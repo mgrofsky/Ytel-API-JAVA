@@ -116,6 +116,7 @@ Message360Client client = new Message360Client(basicAuthUserName, basicAuthPassw
 * [TranscriptionController](#transcription_controller)
 * [PhoneNumberController](#phone_number_controller)
 * [UsageController](#usage_controller)
+* [EmailController](#email_controller)
 * [SMSController](#sms_controller)
 * [AccountController](#account_controller)
 * [RecordingController](#recording_controller)
@@ -205,10 +206,10 @@ void createListParticipantAsync(
 
 ```java
 String conferenceSid = "ConferenceSid";
-Integer page = 237;
-Integer pagesize = 237;
-Boolean muted = true;
-Boolean deaf = true;
+Integer page = 85;
+Integer pagesize = 85;
+Boolean muted = false;
+Boolean deaf = false;
 String responseType = "json";
 // Invoking the API call with sample inputs
 conference.createListParticipantAsync(conferenceSid, page, pagesize, muted, deaf, responseType, new APICallBack<String>() {
@@ -256,9 +257,9 @@ void addParticipantAsync(
 ```java
 String conferencesid = "conferencesid";
 String participantnumber = "participantnumber";
-int tocountrycode = 237;
-Boolean muted = true;
-Boolean deaf = true;
+int tocountrycode = 85;
+Boolean muted = false;
+Boolean deaf = false;
 String responseType = "json";
 // Invoking the API call with sample inputs
 conference.addParticipantAsync(conferencesid, participantnumber, tocountrycode, muted, deaf, responseType, new APICallBack<String>() {
@@ -344,8 +345,8 @@ void createListConferenceAsync(
 #### Example Usage
 
 ```java
-Integer page = 237;
-Integer pageSize = 237;
+Integer page = 85;
+Integer pageSize = 85;
 String friendlyName = "FriendlyName";
 InterruptedCallStatusEnum status = InterruptedCallStatusEnum.fromString("CANCELED");
 String dateCreated = "DateCreated";
@@ -405,8 +406,8 @@ void createListTranscriptionAsync(
 #### Example Usage
 
 ```java
-Integer page = 237;
-Integer pageSize = 237;
+Integer page = 85;
+Integer pageSize = 85;
 StatusEnum status = StatusEnum.fromString("INPROGRESS");
 String dateTranscribed = "DateTranscribed";
 String responseType = "json";
@@ -578,7 +579,7 @@ void createAvailablePhoneNumberAsync(
 ```java
 String numberType = "NumberType";
 String areaCode = "AreaCode";
-Integer pageSize = 237;
+Integer pageSize = 85;
 String responseType = "json";
 // Invoking the API call with sample inputs
 phoneNumber.createAvailablePhoneNumberAsync(numberType, areaCode, pageSize, responseType, new APICallBack<String>() {
@@ -622,8 +623,8 @@ void createListNumberAsync(
 #### Example Usage
 
 ```java
-Integer page = 237;
-Integer pageSize = 237;
+Integer page = 85;
+Integer pageSize = 85;
 String numberType = "NumberType";
 String friendlyName = "FriendlyName";
 String responseType = "json";
@@ -889,6 +890,472 @@ usage.createListUsageAsync(productCode, startDate, endDate, responseType, new AP
 
 [Back to List of Controllers](#list_of_controllers)
 
+### <a name="email_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.EmailController") EmailController
+
+#### Get singleton instance
+
+The singleton instance of the ``` EmailController ``` class can be accessed from the API Client.
+
+```java
+EmailController email = client.getEmail();
+```
+
+#### <a name="create_send_email_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createSendEmailAsync") createSendEmailAsync
+
+> Send out an email
+
+
+```java
+void createSendEmailAsync(
+        final String to,
+        final String from,
+        final String type,
+        final String subject,
+        final String message,
+        final String cc,
+        final String bcc,
+        final File attachment,
+        final String responseType,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| to |  ``` Required ```  | The to email address |
+| from |  ``` Required ```  | The from email address |
+| type |  ``` Required ```  ``` DefaultValue ```  | email format type, html or text |
+| subject |  ``` Required ```  | Email subject |
+| message |  ``` Required ```  | The body of the email message |
+| cc |  ``` Optional ```  | CC Email address |
+| bcc |  ``` Optional ```  | BCC Email address |
+| attachment |  ``` Optional ```  | File to be attached.File must be less than 7MB. |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+String to = "to";
+String from = "from";
+String type = "html";
+String subject = "subject";
+String message = "message";
+String cc = "cc";
+String bcc = "bcc";
+File attachment = new File("PathToFile");
+String responseType = "json";
+// Invoking the API call with sample inputs
+email.createSendEmailAsync(to, from, type, subject, message, cc, bcc, attachment, responseType, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="create_delete_unsubscribes_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteUnsubscribesAsync") createDeleteUnsubscribesAsync
+
+> Delete emails from the unsubscribe list
+
+
+```java
+void createDeleteUnsubscribesAsync(
+        final String email,
+        final String responseType,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| email |  ``` Required ```  | The email to remove from the unsubscribe list |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+String email = "email";
+String responseType = "json";
+// Invoking the API call with sample inputs
+email.createDeleteUnsubscribesAsync(email, responseType, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="create_list_unsubscribes_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createListUnsubscribesAsync") createListUnsubscribesAsync
+
+> List all unsubscribed email addresses
+
+
+```java
+void createListUnsubscribesAsync(
+        final String responseType,
+        final String offset,
+        final String limit,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+| offset |  ``` Optional ```  | Starting record of the list |
+| limit |  ``` Optional ```  | Maximum number of records to be returned |
+
+
+#### Example Usage
+
+```java
+String responseType = "json";
+String offset = "offset";
+String limit = "limit";
+// Invoking the API call with sample inputs
+email.createListUnsubscribesAsync(responseType, offset, limit, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="add_unsubscribes_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.addUnsubscribesAsync") addUnsubscribesAsync
+
+> Add an email to the unsubscribe list
+
+
+```java
+void addUnsubscribesAsync(
+        final String email,
+        final String responseType,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| email |  ``` Required ```  | The email to add to the unsubscribe list |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+String email = "email";
+String responseType = "json";
+// Invoking the API call with sample inputs
+email.addUnsubscribesAsync(email, responseType, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="create_delete_spam_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteSpamAsync") createDeleteSpamAsync
+
+> Deletes a email address marked as spam from the spam list
+
+
+```java
+void createDeleteSpamAsync(
+        final String email,
+        final String responseType,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| email |  ``` Required ```  | Email address |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+String email = "email";
+String responseType = "json";
+// Invoking the API call with sample inputs
+email.createDeleteSpamAsync(email, responseType, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="create_delete_block_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteBlockAsync") createDeleteBlockAsync
+
+> Deletes a blocked email
+
+
+```java
+void createDeleteBlockAsync(
+        final String email,
+        final String responseType,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| email |  ``` Required ```  | Email address to remove from block list |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+String email = "email";
+String responseType = "json";
+// Invoking the API call with sample inputs
+email.createDeleteBlockAsync(email, responseType, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="create_list_invalid_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createListInvalidAsync") createListInvalidAsync
+
+> List out all invalid email addresses
+
+
+```java
+void createListInvalidAsync(
+        final String responseType,
+        final String offet,
+        final String limit,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+| offet |  ``` Optional ```  | Starting record for listing out emails |
+| limit |  ``` Optional ```  | Maximum number of records to return |
+
+
+#### Example Usage
+
+```java
+String responseType = "json";
+String offet = "offet";
+String limit = "limit";
+// Invoking the API call with sample inputs
+email.createListInvalidAsync(responseType, offet, limit, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="create_delete_bounces_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteBouncesAsync") createDeleteBouncesAsync
+
+> Delete an email address from the bounced address list
+
+
+```java
+void createDeleteBouncesAsync(
+        final String email,
+        final String responseType,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| email |  ``` Required ```  | The email address to remove from the bounce list |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+String email = "email";
+String responseType = "json";
+// Invoking the API call with sample inputs
+email.createDeleteBouncesAsync(email, responseType, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="create_list_bounces_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createListBouncesAsync") createListBouncesAsync
+
+> List out all email addresses that have bounced
+
+
+```java
+void createListBouncesAsync(
+        final String responseType,
+        final String offset,
+        final String limit,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+| offset |  ``` Optional ```  | The record to start the list at |
+| limit |  ``` Optional ```  | The maximum number of records to return |
+
+
+#### Example Usage
+
+```java
+String responseType = "json";
+String offset = "offset";
+String limit = "limit";
+// Invoking the API call with sample inputs
+email.createListBouncesAsync(responseType, offset, limit, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="create_list_spam_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createListSpamAsync") createListSpamAsync
+
+> List out all email addresses marked as spam
+
+
+```java
+void createListSpamAsync(
+        final String responseType,
+        final String offset,
+        final String limit,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| responseType |  ``` Required ```  ``` DefaultValue ```  | Response format, xml or json |
+| offset |  ``` Optional ```  | The record number to start the list at |
+| limit |  ``` Optional ```  | Maximum number of records to return |
+
+
+#### Example Usage
+
+```java
+String responseType = "json";
+String offset = "offset";
+String limit = "limit";
+// Invoking the API call with sample inputs
+email.createListSpamAsync(responseType, offset, limit, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="create_list_blocks_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createListBlocksAsync") createListBlocksAsync
+
+> Outputs email addresses on your blocklist
+
+
+```java
+void createListBlocksAsync(
+        final String offset,
+        final String limit,
+        final String responseType,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| offset |  ``` Optional ```  | Where to start in the output list |
+| limit |  ``` Optional ```  | Maximum number of records to return |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+String offset = "offset";
+String limit = "limit";
+String responseType = "json";
+// Invoking the API call with sample inputs
+email.createListBlocksAsync(offset, limit, responseType, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
 ### <a name="sms_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.SMSController") SMSController
 
 #### Get singleton instance
@@ -1024,8 +1491,8 @@ void createListSMSAsync(
 #### Example Usage
 
 ```java
-Integer page = 195;
-Integer pagesize = 195;
+Integer page = 127;
+Integer pagesize = 127;
 String from = "from";
 String to = "to";
 String datesent = "datesent";
@@ -1072,7 +1539,7 @@ void createListInboundSMSAsync(
 #### Example Usage
 
 ```java
-Integer page = 195;
+Integer page = 127;
 String pagesize = "pagesize";
 String from = "from";
 String to = "to";
@@ -1257,8 +1724,8 @@ void createListRecordingAsync(
 #### Example Usage
 
 ```java
-Integer page = 195;
-Integer pageSize = 195;
+Integer page = 127;
+Integer pageSize = 127;
 String dateCreated = "DateCreated";
 String callSid = "CallSid";
 String responseType = "json";
@@ -1399,14 +1866,14 @@ HttpMethodEnum statusCallBackMethod = HttpMethodEnum.fromString("GET");
 String fallBackUrl = "FallBackUrl";
 HttpMethodEnum fallBackMethod = HttpMethodEnum.fromString("GET");
 String heartBeatUrl = "HeartBeatUrl";
-Boolean heartBeatMethod = true;
-Integer timeout = 195;
+Boolean heartBeatMethod = false;
+Integer timeout = 127;
 String playDtmf = "PlayDtmf";
-Boolean hideCallerId = true;
-Boolean record = true;
+Boolean hideCallerId = false;
+Boolean record = false;
 String recordCallBackUrl = "RecordCallBackUrl";
 HttpMethodEnum recordCallBackMethod = HttpMethodEnum.fromString("GET");
-Boolean transcribe = true;
+Boolean transcribe = false;
 String transcribeCallBackUrl = "TranscribeCallBackUrl";
 IfMachineEnum ifMachine = IfMachineEnum.fromString("CONTINUE");
 String responseType = "json";
@@ -1456,10 +1923,10 @@ void createPlayAudioAsync(
 #### Example Usage
 
 ```java
-int length = 195;
+int length = 127;
 DirectionEnum direction = DirectionEnum.fromString("IN");
-boolean loop = true;
-boolean mix = true;
+boolean loop = false;
+boolean mix = false;
 String callSid = "CallSid";
 String audioUrl = "AudioUrl";
 String responseType = "json";
@@ -1510,9 +1977,9 @@ void createRecordCallAsync(
 
 ```java
 String callSid = "CallSid";
-boolean record = true;
+boolean record = false;
 DirectionEnum direction = DirectionEnum.fromString("IN");
-Integer timeLimit = 195;
+Integer timeLimit = 127;
 String callBackUrl = "CallBackUrl";
 AudioFormatEnum fileformat = AudioFormatEnum.fromString("mp3");
 String responseType = "json";
@@ -1566,11 +2033,11 @@ void createVoiceEffectAsync(
 ```java
 String callSid = "CallSid";
 AudioDirectionEnum audioDirection = AudioDirectionEnum.fromString("IN");
-Double pitchSemiTones = 195.57036766809;
-Double pitchOctaves = 195.57036766809;
-Double pitch = 195.57036766809;
-Double rate = 195.57036766809;
-Double tempo = 195.57036766809;
+Double pitchSemiTones = 127.230674667391;
+Double pitchOctaves = 127.230674667391;
+Double pitch = 127.230674667391;
+Double rate = 127.230674667391;
+Double tempo = 127.230674667391;
 String responseType = "json";
 // Invoking the API call with sample inputs
 call.createVoiceEffectAsync(callSid, audioDirection, pitchSemiTones, pitchOctaves, pitch, rate, tempo, responseType, new APICallBack<String>() {

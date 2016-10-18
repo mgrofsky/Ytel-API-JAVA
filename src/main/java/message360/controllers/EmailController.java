@@ -20,295 +20,115 @@ import message360.http.response.HttpStringResponse;
 import message360.http.client.APICallBack;
 import message360.controllers.syncwrapper.APICallBackCatcher;
 
-public class CallController extends BaseController {    
+public class EmailController extends BaseController {    
     //private static variables for the singleton pattern
     private static Object syncObject = new Object();
-    private static CallController instance = null;
+    private static EmailController instance = null;
 
     /**
      * Singleton pattern implementation 
-     * @return The singleton instance of the CallController class 
+     * @return The singleton instance of the EmailController class 
      */
-    public static CallController getInstance() {
+    public static EmailController getInstance() {
         synchronized (syncObject) {
             if (null == instance) {
-                instance = new CallController();
+                instance = new EmailController();
             }
         }
         return instance;
     }
 
     /**
-     * View Call Response
-     * @param    callsid    Required parameter: Call Sid id for particular Call
+     * Send out an email
+     * @param    to    Required parameter: The to email address
+     * @param    from    Required parameter: The from email address
+     * @param    type    Required parameter: email format type, html or text
+     * @param    subject    Required parameter: Email subject
+     * @param    message    Required parameter: The body of the email message
+     * @param    cc    Optional parameter: CC Email address
+     * @param    bcc    Optional parameter: BCC Email address
+     * @param    attachment    Optional parameter: File to be attached.File must be less than 7MB.
      * @param    responseType    Optional parameter: Response format, xml or json
      * @return    Returns the String response from the API call 
      */
-    public String createViewCall(
-                final String callsid,
+    public String createSendEmail(
+                final String to,
+                final String from,
+                final String type,
+                final String subject,
+                final String message,
+                final String cc,
+                final String bcc,
+                final File attachment,
                 final String responseType
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewCallAsync(callsid, responseType, callback);
+        createSendEmailAsync(to, from, type, subject, message, cc, bcc, attachment, responseType, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * View Call Response
-     * @param    callsid    Required parameter: Call Sid id for particular Call
+     * Send out an email
+     * @param    to    Required parameter: The to email address
+     * @param    from    Required parameter: The from email address
+     * @param    type    Required parameter: email format type, html or text
+     * @param    subject    Required parameter: Email subject
+     * @param    message    Required parameter: The body of the email message
+     * @param    cc    Optional parameter: CC Email address
+     * @param    bcc    Optional parameter: BCC Email address
+     * @param    attachment    Optional parameter: File to be attached.File must be less than 7MB.
      * @param    responseType    Optional parameter: Response format, xml or json
      * @return    Returns the void response from the API call 
      */
-    public void createViewCallAsync(
-                final String callsid,
+    public void createSendEmailAsync(
+                final String to,
+                final String from,
+                final String type,
+                final String subject,
+                final String message,
+                final String cc,
+                final String bcc,
+                final File attachment,
                 final String responseType,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == callsid)
-            throw new NullPointerException("The parameter \"callsid\" is a required parameter and cannot be null.");
-
-        //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
-
-        //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/viewcalls.{ResponseType}");
-
-        //process template parameters
-        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4710054185204174046L;
-            {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
-            }});
-        //validate and preprocess url
-        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
-
-        //load all headers for the outgoing API request
-        Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4630617879827497680L;
-            {
-                    put( "user-agent", "message360-api" );
-            }
-        };
-
-        //load all fields for the outgoing API request
-        Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5222043485794523073L;
-            {
-                    put( "callsid", callsid );
-            }
-        };
-
-        //prepare and invoke the API call request to fetch the response
-        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
-                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
-
-        //invoke the callback before request if its not null
-        if (getHttpCallBack() != null)
-        {
-            getHttpCallBack().OnBeforeRequest(_request);
-        }
-
-        //invoke request and get response
-        Runnable _responseTask = new Runnable() {
-            public void run() {
-                //make the API call
-                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
-                    public void onSuccess(HttpContext _context, HttpResponse _response) {
-                        try {
-
-                            //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
-                            {
-                                getHttpCallBack().OnAfterResponse(_context);
-                            }
-
-                            //handle errors defined at the API level
-                            validateResponse(_response, _context);
-
-                            //extract result from the http response
-                            String _result = ((HttpStringResponse)_response).getBody();
-                            //let the caller know of the success
-                            callBack.onSuccess(_context, _result);
-                        } catch (APIException error) {
-                            //let the caller know of the error
-                            callBack.onFailure(_context, error);
-                        } catch (Exception exception) {
-                            //let the caller know of the caught Exception
-                            callBack.onFailure(_context, exception);
-                        }
-                    }
-                    public void onFailure(HttpContext _context, Throwable _error) {
-                        //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
-                            getHttpCallBack().OnAfterResponse(_context);
-                        }
-
-                        //let the caller know of the failure
-                        callBack.onFailure(_context, _error);
-                    }
-                });
-            }
-        };
-
-        //execute async using thread pool
-        APIHelper.getScheduler().execute(_responseTask);
-    }
-
-    /**
-     * You can experiment with initiating a call through Message360 and view the request response generated when doing so and get the response in json
-     * @param    fromCountryCode    Required parameter: from country code
-     * @param    from    Required parameter: This number to display on Caller ID as calling
-     * @param    toCountryCode    Required parameter: To cuntry code number
-     * @param    to    Required parameter: To number
-     * @param    url    Required parameter: URL requested once the call connects
-     * @param    method    Optional parameter: Specifies the HTTP method used to request the required URL once call connects.
-     * @param    statusCallBackUrl    Optional parameter: specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
-     * @param    statusCallBackMethod    Optional parameter: Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
-     * @param    fallBackUrl    Optional parameter: URL requested if the initial Url parameter fails or encounters an error
-     * @param    fallBackMethod    Optional parameter: Specifies the HTTP method used to request the required FallbackUrl once call connects.
-     * @param    heartBeatUrl    Optional parameter: URL that can be requested every 60 seconds during the call to notify of elapsed tim
-     * @param    heartBeatMethod    Optional parameter: Specifies the HTTP method used to request HeartbeatUrl.
-     * @param    timeout    Optional parameter: Time (in seconds) Message360 should wait while the call is ringing before canceling the call
-     * @param    playDtmf    Optional parameter: DTMF Digits to play to the call once it connects. 0-9, #, or *
-     * @param    hideCallerId    Optional parameter: Specifies if the caller id will be hidden
-     * @param    record    Optional parameter: Specifies if the call should be recorded
-     * @param    recordCallBackUrl    Optional parameter: Recording parameters will be sent here upon completion
-     * @param    recordCallBackMethod    Optional parameter: Method used to request the RecordCallback URL.
-     * @param    transcribe    Optional parameter: Specifies if the call recording should be transcribed
-     * @param    transcribeCallBackUrl    Optional parameter: Transcription parameters will be sent here upon completion
-     * @param    ifMachine    Optional parameter: How Message360 should handle the receiving numbers voicemail machine
-     * @param    responseType    Optional parameter: Response format, xml or json
-     * @return    Returns the String response from the API call 
-     */
-    public String createMakeCall(
-                final String fromCountryCode,
-                final String from,
-                final String toCountryCode,
-                final String to,
-                final String url,
-                final HttpMethodEnum method,
-                final String statusCallBackUrl,
-                final HttpMethodEnum statusCallBackMethod,
-                final String fallBackUrl,
-                final HttpMethodEnum fallBackMethod,
-                final String heartBeatUrl,
-                final Boolean heartBeatMethod,
-                final Integer timeout,
-                final String playDtmf,
-                final Boolean hideCallerId,
-                final Boolean record,
-                final String recordCallBackUrl,
-                final HttpMethodEnum recordCallBackMethod,
-                final Boolean transcribe,
-                final String transcribeCallBackUrl,
-                final IfMachineEnum ifMachine,
-                final String responseType
-    ) throws Throwable {
-        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createMakeCallAsync(fromCountryCode, from, toCountryCode, to, url, method, statusCallBackUrl, statusCallBackMethod, fallBackUrl, fallBackMethod, heartBeatUrl, heartBeatMethod, timeout, playDtmf, hideCallerId, record, recordCallBackUrl, recordCallBackMethod, transcribe, transcribeCallBackUrl, ifMachine, responseType, callback);
-        if(!callback.isSuccess())
-            throw callback.getError();
-        return callback.getResult();
-    }
-
-    /**
-     * You can experiment with initiating a call through Message360 and view the request response generated when doing so and get the response in json
-     * @param    fromCountryCode    Required parameter: from country code
-     * @param    from    Required parameter: This number to display on Caller ID as calling
-     * @param    toCountryCode    Required parameter: To cuntry code number
-     * @param    to    Required parameter: To number
-     * @param    url    Required parameter: URL requested once the call connects
-     * @param    method    Optional parameter: Specifies the HTTP method used to request the required URL once call connects.
-     * @param    statusCallBackUrl    Optional parameter: specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
-     * @param    statusCallBackMethod    Optional parameter: Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
-     * @param    fallBackUrl    Optional parameter: URL requested if the initial Url parameter fails or encounters an error
-     * @param    fallBackMethod    Optional parameter: Specifies the HTTP method used to request the required FallbackUrl once call connects.
-     * @param    heartBeatUrl    Optional parameter: URL that can be requested every 60 seconds during the call to notify of elapsed tim
-     * @param    heartBeatMethod    Optional parameter: Specifies the HTTP method used to request HeartbeatUrl.
-     * @param    timeout    Optional parameter: Time (in seconds) Message360 should wait while the call is ringing before canceling the call
-     * @param    playDtmf    Optional parameter: DTMF Digits to play to the call once it connects. 0-9, #, or *
-     * @param    hideCallerId    Optional parameter: Specifies if the caller id will be hidden
-     * @param    record    Optional parameter: Specifies if the call should be recorded
-     * @param    recordCallBackUrl    Optional parameter: Recording parameters will be sent here upon completion
-     * @param    recordCallBackMethod    Optional parameter: Method used to request the RecordCallback URL.
-     * @param    transcribe    Optional parameter: Specifies if the call recording should be transcribed
-     * @param    transcribeCallBackUrl    Optional parameter: Transcription parameters will be sent here upon completion
-     * @param    ifMachine    Optional parameter: How Message360 should handle the receiving numbers voicemail machine
-     * @param    responseType    Optional parameter: Response format, xml or json
-     * @return    Returns the void response from the API call 
-     */
-    public void createMakeCallAsync(
-                final String fromCountryCode,
-                final String from,
-                final String toCountryCode,
-                final String to,
-                final String url,
-                final HttpMethodEnum method,
-                final String statusCallBackUrl,
-                final HttpMethodEnum statusCallBackMethod,
-                final String fallBackUrl,
-                final HttpMethodEnum fallBackMethod,
-                final String heartBeatUrl,
-                final Boolean heartBeatMethod,
-                final Integer timeout,
-                final String playDtmf,
-                final Boolean hideCallerId,
-                final Boolean record,
-                final String recordCallBackUrl,
-                final HttpMethodEnum recordCallBackMethod,
-                final Boolean transcribe,
-                final String transcribeCallBackUrl,
-                final IfMachineEnum ifMachine,
-                final String responseType,
-                final APICallBack<String> callBack
-    ) {
-        //validating required parameters
-        if (null == fromCountryCode)
-            throw new NullPointerException("The parameter \"fromCountryCode\" is a required parameter and cannot be null.");
+        if (null == to)
+            throw new NullPointerException("The parameter \"to\" is a required parameter and cannot be null.");
 
         if (null == from)
             throw new NullPointerException("The parameter \"from\" is a required parameter and cannot be null.");
 
-        if (null == toCountryCode)
-            throw new NullPointerException("The parameter \"toCountryCode\" is a required parameter and cannot be null.");
+        if (null == type)
+            throw new NullPointerException("The parameter \"type\" is a required parameter and cannot be null.");
 
-        if (null == to)
-            throw new NullPointerException("The parameter \"to\" is a required parameter and cannot be null.");
+        if (null == subject)
+            throw new NullPointerException("The parameter \"subject\" is a required parameter and cannot be null.");
 
-        if (null == url)
-            throw new NullPointerException("The parameter \"url\" is a required parameter and cannot be null.");
+        if (null == message)
+            throw new NullPointerException("The parameter \"message\" is a required parameter and cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/makecall.{ResponseType}");
+        _queryBuilder.append("/email/sendemails.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5683534842295449214L;
+            private static final long serialVersionUID = 5634104922030444321L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
-            }});
-
-        //process query parameters
-        APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5718885733499121866L;
-            {
-                    put( "Method", (null != method) ? method.value() : null );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5557113001945130894L;
+            private static final long serialVersionUID = 4767314079718103957L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -316,28 +136,16 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4853702994454904806L;
+            private static final long serialVersionUID = 4884020131407930911L;
             {
-                    put( "FromCountryCode", fromCountryCode );
-                    put( "From", from );
-                    put( "ToCountryCode", toCountryCode );
-                    put( "To", to );
-                    put( "Url", url );
-                    put( "StatusCallBackUrl", statusCallBackUrl );
-                    put( "StatusCallBackMethod", (null != statusCallBackMethod) ? statusCallBackMethod.value() : null );
-                    put( "FallBackUrl", fallBackUrl );
-                    put( "FallBackMethod", (null != fallBackMethod) ? fallBackMethod.value() : null );
-                    put( "HeartBeatUrl", heartBeatUrl );
-                    put( "HeartBeatMethod", heartBeatMethod );
-                    put( "Timeout", timeout );
-                    put( "PlayDtmf", playDtmf );
-                    put( "HideCallerId", hideCallerId );
-                    put( "Record", record );
-                    put( "RecordCallBackUrl", recordCallBackUrl );
-                    put( "RecordCallBackMethod", (null != recordCallBackMethod) ? recordCallBackMethod.value() : null );
-                    put( "Transcribe", transcribe );
-                    put( "TranscribeCallBackUrl", transcribeCallBackUrl );
-                    put( "IfMachine", (null != ifMachine) ? ifMachine.value() : null );
+                    put( "to", to );
+                    put( "from", from );
+                    put( "type", type );
+                    put( "subject", subject );
+                    put( "message", message );
+                    put( "cc", cc );
+                    put( "bcc", bcc );
+                    put( "attachment", attachment );
             }
         };
 
@@ -399,67 +207,47 @@ public class CallController extends BaseController {
     }
 
     /**
-     * Play Dtmf and send the Digit
-     * @param    length    Required parameter: Time limit in seconds for audio play back
-     * @param    direction    Required parameter: The leg of the call audio will be played to
-     * @param    loop    Required parameter: Repeat audio playback indefinitely
-     * @param    mix    Required parameter: If false, all other audio will be muted
-     * @param    callSid    Optional parameter: The unique identifier of each call resource
-     * @param    audioUrl    Optional parameter: URL to sound that should be played. You also can add more than one audio file using semicolons e.g. http://example.com/audio1.mp3;http://example.com/audio2.wav
+     * Delete emails from the unsubscribe list
+     * @param    email    Required parameter: The email to remove from the unsubscribe list
      * @param    responseType    Optional parameter: Response format, xml or json
      * @return    Returns the String response from the API call 
      */
-    public String createPlayAudio(
-                final int length,
-                final DirectionEnum direction,
-                final boolean loop,
-                final boolean mix,
-                final String callSid,
-                final String audioUrl,
+    public String createDeleteUnsubscribes(
+                final String email,
                 final String responseType
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createPlayAudioAsync(length, direction, loop, mix, callSid, audioUrl, responseType, callback);
+        createDeleteUnsubscribesAsync(email, responseType, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * Play Dtmf and send the Digit
-     * @param    length    Required parameter: Time limit in seconds for audio play back
-     * @param    direction    Required parameter: The leg of the call audio will be played to
-     * @param    loop    Required parameter: Repeat audio playback indefinitely
-     * @param    mix    Required parameter: If false, all other audio will be muted
-     * @param    callSid    Optional parameter: The unique identifier of each call resource
-     * @param    audioUrl    Optional parameter: URL to sound that should be played. You also can add more than one audio file using semicolons e.g. http://example.com/audio1.mp3;http://example.com/audio2.wav
+     * Delete emails from the unsubscribe list
+     * @param    email    Required parameter: The email to remove from the unsubscribe list
      * @param    responseType    Optional parameter: Response format, xml or json
      * @return    Returns the void response from the API call 
      */
-    public void createPlayAudioAsync(
-                final int length,
-                final DirectionEnum direction,
-                final boolean loop,
-                final boolean mix,
-                final String callSid,
-                final String audioUrl,
+    public void createDeleteUnsubscribesAsync(
+                final String email,
                 final String responseType,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == direction)
-            throw new NullPointerException("The parameter \"direction\" is a required parameter and cannot be null.");
+        if (null == email)
+            throw new NullPointerException("The parameter \"email\" is a required parameter and cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/playaudios.{ResponseType}");
+        _queryBuilder.append("/email/deleteunsubscribedemail.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5130447566014937382L;
+            private static final long serialVersionUID = 4692486744405349126L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -468,7 +256,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5015681893827608664L;
+            private static final long serialVersionUID = 5615192241864054557L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -476,14 +264,9 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5520670773994389487L;
+            private static final long serialVersionUID = 5713119545384604510L;
             {
-                    put( "Length", length );
-                    put( "Direction", (null != direction) ? direction.value() : null );
-                    put( "Loop", loop );
-                    put( "Mix", mix );
-                    put( "CallSid", callSid );
-                    put( "AudioUrl", audioUrl );
+                    put( "email", email );
             }
         };
 
@@ -545,67 +328,47 @@ public class CallController extends BaseController {
     }
 
     /**
-     * Record a Call
-     * @param    callSid    Required parameter: The unique identifier of each call resource
-     * @param    record    Required parameter: Set true to initiate recording or false to terminate recording
-     * @param    direction    Optional parameter: The leg of the call to record
-     * @param    timeLimit    Optional parameter: Time in seconds the recording duration should not exceed
-     * @param    callBackUrl    Optional parameter: URL consulted after the recording completes
-     * @param    fileformat    Optional parameter: Format of the recording file. Can be .mp3 or .wav
+     * List all unsubscribed email addresses
      * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    offset    Optional parameter: Starting record of the list
+     * @param    limit    Optional parameter: Maximum number of records to be returned
      * @return    Returns the String response from the API call 
      */
-    public String createRecordCall(
-                final String callSid,
-                final boolean record,
-                final DirectionEnum direction,
-                final Integer timeLimit,
-                final String callBackUrl,
-                final AudioFormatEnum fileformat,
-                final String responseType
+    public String createListUnsubscribes(
+                final String responseType,
+                final String offset,
+                final String limit
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createRecordCallAsync(callSid, record, direction, timeLimit, callBackUrl, fileformat, responseType, callback);
+        createListUnsubscribesAsync(responseType, offset, limit, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * Record a Call
-     * @param    callSid    Required parameter: The unique identifier of each call resource
-     * @param    record    Required parameter: Set true to initiate recording or false to terminate recording
-     * @param    direction    Optional parameter: The leg of the call to record
-     * @param    timeLimit    Optional parameter: Time in seconds the recording duration should not exceed
-     * @param    callBackUrl    Optional parameter: URL consulted after the recording completes
-     * @param    fileformat    Optional parameter: Format of the recording file. Can be .mp3 or .wav
+     * List all unsubscribed email addresses
      * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    offset    Optional parameter: Starting record of the list
+     * @param    limit    Optional parameter: Maximum number of records to be returned
      * @return    Returns the void response from the API call 
      */
-    public void createRecordCallAsync(
-                final String callSid,
-                final boolean record,
-                final DirectionEnum direction,
-                final Integer timeLimit,
-                final String callBackUrl,
-                final AudioFormatEnum fileformat,
+    public void createListUnsubscribesAsync(
                 final String responseType,
+                final String offset,
+                final String limit,
                 final APICallBack<String> callBack
     ) {
-        //validating required parameters
-        if (null == callSid)
-            throw new NullPointerException("The parameter \"callSid\" is a required parameter and cannot be null.");
-
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/recordcalls.{ResponseType}");
+        _queryBuilder.append("/email/listunsubscribedemail.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5474484950339413297L;
+            private static final long serialVersionUID = 4950130124604621584L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -614,7 +377,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5351757424814631934L;
+            private static final long serialVersionUID = 5152570838548378392L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -622,14 +385,10 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4876658186076832838L;
+            private static final long serialVersionUID = 5538844342643343494L;
             {
-                    put( "CallSid", callSid );
-                    put( "Record", record );
-                    put( "Direction", (null != direction) ? direction.value() : null );
-                    put( "TimeLimit", timeLimit );
-                    put( "CallBackUrl", callBackUrl );
-                    put( "Fileformat", (null != fileformat) ? fileformat.value() : null );
+                    put( "offset", offset );
+                    put( "limit", limit );
             }
         };
 
@@ -691,71 +450,47 @@ public class CallController extends BaseController {
     }
 
     /**
-     * Voice Effect
-     * @param    callSid    Required parameter: Example: 
-     * @param    audioDirection    Optional parameter: Example: 
-     * @param    pitchSemiTones    Optional parameter: value between -14 and 14
-     * @param    pitchOctaves    Optional parameter: value between -1 and 1
-     * @param    pitch    Optional parameter: value greater than 0
-     * @param    rate    Optional parameter: value greater than 0
-     * @param    tempo    Optional parameter: value greater than 0
+     * Add an email to the unsubscribe list
+     * @param    email    Required parameter: The email to add to the unsubscribe list
      * @param    responseType    Optional parameter: Response format, xml or json
      * @return    Returns the String response from the API call 
      */
-    public String createVoiceEffect(
-                final String callSid,
-                final AudioDirectionEnum audioDirection,
-                final Double pitchSemiTones,
-                final Double pitchOctaves,
-                final Double pitch,
-                final Double rate,
-                final Double tempo,
+    public String addUnsubscribes(
+                final String email,
                 final String responseType
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createVoiceEffectAsync(callSid, audioDirection, pitchSemiTones, pitchOctaves, pitch, rate, tempo, responseType, callback);
+        addUnsubscribesAsync(email, responseType, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * Voice Effect
-     * @param    callSid    Required parameter: Example: 
-     * @param    audioDirection    Optional parameter: Example: 
-     * @param    pitchSemiTones    Optional parameter: value between -14 and 14
-     * @param    pitchOctaves    Optional parameter: value between -1 and 1
-     * @param    pitch    Optional parameter: value greater than 0
-     * @param    rate    Optional parameter: value greater than 0
-     * @param    tempo    Optional parameter: value greater than 0
+     * Add an email to the unsubscribe list
+     * @param    email    Required parameter: The email to add to the unsubscribe list
      * @param    responseType    Optional parameter: Response format, xml or json
      * @return    Returns the void response from the API call 
      */
-    public void createVoiceEffectAsync(
-                final String callSid,
-                final AudioDirectionEnum audioDirection,
-                final Double pitchSemiTones,
-                final Double pitchOctaves,
-                final Double pitch,
-                final Double rate,
-                final Double tempo,
+    public void addUnsubscribesAsync(
+                final String email,
                 final String responseType,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == callSid)
-            throw new NullPointerException("The parameter \"callSid\" is a required parameter and cannot be null.");
+        if (null == email)
+            throw new NullPointerException("The parameter \"email\" is a required parameter and cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/voiceeffect.{ResponseType}");
+        _queryBuilder.append("/email/addunsubscribesemail.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5343190722737306850L;
+            private static final long serialVersionUID = 5361757499760994612L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -764,7 +499,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4958357748403167985L;
+            private static final long serialVersionUID = 5103650379955863812L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -772,15 +507,9 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4657833243281742574L;
+            private static final long serialVersionUID = 4677798254849280257L;
             {
-                    put( "CallSid", callSid );
-                    put( "AudioDirection", (null != audioDirection) ? audioDirection.value() : null );
-                    put( "PitchSemiTones", pitchSemiTones );
-                    put( "PitchOctaves", pitchOctaves );
-                    put( "Pitch", pitch );
-                    put( "Rate", rate );
-                    put( "Tempo", tempo );
+                    put( "email", email );
             }
         };
 
@@ -842,58 +571,47 @@ public class CallController extends BaseController {
     }
 
     /**
-     * Play Dtmf and send the Digit
-     * @param    callSid    Required parameter: The unique identifier of each call resource
-     * @param    playDtmf    Required parameter: DTMF digits to play to the call. 0-9, #, *, W, or w
-     * @param    playDtmfDirection    Optional parameter: The leg of the call DTMF digits should be sent to
+     * Deletes a email address marked as spam from the spam list
+     * @param    email    Required parameter: Email address
      * @param    responseType    Optional parameter: Response format, xml or json
      * @return    Returns the String response from the API call 
      */
-    public String createSendDigit(
-                final String callSid,
-                final String playDtmf,
-                final DirectionEnum playDtmfDirection,
+    public String createDeleteSpam(
+                final String email,
                 final String responseType
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createSendDigitAsync(callSid, playDtmf, playDtmfDirection, responseType, callback);
+        createDeleteSpamAsync(email, responseType, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * Play Dtmf and send the Digit
-     * @param    callSid    Required parameter: The unique identifier of each call resource
-     * @param    playDtmf    Required parameter: DTMF digits to play to the call. 0-9, #, *, W, or w
-     * @param    playDtmfDirection    Optional parameter: The leg of the call DTMF digits should be sent to
+     * Deletes a email address marked as spam from the spam list
+     * @param    email    Required parameter: Email address
      * @param    responseType    Optional parameter: Response format, xml or json
      * @return    Returns the void response from the API call 
      */
-    public void createSendDigitAsync(
-                final String callSid,
-                final String playDtmf,
-                final DirectionEnum playDtmfDirection,
+    public void createDeleteSpamAsync(
+                final String email,
                 final String responseType,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == callSid)
-            throw new NullPointerException("The parameter \"callSid\" is a required parameter and cannot be null.");
-
-        if (null == playDtmf)
-            throw new NullPointerException("The parameter \"playDtmf\" is a required parameter and cannot be null.");
+        if (null == email)
+            throw new NullPointerException("The parameter \"email\" is a required parameter and cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/senddigits.{ResponseType}");
+        _queryBuilder.append("/email/deletespamemail.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4885028291963565206L;
+            private static final long serialVersionUID = 5334927790904108730L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -902,7 +620,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5076949517104236991L;
+            private static final long serialVersionUID = 5193084041437185169L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -910,11 +628,9 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5546119105673151294L;
+            private static final long serialVersionUID = 5443371096439131960L;
             {
-                    put( "CallSid", callSid );
-                    put( "PlayDtmf", playDtmf );
-                    put( "PlayDtmfDirection", (null != playDtmfDirection) ? playDtmfDirection.value() : null );
+                    put( "email", email );
             }
         };
 
@@ -976,59 +692,47 @@ public class CallController extends BaseController {
     }
 
     /**
-     * Interrupt the Call by Call Sid
-     * @param    callSid    Required parameter: Call SId
-     * @param    url    Optional parameter: URL the in-progress call will be redirected to
-     * @param    method    Optional parameter: The method used to request the above Url parameter
-     * @param    status    Optional parameter: Status to set the in-progress call to
+     * Deletes a blocked email
+     * @param    email    Required parameter: Email address to remove from block list
      * @param    responseType    Optional parameter: Response format, xml or json
      * @return    Returns the String response from the API call 
      */
-    public String createInterruptedCall(
-                final String callSid,
-                final String url,
-                final HttpMethodEnum method,
-                final InterruptedCallStatusEnum status,
+    public String createDeleteBlock(
+                final String email,
                 final String responseType
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createInterruptedCallAsync(callSid, url, method, status, responseType, callback);
+        createDeleteBlockAsync(email, responseType, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * Interrupt the Call by Call Sid
-     * @param    callSid    Required parameter: Call SId
-     * @param    url    Optional parameter: URL the in-progress call will be redirected to
-     * @param    method    Optional parameter: The method used to request the above Url parameter
-     * @param    status    Optional parameter: Status to set the in-progress call to
+     * Deletes a blocked email
+     * @param    email    Required parameter: Email address to remove from block list
      * @param    responseType    Optional parameter: Response format, xml or json
      * @return    Returns the void response from the API call 
      */
-    public void createInterruptedCallAsync(
-                final String callSid,
-                final String url,
-                final HttpMethodEnum method,
-                final InterruptedCallStatusEnum status,
+    public void createDeleteBlockAsync(
+                final String email,
                 final String responseType,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == callSid)
-            throw new NullPointerException("The parameter \"callSid\" is a required parameter and cannot be null.");
+        if (null == email)
+            throw new NullPointerException("The parameter \"email\" is a required parameter and cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/interruptcalls.{ResponseType}");
+        _queryBuilder.append("/email/deleteblocksemail.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5581645917880996233L;
+            private static final long serialVersionUID = 5635829252591332165L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -1037,7 +741,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4948186687973500944L;
+            private static final long serialVersionUID = 5507432598289065734L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1045,12 +749,9 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5291507701641886471L;
+            private static final long serialVersionUID = 4810898008411532120L;
             {
-                    put( "CallSid", callSid );
-                    put( "Url", url );
-                    put( "Method", (null != method) ? method.value() : null );
-                    put( "Status", (null != status) ? status.value() : null );
+                    put( "email", email );
             }
         };
 
@@ -1112,59 +813,47 @@ public class CallController extends BaseController {
     }
 
     /**
-     * A list of calls associated with your Message360 account
-     * @param    page    Optional parameter: Which page of the overall response will be returned. Zero indexed
-     * @param    pageSize    Optional parameter: Number of individual resources listed in the response per page
-     * @param    to    Optional parameter: Only list calls to this number
-     * @param    from    Optional parameter: Only list calls from this number
-     * @param    dateCreated    Optional parameter: Only list calls starting within the specified date range
+     * List out all invalid email addresses
      * @param    responseType    Optional parameter: Response format, xml or json
-     * @return    Returns the void response from the API call 
+     * @param    offet    Optional parameter: Starting record for listing out emails
+     * @param    limit    Optional parameter: Maximum number of records to return
+     * @return    Returns the String response from the API call 
      */
-    public void createListCalls(
-                final String page,
-                final String pageSize,
-                final String to,
-                final String from,
-                final String dateCreated,
-                final String responseType
+    public String createListInvalid(
+                final String responseType,
+                final String offet,
+                final String limit
     ) throws Throwable {
-        APICallBackCatcher<Object> callback = new APICallBackCatcher<Object>();
-        createListCallsAsync(page, pageSize, to, from, dateCreated, responseType, callback);
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        createListInvalidAsync(responseType, offet, limit, callback);
         if(!callback.isSuccess())
             throw callback.getError();
-        callback.getResult();
+        return callback.getResult();
     }
 
     /**
-     * A list of calls associated with your Message360 account
-     * @param    page    Optional parameter: Which page of the overall response will be returned. Zero indexed
-     * @param    pageSize    Optional parameter: Number of individual resources listed in the response per page
-     * @param    to    Optional parameter: Only list calls to this number
-     * @param    from    Optional parameter: Only list calls from this number
-     * @param    dateCreated    Optional parameter: Only list calls starting within the specified date range
+     * List out all invalid email addresses
      * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    offet    Optional parameter: Starting record for listing out emails
+     * @param    limit    Optional parameter: Maximum number of records to return
      * @return    Returns the void response from the API call 
      */
-    public void createListCallsAsync(
-                final String page,
-                final String pageSize,
-                final String to,
-                final String from,
-                final String dateCreated,
+    public void createListInvalidAsync(
                 final String responseType,
-                final APICallBack<Object> callBack
+                final String offet,
+                final String limit,
+                final APICallBack<String> callBack
     ) {
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
 
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/listcalls.{ResponseType}");
+        _queryBuilder.append("/email/listinvalidemail.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5073956018923078233L;
+            private static final long serialVersionUID = 5363144598236983724L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -1173,7 +862,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5691476264466754817L;
+            private static final long serialVersionUID = 5520118108751750473L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1181,13 +870,10 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4867791301376870581L;
+            private static final long serialVersionUID = 5659305493999994175L;
             {
-                    put( "Page", page );
-                    put( "PageSize", pageSize );
-                    put( "To", to );
-                    put( "From", from );
-                    put( "DateCreated", dateCreated );
+                    put( "offet", offet );
+                    put( "limit", limit );
             }
         };
 
@@ -1218,8 +904,501 @@ public class CallController extends BaseController {
                             //handle errors defined at the API level
                             validateResponse(_response, _context);
 
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
                             //let the caller know of the success
-                            callBack.onSuccess(_context, _context);
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * Delete an email address from the bounced address list
+     * @param    email    Required parameter: The email address to remove from the bounce list
+     * @param    responseType    Optional parameter: Response format, xml or json
+     * @return    Returns the String response from the API call 
+     */
+    public String createDeleteBounces(
+                final String email,
+                final String responseType
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        createDeleteBouncesAsync(email, responseType, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * Delete an email address from the bounced address list
+     * @param    email    Required parameter: The email address to remove from the bounce list
+     * @param    responseType    Optional parameter: Response format, xml or json
+     * @return    Returns the void response from the API call 
+     */
+    public void createDeleteBouncesAsync(
+                final String email,
+                final String responseType,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == email)
+            throw new NullPointerException("The parameter \"email\" is a required parameter and cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.baseUri;
+
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/email/deletebouncesemail.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5648985610756552591L;
+            {
+                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 5633751179975445905L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5222601426419432139L;
+            {
+                    put( "email", email );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * List out all email addresses that have bounced
+     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    offset    Optional parameter: The record to start the list at
+     * @param    limit    Optional parameter: The maximum number of records to return
+     * @return    Returns the String response from the API call 
+     */
+    public String createListBounces(
+                final String responseType,
+                final String offset,
+                final String limit
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        createListBouncesAsync(responseType, offset, limit, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * List out all email addresses that have bounced
+     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    offset    Optional parameter: The record to start the list at
+     * @param    limit    Optional parameter: The maximum number of records to return
+     * @return    Returns the void response from the API call 
+     */
+    public void createListBouncesAsync(
+                final String responseType,
+                final String offset,
+                final String limit,
+                final APICallBack<String> callBack
+    ) {
+        //the base uri for api requests
+        String _baseUri = Configuration.baseUri;
+
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/email/listbounceemail.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5363020424149267266L;
+            {
+                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 4705186144460628045L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 4947421439150597055L;
+            {
+                    put( "offset", offset );
+                    put( "limit", limit );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * List out all email addresses marked as spam
+     * @param    responseType    Required parameter: Response format, xml or json
+     * @param    offset    Optional parameter: The record number to start the list at
+     * @param    limit    Optional parameter: Maximum number of records to return
+     * @return    Returns the String response from the API call 
+     */
+    public String createListSpam(
+                final String responseType,
+                final String offset,
+                final String limit
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        createListSpamAsync(responseType, offset, limit, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * List out all email addresses marked as spam
+     * @param    responseType    Required parameter: Response format, xml or json
+     * @param    offset    Optional parameter: The record number to start the list at
+     * @param    limit    Optional parameter: Maximum number of records to return
+     * @return    Returns the void response from the API call 
+     */
+    public void createListSpamAsync(
+                final String responseType,
+                final String offset,
+                final String limit,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == responseType)
+            throw new NullPointerException("The parameter \"responseType\" is a required parameter and cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.baseUri;
+
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/email/listspamemail.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 4977914938532222351L;
+            {
+                    put( "ResponseType", responseType );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 5245908008313435626L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5497401329969705549L;
+            {
+                    put( "offset", offset );
+                    put( "limit", limit );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * Outputs email addresses on your blocklist
+     * @param    offset    Optional parameter: Where to start in the output list
+     * @param    limit    Optional parameter: Maximum number of records to return
+     * @param    responseType    Optional parameter: Response format, xml or json
+     * @return    Returns the String response from the API call 
+     */
+    public String createListBlocks(
+                final String offset,
+                final String limit,
+                final String responseType
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        createListBlocksAsync(offset, limit, responseType, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * Outputs email addresses on your blocklist
+     * @param    offset    Optional parameter: Where to start in the output list
+     * @param    limit    Optional parameter: Maximum number of records to return
+     * @param    responseType    Optional parameter: Response format, xml or json
+     * @return    Returns the void response from the API call 
+     */
+    public void createListBlocksAsync(
+                final String offset,
+                final String limit,
+                final String responseType,
+                final APICallBack<String> callBack
+    ) {
+        //the base uri for api requests
+        String _baseUri = Configuration.baseUri;
+
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/email/listblockemail.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5750420135050205629L;
+            {
+                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 5295951508667049795L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5656806413737115063L;
+            {
+                    put( "offset", offset );
+                    put( "limit", limit );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
                         } catch (APIException error) {
                             //let the caller know of the error
                             callBack.onFailure(_context, error);
