@@ -1,4 +1,4 @@
-# Getting Started
+#
 
 ## How to Build
 
@@ -206,8 +206,8 @@ void createListParticipantAsync(
 
 ```java
 String conferenceSid = "ConferenceSid";
-Integer page = 85;
-Integer pagesize = 85;
+Integer page = 116;
+Integer pagesize = 116;
 Boolean muted = false;
 Boolean deaf = false;
 String responseType = "json";
@@ -257,7 +257,7 @@ void addParticipantAsync(
 ```java
 String conferencesid = "conferencesid";
 String participantnumber = "participantnumber";
-int tocountrycode = 85;
+int tocountrycode = 116;
 Boolean muted = false;
 Boolean deaf = false;
 String responseType = "json";
@@ -322,7 +322,7 @@ void createListConferenceAsync(
         final Integer page,
         final Integer pageSize,
         final String friendlyName,
-        final InterruptedCallStatusEnum status,
+        final InterruptedCallStatus status,
         final String dateCreated,
         final String dateUpdated,
         final String responseType,
@@ -345,10 +345,10 @@ void createListConferenceAsync(
 #### Example Usage
 
 ```java
-Integer page = 85;
-Integer pageSize = 85;
+Integer page = 116;
+Integer pageSize = 116;
 String friendlyName = "FriendlyName";
-InterruptedCallStatusEnum status = InterruptedCallStatusEnum.fromString("CANCELED");
+InterruptedCallStatus status = InterruptedCallStatus.fromString("CANCELED");
 String dateCreated = "DateCreated";
 String dateUpdated = "DateUpdated";
 String responseType = "json";
@@ -386,7 +386,7 @@ TranscriptionController transcription = client.getTranscription();
 void createListTranscriptionAsync(
         final Integer page,
         final Integer pageSize,
-        final StatusEnum status,
+        final Status status,
         final String dateTranscribed,
         final String responseType,
         final APICallBack<String> callBack)
@@ -406,9 +406,9 @@ void createListTranscriptionAsync(
 #### Example Usage
 
 ```java
-Integer page = 85;
-Integer pageSize = 85;
-StatusEnum status = StatusEnum.fromString("INPROGRESS");
+Integer page = 116;
+Integer pageSize = 116;
+Status status = Status.fromString("INPROGRESS");
 String dateTranscribed = "DateTranscribed";
 String responseType = "json";
 // Invoking the API call with sample inputs
@@ -579,7 +579,7 @@ void createAvailablePhoneNumberAsync(
 ```java
 String numberType = "NumberType";
 String areaCode = "AreaCode";
-Integer pageSize = 85;
+Integer pageSize = 116;
 String responseType = "json";
 // Invoking the API call with sample inputs
 phoneNumber.createAvailablePhoneNumberAsync(numberType, areaCode, pageSize, responseType, new APICallBack<String>() {
@@ -623,8 +623,8 @@ void createListNumberAsync(
 #### Example Usage
 
 ```java
-Integer page = 85;
-Integer pageSize = 85;
+Integer page = 116;
+Integer pageSize = 116;
 String numberType = "NumberType";
 String friendlyName = "FriendlyName";
 String responseType = "json";
@@ -765,17 +765,17 @@ void updatePhoneNumberAsync(
         final String phoneNumber,
         final String friendlyName,
         final String voiceUrl,
-        final HttpMethodEnum voiceMethod,
+        final HttpMethod voiceMethod,
         final String voiceFallbackUrl,
-        final HttpMethodEnum voiceFallbackMethod,
+        final HttpMethod voiceFallbackMethod,
         final String hangupCallback,
-        final HttpMethodEnum hangupCallbackMethod,
+        final HttpMethod hangupCallbackMethod,
         final String heartbeatUrl,
-        final HttpMethodEnum heartbeatMethod,
+        final HttpMethod heartbeatMethod,
         final String smsUrl,
-        final HttpMethodEnum smsMethod,
+        final HttpMethod smsMethod,
         final String smsFallbackUrl,
-        final HttpMethodEnum smsFallbackMethod,
+        final HttpMethod smsFallbackMethod,
         final String responseType,
         final APICallBack<String> callBack)
 ```
@@ -807,17 +807,17 @@ void updatePhoneNumberAsync(
 String phoneNumber = "PhoneNumber";
 String friendlyName = "FriendlyName";
 String voiceUrl = "VoiceUrl";
-HttpMethodEnum voiceMethod = HttpMethodEnum.fromString("GET");
+HttpMethod voiceMethod = HttpMethod.fromString("GET");
 String voiceFallbackUrl = "VoiceFallbackUrl";
-HttpMethodEnum voiceFallbackMethod = HttpMethodEnum.fromString("GET");
+HttpMethod voiceFallbackMethod = HttpMethod.fromString("GET");
 String hangupCallback = "HangupCallback";
-HttpMethodEnum hangupCallbackMethod = HttpMethodEnum.fromString("GET");
+HttpMethod hangupCallbackMethod = HttpMethod.fromString("GET");
 String heartbeatUrl = "HeartbeatUrl";
-HttpMethodEnum heartbeatMethod = HttpMethodEnum.fromString("GET");
+HttpMethod heartbeatMethod = HttpMethod.fromString("GET");
 String smsUrl = "SmsUrl";
-HttpMethodEnum smsMethod = HttpMethodEnum.fromString("GET");
+HttpMethod smsMethod = HttpMethod.fromString("GET");
 String smsFallbackUrl = "SmsFallbackUrl";
-HttpMethodEnum smsFallbackMethod = HttpMethodEnum.fromString("GET");
+HttpMethod smsFallbackMethod = HttpMethod.fromString("GET");
 String responseType = "json";
 // Invoking the API call with sample inputs
 phoneNumber.updatePhoneNumberAsync(phoneNumber, friendlyName, voiceUrl, voiceMethod, voiceFallbackUrl, voiceFallbackMethod, hangupCallback, hangupCallbackMethod, heartbeatUrl, heartbeatMethod, smsUrl, smsMethod, smsFallbackUrl, smsFallbackMethod, responseType, new APICallBack<String>() {
@@ -909,12 +909,12 @@ EmailController email = client.getEmail();
 void createSendEmailAsync(
         final String to,
         final String from,
-        final String type,
+        final SendEmailAs type,
         final String subject,
         final String message,
         final String cc,
         final String bcc,
-        final File attachment,
+        final String attachment,
         final String responseType,
         final APICallBack<String> callBack)
 ```
@@ -939,12 +939,12 @@ void createSendEmailAsync(
 ```java
 String to = "to";
 String from = "from";
-String type = "html";
+SendEmailAs type = SendEmailAs.fromString("HTML");
 String subject = "subject";
 String message = "message";
 String cc = "cc";
 String bcc = "bcc";
-File attachment = new File("PathToFile");
+String attachment = "attachment";
 String responseType = "json";
 // Invoking the API call with sample inputs
 email.createSendEmailAsync(to, from, type, subject, message, cc, bcc, attachment, responseType, new APICallBack<String>() {
@@ -1378,7 +1378,7 @@ void createSendSMSAsync(
         final int tocountrycode,
         final String to,
         final String body,
-        final HttpMethodEnum method,
+        final HttpMethod method,
         final String messagestatuscallback,
         final String responseType,
         final APICallBack<String> callBack)
@@ -1406,7 +1406,7 @@ String from = "from";
 int tocountrycode = 1;
 String to = "to";
 String body = "body";
-HttpMethodEnum method = HttpMethodEnum.fromString("GET");
+HttpMethod method = HttpMethod.fromString("GET");
 String messagestatuscallback = "messagestatuscallback";
 String responseType = "json";
 // Invoking the API call with sample inputs
@@ -1491,8 +1491,8 @@ void createListSMSAsync(
 #### Example Usage
 
 ```java
-Integer page = 127;
-Integer pagesize = 127;
+Integer page = 25;
+Integer pagesize = 25;
 String from = "from";
 String to = "to";
 String datesent = "datesent";
@@ -1539,7 +1539,7 @@ void createListInboundSMSAsync(
 #### Example Usage
 
 ```java
-Integer page = 127;
+Integer page = 25;
 String pagesize = "pagesize";
 String from = "from";
 String to = "to";
@@ -1724,8 +1724,8 @@ void createListRecordingAsync(
 #### Example Usage
 
 ```java
-Integer page = 127;
-Integer pageSize = 127;
+Integer page = 25;
+Integer pageSize = 25;
 String dateCreated = "DateCreated";
 String callSid = "CallSid";
 String responseType = "json";
@@ -1804,11 +1804,11 @@ void createMakeCallAsync(
         final String toCountryCode,
         final String to,
         final String url,
-        final HttpMethodEnum method,
+        final HttpMethod method,
         final String statusCallBackUrl,
-        final HttpMethodEnum statusCallBackMethod,
+        final HttpMethod statusCallBackMethod,
         final String fallBackUrl,
-        final HttpMethodEnum fallBackMethod,
+        final HttpMethod fallBackMethod,
         final String heartBeatUrl,
         final Boolean heartBeatMethod,
         final Integer timeout,
@@ -1816,10 +1816,10 @@ void createMakeCallAsync(
         final Boolean hideCallerId,
         final Boolean record,
         final String recordCallBackUrl,
-        final HttpMethodEnum recordCallBackMethod,
+        final HttpMethod recordCallBackMethod,
         final Boolean transcribe,
         final String transcribeCallBackUrl,
-        final IfMachineEnum ifMachine,
+        final IfMachine ifMachine,
         final String responseType,
         final APICallBack<String> callBack)
 ```
@@ -1860,22 +1860,22 @@ String from = "From";
 String toCountryCode = "ToCountryCode";
 String to = "To";
 String url = "Url";
-HttpMethodEnum method = HttpMethodEnum.fromString("GET");
+HttpMethod method = HttpMethod.fromString("GET");
 String statusCallBackUrl = "StatusCallBackUrl";
-HttpMethodEnum statusCallBackMethod = HttpMethodEnum.fromString("GET");
+HttpMethod statusCallBackMethod = HttpMethod.fromString("GET");
 String fallBackUrl = "FallBackUrl";
-HttpMethodEnum fallBackMethod = HttpMethodEnum.fromString("GET");
+HttpMethod fallBackMethod = HttpMethod.fromString("GET");
 String heartBeatUrl = "HeartBeatUrl";
 Boolean heartBeatMethod = false;
-Integer timeout = 127;
+Integer timeout = 25;
 String playDtmf = "PlayDtmf";
 Boolean hideCallerId = false;
 Boolean record = false;
 String recordCallBackUrl = "RecordCallBackUrl";
-HttpMethodEnum recordCallBackMethod = HttpMethodEnum.fromString("GET");
+HttpMethod recordCallBackMethod = HttpMethod.fromString("GET");
 Boolean transcribe = false;
 String transcribeCallBackUrl = "TranscribeCallBackUrl";
-IfMachineEnum ifMachine = IfMachineEnum.fromString("CONTINUE");
+IfMachine ifMachine = IfMachine.fromString("CONTINUE");
 String responseType = "json";
 // Invoking the API call with sample inputs
 call.createMakeCallAsync(fromCountryCode, from, toCountryCode, to, url, method, statusCallBackUrl, statusCallBackMethod, fallBackUrl, fallBackMethod, heartBeatUrl, heartBeatMethod, timeout, playDtmf, hideCallerId, record, recordCallBackUrl, recordCallBackMethod, transcribe, transcribeCallBackUrl, ifMachine, responseType, new APICallBack<String>() {
@@ -1898,7 +1898,7 @@ call.createMakeCallAsync(fromCountryCode, from, toCountryCode, to, url, method, 
 ```java
 void createPlayAudioAsync(
         final int length,
-        final DirectionEnum direction,
+        final Direction direction,
         final boolean loop,
         final boolean mix,
         final String callSid,
@@ -1923,8 +1923,8 @@ void createPlayAudioAsync(
 #### Example Usage
 
 ```java
-int length = 127;
-DirectionEnum direction = DirectionEnum.fromString("IN");
+int length = 25;
+Direction direction = Direction.fromString("IN");
 boolean loop = false;
 boolean mix = false;
 String callSid = "CallSid";
@@ -1952,10 +1952,10 @@ call.createPlayAudioAsync(length, direction, loop, mix, callSid, audioUrl, respo
 void createRecordCallAsync(
         final String callSid,
         final boolean record,
-        final DirectionEnum direction,
+        final Direction direction,
         final Integer timeLimit,
         final String callBackUrl,
-        final AudioFormatEnum fileformat,
+        final AudioFormat fileformat,
         final String responseType,
         final APICallBack<String> callBack)
 ```
@@ -1978,10 +1978,10 @@ void createRecordCallAsync(
 ```java
 String callSid = "CallSid";
 boolean record = false;
-DirectionEnum direction = DirectionEnum.fromString("IN");
-Integer timeLimit = 127;
+Direction direction = Direction.fromString("IN");
+Integer timeLimit = 25;
 String callBackUrl = "CallBackUrl";
-AudioFormatEnum fileformat = AudioFormatEnum.fromString("mp3");
+AudioFormat fileformat = AudioFormat.fromString("mp3");
 String responseType = "json";
 // Invoking the API call with sample inputs
 call.createRecordCallAsync(callSid, record, direction, timeLimit, callBackUrl, fileformat, responseType, new APICallBack<String>() {
@@ -2004,7 +2004,7 @@ call.createRecordCallAsync(callSid, record, direction, timeLimit, callBackUrl, f
 ```java
 void createVoiceEffectAsync(
         final String callSid,
-        final AudioDirectionEnum audioDirection,
+        final AudioDirection audioDirection,
         final Double pitchSemiTones,
         final Double pitchOctaves,
         final Double pitch,
@@ -2032,12 +2032,12 @@ void createVoiceEffectAsync(
 
 ```java
 String callSid = "CallSid";
-AudioDirectionEnum audioDirection = AudioDirectionEnum.fromString("IN");
-Double pitchSemiTones = 127.230674667391;
-Double pitchOctaves = 127.230674667391;
-Double pitch = 127.230674667391;
-Double rate = 127.230674667391;
-Double tempo = 127.230674667391;
+AudioDirection audioDirection = AudioDirection.fromString("IN");
+Double pitchSemiTones = 25.4930285972045;
+Double pitchOctaves = 25.4930285972045;
+Double pitch = 25.4930285972045;
+Double rate = 25.4930285972045;
+Double tempo = 25.4930285972045;
 String responseType = "json";
 // Invoking the API call with sample inputs
 call.createVoiceEffectAsync(callSid, audioDirection, pitchSemiTones, pitchOctaves, pitch, rate, tempo, responseType, new APICallBack<String>() {
@@ -2061,7 +2061,7 @@ call.createVoiceEffectAsync(callSid, audioDirection, pitchSemiTones, pitchOctave
 void createSendDigitAsync(
         final String callSid,
         final String playDtmf,
-        final DirectionEnum playDtmfDirection,
+        final Direction playDtmfDirection,
         final String responseType,
         final APICallBack<String> callBack)
 ```
@@ -2081,7 +2081,7 @@ void createSendDigitAsync(
 ```java
 String callSid = "CallSid";
 String playDtmf = "PlayDtmf";
-DirectionEnum playDtmfDirection = DirectionEnum.fromString("IN");
+Direction playDtmfDirection = Direction.fromString("IN");
 String responseType = "json";
 // Invoking the API call with sample inputs
 call.createSendDigitAsync(callSid, playDtmf, playDtmfDirection, responseType, new APICallBack<String>() {
@@ -2105,8 +2105,8 @@ call.createSendDigitAsync(callSid, playDtmf, playDtmfDirection, responseType, ne
 void createInterruptedCallAsync(
         final String callSid,
         final String url,
-        final HttpMethodEnum method,
-        final InterruptedCallStatusEnum status,
+        final HttpMethod method,
+        final InterruptedCallStatus status,
         final String responseType,
         final APICallBack<String> callBack)
 ```
@@ -2127,8 +2127,8 @@ void createInterruptedCallAsync(
 ```java
 String callSid = "CallSid";
 String url = "Url";
-HttpMethodEnum method = HttpMethodEnum.fromString("GET");
-InterruptedCallStatusEnum status = InterruptedCallStatusEnum.fromString("CANCELED");
+HttpMethod method = HttpMethod.fromString("GET");
+InterruptedCallStatus status = InterruptedCallStatus.fromString("CANCELED");
 String responseType = "json";
 // Invoking the API call with sample inputs
 call.createInterruptedCallAsync(callSid, url, method, status, responseType, new APICallBack<String>() {
