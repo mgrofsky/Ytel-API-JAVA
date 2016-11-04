@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 10/21/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/04/2016
  */
 package message360.controllers;
 
@@ -90,7 +90,7 @@ public class PhoneNumberController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5529669377043814474L;
+            private static final long serialVersionUID = 5544634188917698429L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -99,7 +99,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5519265258822898112L;
+            private static final long serialVersionUID = 4627771674486720889L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -107,7 +107,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5244402739798531982L;
+            private static final long serialVersionUID = 4763257275856630800L;
             {
                     put( "NumberType", numberType );
                     put( "AreaCode", areaCode );
@@ -221,7 +221,7 @@ public class PhoneNumberController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4637575528801367200L;
+            private static final long serialVersionUID = 5444432682231968518L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -230,7 +230,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5197517219588502106L;
+            private static final long serialVersionUID = 4883885947647404931L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -238,7 +238,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5383341036442113628L;
+            private static final long serialVersionUID = 5166155563936322721L;
             {
                     put( "Page", page );
                     put( "PageSize", pageSize );
@@ -345,7 +345,7 @@ public class PhoneNumberController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4613798310649108630L;
+            private static final long serialVersionUID = 5111501269848863547L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -354,7 +354,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4655208849833173671L;
+            private static final long serialVersionUID = 4947778447257248841L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -362,7 +362,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4804409716460290279L;
+            private static final long serialVersionUID = 5080438973630253298L;
             {
                     put( "PhoneNumber", phoneNumber );
             }
@@ -466,7 +466,7 @@ public class PhoneNumberController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5737337814531396956L;
+            private static final long serialVersionUID = 5157172937972024401L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -475,7 +475,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4886372851973266634L;
+            private static final long serialVersionUID = 4816931413712121303L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -483,7 +483,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5033191496708436503L;
+            private static final long serialVersionUID = 4759485303497327730L;
             {
                     put( "PhoneNumber", phoneNumber );
             }
@@ -587,7 +587,7 @@ public class PhoneNumberController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4674722997004722058L;
+            private static final long serialVersionUID = 5332099452932252591L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -596,7 +596,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4613147158586409559L;
+            private static final long serialVersionUID = 5501758664365325432L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -604,7 +604,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4739762116510836337L;
+            private static final long serialVersionUID = 4905303092836879567L;
             {
                     put( "PhoneNumber", phoneNumber );
             }
@@ -690,17 +690,17 @@ public class PhoneNumberController extends BaseController {
                 final String phoneNumber,
                 final String friendlyName,
                 final String voiceUrl,
-                final HttpMethod voiceMethod,
+                final HttpAction voiceMethod,
                 final String voiceFallbackUrl,
-                final HttpMethod voiceFallbackMethod,
+                final HttpAction voiceFallbackMethod,
                 final String hangupCallback,
-                final HttpMethod hangupCallbackMethod,
+                final HttpAction hangupCallbackMethod,
                 final String heartbeatUrl,
-                final HttpMethod heartbeatMethod,
+                final HttpAction heartbeatMethod,
                 final String smsUrl,
-                final HttpMethod smsMethod,
+                final HttpAction smsMethod,
                 final String smsFallbackUrl,
-                final HttpMethod smsFallbackMethod,
+                final HttpAction smsFallbackMethod,
                 final String responseType
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
@@ -733,17 +733,17 @@ public class PhoneNumberController extends BaseController {
                 final String phoneNumber,
                 final String friendlyName,
                 final String voiceUrl,
-                final HttpMethod voiceMethod,
+                final HttpAction voiceMethod,
                 final String voiceFallbackUrl,
-                final HttpMethod voiceFallbackMethod,
+                final HttpAction voiceFallbackMethod,
                 final String hangupCallback,
-                final HttpMethod hangupCallbackMethod,
+                final HttpAction hangupCallbackMethod,
                 final String heartbeatUrl,
-                final HttpMethod heartbeatMethod,
+                final HttpAction heartbeatMethod,
                 final String smsUrl,
-                final HttpMethod smsMethod,
+                final HttpAction smsMethod,
                 final String smsFallbackUrl,
-                final HttpMethod smsFallbackMethod,
+                final HttpAction smsFallbackMethod,
                 final String responseType,
                 final APICallBack<String> callBack
     ) {
@@ -760,7 +760,7 @@ public class PhoneNumberController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5734996828984377569L;
+            private static final long serialVersionUID = 4842178812681836377L;
             {
                     put( "ResponseType", (null != responseType) ? responseType : "json" );
             }});
@@ -769,7 +769,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5068274539711384537L;
+            private static final long serialVersionUID = 5032089350641435615L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -777,7 +777,7 @@ public class PhoneNumberController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5012646389273426001L;
+            private static final long serialVersionUID = 5576903419273772655L;
             {
                     put( "PhoneNumber", phoneNumber );
                     put( "FriendlyName", friendlyName );
