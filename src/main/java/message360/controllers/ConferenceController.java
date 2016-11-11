@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/04/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
  */
 package message360.controllers;
 
@@ -40,18 +40,14 @@ public class ConferenceController extends BaseController {
 
     /**
      * View Participant
-     * @param    conferenceSid    Required parameter: unique conference sid
-     * @param    participantSid    Required parameter: Example: 
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateViewParticipantInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createViewParticipant(
-                final String conferenceSid,
-                final String participantSid,
-                final String responseType
+                final CreateViewParticipantInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewParticipantAsync(conferenceSid, participantSid, responseType, callback);
+        createViewParticipantAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -59,43 +55,39 @@ public class ConferenceController extends BaseController {
 
     /**
      * View Participant
-     * @param    conferenceSid    Required parameter: unique conference sid
-     * @param    participantSid    Required parameter: Example: 
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateViewParticipantInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createViewParticipantAsync(
-                final String conferenceSid,
-                final String participantSid,
-                final String responseType,
+                final CreateViewParticipantInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == conferenceSid)
-            throw new NullPointerException("The parameter \"conferenceSid\" is a required parameter and cannot be null.");
+        if (null == input.getConferenceSid())
+            throw new NullPointerException("The property \"ConferenceSid\" in the input object cannot be null.");
 
-        if (null == participantSid)
-            throw new NullPointerException("The parameter \"participantSid\" is a required parameter and cannot be null.");
+        if (null == input.getParticipantSid())
+            throw new NullPointerException("The property \"ParticipantSid\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/conferences/viewparticipant.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5337234348764436480L;
+            private static final long serialVersionUID = 5176554684077838942L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5513263162545748891L;
+            private static final long serialVersionUID = 5290030507766351955L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -103,10 +95,10 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5174272504000521562L;
+            private static final long serialVersionUID = 5338940189704142930L;
             {
-                    put( "ConferenceSid", conferenceSid );
-                    put( "ParticipantSid", participantSid );
+                    put( "ConferenceSid", input.getConferenceSid() );
+                    put( "ParticipantSid", input.getParticipantSid() );
             }
         };
 
@@ -169,24 +161,14 @@ public class ConferenceController extends BaseController {
 
     /**
      * List Participant
-     * @param    conferenceSid    Required parameter: unique conference sid
-     * @param    page    Optional parameter: page number
-     * @param    pagesize    Optional parameter: Example: 
-     * @param    muted    Optional parameter: Example: 
-     * @param    deaf    Optional parameter: Example: 
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateListParticipantInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createListParticipant(
-                final String conferenceSid,
-                final Integer page,
-                final Integer pagesize,
-                final Boolean muted,
-                final Boolean deaf,
-                final String responseType
+                final CreateListParticipantInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createListParticipantAsync(conferenceSid, page, pagesize, muted, deaf, responseType, callback);
+        createListParticipantAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -194,46 +176,36 @@ public class ConferenceController extends BaseController {
 
     /**
      * List Participant
-     * @param    conferenceSid    Required parameter: unique conference sid
-     * @param    page    Optional parameter: page number
-     * @param    pagesize    Optional parameter: Example: 
-     * @param    muted    Optional parameter: Example: 
-     * @param    deaf    Optional parameter: Example: 
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateListParticipantInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createListParticipantAsync(
-                final String conferenceSid,
-                final Integer page,
-                final Integer pagesize,
-                final Boolean muted,
-                final Boolean deaf,
-                final String responseType,
+                final CreateListParticipantInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == conferenceSid)
-            throw new NullPointerException("The parameter \"conferenceSid\" is a required parameter and cannot be null.");
+        if (null == input.getConferenceSid())
+            throw new NullPointerException("The property \"ConferenceSid\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/conferences/listparticipant.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4775926082895129738L;
+            private static final long serialVersionUID = 5062403151017069154L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4733384008533536333L;
+            private static final long serialVersionUID = 5455003185026223021L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -241,13 +213,13 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4707805803887699165L;
+            private static final long serialVersionUID = 4641676876442210135L;
             {
-                    put( "ConferenceSid", conferenceSid );
-                    put( "Page", page );
-                    put( "Pagesize", pagesize );
-                    put( "Muted", muted );
-                    put( "Deaf", deaf );
+                    put( "ConferenceSid", input.getConferenceSid() );
+                    put( "Page", input.getPage() );
+                    put( "Pagesize", input.getPagesize() );
+                    put( "Muted", input.getMuted() );
+                    put( "Deaf", input.getDeaf() );
             }
         };
 
@@ -310,24 +282,14 @@ public class ConferenceController extends BaseController {
 
     /**
      * Add Participant in conference 
-     * @param    conferencesid    Required parameter: Unique Conference Sid
-     * @param    participantnumber    Required parameter: Particiant Number
-     * @param    tocountrycode    Required parameter: Example: 
-     * @param    muted    Optional parameter: Example: 
-     * @param    deaf    Optional parameter: Example: 
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    AddParticipantInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String addParticipant(
-                final String conferencesid,
-                final String participantnumber,
-                final int tocountrycode,
-                final Boolean muted,
-                final Boolean deaf,
-                final String responseType
+                final AddParticipantInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        addParticipantAsync(conferencesid, participantnumber, tocountrycode, muted, deaf, responseType, callback);
+        addParticipantAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -335,49 +297,39 @@ public class ConferenceController extends BaseController {
 
     /**
      * Add Participant in conference 
-     * @param    conferencesid    Required parameter: Unique Conference Sid
-     * @param    participantnumber    Required parameter: Particiant Number
-     * @param    tocountrycode    Required parameter: Example: 
-     * @param    muted    Optional parameter: Example: 
-     * @param    deaf    Optional parameter: Example: 
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    AddParticipantInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void addParticipantAsync(
-                final String conferencesid,
-                final String participantnumber,
-                final int tocountrycode,
-                final Boolean muted,
-                final Boolean deaf,
-                final String responseType,
+                final AddParticipantInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == conferencesid)
-            throw new NullPointerException("The parameter \"conferencesid\" is a required parameter and cannot be null.");
+        if (null == input.getConferencesid())
+            throw new NullPointerException("The property \"Conferencesid\" in the input object cannot be null.");
 
-        if (null == participantnumber)
-            throw new NullPointerException("The parameter \"participantnumber\" is a required parameter and cannot be null.");
+        if (null == input.getParticipantnumber())
+            throw new NullPointerException("The property \"Participantnumber\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/conferences/addParticipant.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5181555934670376116L;
+            private static final long serialVersionUID = 4779226209475708701L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5200380504711229464L;
+            private static final long serialVersionUID = 5529331750182000835L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -385,13 +337,13 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5696536902155050860L;
+            private static final long serialVersionUID = 4869206240726585156L;
             {
-                    put( "conferencesid", conferencesid );
-                    put( "participantnumber", participantnumber );
-                    put( "tocountrycode", tocountrycode );
-                    put( "muted", muted );
-                    put( "deaf", deaf );
+                    put( "conferencesid", input.getConferencesid() );
+                    put( "participantnumber", input.getParticipantnumber() );
+                    put( "tocountrycode", input.getTocountrycode() );
+                    put( "muted", input.getMuted() );
+                    put( "deaf", input.getDeaf() );
             }
         };
 
@@ -454,16 +406,14 @@ public class ConferenceController extends BaseController {
 
     /**
      * View Conference
-     * @param    conferencesid    Required parameter: The unique identifier of each conference resource
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateViewConferenceInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createViewConference(
-                final String conferencesid,
-                final String responseType
+                final CreateViewConferenceInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewConferenceAsync(conferencesid, responseType, callback);
+        createViewConferenceAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -471,38 +421,36 @@ public class ConferenceController extends BaseController {
 
     /**
      * View Conference
-     * @param    conferencesid    Required parameter: The unique identifier of each conference resource
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateViewConferenceInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createViewConferenceAsync(
-                final String conferencesid,
-                final String responseType,
+                final CreateViewConferenceInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == conferencesid)
-            throw new NullPointerException("The parameter \"conferencesid\" is a required parameter and cannot be null.");
+        if (null == input.getConferencesid())
+            throw new NullPointerException("The property \"Conferencesid\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/conferences/viewconference.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5018516055442392143L;
+            private static final long serialVersionUID = 4947522128474265694L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5089599379742186367L;
+            private static final long serialVersionUID = 4866094246264157577L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -510,9 +458,9 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5045499340146395609L;
+            private static final long serialVersionUID = 5203336398083814464L;
             {
-                    put( "conferencesid", conferencesid );
+                    put( "conferencesid", input.getConferencesid() );
             }
         };
 
@@ -575,26 +523,14 @@ public class ConferenceController extends BaseController {
 
     /**
      * List Conference
-     * @param    page    Optional parameter: Which page of the overall response will be returned. Zero indexed
-     * @param    pageSize    Optional parameter: Number of individual resources listed in the response per page
-     * @param    friendlyName    Optional parameter: Only return conferences with the specified FriendlyName
-     * @param    status    Optional parameter: Example: 
-     * @param    dateCreated    Optional parameter: Example: 
-     * @param    dateUpdated    Optional parameter: Example: 
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateListConferenceInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createListConference(
-                final Integer page,
-                final Integer pageSize,
-                final String friendlyName,
-                final InterruptedCallStatus status,
-                final String dateCreated,
-                final String dateUpdated,
-                final String responseType
+                final CreateListConferenceInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createListConferenceAsync(page, pageSize, friendlyName, status, dateCreated, dateUpdated, responseType, callback);
+        createListConferenceAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -602,44 +538,32 @@ public class ConferenceController extends BaseController {
 
     /**
      * List Conference
-     * @param    page    Optional parameter: Which page of the overall response will be returned. Zero indexed
-     * @param    pageSize    Optional parameter: Number of individual resources listed in the response per page
-     * @param    friendlyName    Optional parameter: Only return conferences with the specified FriendlyName
-     * @param    status    Optional parameter: Example: 
-     * @param    dateCreated    Optional parameter: Example: 
-     * @param    dateUpdated    Optional parameter: Example: 
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateListConferenceInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createListConferenceAsync(
-                final Integer page,
-                final Integer pageSize,
-                final String friendlyName,
-                final InterruptedCallStatus status,
-                final String dateCreated,
-                final String dateUpdated,
-                final String responseType,
+                final CreateListConferenceInput input,
                 final APICallBack<String> callBack
     ) {
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/conferences/listconference.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4881096829055662479L;
+            private static final long serialVersionUID = 4952145695125843733L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4910167331392163690L;
+            private static final long serialVersionUID = 5104561055449066523L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -647,14 +571,14 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5731694562230230435L;
+            private static final long serialVersionUID = 5071157049710922885L;
             {
-                    put( "Page", page );
-                    put( "PageSize", pageSize );
-                    put( "FriendlyName", friendlyName );
-                    put( "Status", (null != status) ? status.value() : null );
-                    put( "DateCreated", dateCreated );
-                    put( "DateUpdated", dateUpdated );
+                    put( "Page", input.getPage() );
+                    put( "PageSize", input.getPageSize() );
+                    put( "FriendlyName", input.getFriendlyName() );
+                    put( "Status", (null != input.getStatus()) ? input.getStatus().value() : null );
+                    put( "DateCreated", input.getDateCreated() );
+                    put( "DateUpdated", input.getDateUpdated() );
             }
         };
 

@@ -116,10 +116,11 @@ Message360Client client = new Message360Client(basicAuthUserName, basicAuthPassw
 * [TranscriptionController](#transcription_controller)
 * [PhoneNumberController](#phone_number_controller)
 * [UsageController](#usage_controller)
+* [WebRTCController](#web_rtc_controller)
+* [RecordingController](#recording_controller)
 * [EmailController](#email_controller)
 * [SMSController](#sms_controller)
 * [AccountController](#account_controller)
-* [RecordingController](#recording_controller)
 * [CallController](#call_controller)
 * [CarrierController](#carrier_controller)
 
@@ -140,9 +141,7 @@ ConferenceController conference = client.getConference();
 
 ```java
 void createViewParticipantAsync(
-        final String conferenceSid,
-        final String participantSid,
-        final String responseType,
+        final CreateViewParticipantInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -158,18 +157,27 @@ void createViewParticipantAsync(
 #### Example Usage
 
 ```java
+CreateViewParticipantInput collect = new CreateViewParticipantInput();
+
 String conferenceSid = "ConferenceSid";
+collect.setConferenceSid(conferenceSid);
+
 String participantSid = "ParticipantSid";
+collect.setParticipantSid(participantSid);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-conference.createViewParticipantAsync(conferenceSid, participantSid, responseType, new APICallBack<String>() {
+conference.createViewParticipantAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -181,12 +189,7 @@ conference.createViewParticipantAsync(conferenceSid, participantSid, responseTyp
 
 ```java
 void createListParticipantAsync(
-        final String conferenceSid,
-        final Integer page,
-        final Integer pagesize,
-        final Boolean muted,
-        final Boolean deaf,
-        final String responseType,
+        final CreateListParticipantInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -205,21 +208,36 @@ void createListParticipantAsync(
 #### Example Usage
 
 ```java
+CreateListParticipantInput collect = new CreateListParticipantInput();
+
 String conferenceSid = "ConferenceSid";
-Integer page = 221;
-Integer pagesize = 221;
-Boolean muted = true;
-Boolean deaf = true;
+collect.setConferenceSid(conferenceSid);
+
+Integer page = 71;
+collect.setPage(page);
+
+Integer pagesize = 71;
+collect.setPagesize(pagesize);
+
+Boolean muted = false;
+collect.setMuted(muted);
+
+Boolean deaf = false;
+collect.setDeaf(deaf);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-conference.createListParticipantAsync(conferenceSid, page, pagesize, muted, deaf, responseType, new APICallBack<String>() {
+conference.createListParticipantAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -231,12 +249,7 @@ conference.createListParticipantAsync(conferenceSid, page, pagesize, muted, deaf
 
 ```java
 void addParticipantAsync(
-        final String conferencesid,
-        final String participantnumber,
-        final int tocountrycode,
-        final Boolean muted,
-        final Boolean deaf,
-        final String responseType,
+        final AddParticipantInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -255,21 +268,36 @@ void addParticipantAsync(
 #### Example Usage
 
 ```java
+AddParticipantInput collect = new AddParticipantInput();
+
 String conferencesid = "conferencesid";
+collect.setConferencesid(conferencesid);
+
 String participantnumber = "participantnumber";
-int tocountrycode = 221;
-Boolean muted = true;
-Boolean deaf = true;
+collect.setParticipantnumber(participantnumber);
+
+int tocountrycode = 71;
+collect.setTocountrycode(tocountrycode);
+
+Boolean muted = false;
+collect.setMuted(muted);
+
+Boolean deaf = false;
+collect.setDeaf(deaf);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-conference.addParticipantAsync(conferencesid, participantnumber, tocountrycode, muted, deaf, responseType, new APICallBack<String>() {
+conference.addParticipantAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -281,8 +309,7 @@ conference.addParticipantAsync(conferencesid, participantnumber, tocountrycode, 
 
 ```java
 void createViewConferenceAsync(
-        final String conferencesid,
-        final String responseType,
+        final CreateViewConferenceInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -297,17 +324,24 @@ void createViewConferenceAsync(
 #### Example Usage
 
 ```java
+CreateViewConferenceInput collect = new CreateViewConferenceInput();
+
 String conferencesid = "conferencesid";
+collect.setConferencesid(conferencesid);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-conference.createViewConferenceAsync(conferencesid, responseType, new APICallBack<String>() {
+conference.createViewConferenceAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -319,13 +353,7 @@ conference.createViewConferenceAsync(conferencesid, responseType, new APICallBac
 
 ```java
 void createListConferenceAsync(
-        final Integer page,
-        final Integer pageSize,
-        final String friendlyName,
-        final InterruptedCallStatus status,
-        final String dateCreated,
-        final String dateUpdated,
-        final String responseType,
+        final CreateListConferenceInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -345,22 +373,39 @@ void createListConferenceAsync(
 #### Example Usage
 
 ```java
-Integer page = 221;
-Integer pageSize = 221;
+CreateListConferenceInput collect = new CreateListConferenceInput();
+
+Integer page = 71;
+collect.setPage(page);
+
+Integer pageSize = 71;
+collect.setPageSize(pageSize);
+
 String friendlyName = "FriendlyName";
+collect.setFriendlyName(friendlyName);
+
 InterruptedCallStatus status = InterruptedCallStatus.fromString("CANCELED");
+collect.setStatus(status);
+
 String dateCreated = "DateCreated";
+collect.setDateCreated(dateCreated);
+
 String dateUpdated = "DateUpdated";
+collect.setDateUpdated(dateUpdated);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-conference.createListConferenceAsync(page, pageSize, friendlyName, status, dateCreated, dateUpdated, responseType, new APICallBack<String>() {
+conference.createListConferenceAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -384,11 +429,7 @@ TranscriptionController transcription = client.getTranscription();
 
 ```java
 void createListTranscriptionAsync(
-        final Integer page,
-        final Integer pageSize,
-        final Status status,
-        final String dateTranscribed,
-        final String responseType,
+        final CreateListTranscriptionInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -406,58 +447,33 @@ void createListTranscriptionAsync(
 #### Example Usage
 
 ```java
-Integer page = 221;
-Integer pageSize = 221;
+CreateListTranscriptionInput collect = new CreateListTranscriptionInput();
+
+Integer page = 71;
+collect.setPage(page);
+
+Integer pageSize = 71;
+collect.setPageSize(pageSize);
+
 Status status = Status.fromString("INPROGRESS");
+collect.setStatus(status);
+
 String dateTranscribed = "DateTranscribed";
+collect.setDateTranscribed(dateTranscribed);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-transcription.createListTranscriptionAsync(page, pageSize, status, dateTranscribed, responseType, new APICallBack<String>() {
+transcription.createListTranscriptionAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
-
-```
-
-
-#### <a name="create_recording_transcription_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.TranscriptionController.createRecordingTranscriptionAsync") createRecordingTranscriptionAsync
-
-> Recording Transcriptions
-
-
-```java
-void createRecordingTranscriptionAsync(
-        final String recordingSid,
-        final String responseType,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recordingSid |  ``` Required ```  | Unique Recording sid |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
-
-
-#### Example Usage
-
-```java
-String recordingSid = "RecordingSid";
-String responseType = "json";
-// Invoking the API call with sample inputs
-transcription.createRecordingTranscriptionAsync(recordingSid, responseType, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
+}
+);
 
 ```
 
@@ -469,8 +485,7 @@ transcription.createRecordingTranscriptionAsync(recordingSid, responseType, new 
 
 ```java
 void createViewTranscriptionAsync(
-        final String transcriptionSid,
-        final String responseType,
+        final CreateViewTranscriptionInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -485,17 +500,68 @@ void createViewTranscriptionAsync(
 #### Example Usage
 
 ```java
+CreateViewTranscriptionInput collect = new CreateViewTranscriptionInput();
+
 String transcriptionSid = "TranscriptionSid";
+collect.setTranscriptionSid(transcriptionSid);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-transcription.createViewTranscriptionAsync(transcriptionSid, responseType, new APICallBack<String>() {
+transcription.createViewTranscriptionAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
+
+```
+
+
+#### <a name="create_recording_transcription_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.TranscriptionController.createRecordingTranscriptionAsync") createRecordingTranscriptionAsync
+
+> Recording Transcriptions
+
+
+```java
+void createRecordingTranscriptionAsync(
+        final CreateRecordingTranscriptionInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recordingSid |  ``` Required ```  | Unique Recording sid |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+CreateRecordingTranscriptionInput collect = new CreateRecordingTranscriptionInput();
+
+String recordingSid = "RecordingSid";
+collect.setRecordingSid(recordingSid);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+transcription.createRecordingTranscriptionAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
 
 ```
 
@@ -507,8 +573,7 @@ transcription.createViewTranscriptionAsync(transcriptionSid, responseType, new A
 
 ```java
 void createAudioURLTranscriptionAsync(
-        final String audioUrl,
-        final String responseType,
+        final CreateAudioURLTranscriptionInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -523,17 +588,24 @@ void createAudioURLTranscriptionAsync(
 #### Example Usage
 
 ```java
+CreateAudioURLTranscriptionInput collect = new CreateAudioURLTranscriptionInput();
+
 String audioUrl = "AudioUrl";
+collect.setAudioUrl(audioUrl);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-transcription.createAudioURLTranscriptionAsync(audioUrl, responseType, new APICallBack<String>() {
+transcription.createAudioURLTranscriptionAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -557,10 +629,7 @@ PhoneNumberController phoneNumber = client.getPhoneNumber();
 
 ```java
 void createAvailablePhoneNumberAsync(
-        final String numberType,
-        final String areaCode,
-        final Integer pageSize,
-        final String responseType,
+        final CreateAvailablePhoneNumberInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -577,19 +646,30 @@ void createAvailablePhoneNumberAsync(
 #### Example Usage
 
 ```java
+CreateAvailablePhoneNumberInput collect = new CreateAvailablePhoneNumberInput();
+
 String numberType = "NumberType";
+collect.setNumberType(numberType);
+
 String areaCode = "AreaCode";
-Integer pageSize = 221;
+collect.setAreaCode(areaCode);
+
+Integer pageSize = 71;
+collect.setPageSize(pageSize);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-phoneNumber.createAvailablePhoneNumberAsync(numberType, areaCode, pageSize, responseType, new APICallBack<String>() {
+phoneNumber.createAvailablePhoneNumberAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -601,11 +681,7 @@ phoneNumber.createAvailablePhoneNumberAsync(numberType, areaCode, pageSize, resp
 
 ```java
 void createListNumberAsync(
-        final Integer page,
-        final Integer pageSize,
-        final String numberType,
-        final String friendlyName,
-        final String responseType,
+        final CreateListNumberInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -623,96 +699,33 @@ void createListNumberAsync(
 #### Example Usage
 
 ```java
-Integer page = 221;
-Integer pageSize = 221;
+CreateListNumberInput collect = new CreateListNumberInput();
+
+Integer page = 71;
+collect.setPage(page);
+
+Integer pageSize = 71;
+collect.setPageSize(pageSize);
+
 String numberType = "NumberType";
+collect.setNumberType(numberType);
+
 String friendlyName = "FriendlyName";
+collect.setFriendlyName(friendlyName);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-phoneNumber.createListNumberAsync(page, pageSize, numberType, friendlyName, responseType, new APICallBack<String>() {
+phoneNumber.createListNumberAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
-
-```
-
-
-#### <a name="create_release_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createReleaseNumberAsync") createReleaseNumberAsync
-
-> Release number from account
-
-
-```java
-void createReleaseNumberAsync(
-        final String phoneNumber,
-        final String responseType,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| phoneNumber |  ``` Required ```  | Phone number to be relase |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
-
-
-#### Example Usage
-
-```java
-String phoneNumber = "PhoneNumber";
-String responseType = "json";
-// Invoking the API call with sample inputs
-phoneNumber.createReleaseNumberAsync(phoneNumber, responseType, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-#### <a name="create_buy_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createBuyNumberAsync") createBuyNumberAsync
-
-> Buy Phone Number 
-
-
-```java
-void createBuyNumberAsync(
-        final String phoneNumber,
-        final String responseType,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| phoneNumber |  ``` Required ```  | Phone number to be purchase |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
-
-
-#### Example Usage
-
-```java
-String phoneNumber = "PhoneNumber";
-String responseType = "json";
-// Invoking the API call with sample inputs
-phoneNumber.createBuyNumberAsync(phoneNumber, responseType, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
+}
+);
 
 ```
 
@@ -724,8 +737,7 @@ phoneNumber.createBuyNumberAsync(phoneNumber, responseType, new APICallBack<Stri
 
 ```java
 void createViewNumberDetailsAsync(
-        final String phoneNumber,
-        final String responseType,
+        final CreateViewNumberDetailsInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -740,17 +752,112 @@ void createViewNumberDetailsAsync(
 #### Example Usage
 
 ```java
+CreateViewNumberDetailsInput collect = new CreateViewNumberDetailsInput();
+
 String phoneNumber = "PhoneNumber";
+collect.setPhoneNumber(phoneNumber);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-phoneNumber.createViewNumberDetailsAsync(phoneNumber, responseType, new APICallBack<String>() {
+phoneNumber.createViewNumberDetailsAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
+
+```
+
+
+#### <a name="create_release_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createReleaseNumberAsync") createReleaseNumberAsync
+
+> Release number from account
+
+
+```java
+void createReleaseNumberAsync(
+        final CreateReleaseNumberInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| phoneNumber |  ``` Required ```  | Phone number to be relase |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+CreateReleaseNumberInput collect = new CreateReleaseNumberInput();
+
+String phoneNumber = "PhoneNumber";
+collect.setPhoneNumber(phoneNumber);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+phoneNumber.createReleaseNumberAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_buy_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createBuyNumberAsync") createBuyNumberAsync
+
+> Buy Phone Number 
+
+
+```java
+void createBuyNumberAsync(
+        final CreateBuyNumberInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| phoneNumber |  ``` Required ```  | Phone number to be purchase |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+CreateBuyNumberInput collect = new CreateBuyNumberInput();
+
+String phoneNumber = "PhoneNumber";
+collect.setPhoneNumber(phoneNumber);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+phoneNumber.createBuyNumberAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
 
 ```
 
@@ -762,21 +869,7 @@ phoneNumber.createViewNumberDetailsAsync(phoneNumber, responseType, new APICallB
 
 ```java
 void updatePhoneNumberAsync(
-        final String phoneNumber,
-        final String friendlyName,
-        final String voiceUrl,
-        final HttpAction voiceMethod,
-        final String voiceFallbackUrl,
-        final HttpAction voiceFallbackMethod,
-        final String hangupCallback,
-        final HttpAction hangupCallbackMethod,
-        final String heartbeatUrl,
-        final HttpAction heartbeatMethod,
-        final String smsUrl,
-        final HttpAction smsMethod,
-        final String smsFallbackUrl,
-        final HttpAction smsFallbackMethod,
-        final String responseType,
+        final UpdatePhoneNumberInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -804,30 +897,63 @@ void updatePhoneNumberAsync(
 #### Example Usage
 
 ```java
+UpdatePhoneNumberInput collect = new UpdatePhoneNumberInput();
+
 String phoneNumber = "PhoneNumber";
+collect.setPhoneNumber(phoneNumber);
+
 String friendlyName = "FriendlyName";
+collect.setFriendlyName(friendlyName);
+
 String voiceUrl = "VoiceUrl";
+collect.setVoiceUrl(voiceUrl);
+
 HttpAction voiceMethod = HttpAction.fromString("GET");
+collect.setVoiceMethod(voiceMethod);
+
 String voiceFallbackUrl = "VoiceFallbackUrl";
+collect.setVoiceFallbackUrl(voiceFallbackUrl);
+
 HttpAction voiceFallbackMethod = HttpAction.fromString("GET");
+collect.setVoiceFallbackMethod(voiceFallbackMethod);
+
 String hangupCallback = "HangupCallback";
+collect.setHangupCallback(hangupCallback);
+
 HttpAction hangupCallbackMethod = HttpAction.fromString("GET");
+collect.setHangupCallbackMethod(hangupCallbackMethod);
+
 String heartbeatUrl = "HeartbeatUrl";
+collect.setHeartbeatUrl(heartbeatUrl);
+
 HttpAction heartbeatMethod = HttpAction.fromString("GET");
+collect.setHeartbeatMethod(heartbeatMethod);
+
 String smsUrl = "SmsUrl";
+collect.setSmsUrl(smsUrl);
+
 HttpAction smsMethod = HttpAction.fromString("GET");
+collect.setSmsMethod(smsMethod);
+
 String smsFallbackUrl = "SmsFallbackUrl";
+collect.setSmsFallbackUrl(smsFallbackUrl);
+
 HttpAction smsFallbackMethod = HttpAction.fromString("GET");
+collect.setSmsFallbackMethod(smsFallbackMethod);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-phoneNumber.updatePhoneNumberAsync(phoneNumber, friendlyName, voiceUrl, voiceMethod, voiceFallbackUrl, voiceFallbackMethod, hangupCallback, hangupCallbackMethod, heartbeatUrl, heartbeatMethod, smsUrl, smsMethod, smsFallbackUrl, smsFallbackMethod, responseType, new APICallBack<String>() {
+phoneNumber.updatePhoneNumberAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -851,10 +977,7 @@ UsageController usage = client.getUsage();
 
 ```java
 void createListUsageAsync(
-        final String productCode,
-        final String startDate,
-        final String endDate,
-        final String responseType,
+        final CreateListUsageInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -871,19 +994,334 @@ void createListUsageAsync(
 #### Example Usage
 
 ```java
+CreateListUsageInput collect = new CreateListUsageInput();
+
 String productCode = "0";
+collect.setProductCode(productCode);
+
 String startDate = "2016-09-06";
+collect.setStartDate(startDate);
+
 String endDate = "2016-09-06";
+collect.setEndDate(endDate);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-usage.createListUsageAsync(productCode, startDate, endDate, responseType, new APICallBack<String>() {
+usage.createListUsageAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+### <a name="web_rtc_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.WebRTCController") WebRTCController
+
+#### Get singleton instance
+
+The singleton instance of the ``` WebRTCController ``` class can be accessed from the API Client.
+
+```java
+WebRTCController webRTC = client.getWebRTC();
+```
+
+#### <a name="create_check_funds_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.WebRTCController.createCheckFundsAsync") createCheckFundsAsync
+
+> TODO: Add a method description
+
+
+```java
+void createCheckFundsAsync(
+        final CreateCheckFundsInput input,
+        final APICallBack<Object> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountSid |  ``` Required ```  | Your message360 Account SID |
+| authToken |  ``` Required ```  | Your message360 Token |
+
+
+#### Example Usage
+
+```java
+CreateCheckFundsInput collect = new CreateCheckFundsInput();
+
+String accountSid = "account_sid";
+collect.setAccountSid(accountSid);
+
+String authToken = "auth_token";
+collect.setAuthToken(authToken);
+
+// Invoking the API call with sample inputs
+webRTC.createCheckFundsAsync(collect, new APICallBack<void>() {
+    public void onSuccess(HttpContext context, void response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_authenticate_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.WebRTCController.createAuthenticateNumberAsync") createAuthenticateNumberAsync
+
+> Authenticate a message360 number for use
+
+
+```java
+void createAuthenticateNumberAsync(
+        final CreateAuthenticateNumberInput input,
+        final APICallBack<Object> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| phoneNumber |  ``` Required ```  | Phone number to authenticate for use |
+| accountSid |  ``` Required ```  | Your message360 Account SID |
+| authToken |  ``` Required ```  | Your message360 token |
+
+
+#### Example Usage
+
+```java
+CreateAuthenticateNumberInput collect = new CreateAuthenticateNumberInput();
+
+String phoneNumber = "phone_number";
+collect.setPhoneNumber(phoneNumber);
+
+String accountSid = "account_sid";
+collect.setAccountSid(accountSid);
+
+String authToken = "auth_token";
+collect.setAuthToken(authToken);
+
+// Invoking the API call with sample inputs
+webRTC.createAuthenticateNumberAsync(collect, new APICallBack<void>() {
+    public void onSuccess(HttpContext context, void response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_token_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.WebRTCController.createTokenAsync") createTokenAsync
+
+> message360 webrtc
+
+
+```java
+void createTokenAsync(
+        final CreateTokenInput input,
+        final APICallBack<Object> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountSid |  ``` Required ```  | Your message360 Account SID |
+| authToken |  ``` Required ```  | Your message360 Token |
+
+
+#### Example Usage
+
+```java
+CreateTokenInput collect = new CreateTokenInput();
+
+String accountSid = "account_sid";
+collect.setAccountSid(accountSid);
+
+String authToken = "auth_token";
+collect.setAuthToken(authToken);
+
+// Invoking the API call with sample inputs
+webRTC.createTokenAsync(collect, new APICallBack<void>() {
+    public void onSuccess(HttpContext context, void response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+### <a name="recording_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.RecordingController") RecordingController
+
+#### Get singleton instance
+
+The singleton instance of the ``` RecordingController ``` class can be accessed from the API Client.
+
+```java
+RecordingController recording = client.getRecording();
+```
+
+#### <a name="create_view_recording_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.RecordingController.createViewRecordingAsync") createViewRecordingAsync
+
+> View a specific Recording
+
+
+```java
+void createViewRecordingAsync(
+        final CreateViewRecordingInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recordingSid |  ``` Required ```  | Search Recording sid |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+CreateViewRecordingInput collect = new CreateViewRecordingInput();
+
+String recordingSid = "RecordingSid";
+collect.setRecordingSid(recordingSid);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+recording.createViewRecordingAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_delete_recording_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.RecordingController.createDeleteRecordingAsync") createDeleteRecordingAsync
+
+> Delete Recording Record
+
+
+```java
+void createDeleteRecordingAsync(
+        final CreateDeleteRecordingInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recordingSid |  ``` Required ```  | Unique Recording Sid to be delete |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+CreateDeleteRecordingInput collect = new CreateDeleteRecordingInput();
+
+String recordingSid = "RecordingSid";
+collect.setRecordingSid(recordingSid);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+recording.createDeleteRecordingAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_list_recording_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.RecordingController.createListRecordingAsync") createListRecordingAsync
+
+> List out Recordings
+
+
+```java
+void createListRecordingAsync(
+        final CreateListRecordingInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Which page of the overall response will be returned. Zero indexed |
+| pageSize |  ``` Optional ```  | Number of individual resources listed in the response per page |
+| dateCreated |  ``` Optional ```  | TODO: Add a parameter description |
+| callSid |  ``` Optional ```  | TODO: Add a parameter description |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+CreateListRecordingInput collect = new CreateListRecordingInput();
+
+Integer page = 71;
+collect.setPage(page);
+
+Integer pageSize = 71;
+collect.setPageSize(pageSize);
+
+String dateCreated = "DateCreated";
+collect.setDateCreated(dateCreated);
+
+String callSid = "CallSid";
+collect.setCallSid(callSid);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+recording.createListRecordingAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
 
 ```
 
@@ -900,6 +1338,138 @@ The singleton instance of the ``` EmailController ``` class can be accessed from
 EmailController email = client.getEmail();
 ```
 
+#### <a name="create_delete_spam_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteSpamAsync") createDeleteSpamAsync
+
+> Deletes a email address marked as spam from the spam list
+
+
+```java
+void createDeleteSpamAsync(
+        final CreateDeleteSpamInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| email |  ``` Required ```  | Email address |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+CreateDeleteSpamInput collect = new CreateDeleteSpamInput();
+
+String email = "email";
+collect.setEmail(email);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+email.createDeleteSpamAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_delete_block_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteBlockAsync") createDeleteBlockAsync
+
+> Deletes a blocked email
+
+
+```java
+void createDeleteBlockAsync(
+        final CreateDeleteBlockInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| email |  ``` Required ```  | Email address to remove from block list |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+CreateDeleteBlockInput collect = new CreateDeleteBlockInput();
+
+String email = "email";
+collect.setEmail(email);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+email.createDeleteBlockAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="add_unsubscribes_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.addUnsubscribesAsync") addUnsubscribesAsync
+
+> Add an email to the unsubscribe list
+
+
+```java
+void addUnsubscribesAsync(
+        final AddUnsubscribesInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| email |  ``` Required ```  | The email to add to the unsubscribe list |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
+
+
+#### Example Usage
+
+```java
+AddUnsubscribesInput collect = new AddUnsubscribesInput();
+
+String email = "email";
+collect.setEmail(email);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+email.addUnsubscribesAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
 #### <a name="create_send_email_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createSendEmailAsync") createSendEmailAsync
 
 > Send out an email
@@ -907,15 +1477,7 @@ EmailController email = client.getEmail();
 
 ```java
 void createSendEmailAsync(
-        final String to,
-        final String from,
-        final SendEmailAs type,
-        final String subject,
-        final String message,
-        final String cc,
-        final String bcc,
-        final String attachment,
-        final String responseType,
+        final CreateSendEmailInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -937,24 +1499,45 @@ void createSendEmailAsync(
 #### Example Usage
 
 ```java
+CreateSendEmailInput collect = new CreateSendEmailInput();
+
 String to = "to";
+collect.setTo(to);
+
 String from = "from";
+collect.setFrom(from);
+
 SendEmailAs type = SendEmailAs.fromString("HTML");
+collect.setType(type);
+
 String subject = "subject";
+collect.setSubject(subject);
+
 String message = "message";
+collect.setMessage(message);
+
 String cc = "cc";
+collect.setCc(cc);
+
 String bcc = "bcc";
+collect.setBcc(bcc);
+
 String attachment = "attachment";
+collect.setAttachment(attachment);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-email.createSendEmailAsync(to, from, type, subject, message, cc, bcc, attachment, responseType, new APICallBack<String>() {
+email.createSendEmailAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -966,8 +1549,7 @@ email.createSendEmailAsync(to, from, type, subject, message, cc, bcc, attachment
 
 ```java
 void createDeleteUnsubscribesAsync(
-        final String email,
-        final String responseType,
+        final CreateDeleteUnsubscribesInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -982,17 +1564,24 @@ void createDeleteUnsubscribesAsync(
 #### Example Usage
 
 ```java
+CreateDeleteUnsubscribesInput collect = new CreateDeleteUnsubscribesInput();
+
 String email = "email";
+collect.setEmail(email);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-email.createDeleteUnsubscribesAsync(email, responseType, new APICallBack<String>() {
+email.createDeleteUnsubscribesAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1004,9 +1593,7 @@ email.createDeleteUnsubscribesAsync(email, responseType, new APICallBack<String>
 
 ```java
 void createListUnsubscribesAsync(
-        final String responseType,
-        final String offset,
-        final String limit,
+        final CreateListUnsubscribesInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1022,132 +1609,27 @@ void createListUnsubscribesAsync(
 #### Example Usage
 
 ```java
+CreateListUnsubscribesInput collect = new CreateListUnsubscribesInput();
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 String offset = "offset";
+collect.setOffset(offset);
+
 String limit = "limit";
+collect.setLimit(limit);
+
 // Invoking the API call with sample inputs
-email.createListUnsubscribesAsync(responseType, offset, limit, new APICallBack<String>() {
+email.createListUnsubscribesAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
-
-```
-
-
-#### <a name="add_unsubscribes_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.addUnsubscribesAsync") addUnsubscribesAsync
-
-> Add an email to the unsubscribe list
-
-
-```java
-void addUnsubscribesAsync(
-        final String email,
-        final String responseType,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| email |  ``` Required ```  | The email to add to the unsubscribe list |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
-
-
-#### Example Usage
-
-```java
-String email = "email";
-String responseType = "json";
-// Invoking the API call with sample inputs
-email.addUnsubscribesAsync(email, responseType, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-#### <a name="create_delete_spam_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteSpamAsync") createDeleteSpamAsync
-
-> Deletes a email address marked as spam from the spam list
-
-
-```java
-void createDeleteSpamAsync(
-        final String email,
-        final String responseType,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| email |  ``` Required ```  | Email address |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
-
-
-#### Example Usage
-
-```java
-String email = "email";
-String responseType = "json";
-// Invoking the API call with sample inputs
-email.createDeleteSpamAsync(email, responseType, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-#### <a name="create_delete_block_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteBlockAsync") createDeleteBlockAsync
-
-> Deletes a blocked email
-
-
-```java
-void createDeleteBlockAsync(
-        final String email,
-        final String responseType,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| email |  ``` Required ```  | Email address to remove from block list |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
-
-
-#### Example Usage
-
-```java
-String email = "email";
-String responseType = "json";
-// Invoking the API call with sample inputs
-email.createDeleteBlockAsync(email, responseType, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
+}
+);
 
 ```
 
@@ -1159,9 +1641,7 @@ email.createDeleteBlockAsync(email, responseType, new APICallBack<String>() {
 
 ```java
 void createListInvalidAsync(
-        final String responseType,
-        final String offet,
-        final String limit,
+        final CreateListInvalidInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1177,18 +1657,27 @@ void createListInvalidAsync(
 #### Example Usage
 
 ```java
+CreateListInvalidInput collect = new CreateListInvalidInput();
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 String offet = "offet";
+collect.setOffet(offet);
+
 String limit = "limit";
+collect.setLimit(limit);
+
 // Invoking the API call with sample inputs
-email.createListInvalidAsync(responseType, offet, limit, new APICallBack<String>() {
+email.createListInvalidAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1200,8 +1689,7 @@ email.createListInvalidAsync(responseType, offet, limit, new APICallBack<String>
 
 ```java
 void createDeleteBouncesAsync(
-        final String email,
-        final String responseType,
+        final CreateDeleteBouncesInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1216,17 +1704,24 @@ void createDeleteBouncesAsync(
 #### Example Usage
 
 ```java
+CreateDeleteBouncesInput collect = new CreateDeleteBouncesInput();
+
 String email = "email";
+collect.setEmail(email);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-email.createDeleteBouncesAsync(email, responseType, new APICallBack<String>() {
+email.createDeleteBouncesAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1238,9 +1733,7 @@ email.createDeleteBouncesAsync(email, responseType, new APICallBack<String>() {
 
 ```java
 void createListBouncesAsync(
-        final String responseType,
-        final String offset,
-        final String limit,
+        final CreateListBouncesInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1256,18 +1749,27 @@ void createListBouncesAsync(
 #### Example Usage
 
 ```java
+CreateListBouncesInput collect = new CreateListBouncesInput();
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 String offset = "offset";
+collect.setOffset(offset);
+
 String limit = "limit";
+collect.setLimit(limit);
+
 // Invoking the API call with sample inputs
-email.createListBouncesAsync(responseType, offset, limit, new APICallBack<String>() {
+email.createListBouncesAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1279,9 +1781,7 @@ email.createListBouncesAsync(responseType, offset, limit, new APICallBack<String
 
 ```java
 void createListSpamAsync(
-        final String responseType,
-        final String offset,
-        final String limit,
+        final CreateListSpamInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1297,18 +1797,27 @@ void createListSpamAsync(
 #### Example Usage
 
 ```java
+CreateListSpamInput collect = new CreateListSpamInput();
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 String offset = "offset";
+collect.setOffset(offset);
+
 String limit = "limit";
+collect.setLimit(limit);
+
 // Invoking the API call with sample inputs
-email.createListSpamAsync(responseType, offset, limit, new APICallBack<String>() {
+email.createListSpamAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1320,9 +1829,7 @@ email.createListSpamAsync(responseType, offset, limit, new APICallBack<String>()
 
 ```java
 void createListBlocksAsync(
-        final String offset,
-        final String limit,
-        final String responseType,
+        final CreateListBlocksInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1338,18 +1845,27 @@ void createListBlocksAsync(
 #### Example Usage
 
 ```java
+CreateListBlocksInput collect = new CreateListBlocksInput();
+
 String offset = "offset";
+collect.setOffset(offset);
+
 String limit = "limit";
+collect.setLimit(limit);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-email.createListBlocksAsync(offset, limit, responseType, new APICallBack<String>() {
+email.createListBlocksAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1373,14 +1889,7 @@ SMSController sMS = client.getSMS();
 
 ```java
 void createSendSMSAsync(
-        final int fromcountrycode,
-        final String from,
-        final int tocountrycode,
-        final String to,
-        final String body,
-        final HttpAction method,
-        final String messagestatuscallback,
-        final String responseType,
+        final CreateSendSMSInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1401,23 +1910,42 @@ void createSendSMSAsync(
 #### Example Usage
 
 ```java
+CreateSendSMSInput collect = new CreateSendSMSInput();
+
 int fromcountrycode = 1;
+collect.setFromcountrycode(fromcountrycode);
+
 String from = "from";
+collect.setFrom(from);
+
 int tocountrycode = 1;
+collect.setTocountrycode(tocountrycode);
+
 String to = "to";
+collect.setTo(to);
+
 String body = "body";
+collect.setBody(body);
+
 HttpAction method = HttpAction.fromString("GET");
+collect.setMethod(method);
+
 String messagestatuscallback = "messagestatuscallback";
+collect.setMessagestatuscallback(messagestatuscallback);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-sMS.createSendSMSAsync(fromcountrycode, from, tocountrycode, to, body, method, messagestatuscallback, responseType, new APICallBack<String>() {
+sMS.createSendSMSAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1429,8 +1957,7 @@ sMS.createSendSMSAsync(fromcountrycode, from, tocountrycode, to, body, method, m
 
 ```java
 void createViewSMSAsync(
-        final String messagesid,
-        final String responseType,
+        final CreateViewSMSInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1445,17 +1972,24 @@ void createViewSMSAsync(
 #### Example Usage
 
 ```java
+CreateViewSMSInput collect = new CreateViewSMSInput();
+
 String messagesid = "messagesid";
+collect.setMessagesid(messagesid);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-sMS.createViewSMSAsync(messagesid, responseType, new APICallBack<String>() {
+sMS.createViewSMSAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1467,12 +2001,7 @@ sMS.createViewSMSAsync(messagesid, responseType, new APICallBack<String>() {
 
 ```java
 void createListSMSAsync(
-        final Integer page,
-        final Integer pagesize,
-        final String from,
-        final String to,
-        final String datesent,
-        final String responseType,
+        final CreateListSMSInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1491,21 +2020,36 @@ void createListSMSAsync(
 #### Example Usage
 
 ```java
-Integer page = 221;
-Integer pagesize = 221;
+CreateListSMSInput collect = new CreateListSMSInput();
+
+Integer page = 163;
+collect.setPage(page);
+
+Integer pagesize = 163;
+collect.setPagesize(pagesize);
+
 String from = "from";
+collect.setFrom(from);
+
 String to = "to";
+collect.setTo(to);
+
 String datesent = "datesent";
+collect.setDatesent(datesent);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-sMS.createListSMSAsync(page, pagesize, from, to, datesent, responseType, new APICallBack<String>() {
+sMS.createListSMSAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1517,11 +2061,7 @@ sMS.createListSMSAsync(page, pagesize, from, to, datesent, responseType, new API
 
 ```java
 void createListInboundSMSAsync(
-        final Integer page,
-        final String pagesize,
-        final String from,
-        final String to,
-        final String responseType,
+        final CreateListInboundSMSInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1539,20 +2079,33 @@ void createListInboundSMSAsync(
 #### Example Usage
 
 ```java
-Integer page = 179;
+CreateListInboundSMSInput collect = new CreateListInboundSMSInput();
+
+Integer page = 163;
+collect.setPage(page);
+
 String pagesize = "pagesize";
+collect.setPagesize(pagesize);
+
 String from = "from";
+collect.setFrom(from);
+
 String to = "to";
+collect.setTo(to);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-sMS.createListInboundSMSAsync(page, pagesize, from, to, responseType, new APICallBack<String>() {
+sMS.createListInboundSMSAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1576,8 +2129,7 @@ AccountController account = client.getAccount();
 
 ```java
 void createViewAccountAsync(
-        final String date,
-        final String responseType,
+        final CreateViewAccountInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1592,152 +2144,24 @@ void createViewAccountAsync(
 #### Example Usage
 
 ```java
+CreateViewAccountInput collect = new CreateViewAccountInput();
+
 String date = "date";
+collect.setDate(date);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-account.createViewAccountAsync(date, responseType, new APICallBack<String>() {
+account.createViewAccountAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-### <a name="recording_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.RecordingController") RecordingController
-
-#### Get singleton instance
-
-The singleton instance of the ``` RecordingController ``` class can be accessed from the API Client.
-
-```java
-RecordingController recording = client.getRecording();
-```
-
-#### <a name="create_delete_recording_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.RecordingController.createDeleteRecordingAsync") createDeleteRecordingAsync
-
-> Delete Recording Record
-
-
-```java
-void createDeleteRecordingAsync(
-        final String recordingSid,
-        final String responseType,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recordingSid |  ``` Required ```  | Unique Recording Sid to be delete |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
-
-
-#### Example Usage
-
-```java
-String recordingSid = "RecordingSid";
-String responseType = "json";
-// Invoking the API call with sample inputs
-recording.createDeleteRecordingAsync(recordingSid, responseType, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-#### <a name="create_view_recording_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.RecordingController.createViewRecordingAsync") createViewRecordingAsync
-
-> View a specific Recording
-
-
-```java
-void createViewRecordingAsync(
-        final String recordingSid,
-        final String responseType,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recordingSid |  ``` Required ```  | Search Recording sid |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
-
-
-#### Example Usage
-
-```java
-String recordingSid = "RecordingSid";
-String responseType = "json";
-// Invoking the API call with sample inputs
-recording.createViewRecordingAsync(recordingSid, responseType, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-#### <a name="create_list_recording_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.RecordingController.createListRecordingAsync") createListRecordingAsync
-
-> List out Recordings
-
-
-```java
-void createListRecordingAsync(
-        final Integer page,
-        final Integer pageSize,
-        final String dateCreated,
-        final String callSid,
-        final String responseType,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Which page of the overall response will be returned. Zero indexed |
-| pageSize |  ``` Optional ```  | Number of individual resources listed in the response per page |
-| dateCreated |  ``` Optional ```  | TODO: Add a parameter description |
-| callSid |  ``` Optional ```  | TODO: Add a parameter description |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response format, xml or json |
-
-
-#### Example Usage
-
-```java
-Integer page = 15;
-Integer pageSize = 15;
-String dateCreated = "DateCreated";
-String callSid = "CallSid";
-String responseType = "json";
-// Invoking the API call with sample inputs
-recording.createListRecordingAsync(page, pageSize, dateCreated, callSid, responseType, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
+}
+);
 
 ```
 
@@ -1761,8 +2185,7 @@ CallController call = client.getCall();
 
 ```java
 void createViewCallAsync(
-        final String callsid,
-        final String responseType,
+        final CreateViewCallInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1777,17 +2200,24 @@ void createViewCallAsync(
 #### Example Usage
 
 ```java
+CreateViewCallInput collect = new CreateViewCallInput();
+
 String callsid = "callsid";
+collect.setCallsid(callsid);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-call.createViewCallAsync(callsid, responseType, new APICallBack<String>() {
+call.createViewCallAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1799,28 +2229,7 @@ call.createViewCallAsync(callsid, responseType, new APICallBack<String>() {
 
 ```java
 void createMakeCallAsync(
-        final String fromCountryCode,
-        final String from,
-        final String toCountryCode,
-        final String to,
-        final String url,
-        final HttpAction method,
-        final String statusCallBackUrl,
-        final HttpAction statusCallBackMethod,
-        final String fallBackUrl,
-        final HttpAction fallBackMethod,
-        final String heartBeatUrl,
-        final Boolean heartBeatMethod,
-        final Integer timeout,
-        final String playDtmf,
-        final Boolean hideCallerId,
-        final Boolean record,
-        final String recordCallBackUrl,
-        final HttpAction recordCallBackMethod,
-        final Boolean transcribe,
-        final String transcribeCallBackUrl,
-        final IfMachine ifMachine,
-        final String responseType,
+        final CreateMakeCallInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1855,37 +2264,84 @@ void createMakeCallAsync(
 #### Example Usage
 
 ```java
+CreateMakeCallInput collect = new CreateMakeCallInput();
+
 String fromCountryCode = "FromCountryCode";
+collect.setFromCountryCode(fromCountryCode);
+
 String from = "From";
+collect.setFrom(from);
+
 String toCountryCode = "ToCountryCode";
+collect.setToCountryCode(toCountryCode);
+
 String to = "To";
+collect.setTo(to);
+
 String url = "Url";
+collect.setUrl(url);
+
 HttpAction method = HttpAction.fromString("GET");
+collect.setMethod(method);
+
 String statusCallBackUrl = "StatusCallBackUrl";
+collect.setStatusCallBackUrl(statusCallBackUrl);
+
 HttpAction statusCallBackMethod = HttpAction.fromString("GET");
+collect.setStatusCallBackMethod(statusCallBackMethod);
+
 String fallBackUrl = "FallBackUrl";
+collect.setFallBackUrl(fallBackUrl);
+
 HttpAction fallBackMethod = HttpAction.fromString("GET");
+collect.setFallBackMethod(fallBackMethod);
+
 String heartBeatUrl = "HeartBeatUrl";
-Boolean heartBeatMethod = false;
-Integer timeout = 15;
+collect.setHeartBeatUrl(heartBeatUrl);
+
+Boolean heartBeatMethod = true;
+collect.setHeartBeatMethod(heartBeatMethod);
+
+Integer timeout = 163;
+collect.setTimeout(timeout);
+
 String playDtmf = "PlayDtmf";
-Boolean hideCallerId = false;
-Boolean record = false;
+collect.setPlayDtmf(playDtmf);
+
+Boolean hideCallerId = true;
+collect.setHideCallerId(hideCallerId);
+
+Boolean record = true;
+collect.setRecord(record);
+
 String recordCallBackUrl = "RecordCallBackUrl";
+collect.setRecordCallBackUrl(recordCallBackUrl);
+
 HttpAction recordCallBackMethod = HttpAction.fromString("GET");
-Boolean transcribe = false;
+collect.setRecordCallBackMethod(recordCallBackMethod);
+
+Boolean transcribe = true;
+collect.setTranscribe(transcribe);
+
 String transcribeCallBackUrl = "TranscribeCallBackUrl";
+collect.setTranscribeCallBackUrl(transcribeCallBackUrl);
+
 IfMachine ifMachine = IfMachine.fromString("CONTINUE");
+collect.setIfMachine(ifMachine);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-call.createMakeCallAsync(fromCountryCode, from, toCountryCode, to, url, method, statusCallBackUrl, statusCallBackMethod, fallBackUrl, fallBackMethod, heartBeatUrl, heartBeatMethod, timeout, playDtmf, hideCallerId, record, recordCallBackUrl, recordCallBackMethod, transcribe, transcribeCallBackUrl, ifMachine, responseType, new APICallBack<String>() {
+call.createMakeCallAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1897,13 +2353,7 @@ call.createMakeCallAsync(fromCountryCode, from, toCountryCode, to, url, method, 
 
 ```java
 void createPlayAudioAsync(
-        final int length,
-        final Direction direction,
-        final boolean loop,
-        final boolean mix,
-        final String callSid,
-        final String audioUrl,
-        final String responseType,
+        final CreatePlayAudioInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1923,22 +2373,39 @@ void createPlayAudioAsync(
 #### Example Usage
 
 ```java
-int length = 15;
+CreatePlayAudioInput collect = new CreatePlayAudioInput();
+
+int length = 163;
+collect.setLength(length);
+
 Direction direction = Direction.fromString("IN");
-boolean loop = false;
-boolean mix = false;
+collect.setDirection(direction);
+
+boolean loop = true;
+collect.setLoop(loop);
+
+boolean mix = true;
+collect.setMix(mix);
+
 String callSid = "CallSid";
+collect.setCallSid(callSid);
+
 String audioUrl = "AudioUrl";
+collect.setAudioUrl(audioUrl);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-call.createPlayAudioAsync(length, direction, loop, mix, callSid, audioUrl, responseType, new APICallBack<String>() {
+call.createPlayAudioAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -1950,13 +2417,7 @@ call.createPlayAudioAsync(length, direction, loop, mix, callSid, audioUrl, respo
 
 ```java
 void createRecordCallAsync(
-        final String callSid,
-        final boolean record,
-        final Direction direction,
-        final Integer timeLimit,
-        final String callBackUrl,
-        final AudioFormat fileformat,
-        final String responseType,
+        final CreateRecordCallInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1976,22 +2437,39 @@ void createRecordCallAsync(
 #### Example Usage
 
 ```java
+CreateRecordCallInput collect = new CreateRecordCallInput();
+
 String callSid = "CallSid";
-boolean record = false;
+collect.setCallSid(callSid);
+
+boolean record = true;
+collect.setRecord(record);
+
 Direction direction = Direction.fromString("IN");
-Integer timeLimit = 15;
+collect.setDirection(direction);
+
+Integer timeLimit = 163;
+collect.setTimeLimit(timeLimit);
+
 String callBackUrl = "CallBackUrl";
+collect.setCallBackUrl(callBackUrl);
+
 AudioFormat fileformat = AudioFormat.fromString("mp3");
+collect.setFileformat(fileformat);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-call.createRecordCallAsync(callSid, record, direction, timeLimit, callBackUrl, fileformat, responseType, new APICallBack<String>() {
+call.createRecordCallAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -2003,14 +2481,7 @@ call.createRecordCallAsync(callSid, record, direction, timeLimit, callBackUrl, f
 
 ```java
 void createVoiceEffectAsync(
-        final String callSid,
-        final AudioDirection audioDirection,
-        final Double pitchSemiTones,
-        final Double pitchOctaves,
-        final Double pitch,
-        final Double rate,
-        final Double tempo,
-        final String responseType,
+        final CreateVoiceEffectInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -2031,23 +2502,42 @@ void createVoiceEffectAsync(
 #### Example Usage
 
 ```java
+CreateVoiceEffectInput collect = new CreateVoiceEffectInput();
+
 String callSid = "CallSid";
+collect.setCallSid(callSid);
+
 AudioDirection audioDirection = AudioDirection.fromString("IN");
-Double pitchSemiTones = 15.9031174336109;
-Double pitchOctaves = 15.9031174336109;
-Double pitch = 15.9031174336109;
-Double rate = 15.9031174336109;
-Double tempo = 15.9031174336109;
+collect.setAudioDirection(audioDirection);
+
+Double pitchSemiTones = 163.418492660121;
+collect.setPitchSemiTones(pitchSemiTones);
+
+Double pitchOctaves = 163.418492660121;
+collect.setPitchOctaves(pitchOctaves);
+
+Double pitch = 163.418492660121;
+collect.setPitch(pitch);
+
+Double rate = 163.418492660121;
+collect.setRate(rate);
+
+Double tempo = 163.418492660121;
+collect.setTempo(tempo);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-call.createVoiceEffectAsync(callSid, audioDirection, pitchSemiTones, pitchOctaves, pitch, rate, tempo, responseType, new APICallBack<String>() {
+call.createVoiceEffectAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -2059,10 +2549,7 @@ call.createVoiceEffectAsync(callSid, audioDirection, pitchSemiTones, pitchOctave
 
 ```java
 void createSendDigitAsync(
-        final String callSid,
-        final String playDtmf,
-        final Direction playDtmfDirection,
-        final String responseType,
+        final CreateSendDigitInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -2079,19 +2566,30 @@ void createSendDigitAsync(
 #### Example Usage
 
 ```java
+CreateSendDigitInput collect = new CreateSendDigitInput();
+
 String callSid = "CallSid";
+collect.setCallSid(callSid);
+
 String playDtmf = "PlayDtmf";
+collect.setPlayDtmf(playDtmf);
+
 Direction playDtmfDirection = Direction.fromString("IN");
+collect.setPlayDtmfDirection(playDtmfDirection);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-call.createSendDigitAsync(callSid, playDtmf, playDtmfDirection, responseType, new APICallBack<String>() {
+call.createSendDigitAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -2103,11 +2601,7 @@ call.createSendDigitAsync(callSid, playDtmf, playDtmfDirection, responseType, ne
 
 ```java
 void createInterruptedCallAsync(
-        final String callSid,
-        final String url,
-        final HttpAction method,
-        final InterruptedCallStatus status,
-        final String responseType,
+        final CreateInterruptedCallInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -2125,20 +2619,33 @@ void createInterruptedCallAsync(
 #### Example Usage
 
 ```java
+CreateInterruptedCallInput collect = new CreateInterruptedCallInput();
+
 String callSid = "CallSid";
+collect.setCallSid(callSid);
+
 String url = "Url";
+collect.setUrl(url);
+
 HttpAction method = HttpAction.fromString("GET");
+collect.setMethod(method);
+
 InterruptedCallStatus status = InterruptedCallStatus.fromString("CANCELED");
+collect.setStatus(status);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-call.createInterruptedCallAsync(callSid, url, method, status, responseType, new APICallBack<String>() {
+call.createInterruptedCallAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -2150,12 +2657,7 @@ call.createInterruptedCallAsync(callSid, url, method, status, responseType, new 
 
 ```java
 void createListCallsAsync(
-        final String page,
-        final String pageSize,
-        final String to,
-        final String from,
-        final String dateCreated,
-        final String responseType,
+        final CreateListCallsInput input,
         final APICallBack<Object> callBack)
 ```
 
@@ -2174,21 +2676,36 @@ void createListCallsAsync(
 #### Example Usage
 
 ```java
+CreateListCallsInput collect = new CreateListCallsInput();
+
 String page = "Page";
+collect.setPage(page);
+
 String pageSize = "PageSize";
+collect.setPageSize(pageSize);
+
 String to = "To";
+collect.setTo(to);
+
 String from = "From";
+collect.setFrom(from);
+
 String dateCreated = "DateCreated";
+collect.setDateCreated(dateCreated);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-call.createListCallsAsync(page, pageSize, to, from, dateCreated, responseType, new APICallBack<void>() {
+call.createListCallsAsync(collect, new APICallBack<void>() {
     public void onSuccess(HttpContext context, void response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -2212,8 +2729,7 @@ CarrierController carrier = client.getCarrier();
 
 ```java
 void createCarrierLookupAsync(
-        final String phonenumber,
-        final String responseType,
+        final CreateCarrierLookupInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -2228,17 +2744,24 @@ void createCarrierLookupAsync(
 #### Example Usage
 
 ```java
+CreateCarrierLookupInput collect = new CreateCarrierLookupInput();
+
 String phonenumber = "phonenumber";
+collect.setPhonenumber(phonenumber);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-carrier.createCarrierLookupAsync(phonenumber, responseType, new APICallBack<String>() {
+carrier.createCarrierLookupAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 
@@ -2250,9 +2773,7 @@ carrier.createCarrierLookupAsync(phonenumber, responseType, new APICallBack<Stri
 
 ```java
 void createCarrierLookupListAsync(
-        final String page,
-        final String pagesize,
-        final String responseType,
+        final CreateCarrierLookupListInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -2268,18 +2789,27 @@ void createCarrierLookupListAsync(
 #### Example Usage
 
 ```java
+CreateCarrierLookupListInput collect = new CreateCarrierLookupListInput();
+
 String page = "page";
+collect.setPage(page);
+
 String pagesize = "pagesize";
+collect.setPagesize(pagesize);
+
 String responseType = "json";
+collect.setResponseType(responseType);
+
 // Invoking the API call with sample inputs
-carrier.createCarrierLookupListAsync(page, pagesize, responseType, new APICallBack<String>() {
+carrier.createCarrierLookupListAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
+}
+);
 
 ```
 

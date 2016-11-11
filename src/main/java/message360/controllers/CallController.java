@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/04/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
  */
 package message360.controllers;
 
@@ -40,16 +40,14 @@ public class CallController extends BaseController {
 
     /**
      * View Call Response
-     * @param    callsid    Required parameter: Call Sid id for particular Call
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateViewCallInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createViewCall(
-                final String callsid,
-                final String responseType
+                final CreateViewCallInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewCallAsync(callsid, responseType, callback);
+        createViewCallAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -57,38 +55,36 @@ public class CallController extends BaseController {
 
     /**
      * View Call Response
-     * @param    callsid    Required parameter: Call Sid id for particular Call
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateViewCallInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createViewCallAsync(
-                final String callsid,
-                final String responseType,
+                final CreateViewCallInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == callsid)
-            throw new NullPointerException("The parameter \"callsid\" is a required parameter and cannot be null.");
+        if (null == input.getCallsid())
+            throw new NullPointerException("The property \"Callsid\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/calls/viewcalls.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5088216574753162168L;
+            private static final long serialVersionUID = 5458897043190919468L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4931056235081422355L;
+            private static final long serialVersionUID = 4821151002572118124L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -96,9 +92,9 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5018781727616484146L;
+            private static final long serialVersionUID = 5728382128597226177L;
             {
-                    put( "callsid", callsid );
+                    put( "callsid", input.getCallsid() );
             }
         };
 
@@ -161,56 +157,14 @@ public class CallController extends BaseController {
 
     /**
      * You can experiment with initiating a call through Message360 and view the request response generated when doing so and get the response in json
-     * @param    fromCountryCode    Required parameter: from country code
-     * @param    from    Required parameter: This number to display on Caller ID as calling
-     * @param    toCountryCode    Required parameter: To cuntry code number
-     * @param    to    Required parameter: To number
-     * @param    url    Required parameter: URL requested once the call connects
-     * @param    method    Optional parameter: Specifies the HTTP method used to request the required URL once call connects.
-     * @param    statusCallBackUrl    Optional parameter: specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
-     * @param    statusCallBackMethod    Optional parameter: Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
-     * @param    fallBackUrl    Optional parameter: URL requested if the initial Url parameter fails or encounters an error
-     * @param    fallBackMethod    Optional parameter: Specifies the HTTP method used to request the required FallbackUrl once call connects.
-     * @param    heartBeatUrl    Optional parameter: URL that can be requested every 60 seconds during the call to notify of elapsed tim
-     * @param    heartBeatMethod    Optional parameter: Specifies the HTTP method used to request HeartbeatUrl.
-     * @param    timeout    Optional parameter: Time (in seconds) Message360 should wait while the call is ringing before canceling the call
-     * @param    playDtmf    Optional parameter: DTMF Digits to play to the call once it connects. 0-9, #, or *
-     * @param    hideCallerId    Optional parameter: Specifies if the caller id will be hidden
-     * @param    record    Optional parameter: Specifies if the call should be recorded
-     * @param    recordCallBackUrl    Optional parameter: Recording parameters will be sent here upon completion
-     * @param    recordCallBackMethod    Optional parameter: Method used to request the RecordCallback URL.
-     * @param    transcribe    Optional parameter: Specifies if the call recording should be transcribed
-     * @param    transcribeCallBackUrl    Optional parameter: Transcription parameters will be sent here upon completion
-     * @param    ifMachine    Optional parameter: How Message360 should handle the receiving numbers voicemail machine
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateMakeCallInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createMakeCall(
-                final String fromCountryCode,
-                final String from,
-                final String toCountryCode,
-                final String to,
-                final String url,
-                final HttpAction method,
-                final String statusCallBackUrl,
-                final HttpAction statusCallBackMethod,
-                final String fallBackUrl,
-                final HttpAction fallBackMethod,
-                final String heartBeatUrl,
-                final Boolean heartBeatMethod,
-                final Integer timeout,
-                final String playDtmf,
-                final Boolean hideCallerId,
-                final Boolean record,
-                final String recordCallBackUrl,
-                final HttpAction recordCallBackMethod,
-                final Boolean transcribe,
-                final String transcribeCallBackUrl,
-                final IfMachine ifMachine,
-                final String responseType
+                final CreateMakeCallInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createMakeCallAsync(fromCountryCode, from, toCountryCode, to, url, method, statusCallBackUrl, statusCallBackMethod, fallBackUrl, fallBackMethod, heartBeatUrl, heartBeatMethod, timeout, playDtmf, hideCallerId, record, recordCallBackUrl, recordCallBackMethod, transcribe, transcribeCallBackUrl, ifMachine, responseType, callback);
+        createMakeCallAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -218,97 +172,55 @@ public class CallController extends BaseController {
 
     /**
      * You can experiment with initiating a call through Message360 and view the request response generated when doing so and get the response in json
-     * @param    fromCountryCode    Required parameter: from country code
-     * @param    from    Required parameter: This number to display on Caller ID as calling
-     * @param    toCountryCode    Required parameter: To cuntry code number
-     * @param    to    Required parameter: To number
-     * @param    url    Required parameter: URL requested once the call connects
-     * @param    method    Optional parameter: Specifies the HTTP method used to request the required URL once call connects.
-     * @param    statusCallBackUrl    Optional parameter: specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
-     * @param    statusCallBackMethod    Optional parameter: Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
-     * @param    fallBackUrl    Optional parameter: URL requested if the initial Url parameter fails or encounters an error
-     * @param    fallBackMethod    Optional parameter: Specifies the HTTP method used to request the required FallbackUrl once call connects.
-     * @param    heartBeatUrl    Optional parameter: URL that can be requested every 60 seconds during the call to notify of elapsed tim
-     * @param    heartBeatMethod    Optional parameter: Specifies the HTTP method used to request HeartbeatUrl.
-     * @param    timeout    Optional parameter: Time (in seconds) Message360 should wait while the call is ringing before canceling the call
-     * @param    playDtmf    Optional parameter: DTMF Digits to play to the call once it connects. 0-9, #, or *
-     * @param    hideCallerId    Optional parameter: Specifies if the caller id will be hidden
-     * @param    record    Optional parameter: Specifies if the call should be recorded
-     * @param    recordCallBackUrl    Optional parameter: Recording parameters will be sent here upon completion
-     * @param    recordCallBackMethod    Optional parameter: Method used to request the RecordCallback URL.
-     * @param    transcribe    Optional parameter: Specifies if the call recording should be transcribed
-     * @param    transcribeCallBackUrl    Optional parameter: Transcription parameters will be sent here upon completion
-     * @param    ifMachine    Optional parameter: How Message360 should handle the receiving numbers voicemail machine
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateMakeCallInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createMakeCallAsync(
-                final String fromCountryCode,
-                final String from,
-                final String toCountryCode,
-                final String to,
-                final String url,
-                final HttpAction method,
-                final String statusCallBackUrl,
-                final HttpAction statusCallBackMethod,
-                final String fallBackUrl,
-                final HttpAction fallBackMethod,
-                final String heartBeatUrl,
-                final Boolean heartBeatMethod,
-                final Integer timeout,
-                final String playDtmf,
-                final Boolean hideCallerId,
-                final Boolean record,
-                final String recordCallBackUrl,
-                final HttpAction recordCallBackMethod,
-                final Boolean transcribe,
-                final String transcribeCallBackUrl,
-                final IfMachine ifMachine,
-                final String responseType,
+                final CreateMakeCallInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == fromCountryCode)
-            throw new NullPointerException("The parameter \"fromCountryCode\" is a required parameter and cannot be null.");
+        if (null == input.getFromCountryCode())
+            throw new NullPointerException("The property \"FromCountryCode\" in the input object cannot be null.");
 
-        if (null == from)
-            throw new NullPointerException("The parameter \"from\" is a required parameter and cannot be null.");
+        if (null == input.getFrom())
+            throw new NullPointerException("The property \"From\" in the input object cannot be null.");
 
-        if (null == toCountryCode)
-            throw new NullPointerException("The parameter \"toCountryCode\" is a required parameter and cannot be null.");
+        if (null == input.getToCountryCode())
+            throw new NullPointerException("The property \"ToCountryCode\" in the input object cannot be null.");
 
-        if (null == to)
-            throw new NullPointerException("The parameter \"to\" is a required parameter and cannot be null.");
+        if (null == input.getTo())
+            throw new NullPointerException("The property \"To\" in the input object cannot be null.");
 
-        if (null == url)
-            throw new NullPointerException("The parameter \"url\" is a required parameter and cannot be null.");
+        if (null == input.getUrl())
+            throw new NullPointerException("The property \"Url\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/calls/makecall.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5298387997258545093L;
+            private static final long serialVersionUID = 5130630409472465338L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5750864735269281343L;
+            private static final long serialVersionUID = 4623583357920679545L;
             {
-                    put( "Method", (null != method) ? method.value() : null );
+                    put( "Method", (null != input.getMethod()) ? input.getMethod().value() : null );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5075752913633553481L;
+            private static final long serialVersionUID = 4626933831004329633L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -316,28 +228,28 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5531366734092844406L;
+            private static final long serialVersionUID = 5157467192648278440L;
             {
-                    put( "FromCountryCode", fromCountryCode );
-                    put( "From", from );
-                    put( "ToCountryCode", toCountryCode );
-                    put( "To", to );
-                    put( "Url", url );
-                    put( "StatusCallBackUrl", statusCallBackUrl );
-                    put( "StatusCallBackMethod", (null != statusCallBackMethod) ? statusCallBackMethod.value() : null );
-                    put( "FallBackUrl", fallBackUrl );
-                    put( "FallBackMethod", (null != fallBackMethod) ? fallBackMethod.value() : null );
-                    put( "HeartBeatUrl", heartBeatUrl );
-                    put( "HeartBeatMethod", heartBeatMethod );
-                    put( "Timeout", timeout );
-                    put( "PlayDtmf", playDtmf );
-                    put( "HideCallerId", hideCallerId );
-                    put( "Record", record );
-                    put( "RecordCallBackUrl", recordCallBackUrl );
-                    put( "RecordCallBackMethod", (null != recordCallBackMethod) ? recordCallBackMethod.value() : null );
-                    put( "Transcribe", transcribe );
-                    put( "TranscribeCallBackUrl", transcribeCallBackUrl );
-                    put( "IfMachine", (null != ifMachine) ? ifMachine.value() : null );
+                    put( "FromCountryCode", input.getFromCountryCode() );
+                    put( "From", input.getFrom() );
+                    put( "ToCountryCode", input.getToCountryCode() );
+                    put( "To", input.getTo() );
+                    put( "Url", input.getUrl() );
+                    put( "StatusCallBackUrl", input.getStatusCallBackUrl() );
+                    put( "StatusCallBackMethod", (null != input.getStatusCallBackMethod()) ? input.getStatusCallBackMethod().value() : null );
+                    put( "FallBackUrl", input.getFallBackUrl() );
+                    put( "FallBackMethod", (null != input.getFallBackMethod()) ? input.getFallBackMethod().value() : null );
+                    put( "HeartBeatUrl", input.getHeartBeatUrl() );
+                    put( "HeartBeatMethod", input.getHeartBeatMethod() );
+                    put( "Timeout", input.getTimeout() );
+                    put( "PlayDtmf", input.getPlayDtmf() );
+                    put( "HideCallerId", input.getHideCallerId() );
+                    put( "Record", input.getRecord() );
+                    put( "RecordCallBackUrl", input.getRecordCallBackUrl() );
+                    put( "RecordCallBackMethod", (null != input.getRecordCallBackMethod()) ? input.getRecordCallBackMethod().value() : null );
+                    put( "Transcribe", input.getTranscribe() );
+                    put( "TranscribeCallBackUrl", input.getTranscribeCallBackUrl() );
+                    put( "IfMachine", (null != input.getIfMachine()) ? input.getIfMachine().value() : null );
             }
         };
 
@@ -400,26 +312,14 @@ public class CallController extends BaseController {
 
     /**
      * Play Dtmf and send the Digit
-     * @param    length    Required parameter: Time limit in seconds for audio play back
-     * @param    direction    Required parameter: The leg of the call audio will be played to
-     * @param    loop    Required parameter: Repeat audio playback indefinitely
-     * @param    mix    Required parameter: If false, all other audio will be muted
-     * @param    callSid    Optional parameter: The unique identifier of each call resource
-     * @param    audioUrl    Optional parameter: URL to sound that should be played. You also can add more than one audio file using semicolons e.g. http://example.com/audio1.mp3;http://example.com/audio2.wav
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreatePlayAudioInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createPlayAudio(
-                final int length,
-                final Direction direction,
-                final boolean loop,
-                final boolean mix,
-                final String callSid,
-                final String audioUrl,
-                final String responseType
+                final CreatePlayAudioInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createPlayAudioAsync(length, direction, loop, mix, callSid, audioUrl, responseType, callback);
+        createPlayAudioAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -427,48 +327,36 @@ public class CallController extends BaseController {
 
     /**
      * Play Dtmf and send the Digit
-     * @param    length    Required parameter: Time limit in seconds for audio play back
-     * @param    direction    Required parameter: The leg of the call audio will be played to
-     * @param    loop    Required parameter: Repeat audio playback indefinitely
-     * @param    mix    Required parameter: If false, all other audio will be muted
-     * @param    callSid    Optional parameter: The unique identifier of each call resource
-     * @param    audioUrl    Optional parameter: URL to sound that should be played. You also can add more than one audio file using semicolons e.g. http://example.com/audio1.mp3;http://example.com/audio2.wav
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreatePlayAudioInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createPlayAudioAsync(
-                final int length,
-                final Direction direction,
-                final boolean loop,
-                final boolean mix,
-                final String callSid,
-                final String audioUrl,
-                final String responseType,
+                final CreatePlayAudioInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == direction)
-            throw new NullPointerException("The parameter \"direction\" is a required parameter and cannot be null.");
+        if (null == input.getDirection())
+            throw new NullPointerException("The property \"Direction\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/calls/playaudios.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5054599023884948935L;
+            private static final long serialVersionUID = 5563088728367645073L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4820700035802742612L;
+            private static final long serialVersionUID = 4924880175543253382L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -476,14 +364,14 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5433215649095047677L;
+            private static final long serialVersionUID = 5709802736386460848L;
             {
-                    put( "Length", length );
-                    put( "Direction", (null != direction) ? direction.value() : null );
-                    put( "Loop", loop );
-                    put( "Mix", mix );
-                    put( "CallSid", callSid );
-                    put( "AudioUrl", audioUrl );
+                    put( "Length", input.getLength() );
+                    put( "Direction", (null != input.getDirection()) ? input.getDirection().value() : null );
+                    put( "Loop", input.getLoop() );
+                    put( "Mix", input.getMix() );
+                    put( "CallSid", input.getCallSid() );
+                    put( "AudioUrl", input.getAudioUrl() );
             }
         };
 
@@ -546,26 +434,14 @@ public class CallController extends BaseController {
 
     /**
      * Record a Call
-     * @param    callSid    Required parameter: The unique identifier of each call resource
-     * @param    record    Required parameter: Set true to initiate recording or false to terminate recording
-     * @param    direction    Optional parameter: The leg of the call to record
-     * @param    timeLimit    Optional parameter: Time in seconds the recording duration should not exceed
-     * @param    callBackUrl    Optional parameter: URL consulted after the recording completes
-     * @param    fileformat    Optional parameter: Format of the recording file. Can be .mp3 or .wav
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateRecordCallInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createRecordCall(
-                final String callSid,
-                final boolean record,
-                final Direction direction,
-                final Integer timeLimit,
-                final String callBackUrl,
-                final AudioFormat fileformat,
-                final String responseType
+                final CreateRecordCallInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createRecordCallAsync(callSid, record, direction, timeLimit, callBackUrl, fileformat, responseType, callback);
+        createRecordCallAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -573,48 +449,36 @@ public class CallController extends BaseController {
 
     /**
      * Record a Call
-     * @param    callSid    Required parameter: The unique identifier of each call resource
-     * @param    record    Required parameter: Set true to initiate recording or false to terminate recording
-     * @param    direction    Optional parameter: The leg of the call to record
-     * @param    timeLimit    Optional parameter: Time in seconds the recording duration should not exceed
-     * @param    callBackUrl    Optional parameter: URL consulted after the recording completes
-     * @param    fileformat    Optional parameter: Format of the recording file. Can be .mp3 or .wav
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateRecordCallInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createRecordCallAsync(
-                final String callSid,
-                final boolean record,
-                final Direction direction,
-                final Integer timeLimit,
-                final String callBackUrl,
-                final AudioFormat fileformat,
-                final String responseType,
+                final CreateRecordCallInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == callSid)
-            throw new NullPointerException("The parameter \"callSid\" is a required parameter and cannot be null.");
+        if (null == input.getCallSid())
+            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/calls/recordcalls.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5368833468663091000L;
+            private static final long serialVersionUID = 4988974973372123650L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4945718573492364845L;
+            private static final long serialVersionUID = 4857765656097647504L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -622,14 +486,14 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5435745296630516951L;
+            private static final long serialVersionUID = 5256108799072061675L;
             {
-                    put( "CallSid", callSid );
-                    put( "Record", record );
-                    put( "Direction", (null != direction) ? direction.value() : null );
-                    put( "TimeLimit", timeLimit );
-                    put( "CallBackUrl", callBackUrl );
-                    put( "Fileformat", (null != fileformat) ? fileformat.value() : null );
+                    put( "CallSid", input.getCallSid() );
+                    put( "Record", input.getRecord() );
+                    put( "Direction", (null != input.getDirection()) ? input.getDirection().value() : null );
+                    put( "TimeLimit", input.getTimeLimit() );
+                    put( "CallBackUrl", input.getCallBackUrl() );
+                    put( "Fileformat", (null != input.getFileformat()) ? input.getFileformat().value() : null );
             }
         };
 
@@ -692,28 +556,14 @@ public class CallController extends BaseController {
 
     /**
      * Voice Effect
-     * @param    callSid    Required parameter: Example: 
-     * @param    audioDirection    Optional parameter: Example: 
-     * @param    pitchSemiTones    Optional parameter: value between -14 and 14
-     * @param    pitchOctaves    Optional parameter: value between -1 and 1
-     * @param    pitch    Optional parameter: value greater than 0
-     * @param    rate    Optional parameter: value greater than 0
-     * @param    tempo    Optional parameter: value greater than 0
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateVoiceEffectInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createVoiceEffect(
-                final String callSid,
-                final AudioDirection audioDirection,
-                final Double pitchSemiTones,
-                final Double pitchOctaves,
-                final Double pitch,
-                final Double rate,
-                final Double tempo,
-                final String responseType
+                final CreateVoiceEffectInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createVoiceEffectAsync(callSid, audioDirection, pitchSemiTones, pitchOctaves, pitch, rate, tempo, responseType, callback);
+        createVoiceEffectAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -721,50 +571,36 @@ public class CallController extends BaseController {
 
     /**
      * Voice Effect
-     * @param    callSid    Required parameter: Example: 
-     * @param    audioDirection    Optional parameter: Example: 
-     * @param    pitchSemiTones    Optional parameter: value between -14 and 14
-     * @param    pitchOctaves    Optional parameter: value between -1 and 1
-     * @param    pitch    Optional parameter: value greater than 0
-     * @param    rate    Optional parameter: value greater than 0
-     * @param    tempo    Optional parameter: value greater than 0
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateVoiceEffectInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createVoiceEffectAsync(
-                final String callSid,
-                final AudioDirection audioDirection,
-                final Double pitchSemiTones,
-                final Double pitchOctaves,
-                final Double pitch,
-                final Double rate,
-                final Double tempo,
-                final String responseType,
+                final CreateVoiceEffectInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == callSid)
-            throw new NullPointerException("The parameter \"callSid\" is a required parameter and cannot be null.");
+        if (null == input.getCallSid())
+            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/calls/voiceeffect.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5550842915845179415L;
+            private static final long serialVersionUID = 4929622383031392848L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5576034174233512258L;
+            private static final long serialVersionUID = 5171385130324170396L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -772,15 +608,15 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5541447714893549410L;
+            private static final long serialVersionUID = 4847854197453943042L;
             {
-                    put( "CallSid", callSid );
-                    put( "AudioDirection", (null != audioDirection) ? audioDirection.value() : null );
-                    put( "PitchSemiTones", pitchSemiTones );
-                    put( "PitchOctaves", pitchOctaves );
-                    put( "Pitch", pitch );
-                    put( "Rate", rate );
-                    put( "Tempo", tempo );
+                    put( "CallSid", input.getCallSid() );
+                    put( "AudioDirection", (null != input.getAudioDirection()) ? input.getAudioDirection().value() : null );
+                    put( "PitchSemiTones", input.getPitchSemiTones() );
+                    put( "PitchOctaves", input.getPitchOctaves() );
+                    put( "Pitch", input.getPitch() );
+                    put( "Rate", input.getRate() );
+                    put( "Tempo", input.getTempo() );
             }
         };
 
@@ -843,20 +679,14 @@ public class CallController extends BaseController {
 
     /**
      * Play Dtmf and send the Digit
-     * @param    callSid    Required parameter: The unique identifier of each call resource
-     * @param    playDtmf    Required parameter: DTMF digits to play to the call. 0-9, #, *, W, or w
-     * @param    playDtmfDirection    Optional parameter: The leg of the call DTMF digits should be sent to
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateSendDigitInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createSendDigit(
-                final String callSid,
-                final String playDtmf,
-                final Direction playDtmfDirection,
-                final String responseType
+                final CreateSendDigitInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createSendDigitAsync(callSid, playDtmf, playDtmfDirection, responseType, callback);
+        createSendDigitAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -864,45 +694,39 @@ public class CallController extends BaseController {
 
     /**
      * Play Dtmf and send the Digit
-     * @param    callSid    Required parameter: The unique identifier of each call resource
-     * @param    playDtmf    Required parameter: DTMF digits to play to the call. 0-9, #, *, W, or w
-     * @param    playDtmfDirection    Optional parameter: The leg of the call DTMF digits should be sent to
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateSendDigitInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createSendDigitAsync(
-                final String callSid,
-                final String playDtmf,
-                final Direction playDtmfDirection,
-                final String responseType,
+                final CreateSendDigitInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == callSid)
-            throw new NullPointerException("The parameter \"callSid\" is a required parameter and cannot be null.");
+        if (null == input.getCallSid())
+            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
 
-        if (null == playDtmf)
-            throw new NullPointerException("The parameter \"playDtmf\" is a required parameter and cannot be null.");
+        if (null == input.getPlayDtmf())
+            throw new NullPointerException("The property \"PlayDtmf\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/calls/senddigits.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4851366990762440423L;
+            private static final long serialVersionUID = 4983488455340178067L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5373858071658080565L;
+            private static final long serialVersionUID = 5508891196846078942L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -910,11 +734,11 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5172242931940133305L;
+            private static final long serialVersionUID = 4751132464311867022L;
             {
-                    put( "CallSid", callSid );
-                    put( "PlayDtmf", playDtmf );
-                    put( "PlayDtmfDirection", (null != playDtmfDirection) ? playDtmfDirection.value() : null );
+                    put( "CallSid", input.getCallSid() );
+                    put( "PlayDtmf", input.getPlayDtmf() );
+                    put( "PlayDtmfDirection", (null != input.getPlayDtmfDirection()) ? input.getPlayDtmfDirection().value() : null );
             }
         };
 
@@ -977,22 +801,14 @@ public class CallController extends BaseController {
 
     /**
      * Interrupt the Call by Call Sid
-     * @param    callSid    Required parameter: Call SId
-     * @param    url    Optional parameter: URL the in-progress call will be redirected to
-     * @param    method    Optional parameter: The method used to request the above Url parameter
-     * @param    status    Optional parameter: Status to set the in-progress call to
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateInterruptedCallInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createInterruptedCall(
-                final String callSid,
-                final String url,
-                final HttpAction method,
-                final InterruptedCallStatus status,
-                final String responseType
+                final CreateInterruptedCallInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createInterruptedCallAsync(callSid, url, method, status, responseType, callback);
+        createInterruptedCallAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -1000,44 +816,36 @@ public class CallController extends BaseController {
 
     /**
      * Interrupt the Call by Call Sid
-     * @param    callSid    Required parameter: Call SId
-     * @param    url    Optional parameter: URL the in-progress call will be redirected to
-     * @param    method    Optional parameter: The method used to request the above Url parameter
-     * @param    status    Optional parameter: Status to set the in-progress call to
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateInterruptedCallInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createInterruptedCallAsync(
-                final String callSid,
-                final String url,
-                final HttpAction method,
-                final InterruptedCallStatus status,
-                final String responseType,
+                final CreateInterruptedCallInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == callSid)
-            throw new NullPointerException("The parameter \"callSid\" is a required parameter and cannot be null.");
+        if (null == input.getCallSid())
+            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/calls/interruptcalls.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5662812619768438599L;
+            private static final long serialVersionUID = 4683191584559339694L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5367613850730361779L;
+            private static final long serialVersionUID = 5464953220100942508L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1045,12 +853,12 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5647429584951826091L;
+            private static final long serialVersionUID = 4870110757714412920L;
             {
-                    put( "CallSid", callSid );
-                    put( "Url", url );
-                    put( "Method", (null != method) ? method.value() : null );
-                    put( "Status", (null != status) ? status.value() : null );
+                    put( "CallSid", input.getCallSid() );
+                    put( "Url", input.getUrl() );
+                    put( "Method", (null != input.getMethod()) ? input.getMethod().value() : null );
+                    put( "Status", (null != input.getStatus()) ? input.getStatus().value() : null );
             }
         };
 
@@ -1113,24 +921,14 @@ public class CallController extends BaseController {
 
     /**
      * A list of calls associated with your Message360 account
-     * @param    page    Optional parameter: Which page of the overall response will be returned. Zero indexed
-     * @param    pageSize    Optional parameter: Number of individual resources listed in the response per page
-     * @param    to    Optional parameter: Only list calls to this number
-     * @param    from    Optional parameter: Only list calls from this number
-     * @param    dateCreated    Optional parameter: Only list calls starting within the specified date range
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateListCallsInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createListCalls(
-                final String page,
-                final String pageSize,
-                final String to,
-                final String from,
-                final String dateCreated,
-                final String responseType
+                final CreateListCallsInput input
     ) throws Throwable {
         APICallBackCatcher<Object> callback = new APICallBackCatcher<Object>();
-        createListCallsAsync(page, pageSize, to, from, dateCreated, responseType, callback);
+        createListCallsAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         callback.getResult();
@@ -1138,42 +936,32 @@ public class CallController extends BaseController {
 
     /**
      * A list of calls associated with your Message360 account
-     * @param    page    Optional parameter: Which page of the overall response will be returned. Zero indexed
-     * @param    pageSize    Optional parameter: Number of individual resources listed in the response per page
-     * @param    to    Optional parameter: Only list calls to this number
-     * @param    from    Optional parameter: Only list calls from this number
-     * @param    dateCreated    Optional parameter: Only list calls starting within the specified date range
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateListCallsInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createListCallsAsync(
-                final String page,
-                final String pageSize,
-                final String to,
-                final String from,
-                final String dateCreated,
-                final String responseType,
+                final CreateListCallsInput input,
                 final APICallBack<Object> callBack
     ) {
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/calls/listcalls.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5702112760273070109L;
+            private static final long serialVersionUID = 5390366336409006092L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4889873291724695098L;
+            private static final long serialVersionUID = 5545046293647057622L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1181,13 +969,13 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5252973553224033345L;
+            private static final long serialVersionUID = 5443618290412132217L;
             {
-                    put( "Page", page );
-                    put( "PageSize", pageSize );
-                    put( "To", to );
-                    put( "From", from );
-                    put( "DateCreated", dateCreated );
+                    put( "Page", input.getPage() );
+                    put( "PageSize", input.getPageSize() );
+                    put( "To", input.getTo() );
+                    put( "From", input.getFrom() );
+                    put( "DateCreated", input.getDateCreated() );
             }
         };
 

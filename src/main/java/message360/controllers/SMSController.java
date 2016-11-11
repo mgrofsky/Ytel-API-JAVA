@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/04/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
  */
 package message360.controllers;
 
@@ -40,28 +40,14 @@ public class SMSController extends BaseController {
 
     /**
      * Send an SMS from a message360 number
-     * @param    fromcountrycode    Required parameter: From Country Code
-     * @param    from    Required parameter: SMS enabled Message360 number to send this message from
-     * @param    tocountrycode    Required parameter: To country code
-     * @param    to    Required parameter: Number to send the SMS to
-     * @param    body    Required parameter: Text Message To Send
-     * @param    method    Optional parameter: Specifies the HTTP method used to request the required URL once SMS sent.
-     * @param    messagestatuscallback    Optional parameter: URL that can be requested to receive notification when SMS has Sent. A set of default parameters will be sent here once the SMS is finished.
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateSendSMSInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createSendSMS(
-                final int fromcountrycode,
-                final String from,
-                final int tocountrycode,
-                final String to,
-                final String body,
-                final HttpAction method,
-                final String messagestatuscallback,
-                final String responseType
+                final CreateSendSMSInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createSendSMSAsync(fromcountrycode, from, tocountrycode, to, body, method, messagestatuscallback, responseType, callback);
+        createSendSMSAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -69,56 +55,42 @@ public class SMSController extends BaseController {
 
     /**
      * Send an SMS from a message360 number
-     * @param    fromcountrycode    Required parameter: From Country Code
-     * @param    from    Required parameter: SMS enabled Message360 number to send this message from
-     * @param    tocountrycode    Required parameter: To country code
-     * @param    to    Required parameter: Number to send the SMS to
-     * @param    body    Required parameter: Text Message To Send
-     * @param    method    Optional parameter: Specifies the HTTP method used to request the required URL once SMS sent.
-     * @param    messagestatuscallback    Optional parameter: URL that can be requested to receive notification when SMS has Sent. A set of default parameters will be sent here once the SMS is finished.
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateSendSMSInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createSendSMSAsync(
-                final int fromcountrycode,
-                final String from,
-                final int tocountrycode,
-                final String to,
-                final String body,
-                final HttpAction method,
-                final String messagestatuscallback,
-                final String responseType,
+                final CreateSendSMSInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == from)
-            throw new NullPointerException("The parameter \"from\" is a required parameter and cannot be null.");
+        if (null == input.getFrom())
+            throw new NullPointerException("The property \"From\" in the input object cannot be null.");
 
-        if (null == to)
-            throw new NullPointerException("The parameter \"to\" is a required parameter and cannot be null.");
+        if (null == input.getTo())
+            throw new NullPointerException("The property \"To\" in the input object cannot be null.");
 
-        if (null == body)
-            throw new NullPointerException("The parameter \"body\" is a required parameter and cannot be null.");
+        if (null == input.getBody())
+            throw new NullPointerException("The property \"Body\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/sms/sendsms.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5233754105260633159L;
+            private static final long serialVersionUID = 4894366080586286989L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4970718081418289883L;
+            private static final long serialVersionUID = 4807359467683720595L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -126,15 +98,15 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4681812066894801112L;
+            private static final long serialVersionUID = 5147940960540659044L;
             {
-                    put( "fromcountrycode", fromcountrycode );
-                    put( "from", from );
-                    put( "tocountrycode", tocountrycode );
-                    put( "to", to );
-                    put( "body", body );
-                    put( "method", (null != method) ? method.value() : null );
-                    put( "messagestatuscallback", messagestatuscallback );
+                    put( "fromcountrycode", input.getFromcountrycode() );
+                    put( "from", input.getFrom() );
+                    put( "tocountrycode", input.getTocountrycode() );
+                    put( "to", input.getTo() );
+                    put( "body", input.getBody() );
+                    put( "method", (null != input.getMethod()) ? input.getMethod().value() : null );
+                    put( "messagestatuscallback", input.getMessagestatuscallback() );
             }
         };
 
@@ -197,16 +169,14 @@ public class SMSController extends BaseController {
 
     /**
      * View Particular SMS
-     * @param    messagesid    Required parameter: Message sid
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateViewSMSInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createViewSMS(
-                final String messagesid,
-                final String responseType
+                final CreateViewSMSInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewSMSAsync(messagesid, responseType, callback);
+        createViewSMSAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -214,38 +184,36 @@ public class SMSController extends BaseController {
 
     /**
      * View Particular SMS
-     * @param    messagesid    Required parameter: Message sid
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateViewSMSInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createViewSMSAsync(
-                final String messagesid,
-                final String responseType,
+                final CreateViewSMSInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == messagesid)
-            throw new NullPointerException("The parameter \"messagesid\" is a required parameter and cannot be null.");
+        if (null == input.getMessagesid())
+            throw new NullPointerException("The property \"Messagesid\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/sms/viewsms.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4874573953845098519L;
+            private static final long serialVersionUID = 5549035704194495340L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5206789525434616603L;
+            private static final long serialVersionUID = 5014602482441479610L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -253,9 +221,9 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4984777777643481857L;
+            private static final long serialVersionUID = 5596381497012686497L;
             {
-                    put( "messagesid", messagesid );
+                    put( "messagesid", input.getMessagesid() );
             }
         };
 
@@ -318,24 +286,14 @@ public class SMSController extends BaseController {
 
     /**
      * List All SMS
-     * @param    page    Optional parameter: Which page of the overall response will be returned. Zero indexed
-     * @param    pagesize    Optional parameter: Number of individual resources listed in the response per page
-     * @param    from    Optional parameter: Messages sent from this number
-     * @param    to    Optional parameter: Messages sent to this number
-     * @param    datesent    Optional parameter: Only list SMS messages sent in the specified date range
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateListSMSInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createListSMS(
-                final Integer page,
-                final Integer pagesize,
-                final String from,
-                final String to,
-                final String datesent,
-                final String responseType
+                final CreateListSMSInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createListSMSAsync(page, pagesize, from, to, datesent, responseType, callback);
+        createListSMSAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -343,42 +301,32 @@ public class SMSController extends BaseController {
 
     /**
      * List All SMS
-     * @param    page    Optional parameter: Which page of the overall response will be returned. Zero indexed
-     * @param    pagesize    Optional parameter: Number of individual resources listed in the response per page
-     * @param    from    Optional parameter: Messages sent from this number
-     * @param    to    Optional parameter: Messages sent to this number
-     * @param    datesent    Optional parameter: Only list SMS messages sent in the specified date range
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateListSMSInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createListSMSAsync(
-                final Integer page,
-                final Integer pagesize,
-                final String from,
-                final String to,
-                final String datesent,
-                final String responseType,
+                final CreateListSMSInput input,
                 final APICallBack<String> callBack
     ) {
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/sms/listsms.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4755893401676589503L;
+            private static final long serialVersionUID = 5106655456120969823L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5081480714863578228L;
+            private static final long serialVersionUID = 5013943024600002903L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -386,13 +334,13 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5291953992207725035L;
+            private static final long serialVersionUID = 5168358555532709706L;
             {
-                    put( "page", page );
-                    put( "pagesize", pagesize );
-                    put( "from", from );
-                    put( "to", to );
-                    put( "datesent", datesent );
+                    put( "page", input.getPage() );
+                    put( "pagesize", input.getPagesize() );
+                    put( "from", input.getFrom() );
+                    put( "to", input.getTo() );
+                    put( "datesent", input.getDatesent() );
             }
         };
 
@@ -455,22 +403,14 @@ public class SMSController extends BaseController {
 
     /**
      * List All Inbound SMS
-     * @param    page    Optional parameter: Which page of the overall response will be returned. Zero indexed
-     * @param    pagesize    Optional parameter: Number of individual resources listed in the response per page
-     * @param    from    Optional parameter: From Number to Inbound SMS
-     * @param    to    Optional parameter: To Number to get Inbound SMS
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateListInboundSMSInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
     public String createListInboundSMS(
-                final Integer page,
-                final String pagesize,
-                final String from,
-                final String to,
-                final String responseType
+                final CreateListInboundSMSInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createListInboundSMSAsync(page, pagesize, from, to, responseType, callback);
+        createListInboundSMSAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -478,40 +418,32 @@ public class SMSController extends BaseController {
 
     /**
      * List All Inbound SMS
-     * @param    page    Optional parameter: Which page of the overall response will be returned. Zero indexed
-     * @param    pagesize    Optional parameter: Number of individual resources listed in the response per page
-     * @param    from    Optional parameter: From Number to Inbound SMS
-     * @param    to    Optional parameter: To Number to get Inbound SMS
-     * @param    responseType    Optional parameter: Response format, xml or json
+     * @param    CreateListInboundSMSInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
     public void createListInboundSMSAsync(
-                final Integer page,
-                final String pagesize,
-                final String from,
-                final String to,
-                final String responseType,
+                final CreateListInboundSMSInput input,
                 final APICallBack<String> callBack
     ) {
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
-
+        
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
         _queryBuilder.append("/sms/getInboundsms.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5304672937016735356L;
+            private static final long serialVersionUID = 5182495280874954619L;
             {
-                    put( "ResponseType", (null != responseType) ? responseType : "json" );
+                    put( "ResponseType", input.getResponseType() );
             }});
         //validate and preprocess url
         String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4655453409545717892L;
+            private static final long serialVersionUID = 4864087157031466180L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -519,12 +451,12 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4731230126912965557L;
+            private static final long serialVersionUID = 5679286445487490561L;
             {
-                    put( "page", page );
-                    put( "pagesize", pagesize );
-                    put( "from", from );
-                    put( "to", to );
+                    put( "page", input.getPage() );
+                    put( "pagesize", input.getPagesize() );
+                    put( "from", input.getFrom() );
+                    put( "to", input.getTo() );
             }
         };
 

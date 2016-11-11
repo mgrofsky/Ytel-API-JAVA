@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC BETA v2.0 on 11/04/2016
+ * This file was automatically generated for message360 by APIMATIC BETA v2.0 on 11/11/2016
  */
 package message360.http.client;
 
