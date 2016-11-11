@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/04/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
  */
 package message360;
 
@@ -42,6 +42,22 @@ public class Message360Client {
     }
 
     /**
+     * Singleton access to WebRTC controller
+     * @return	Returns the WebRTCController instance 
+     */
+    public WebRTCController getWebRTC() {
+        return WebRTCController.getInstance();
+    }
+
+    /**
+     * Singleton access to Recording controller
+     * @return	Returns the RecordingController instance 
+     */
+    public RecordingController getRecording() {
+        return RecordingController.getInstance();
+    }
+
+    /**
      * Singleton access to Email controller
      * @return	Returns the EmailController instance 
      */
@@ -63,14 +79,6 @@ public class Message360Client {
      */
     public AccountController getAccount() {
         return AccountController.getInstance();
-    }
-
-    /**
-     * Singleton access to Recording controller
-     * @return	Returns the RecordingController instance 
-     */
-    public RecordingController getRecording() {
-        return RecordingController.getInstance();
     }
 
     /**
