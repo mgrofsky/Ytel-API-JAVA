@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
  */
 package message360.models;
 
@@ -27,7 +27,7 @@ public class AddUnsubscribesInputBuilder {
     }
 
     /**
-     * Response format, xml or json
+     * Response type format xml or json
      */
     public AddUnsubscribesInputBuilder responseType(String responseType) {
         addUnsubscribesInput.setResponseType(responseType);

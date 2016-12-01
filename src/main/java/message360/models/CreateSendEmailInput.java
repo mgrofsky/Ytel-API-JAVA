@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSendEmailInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4725008018068188225L;
+    private static final long serialVersionUID = 4819421296336575974L;
     private String to;
     private String from;
     private SendEmailAs type = SendEmailAs.HTML;
@@ -150,7 +150,7 @@ public class CreateSendEmailInput
     }
  
     /** GETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonGetter("ResponseType")
     public String getResponseType ( ) { 
@@ -158,7 +158,7 @@ public class CreateSendEmailInput
     }
     
     /** SETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonSetter("ResponseType")
     public void setResponseType (String value) { 

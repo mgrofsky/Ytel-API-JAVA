@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateVoiceEffectInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5492130555201785736L;
+    private static final long serialVersionUID = 4888532970953635625L;
     private String callSid;
     private AudioDirection audioDirection;
     private Double pitchSemiTones;
@@ -133,7 +133,7 @@ public class CreateVoiceEffectInput
     }
  
     /** GETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonGetter("ResponseType")
     public String getResponseType ( ) { 
@@ -141,7 +141,7 @@ public class CreateVoiceEffectInput
     }
     
     /** SETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonSetter("ResponseType")
     public void setResponseType (String value) { 

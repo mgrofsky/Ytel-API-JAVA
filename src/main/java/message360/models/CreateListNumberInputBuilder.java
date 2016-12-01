@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
  */
 package message360.models;
 
@@ -34,7 +34,7 @@ public class CreateListNumberInputBuilder {
         return this;
     }
 
-    public CreateListNumberInputBuilder numberType(String numberType) {
+    public CreateListNumberInputBuilder numberType(NumberType numberType) {
         createListNumberInput.setNumberType(numberType);
         return this;
     }
@@ -45,7 +45,7 @@ public class CreateListNumberInputBuilder {
     }
 
     /**
-     * Response format, xml or json
+     * Response type format xml or json
      */
     public CreateListNumberInputBuilder responseType(String responseType) {
         createListNumberInput.setResponseType(responseType);

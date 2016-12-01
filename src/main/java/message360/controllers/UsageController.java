@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
  */
 package message360.controllers;
 
@@ -81,7 +81,7 @@ public class UsageController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5214992617243388083L;
+            private static final long serialVersionUID = 4990998206767350096L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -90,7 +90,7 @@ public class UsageController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5304435831120354441L;
+            private static final long serialVersionUID = 4938204653021410616L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -98,9 +98,9 @@ public class UsageController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4873713201402787956L;
+            private static final long serialVersionUID = 5483328808519009467L;
             {
-                    put( "ProductCode", input.getProductCode() );
+                    put( "ProductCode", (null != input.getProductCode()) ? input.getProductCode().value() : 0 );
                     put( "startDate", input.getStartDate() );
                     put( "endDate", input.getEndDate() );
             }

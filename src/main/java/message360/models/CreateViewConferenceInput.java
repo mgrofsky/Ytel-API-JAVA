@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateViewConferenceInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5125073990161533782L;
+    private static final long serialVersionUID = 5275117268329585523L;
     private String conferencesid;
     private String responseType = "json";
     /** GETTER
@@ -31,7 +31,7 @@ public class CreateViewConferenceInput
     }
  
     /** GETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonGetter("ResponseType")
     public String getResponseType ( ) { 
@@ -39,7 +39,7 @@ public class CreateViewConferenceInput
     }
     
     /** SETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonSetter("ResponseType")
     public void setResponseType (String value) { 

@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateInterruptedCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5039791339354902451L;
+    private static final long serialVersionUID = 5620811689361852379L;
     private String callSid;
     private String url;
     private HttpAction method;
@@ -82,7 +82,7 @@ public class CreateInterruptedCallInput
     }
  
     /** GETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonGetter("ResponseType")
     public String getResponseType ( ) { 
@@ -90,7 +90,7 @@ public class CreateInterruptedCallInput
     }
     
     /** SETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonSetter("ResponseType")
     public void setResponseType (String value) { 

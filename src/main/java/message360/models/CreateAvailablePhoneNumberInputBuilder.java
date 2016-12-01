@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
  */
 package message360.models;
 
@@ -21,7 +21,7 @@ public class CreateAvailablePhoneNumberInputBuilder {
     /**
      * Number type either SMS,Voice or all
      */
-    public CreateAvailablePhoneNumberInputBuilder numberType(String numberType) {
+    public CreateAvailablePhoneNumberInputBuilder numberType(NumberType numberType) {
         createAvailablePhoneNumberInput.setNumberType(numberType);
         return this;
     }
@@ -43,7 +43,7 @@ public class CreateAvailablePhoneNumberInputBuilder {
     }
 
     /**
-     * Response format, xml or json
+     * Response type format xml or json
      */
     public CreateAvailablePhoneNumberInputBuilder responseType(String responseType) {
         createAvailablePhoneNumberInput.setResponseType(responseType);

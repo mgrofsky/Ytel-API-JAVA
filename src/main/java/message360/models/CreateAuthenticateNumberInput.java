@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateAuthenticateNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5518221208475450752L;
+    private static final long serialVersionUID = 5752553734081419751L;
     private String phoneNumber;
     private String accountSid;
     private String authToken;

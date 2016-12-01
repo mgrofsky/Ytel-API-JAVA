@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
  */
 package message360.models;
 
@@ -21,7 +21,7 @@ public class CreateListCallsInputBuilder {
     /**
      * Which page of the overall response will be returned. Zero indexed
      */
-    public CreateListCallsInputBuilder page(String page) {
+    public CreateListCallsInputBuilder page(Integer page) {
         createListCallsInput.setPage(page);
         return this;
     }
@@ -29,7 +29,7 @@ public class CreateListCallsInputBuilder {
     /**
      * Number of individual resources listed in the response per page
      */
-    public CreateListCallsInputBuilder pageSize(String pageSize) {
+    public CreateListCallsInputBuilder pageSize(Integer pageSize) {
         createListCallsInput.setPageSize(pageSize);
         return this;
     }
@@ -59,7 +59,7 @@ public class CreateListCallsInputBuilder {
     }
 
     /**
-     * Response format, xml or json
+     * Response type format xml or json
      */
     public CreateListCallsInputBuilder responseType(String responseType) {
         createListCallsInput.setResponseType(responseType);
