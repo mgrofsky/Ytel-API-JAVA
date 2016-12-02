@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateRecordCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5378924240330622229L;
+    private static final long serialVersionUID = 5580903939261383552L;
     private String callSid;
     private boolean record;
     private Direction direction;

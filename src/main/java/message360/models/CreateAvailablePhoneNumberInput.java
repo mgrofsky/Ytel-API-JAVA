@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateAvailablePhoneNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4688275244900929293L;
+    private static final long serialVersionUID = 4629741903368595713L;
     private NumberType numberType;
     private String areaCode;
     private Integer pageSize;

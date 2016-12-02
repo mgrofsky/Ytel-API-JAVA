@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateListUsageInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5525076289819535247L;
+    private static final long serialVersionUID = 5507805847153338522L;
     private ProductCode productCode = ProductCode.ALL;
     private String startDate = "2016-09-06";
     private String endDate = "2016-09-06";

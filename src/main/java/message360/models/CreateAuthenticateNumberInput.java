@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateAuthenticateNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4995536495597296539L;
+    private static final long serialVersionUID = 5127677264946485795L;
     private String phoneNumber;
     private String accountSid;
     private String authToken;
