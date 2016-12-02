@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
  */
 package message360.models;
 
@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateListUsageInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4761383574993821445L;
-    private String productCode = "0";
+    private static final long serialVersionUID = 5525076289819535247L;
+    private ProductCode productCode = ProductCode.ALL;
     private String startDate = "2016-09-06";
     private String endDate = "2016-09-06";
     private String responseType = "json";
@@ -20,7 +20,7 @@ public class CreateListUsageInput
      * Product Code
      */
     @JsonGetter("ProductCode")
-    public String getProductCode ( ) { 
+    public ProductCode getProductCode ( ) { 
         return this.productCode;
     }
     
@@ -28,7 +28,7 @@ public class CreateListUsageInput
      * Product Code
      */
     @JsonSetter("ProductCode")
-    public void setProductCode (String value) { 
+    public void setProductCode (ProductCode value) { 
         this.productCode = value;
     }
  
@@ -65,7 +65,7 @@ public class CreateListUsageInput
     }
  
     /** GETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonGetter("ResponseType")
     public String getResponseType ( ) { 
@@ -73,7 +73,7 @@ public class CreateListUsageInput
     }
     
     /** SETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonSetter("ResponseType")
     public void setResponseType (String value) { 

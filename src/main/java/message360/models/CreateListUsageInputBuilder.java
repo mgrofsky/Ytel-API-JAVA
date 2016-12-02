@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
  */
 package message360.models;
 
@@ -21,7 +21,7 @@ public class CreateListUsageInputBuilder {
     /**
      * Product Code
      */
-    public CreateListUsageInputBuilder productCode(String productCode) {
+    public CreateListUsageInputBuilder productCode(ProductCode productCode) {
         createListUsageInput.setProductCode(productCode);
         return this;
     }
@@ -43,7 +43,7 @@ public class CreateListUsageInputBuilder {
     }
 
     /**
-     * Response format, xml or json
+     * Response type format xml or json
      */
     public CreateListUsageInputBuilder responseType(String responseType) {
         createListUsageInput.setResponseType(responseType);

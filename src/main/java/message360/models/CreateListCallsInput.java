@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
  */
 package message360.models;
 
@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateListCallsInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5173983037546729219L;
-    private String page;
-    private String pageSize;
+    private static final long serialVersionUID = 5417388412345465512L;
+    private Integer page;
+    private Integer pageSize;
     private String to;
     private String from;
     private String dateCreated;
@@ -22,7 +22,7 @@ public class CreateListCallsInput
      * Which page of the overall response will be returned. Zero indexed
      */
     @JsonGetter("Page")
-    public String getPage ( ) { 
+    public Integer getPage ( ) { 
         return this.page;
     }
     
@@ -30,7 +30,7 @@ public class CreateListCallsInput
      * Which page of the overall response will be returned. Zero indexed
      */
     @JsonSetter("Page")
-    public void setPage (String value) { 
+    public void setPage (Integer value) { 
         this.page = value;
     }
  
@@ -38,7 +38,7 @@ public class CreateListCallsInput
      * Number of individual resources listed in the response per page
      */
     @JsonGetter("PageSize")
-    public String getPageSize ( ) { 
+    public Integer getPageSize ( ) { 
         return this.pageSize;
     }
     
@@ -46,7 +46,7 @@ public class CreateListCallsInput
      * Number of individual resources listed in the response per page
      */
     @JsonSetter("PageSize")
-    public void setPageSize (String value) { 
+    public void setPageSize (Integer value) { 
         this.pageSize = value;
     }
  
@@ -99,7 +99,7 @@ public class CreateListCallsInput
     }
  
     /** GETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonGetter("ResponseType")
     public String getResponseType ( ) { 
@@ -107,7 +107,7 @@ public class CreateListCallsInput
     }
     
     /** SETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonSetter("ResponseType")
     public void setResponseType (String value) { 

@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
  */
 package message360.controllers;
 
@@ -39,27 +39,27 @@ public class ConferenceController extends BaseController {
     }
 
     /**
-     * View Participant
-     * @param    CreateViewParticipantInput    Object containing request parameters
+     * Deaf Mute Participant
+     * @param    CreateDeafMuteParticipantInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createViewParticipant(
-                final CreateViewParticipantInput input
+    public String createDeafMuteParticipant(
+                final CreateDeafMuteParticipantInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewParticipantAsync(input, callback);
+        createDeafMuteParticipantAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * View Participant
-     * @param    CreateViewParticipantInput    Object containing request parameters
+     * Deaf Mute Participant
+     * @param    CreateDeafMuteParticipantInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createViewParticipantAsync(
-                final CreateViewParticipantInput input,
+    public void createDeafMuteParticipantAsync(
+                final CreateDeafMuteParticipantInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -74,11 +74,11 @@ public class ConferenceController extends BaseController {
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/conferences/viewparticipant.{ResponseType}");
+        _queryBuilder.append("/conferences/deafMuteParticipant.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5176554684077838942L;
+            private static final long serialVersionUID = 4920134027413940301L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +87,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5290030507766351955L;
+            private static final long serialVersionUID = 4835578589374982019L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -95,10 +95,12 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5338940189704142930L;
+            private static final long serialVersionUID = 5394677450567848463L;
             {
-                    put( "ConferenceSid", input.getConferenceSid() );
+                    put( "conferenceSid", input.getConferenceSid() );
                     put( "ParticipantSid", input.getParticipantSid() );
+                    put( "Muted", input.getMuted() );
+                    put( "Deaf", input.getDeaf() );
             }
         };
 
@@ -160,43 +162,39 @@ public class ConferenceController extends BaseController {
     }
 
     /**
-     * List Participant
-     * @param    CreateListParticipantInput    Object containing request parameters
+     * List Conference
+     * @param    CreateListConferenceInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createListParticipant(
-                final CreateListParticipantInput input
+    public String createListConference(
+                final CreateListConferenceInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createListParticipantAsync(input, callback);
+        createListConferenceAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * List Participant
-     * @param    CreateListParticipantInput    Object containing request parameters
+     * List Conference
+     * @param    CreateListConferenceInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createListParticipantAsync(
-                final CreateListParticipantInput input,
+    public void createListConferenceAsync(
+                final CreateListConferenceInput input,
                 final APICallBack<String> callBack
     ) {
-        //validating required parameters
-        if (null == input.getConferenceSid())
-            throw new NullPointerException("The property \"ConferenceSid\" in the input object cannot be null.");
-
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/conferences/listparticipant.{ResponseType}");
+        _queryBuilder.append("/conferences/listconference.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5062403151017069154L;
+            private static final long serialVersionUID = 5457854058668658618L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -205,7 +203,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5455003185026223021L;
+            private static final long serialVersionUID = 5528176208536778450L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -213,13 +211,131 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4641676876442210135L;
+            private static final long serialVersionUID = 5462989767809568095L;
             {
-                    put( "ConferenceSid", input.getConferenceSid() );
                     put( "Page", input.getPage() );
-                    put( "Pagesize", input.getPagesize() );
-                    put( "Muted", input.getMuted() );
-                    put( "Deaf", input.getDeaf() );
+                    put( "PageSize", input.getPageSize() );
+                    put( "FriendlyName", input.getFriendlyName() );
+                    put( "Status", (null != input.getStatus()) ? input.getStatus().value() : null );
+                    put( "DateCreated", input.getDateCreated() );
+                    put( "DateUpdated", input.getDateUpdated() );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * View Conference
+     * @param    CreateViewConferenceInput    Object containing request parameters
+     * @return    Returns the String response from the API call 
+     */
+    public String createViewConference(
+                final CreateViewConferenceInput input
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        createViewConferenceAsync(input, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * View Conference
+     * @param    CreateViewConferenceInput    Object containing request parameters
+     * @return    Returns the void response from the API call 
+     */
+    public void createViewConferenceAsync(
+                final CreateViewConferenceInput input,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == input.getConferencesid())
+            throw new NullPointerException("The property \"Conferencesid\" in the input object cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.baseUri;
+        
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/conferences/viewconference.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5482929290374565917L;
+            {
+                    put( "ResponseType", input.getResponseType() );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 4690277917203812977L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 4683797362438607872L;
+            {
+                    put( "conferencesid", input.getConferencesid() );
             }
         };
 
@@ -320,7 +436,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4779226209475708701L;
+            private static final long serialVersionUID = 4844460077176309012L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -329,7 +445,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5529331750182000835L;
+            private static final long serialVersionUID = 5164212347351691895L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -337,7 +453,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4869206240726585156L;
+            private static final long serialVersionUID = 5087049788912304106L;
             {
                     put( "conferencesid", input.getConferencesid() );
                     put( "participantnumber", input.getParticipantnumber() );
@@ -405,43 +521,43 @@ public class ConferenceController extends BaseController {
     }
 
     /**
-     * View Conference
-     * @param    CreateViewConferenceInput    Object containing request parameters
+     * List Participant
+     * @param    CreateListParticipantInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createViewConference(
-                final CreateViewConferenceInput input
+    public String createListParticipant(
+                final CreateListParticipantInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewConferenceAsync(input, callback);
+        createListParticipantAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * View Conference
-     * @param    CreateViewConferenceInput    Object containing request parameters
+     * List Participant
+     * @param    CreateListParticipantInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createViewConferenceAsync(
-                final CreateViewConferenceInput input,
+    public void createListParticipantAsync(
+                final CreateListParticipantInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == input.getConferencesid())
-            throw new NullPointerException("The property \"Conferencesid\" in the input object cannot be null.");
+        if (null == input.getConferenceSid())
+            throw new NullPointerException("The property \"ConferenceSid\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/conferences/viewconference.{ResponseType}");
+        _queryBuilder.append("/conferences/listparticipant.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4947522128474265694L;
+            private static final long serialVersionUID = 4963836949874208523L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -450,7 +566,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4866094246264157577L;
+            private static final long serialVersionUID = 4789037236876120445L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -458,9 +574,13 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5203336398083814464L;
+            private static final long serialVersionUID = 5075910346267261702L;
             {
-                    put( "conferencesid", input.getConferencesid() );
+                    put( "ConferenceSid", input.getConferenceSid() );
+                    put( "Page", input.getPage() );
+                    put( "Pagesize", input.getPagesize() );
+                    put( "Muted", input.getMuted() );
+                    put( "Deaf", input.getDeaf() );
             }
         };
 
@@ -522,39 +642,46 @@ public class ConferenceController extends BaseController {
     }
 
     /**
-     * List Conference
-     * @param    CreateListConferenceInput    Object containing request parameters
+     * View Participant
+     * @param    CreateViewParticipantInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createListConference(
-                final CreateListConferenceInput input
+    public String createViewParticipant(
+                final CreateViewParticipantInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createListConferenceAsync(input, callback);
+        createViewParticipantAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * List Conference
-     * @param    CreateListConferenceInput    Object containing request parameters
+     * View Participant
+     * @param    CreateViewParticipantInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createListConferenceAsync(
-                final CreateListConferenceInput input,
+    public void createViewParticipantAsync(
+                final CreateViewParticipantInput input,
                 final APICallBack<String> callBack
     ) {
+        //validating required parameters
+        if (null == input.getConferenceSid())
+            throw new NullPointerException("The property \"ConferenceSid\" in the input object cannot be null.");
+
+        if (null == input.getParticipantSid())
+            throw new NullPointerException("The property \"ParticipantSid\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/conferences/listconference.{ResponseType}");
+        _queryBuilder.append("/conferences/viewparticipant.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4952145695125843733L;
+            private static final long serialVersionUID = 5432060399025070208L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -563,7 +690,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5104561055449066523L;
+            private static final long serialVersionUID = 5564553118117653763L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -571,14 +698,10 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5071157049710922885L;
+            private static final long serialVersionUID = 5461418876074210231L;
             {
-                    put( "Page", input.getPage() );
-                    put( "PageSize", input.getPageSize() );
-                    put( "FriendlyName", input.getFriendlyName() );
-                    put( "Status", (null != input.getStatus()) ? input.getStatus().value() : null );
-                    put( "DateCreated", input.getDateCreated() );
-                    put( "DateUpdated", input.getDateUpdated() );
+                    put( "ConferenceSid", input.getConferenceSid() );
+                    put( "ParticipantSid", input.getParticipantSid() );
             }
         };
 

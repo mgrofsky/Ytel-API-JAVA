@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
  */
 package message360.models;
 
@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateAvailablePhoneNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5043793540878590771L;
-    private String numberType;
+    private static final long serialVersionUID = 4688275244900929293L;
+    private NumberType numberType;
     private String areaCode;
     private Integer pageSize;
     private String responseType = "json";
@@ -20,7 +20,7 @@ public class CreateAvailablePhoneNumberInput
      * Number type either SMS,Voice or all
      */
     @JsonGetter("NumberType")
-    public String getNumberType ( ) { 
+    public NumberType getNumberType ( ) { 
         return this.numberType;
     }
     
@@ -28,7 +28,7 @@ public class CreateAvailablePhoneNumberInput
      * Number type either SMS,Voice or all
      */
     @JsonSetter("NumberType")
-    public void setNumberType (String value) { 
+    public void setNumberType (NumberType value) { 
         this.numberType = value;
     }
  
@@ -65,7 +65,7 @@ public class CreateAvailablePhoneNumberInput
     }
  
     /** GETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonGetter("ResponseType")
     public String getResponseType ( ) { 
@@ -73,7 +73,7 @@ public class CreateAvailablePhoneNumberInput
     }
     
     /** SETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonSetter("ResponseType")
     public void setResponseType (String value) { 

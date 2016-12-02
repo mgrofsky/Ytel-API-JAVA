@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
  */
 package message360.models;
 
@@ -16,38 +16,6 @@ public class CreatePlayAudioInputBuilder {
      */
     public CreatePlayAudioInputBuilder() {
         createPlayAudioInput = new CreatePlayAudioInput();
-    }
-
-    /**
-     * Time limit in seconds for audio play back
-     */
-    public CreatePlayAudioInputBuilder length(int length) {
-        createPlayAudioInput.setLength(length);
-        return this;
-    }
-
-    /**
-     * The leg of the call audio will be played to
-     */
-    public CreatePlayAudioInputBuilder direction(Direction direction) {
-        createPlayAudioInput.setDirection(direction);
-        return this;
-    }
-
-    /**
-     * Repeat audio playback indefinitely
-     */
-    public CreatePlayAudioInputBuilder loop(boolean loop) {
-        createPlayAudioInput.setLoop(loop);
-        return this;
-    }
-
-    /**
-     * If false, all other audio will be muted
-     */
-    public CreatePlayAudioInputBuilder mix(boolean mix) {
-        createPlayAudioInput.setMix(mix);
-        return this;
     }
 
     /**
@@ -67,7 +35,39 @@ public class CreatePlayAudioInputBuilder {
     }
 
     /**
-     * Response format, xml or json
+     * Time limit in seconds for audio play back
+     */
+    public CreatePlayAudioInputBuilder length(Integer length) {
+        createPlayAudioInput.setLength(length);
+        return this;
+    }
+
+    /**
+     * The leg of the call audio will be played to
+     */
+    public CreatePlayAudioInputBuilder direction(Direction direction) {
+        createPlayAudioInput.setDirection(direction);
+        return this;
+    }
+
+    /**
+     * Repeat audio playback indefinitely
+     */
+    public CreatePlayAudioInputBuilder loop(Boolean loop) {
+        createPlayAudioInput.setLoop(loop);
+        return this;
+    }
+
+    /**
+     * If false, all other audio will be muted
+     */
+    public CreatePlayAudioInputBuilder mix(Boolean mix) {
+        createPlayAudioInput.setMix(mix);
+        return this;
+    }
+
+    /**
+     * Response type format xml or json
      */
     public CreatePlayAudioInputBuilder responseType(String responseType) {
         createPlayAudioInput.setResponseType(responseType);

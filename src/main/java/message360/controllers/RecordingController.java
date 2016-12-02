@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
  */
 package message360.controllers;
 
@@ -39,43 +39,39 @@ public class RecordingController extends BaseController {
     }
 
     /**
-     * View a specific Recording
-     * @param    CreateViewRecordingInput    Object containing request parameters
+     * List out Recordings
+     * @param    CreateListRecordingInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createViewRecording(
-                final CreateViewRecordingInput input
+    public String createListRecording(
+                final CreateListRecordingInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewRecordingAsync(input, callback);
+        createListRecordingAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * View a specific Recording
-     * @param    CreateViewRecordingInput    Object containing request parameters
+     * List out Recordings
+     * @param    CreateListRecordingInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createViewRecordingAsync(
-                final CreateViewRecordingInput input,
+    public void createListRecordingAsync(
+                final CreateListRecordingInput input,
                 final APICallBack<String> callBack
     ) {
-        //validating required parameters
-        if (null == input.getRecordingSid())
-            throw new NullPointerException("The property \"RecordingSid\" in the input object cannot be null.");
-
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/recording/viewrecording.{ResponseType}");
+        _queryBuilder.append("/recording/listrecording.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5003155627538724548L;
+            private static final long serialVersionUID = 5525459320247148415L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -84,7 +80,7 @@ public class RecordingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4941754745076806970L;
+            private static final long serialVersionUID = 5001524281670113774L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -92,9 +88,12 @@ public class RecordingController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5513444531795878736L;
+            private static final long serialVersionUID = 4918379145627975614L;
             {
-                    put( "RecordingSid", input.getRecordingSid() );
+                    put( "Page", input.getPage() );
+                    put( "PageSize", input.getPageSize() );
+                    put( "DateCreated", input.getDateCreated() );
+                    put( "CallSid", input.getCallSid() );
             }
         };
 
@@ -192,7 +191,7 @@ public class RecordingController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5437654443673680318L;
+            private static final long serialVersionUID = 5165803261559848289L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -201,7 +200,7 @@ public class RecordingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5398021977271284794L;
+            private static final long serialVersionUID = 5397472029565539810L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -209,7 +208,7 @@ public class RecordingController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5283133723966923643L;
+            private static final long serialVersionUID = 4953389244010007737L;
             {
                     put( "RecordingSid", input.getRecordingSid() );
             }
@@ -273,39 +272,43 @@ public class RecordingController extends BaseController {
     }
 
     /**
-     * List out Recordings
-     * @param    CreateListRecordingInput    Object containing request parameters
+     * View a specific Recording
+     * @param    CreateViewRecordingInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createListRecording(
-                final CreateListRecordingInput input
+    public String createViewRecording(
+                final CreateViewRecordingInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createListRecordingAsync(input, callback);
+        createViewRecordingAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * List out Recordings
-     * @param    CreateListRecordingInput    Object containing request parameters
+     * View a specific Recording
+     * @param    CreateViewRecordingInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createListRecordingAsync(
-                final CreateListRecordingInput input,
+    public void createViewRecordingAsync(
+                final CreateViewRecordingInput input,
                 final APICallBack<String> callBack
     ) {
+        //validating required parameters
+        if (null == input.getRecordingSid())
+            throw new NullPointerException("The property \"RecordingSid\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.baseUri;
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/recording/listrecording.{ResponseType}");
+        _queryBuilder.append("/recording/viewrecording.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5672630702213123488L;
+            private static final long serialVersionUID = 5369776605844337418L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -314,7 +317,7 @@ public class RecordingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4827186863020110729L;
+            private static final long serialVersionUID = 5534322532055281448L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -322,12 +325,9 @@ public class RecordingController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5758177576424999285L;
+            private static final long serialVersionUID = 5668013290673778283L;
             {
-                    put( "Page", input.getPage() );
-                    put( "PageSize", input.getPageSize() );
-                    put( "DateCreated", input.getDateCreated() );
-                    put( "CallSid", input.getCallSid() );
+                    put( "RecordingSid", input.getRecordingSid() );
             }
         };
 

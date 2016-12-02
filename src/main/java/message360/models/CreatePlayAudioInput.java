@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
  */
 package message360.models;
 
@@ -11,78 +11,14 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreatePlayAudioInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4721111126485674652L;
-    private int length;
-    private Direction direction;
-    private boolean loop;
-    private boolean mix;
+    private static final long serialVersionUID = 4616846509038855540L;
     private String callSid;
     private String audioUrl;
+    private Integer length;
+    private Direction direction;
+    private Boolean loop;
+    private Boolean mix;
     private String responseType = "json";
-    /** GETTER
-     * Time limit in seconds for audio play back
-     */
-    @JsonGetter("Length")
-    public int getLength ( ) { 
-        return this.length;
-    }
-    
-    /** SETTER
-     * Time limit in seconds for audio play back
-     */
-    @JsonSetter("Length")
-    public void setLength (int value) { 
-        this.length = value;
-    }
- 
-    /** GETTER
-     * The leg of the call audio will be played to
-     */
-    @JsonGetter("Direction")
-    public Direction getDirection ( ) { 
-        return this.direction;
-    }
-    
-    /** SETTER
-     * The leg of the call audio will be played to
-     */
-    @JsonSetter("Direction")
-    public void setDirection (Direction value) { 
-        this.direction = value;
-    }
- 
-    /** GETTER
-     * Repeat audio playback indefinitely
-     */
-    @JsonGetter("Loop")
-    public boolean getLoop ( ) { 
-        return this.loop;
-    }
-    
-    /** SETTER
-     * Repeat audio playback indefinitely
-     */
-    @JsonSetter("Loop")
-    public void setLoop (boolean value) { 
-        this.loop = value;
-    }
- 
-    /** GETTER
-     * If false, all other audio will be muted
-     */
-    @JsonGetter("Mix")
-    public boolean getMix ( ) { 
-        return this.mix;
-    }
-    
-    /** SETTER
-     * If false, all other audio will be muted
-     */
-    @JsonSetter("Mix")
-    public void setMix (boolean value) { 
-        this.mix = value;
-    }
- 
     /** GETTER
      * The unique identifier of each call resource
      */
@@ -116,7 +52,71 @@ public class CreatePlayAudioInput
     }
  
     /** GETTER
-     * Response format, xml or json
+     * Time limit in seconds for audio play back
+     */
+    @JsonGetter("Length")
+    public Integer getLength ( ) { 
+        return this.length;
+    }
+    
+    /** SETTER
+     * Time limit in seconds for audio play back
+     */
+    @JsonSetter("Length")
+    public void setLength (Integer value) { 
+        this.length = value;
+    }
+ 
+    /** GETTER
+     * The leg of the call audio will be played to
+     */
+    @JsonGetter("Direction")
+    public Direction getDirection ( ) { 
+        return this.direction;
+    }
+    
+    /** SETTER
+     * The leg of the call audio will be played to
+     */
+    @JsonSetter("Direction")
+    public void setDirection (Direction value) { 
+        this.direction = value;
+    }
+ 
+    /** GETTER
+     * Repeat audio playback indefinitely
+     */
+    @JsonGetter("Loop")
+    public Boolean getLoop ( ) { 
+        return this.loop;
+    }
+    
+    /** SETTER
+     * Repeat audio playback indefinitely
+     */
+    @JsonSetter("Loop")
+    public void setLoop (Boolean value) { 
+        this.loop = value;
+    }
+ 
+    /** GETTER
+     * If false, all other audio will be muted
+     */
+    @JsonGetter("Mix")
+    public Boolean getMix ( ) { 
+        return this.mix;
+    }
+    
+    /** SETTER
+     * If false, all other audio will be muted
+     */
+    @JsonSetter("Mix")
+    public void setMix (Boolean value) { 
+        this.mix = value;
+    }
+ 
+    /** GETTER
+     * Response type format xml or json
      */
     @JsonGetter("ResponseType")
     public String getResponseType ( ) { 
@@ -124,7 +124,7 @@ public class CreatePlayAudioInput
     }
     
     /** SETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonSetter("ResponseType")
     public void setResponseType (String value) { 

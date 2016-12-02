@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 11/11/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
  */
 package message360.models;
 
@@ -11,15 +11,15 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateCarrierLookupListInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5102984684202551600L;
-    private String page;
-    private String pagesize;
+    private static final long serialVersionUID = 5639630332357975141L;
+    private Integer page;
+    private Integer pagesize;
     private String responseType = "json";
     /** GETTER
      * Page Number
      */
     @JsonGetter("page")
-    public String getPage ( ) { 
+    public Integer getPage ( ) { 
         return this.page;
     }
     
@@ -27,7 +27,7 @@ public class CreateCarrierLookupListInput
      * Page Number
      */
     @JsonSetter("page")
-    public void setPage (String value) { 
+    public void setPage (Integer value) { 
         this.page = value;
     }
  
@@ -35,7 +35,7 @@ public class CreateCarrierLookupListInput
      * Page Size
      */
     @JsonGetter("pagesize")
-    public String getPagesize ( ) { 
+    public Integer getPagesize ( ) { 
         return this.pagesize;
     }
     
@@ -43,12 +43,12 @@ public class CreateCarrierLookupListInput
      * Page Size
      */
     @JsonSetter("pagesize")
-    public void setPagesize (String value) { 
+    public void setPagesize (Integer value) { 
         this.pagesize = value;
     }
  
     /** GETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonGetter("ResponseType")
     public String getResponseType ( ) { 
@@ -56,7 +56,7 @@ public class CreateCarrierLookupListInput
     }
     
     /** SETTER
-     * Response format, xml or json
+     * Response type format xml or json
      */
     @JsonSetter("ResponseType")
     public void setResponseType (String value) { 
