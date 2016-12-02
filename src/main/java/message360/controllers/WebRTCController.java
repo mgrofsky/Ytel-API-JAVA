@@ -80,7 +80,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5309206727908697116L;
+            private static final long serialVersionUID = 5188748120568703878L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -88,7 +88,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5195862944399631893L;
+            private static final long serialVersionUID = 5109070552246720031L;
             {
                     put( "account_sid", input.getAccountSid() );
                     put( "auth_token", input.getAuthToken() );
@@ -192,7 +192,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4996923503913021955L;
+            private static final long serialVersionUID = 4983292570356363207L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -200,7 +200,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5422343094762151939L;
+            private static final long serialVersionUID = 5665225643258811528L;
             {
                     put( "account_sid", input.getAccountSid() );
                     put( "auth_token", input.getAuthToken() );
@@ -307,7 +307,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5333289372099778011L;
+            private static final long serialVersionUID = 5068725815780672941L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -315,7 +315,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4706636742721152833L;
+            private static final long serialVersionUID = 5308021203356925417L;
             {
                     put( "phone_number", input.getPhoneNumber() );
                     put( "account_sid", input.getAccountSid() );

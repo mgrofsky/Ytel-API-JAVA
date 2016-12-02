@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateVoiceEffectInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4846362134400342683L;
+    private static final long serialVersionUID = 5248107724557493659L;
     private String callSid;
     private AudioDirection audioDirection;
     private Double pitchSemiTones;

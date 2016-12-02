@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateDeleteAddressInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5475546015731383499L;
+    private static final long serialVersionUID = 5272335265542137647L;
     private String addressid;
     private String responseType = "json";
     /** GETTER

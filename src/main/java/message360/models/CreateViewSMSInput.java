@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateViewSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5583495947405272606L;
+    private static final long serialVersionUID = 4875835845520616228L;
     private String messagesid;
     private String responseType = "json";
     /** GETTER
