@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
  */
 package message360.controllers;
 
@@ -80,7 +80,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5553385551516243317L;
+            private static final long serialVersionUID = 5309206727908697116L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -88,7 +88,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5188196851868880469L;
+            private static final long serialVersionUID = 5195862944399631893L;
             {
                     put( "account_sid", input.getAccountSid() );
                     put( "auth_token", input.getAuthToken() );
@@ -192,7 +192,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5215373838156148917L;
+            private static final long serialVersionUID = 4996923503913021955L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -200,7 +200,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5015693071899013166L;
+            private static final long serialVersionUID = 5422343094762151939L;
             {
                     put( "account_sid", input.getAccountSid() );
                     put( "auth_token", input.getAuthToken() );
@@ -307,7 +307,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5011541383258734961L;
+            private static final long serialVersionUID = 5333289372099778011L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -315,7 +315,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5072951953753570231L;
+            private static final long serialVersionUID = 4706636742721152833L;
             {
                     put( "phone_number", input.getPhoneNumber() );
                     put( "account_sid", input.getAccountSid() );

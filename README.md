@@ -170,10 +170,10 @@ collect.setConferenceSid(conferenceSid);
 String participantSid = "ParticipantSid";
 collect.setParticipantSid(participantSid);
 
-Boolean muted = false;
+Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 String responseType = "json";
@@ -222,10 +222,10 @@ void createListConferenceAsync(
 ```java
 CreateListConferenceInput collect = new CreateListConferenceInput();
 
-Integer page = 48;
+Integer page = 142;
 collect.setPage(page);
 
-Integer pageSize = 48;
+Integer pageSize = 142;
 collect.setPageSize(pageSize);
 
 String friendlyName = "FriendlyName";
@@ -335,13 +335,13 @@ collect.setConferencesid(conferencesid);
 String participantnumber = "participantnumber";
 collect.setParticipantnumber(participantnumber);
 
-int tocountrycode = 48;
+int tocountrycode = 142;
 collect.setTocountrycode(tocountrycode);
 
-Boolean muted = false;
+Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 String responseType = "json";
@@ -392,16 +392,16 @@ CreateListParticipantInput collect = new CreateListParticipantInput();
 String conferenceSid = "ConferenceSid";
 collect.setConferenceSid(conferenceSid);
 
-Integer page = 48;
+Integer page = 142;
 collect.setPage(page);
 
-Integer pagesize = 48;
+Integer pagesize = 142;
 collect.setPagesize(pagesize);
 
-Boolean muted = false;
+Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 String responseType = "json";
@@ -1198,10 +1198,10 @@ void createCarrierLookupListAsync(
 ```java
 CreateCarrierLookupListInput collect = new CreateCarrierLookupListInput();
 
-Integer page = 139;
+Integer page = 233;
 collect.setPage(page);
 
-Integer pagesize = 139;
+Integer pagesize = 233;
 collect.setPagesize(pagesize);
 
 String responseType = "json";
@@ -1356,7 +1356,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 HttpAction heartBeatMethod = HttpAction.fromString("GET");
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 139;
+Integer timeout = 233;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -1433,19 +1433,19 @@ collect.setCallSid(callSid);
 AudioDirection audioDirection = AudioDirection.fromString("IN");
 collect.setAudioDirection(audioDirection);
 
-Double pitchSemiTones = 139.920174747203;
+Double pitchSemiTones = 233.568683773544;
 collect.setPitchSemiTones(pitchSemiTones);
 
-Double pitchOctaves = 139.920174747203;
+Double pitchOctaves = 233.568683773544;
 collect.setPitchOctaves(pitchOctaves);
 
-Double pitch = 139.920174747203;
+Double pitch = 233.568683773544;
 collect.setPitch(pitch);
 
-Double rate = 139.920174747203;
+Double rate = 233.568683773544;
 collect.setRate(rate);
 
-Double tempo = 139.920174747203;
+Double tempo = 233.568683773544;
 collect.setTempo(tempo);
 
 String responseType = "json";
@@ -1503,7 +1503,7 @@ collect.setRecord(record);
 Direction direction = Direction.fromString("IN");
 collect.setDirection(direction);
 
-Integer timeLimit = 139;
+Integer timeLimit = 233;
 collect.setTimeLimit(timeLimit);
 
 String callBackUrl = "CallBackUrl";
@@ -1564,7 +1564,7 @@ collect.setCallSid(callSid);
 String audioUrl = "AudioUrl";
 collect.setAudioUrl(audioUrl);
 
-Integer length = 139;
+Integer length = 233;
 collect.setLength(length);
 
 Direction direction = Direction.fromString("IN");
@@ -1621,10 +1621,10 @@ void createListCallsAsync(
 ```java
 CreateListCallsInput collect = new CreateListCallsInput();
 
-Integer page = 139;
+Integer page = 233;
 collect.setPage(page);
 
-Integer pageSize = 139;
+Integer pageSize = 233;
 collect.setPageSize(pageSize);
 
 String to = "To";
@@ -1841,7 +1841,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 Boolean heartBeatMethod = true;
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 139;
+Integer timeout = 233;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -1968,7 +1968,7 @@ void createListInboundSMSAsync(
 ```java
 CreateListInboundSMSInput collect = new CreateListInboundSMSInput();
 
-Integer page = 139;
+Integer page = 233;
 collect.setPage(page);
 
 String pagesize = "pagesize";
@@ -2025,10 +2025,10 @@ void createListSMSAsync(
 ```java
 CreateListSMSInput collect = new CreateListSMSInput();
 
-Integer page = 139;
+Integer page = 233;
 collect.setPage(page);
 
-Integer pagesize = 139;
+Integer pagesize = 233;
 collect.setPagesize(pagesize);
 
 String from = "from";
@@ -3032,10 +3032,10 @@ void createListNumberAsync(
 ```java
 CreateListNumberInput collect = new CreateListNumberInput();
 
-Integer page = 139;
+Integer page = 233;
 collect.setPage(page);
 
-Integer pageSize = 139;
+Integer pageSize = 233;
 collect.setPageSize(pageSize);
 
 NumberType numberType = NumberType.fromString("ALL");
@@ -3093,7 +3093,7 @@ collect.setNumberType(numberType);
 String areaCode = "AreaCode";
 collect.setAreaCode(areaCode);
 
-Integer pageSize = 139;
+Integer pageSize = 233;
 collect.setPageSize(pageSize);
 
 String responseType = "json";
@@ -3152,10 +3152,10 @@ void createListRecordingAsync(
 ```java
 CreateListRecordingInput collect = new CreateListRecordingInput();
 
-Integer page = 139;
+Integer page = 233;
 collect.setPage(page);
 
-Integer pageSize = 139;
+Integer pageSize = 233;
 collect.setPageSize(pageSize);
 
 String dateCreated = "DateCreated";
@@ -3440,10 +3440,10 @@ void createListTranscriptionAsync(
 ```java
 CreateListTranscriptionInput collect = new CreateListTranscriptionInput();
 
-Integer page = 98;
+Integer page = 233;
 collect.setPage(page);
 
-Integer pageSize = 98;
+Integer pageSize = 233;
 collect.setPageSize(pageSize);
 
 Status status = Status.fromString("INPROGRESS");

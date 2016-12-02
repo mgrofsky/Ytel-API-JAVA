@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/01/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateListNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5628008508010745799L;
+    private static final long serialVersionUID = 4615697267852217121L;
     private Integer page;
     private Integer pageSize;
     private NumberType numberType;
