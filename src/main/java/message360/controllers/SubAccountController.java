@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/08/2016
  */
 package message360.controllers;
 
@@ -73,7 +73,7 @@ public class SubAccountController extends BaseController {
             throw new NullPointerException("The property \"Email\" in the input object cannot be null.");
 
         //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
+        String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -81,7 +81,7 @@ public class SubAccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5129496336025850535L;
+            private static final long serialVersionUID = 5459728687192924437L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -90,7 +90,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5501269309329432477L;
+            private static final long serialVersionUID = 4712205625400333821L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -98,7 +98,7 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4618718847615842491L;
+            private static final long serialVersionUID = 5119017612574651193L;
             {
                     put( "firstname", input.getFirstname() );
                     put( "lastname", input.getLastname() );
@@ -195,7 +195,7 @@ public class SubAccountController extends BaseController {
             throw new NullPointerException("The property \"Activate\" in the input object cannot be null.");
 
         //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
+        String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -203,7 +203,7 @@ public class SubAccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5305833472081546214L;
+            private static final long serialVersionUID = 4686162447590083313L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -212,7 +212,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4660715077117438435L;
+            private static final long serialVersionUID = 4954092897309588317L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -220,7 +220,7 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4989468324740063016L;
+            private static final long serialVersionUID = 5257321607948611540L;
             {
                     put( "subaccountsid", input.getSubaccountsid() );
                     put( "activate", (null != input.getActivate()) ? input.getActivate().value() : null );
@@ -316,7 +316,7 @@ public class SubAccountController extends BaseController {
             throw new NullPointerException("The property \"Mergenumber\" in the input object cannot be null.");
 
         //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
+        String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -324,7 +324,7 @@ public class SubAccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4653215494978870375L;
+            private static final long serialVersionUID = 5195406314360903844L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -333,7 +333,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5594363154189968012L;
+            private static final long serialVersionUID = 5612516606362935515L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -341,7 +341,7 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4979926261125399452L;
+            private static final long serialVersionUID = 5279169083424083293L;
             {
                     put( "subaccountsid", input.getSubaccountsid() );
                     put( "mergenumber", (null != input.getMergenumber()) ? input.getMergenumber().value() : null );

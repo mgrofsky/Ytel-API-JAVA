@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/08/2016
  */
 package message360.controllers;
 
@@ -67,7 +67,7 @@ public class TranscriptionController extends BaseController {
             throw new NullPointerException("The property \"AudioUrl\" in the input object cannot be null.");
 
         //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
+        String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -75,7 +75,7 @@ public class TranscriptionController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5728238585553864472L;
+            private static final long serialVersionUID = 4666560539325991726L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -84,7 +84,7 @@ public class TranscriptionController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5598830830024745139L;
+            private static final long serialVersionUID = 4702957712682007943L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -92,7 +92,7 @@ public class TranscriptionController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5585334156245093478L;
+            private static final long serialVersionUID = 5685831773729665028L;
             {
                     put( "AudioUrl", input.getAudioUrl() );
             }
@@ -184,7 +184,7 @@ public class TranscriptionController extends BaseController {
             throw new NullPointerException("The property \"RecordingSid\" in the input object cannot be null.");
 
         //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
+        String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -192,7 +192,7 @@ public class TranscriptionController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5034688383748955912L;
+            private static final long serialVersionUID = 5726816202702039093L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -201,7 +201,7 @@ public class TranscriptionController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5380205523651282677L;
+            private static final long serialVersionUID = 5197349654751428063L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -209,7 +209,7 @@ public class TranscriptionController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4616690456048654144L;
+            private static final long serialVersionUID = 5466485282636208480L;
             {
                     put( "RecordingSid", input.getRecordingSid() );
             }
@@ -301,7 +301,7 @@ public class TranscriptionController extends BaseController {
             throw new NullPointerException("The property \"TranscriptionSid\" in the input object cannot be null.");
 
         //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
+        String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -309,7 +309,7 @@ public class TranscriptionController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4991371817253974466L;
+            private static final long serialVersionUID = 5206051549534552616L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -318,7 +318,7 @@ public class TranscriptionController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5124035254916554612L;
+            private static final long serialVersionUID = 5734218392694065119L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -326,7 +326,7 @@ public class TranscriptionController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5495993682486587536L;
+            private static final long serialVersionUID = 4772120368012105934L;
             {
                     put( "TranscriptionSid", input.getTranscriptionSid() );
             }
@@ -414,7 +414,7 @@ public class TranscriptionController extends BaseController {
                 final APICallBack<String> callBack
     ) {
         //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
+        String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -422,7 +422,7 @@ public class TranscriptionController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4998355820073651705L;
+            private static final long serialVersionUID = 5273401936982285427L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -431,7 +431,7 @@ public class TranscriptionController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5463235472884610233L;
+            private static final long serialVersionUID = 5693940093438259168L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -439,7 +439,7 @@ public class TranscriptionController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5744625838653410141L;
+            private static final long serialVersionUID = 5246816317748789618L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
