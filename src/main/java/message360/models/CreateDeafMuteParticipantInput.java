@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/08/2016
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateDeafMuteParticipantInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5253225292036742239L;
+    private static final long serialVersionUID = 5307884796970681490L;
     private String conferenceSid;
     private String participantSid;
     private Boolean muted;

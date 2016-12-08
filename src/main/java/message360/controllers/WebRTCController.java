@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/08/2016
  */
 package message360.controllers;
 
@@ -70,7 +70,7 @@ public class WebRTCController extends BaseController {
             throw new NullPointerException("The property \"AuthToken\" in the input object cannot be null.");
 
         //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
+        String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -80,7 +80,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5188748120568703878L;
+            private static final long serialVersionUID = 4898346639106639177L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -88,7 +88,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5109070552246720031L;
+            private static final long serialVersionUID = 4620081642069939026L;
             {
                     put( "account_sid", input.getAccountSid() );
                     put( "auth_token", input.getAuthToken() );
@@ -182,7 +182,7 @@ public class WebRTCController extends BaseController {
             throw new NullPointerException("The property \"AuthToken\" in the input object cannot be null.");
 
         //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
+        String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -192,7 +192,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4983292570356363207L;
+            private static final long serialVersionUID = 5504284667676860505L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -200,7 +200,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5665225643258811528L;
+            private static final long serialVersionUID = 4798460010266015017L;
             {
                     put( "account_sid", input.getAccountSid() );
                     put( "auth_token", input.getAuthToken() );
@@ -297,7 +297,7 @@ public class WebRTCController extends BaseController {
             throw new NullPointerException("The property \"AuthToken\" in the input object cannot be null.");
 
         //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
+        String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -307,7 +307,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5068725815780672941L;
+            private static final long serialVersionUID = 5262048721552913180L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -315,7 +315,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5308021203356925417L;
+            private static final long serialVersionUID = 4935066613520825080L;
             {
                     put( "phone_number", input.getPhoneNumber() );
                     put( "account_sid", input.getAccountSid() );

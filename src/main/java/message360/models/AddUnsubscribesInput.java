@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/08/2016
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class AddUnsubscribesInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4840473092998697200L;
+    private static final long serialVersionUID = 4692162131504898001L;
     private String email;
     private String responseType = "json";
     /** GETTER

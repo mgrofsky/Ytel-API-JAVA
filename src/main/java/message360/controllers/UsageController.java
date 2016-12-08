@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/02/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/08/2016
  */
 package message360.controllers;
 
@@ -73,7 +73,7 @@ public class UsageController extends BaseController {
             throw new NullPointerException("The property \"EndDate\" in the input object cannot be null.");
 
         //the base uri for api requests
-        String _baseUri = Configuration.baseUri;
+        String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
@@ -81,7 +81,7 @@ public class UsageController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5603845165357067870L;
+            private static final long serialVersionUID = 5232689517239830824L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -90,7 +90,7 @@ public class UsageController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5592760460597861906L;
+            private static final long serialVersionUID = 4867840105405876497L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -98,7 +98,7 @@ public class UsageController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4764037061895264099L;
+            private static final long serialVersionUID = 5354560300910643229L;
             {
                     put( "ProductCode", (null != input.getProductCode()) ? input.getProductCode().value() : 0 );
                     put( "startDate", input.getStartDate() );
