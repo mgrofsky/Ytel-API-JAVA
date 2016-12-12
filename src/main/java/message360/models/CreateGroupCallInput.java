@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/08/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateGroupCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4848537079023228998L;
+    private static final long serialVersionUID = 5066879203056915769L;
     private String fromCountryCode = "1";
     private String from;
     private String toCountryCode = "1";

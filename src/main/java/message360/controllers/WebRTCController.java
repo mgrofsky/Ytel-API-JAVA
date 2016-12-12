@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/08/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
  */
 package message360.controllers;
 
@@ -39,130 +39,18 @@ public class WebRTCController extends BaseController {
     }
 
     /**
-     * message360 webrtc
-     * @param    CreateTokenInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
-     */
-    public void createToken(
-                final CreateTokenInput input
-    ) throws Throwable {
-        APICallBackCatcher<Object> callback = new APICallBackCatcher<Object>();
-        createTokenAsync(input, callback);
-        if(!callback.isSuccess())
-            throw callback.getError();
-        callback.getResult();
-    }
-
-    /**
-     * message360 webrtc
-     * @param    CreateTokenInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
-     */
-    public void createTokenAsync(
-                final CreateTokenInput input,
-                final APICallBack<Object> callBack
-    ) {
-        //validating required parameters
-        if (null == input.getAccountSid())
-            throw new NullPointerException("The property \"AccountSid\" in the input object cannot be null.");
-
-        if (null == input.getAuthToken())
-            throw new NullPointerException("The property \"AuthToken\" in the input object cannot be null.");
-
-        //the base uri for api requests
-        String _baseUri = Configuration.getBaseUri();
-        
-        //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/webrtc/createToken.json");
-        //validate and preprocess url
-        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
-
-        //load all headers for the outgoing API request
-        Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4898346639106639177L;
-            {
-                    put( "user-agent", "message360-api" );
-            }
-        };
-
-        //load all fields for the outgoing API request
-        Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4620081642069939026L;
-            {
-                    put( "account_sid", input.getAccountSid() );
-                    put( "auth_token", input.getAuthToken() );
-            }
-        };
-
-        //prepare and invoke the API call request to fetch the response
-        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
-                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
-
-        //invoke the callback before request if its not null
-        if (getHttpCallBack() != null)
-        {
-            getHttpCallBack().OnBeforeRequest(_request);
-        }
-
-        //invoke request and get response
-        Runnable _responseTask = new Runnable() {
-            public void run() {
-                //make the API call
-                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
-                    public void onSuccess(HttpContext _context, HttpResponse _response) {
-                        try {
-
-                            //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
-                            {
-                                getHttpCallBack().OnAfterResponse(_context);
-                            }
-
-                            //handle errors defined at the API level
-                            validateResponse(_response, _context);
-
-                            //let the caller know of the success
-                            callBack.onSuccess(_context, _context);
-                        } catch (APIException error) {
-                            //let the caller know of the error
-                            callBack.onFailure(_context, error);
-                        } catch (Exception exception) {
-                            //let the caller know of the caught Exception
-                            callBack.onFailure(_context, exception);
-                        }
-                    }
-                    public void onFailure(HttpContext _context, Throwable _error) {
-                        //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
-                            getHttpCallBack().OnAfterResponse(_context);
-                        }
-
-                        //let the caller know of the failure
-                        callBack.onFailure(_context, _error);
-                    }
-                });
-            }
-        };
-
-        //execute async using thread pool
-        APIHelper.getScheduler().execute(_responseTask);
-    }
-
-    /**
      * TODO: type endpoint description here
      * @param    CreateCheckFundsInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
+     * @return    Returns the String response from the API call 
      */
-    public void createCheckFunds(
+    public String createCheckFunds(
                 final CreateCheckFundsInput input
     ) throws Throwable {
-        APICallBackCatcher<Object> callback = new APICallBackCatcher<Object>();
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
         createCheckFundsAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
-        callback.getResult();
+        return callback.getResult();
     }
 
     /**
@@ -172,7 +60,7 @@ public class WebRTCController extends BaseController {
      */
     public void createCheckFundsAsync(
                 final CreateCheckFundsInput input,
-                final APICallBack<Object> callBack
+                final APICallBack<String> callBack
     ) {
         //validating required parameters
         if (null == input.getAccountSid())
@@ -192,7 +80,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5504284667676860505L;
+            private static final long serialVersionUID = 4839794028507165475L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -200,7 +88,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4798460010266015017L;
+            private static final long serialVersionUID = 5361986308870112856L;
             {
                     put( "account_sid", input.getAccountSid() );
                     put( "auth_token", input.getAuthToken() );
@@ -234,8 +122,10 @@ public class WebRTCController extends BaseController {
                             //handle errors defined at the API level
                             validateResponse(_response, _context);
 
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
                             //let the caller know of the success
-                            callBack.onSuccess(_context, _context);
+                            callBack.onSuccess(_context, _result);
                         } catch (APIException error) {
                             //let the caller know of the error
                             callBack.onFailure(_context, error);
@@ -265,16 +155,16 @@ public class WebRTCController extends BaseController {
     /**
      * Authenticate a message360 number for use
      * @param    CreateAuthenticateNumberInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
+     * @return    Returns the String response from the API call 
      */
-    public void createAuthenticateNumber(
+    public String createAuthenticateNumber(
                 final CreateAuthenticateNumberInput input
     ) throws Throwable {
-        APICallBackCatcher<Object> callback = new APICallBackCatcher<Object>();
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
         createAuthenticateNumberAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
-        callback.getResult();
+        return callback.getResult();
     }
 
     /**
@@ -284,7 +174,7 @@ public class WebRTCController extends BaseController {
      */
     public void createAuthenticateNumberAsync(
                 final CreateAuthenticateNumberInput input,
-                final APICallBack<Object> callBack
+                final APICallBack<String> callBack
     ) {
         //validating required parameters
         if (null == input.getPhoneNumber())
@@ -307,7 +197,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5262048721552913180L;
+            private static final long serialVersionUID = 5011780619062670716L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -315,7 +205,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4935066613520825080L;
+            private static final long serialVersionUID = 5042480444282257126L;
             {
                     put( "phone_number", input.getPhoneNumber() );
                     put( "account_sid", input.getAccountSid() );
@@ -350,8 +240,124 @@ public class WebRTCController extends BaseController {
                             //handle errors defined at the API level
                             validateResponse(_response, _context);
 
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
                             //let the caller know of the success
-                            callBack.onSuccess(_context, _context);
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * message360 webrtc
+     * @param    CreateTokenInput    Object containing request parameters
+     * @return    Returns the String response from the API call 
+     */
+    public String createToken(
+                final CreateTokenInput input
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        createTokenAsync(input, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * message360 webrtc
+     * @param    CreateTokenInput    Object containing request parameters
+     * @return    Returns the void response from the API call 
+     */
+    public void createTokenAsync(
+                final CreateTokenInput input,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == input.getAccountSid())
+            throw new NullPointerException("The property \"AccountSid\" in the input object cannot be null.");
+
+        if (null == input.getAuthToken())
+            throw new NullPointerException("The property \"AuthToken\" in the input object cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.getBaseUri();
+        
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/webrtc/createToken.json");
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 5660848895222827607L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5310359700201176449L;
+            {
+                    put( "account_sid", input.getAccountSid() );
+                    put( "auth_token", input.getAuthToken() );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
                         } catch (APIException error) {
                             //let the caller know of the error
                             callBack.onFailure(_context, error);

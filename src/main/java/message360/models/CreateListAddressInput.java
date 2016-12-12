@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/08/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateListAddressInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4615440088184019891L;
+    private static final long serialVersionUID = 4984799272597382870L;
     private Integer page = 1;
     private Integer pageSize = 10;
     private String addressId;

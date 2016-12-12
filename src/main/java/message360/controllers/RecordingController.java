@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/08/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
  */
 package message360.controllers;
 
@@ -71,7 +71,7 @@ public class RecordingController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4979366836666567392L;
+            private static final long serialVersionUID = 4699289307302930667L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -80,7 +80,7 @@ public class RecordingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5460469628598383654L;
+            private static final long serialVersionUID = 5612014870967622632L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -88,7 +88,7 @@ public class RecordingController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5511118624826113749L;
+            private static final long serialVersionUID = 5244127775852058161L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -191,7 +191,7 @@ public class RecordingController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5208486497549378148L;
+            private static final long serialVersionUID = 5335822277758943749L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -200,7 +200,7 @@ public class RecordingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4952497044712145103L;
+            private static final long serialVersionUID = 5575338262677101515L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -208,7 +208,7 @@ public class RecordingController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5373094696472330821L;
+            private static final long serialVersionUID = 4624504320060016308L;
             {
                     put( "RecordingSid", input.getRecordingSid() );
             }
@@ -308,7 +308,7 @@ public class RecordingController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5626654148864086457L;
+            private static final long serialVersionUID = 5068907366110099545L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -317,7 +317,7 @@ public class RecordingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4674625750572592457L;
+            private static final long serialVersionUID = 5407206551339726415L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -325,7 +325,7 @@ public class RecordingController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5461382775248876738L;
+            private static final long serialVersionUID = 4825449893640169662L;
             {
                     put( "RecordingSid", input.getRecordingSid() );
             }
