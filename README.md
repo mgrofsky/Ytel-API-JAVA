@@ -222,10 +222,10 @@ void createListConferenceAsync(
 ```java
 CreateListConferenceInput collect = new CreateListConferenceInput();
 
-Integer page = 196;
+Integer page = 130;
 collect.setPage(page);
 
-Integer pageSize = 196;
+Integer pageSize = 130;
 collect.setPageSize(pageSize);
 
 String friendlyName = "FriendlyName";
@@ -335,13 +335,13 @@ collect.setConferencesid(conferencesid);
 String participantnumber = "participantnumber";
 collect.setParticipantnumber(participantnumber);
 
-int tocountrycode = 196;
+int tocountrycode = 88;
 collect.setTocountrycode(tocountrycode);
 
-Boolean muted = true;
+Boolean muted = false;
 collect.setMuted(muted);
 
-Boolean deaf = true;
+Boolean deaf = false;
 collect.setDeaf(deaf);
 
 String responseType = "json";
@@ -392,16 +392,16 @@ CreateListParticipantInput collect = new CreateListParticipantInput();
 String conferenceSid = "ConferenceSid";
 collect.setConferenceSid(conferenceSid);
 
-Integer page = 196;
+Integer page = 88;
 collect.setPage(page);
 
-Integer pagesize = 196;
+Integer pagesize = 88;
 collect.setPagesize(pagesize);
 
-Boolean muted = true;
+Boolean muted = false;
 collect.setMuted(muted);
 
-Boolean deaf = true;
+Boolean deaf = false;
 collect.setDeaf(deaf);
 
 String responseType = "json";
@@ -1198,10 +1198,10 @@ void createCarrierLookupListAsync(
 ```java
 CreateCarrierLookupListInput collect = new CreateCarrierLookupListInput();
 
-Integer page = 196;
+Integer page = 88;
 collect.setPage(page);
 
-Integer pagesize = 196;
+Integer pagesize = 88;
 collect.setPagesize(pagesize);
 
 String responseType = "json";
@@ -1356,7 +1356,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 HttpAction heartBeatMethod = HttpAction.fromString("GET");
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 196;
+Integer timeout = 88;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -1365,7 +1365,7 @@ collect.setPlayDtmf(playDtmf);
 String hideCallerId = "HideCallerId";
 collect.setHideCallerId(hideCallerId);
 
-Boolean record = true;
+Boolean record = false;
 collect.setRecord(record);
 
 String recordCallBackUrl = "RecordCallBackUrl";
@@ -1374,7 +1374,7 @@ collect.setRecordCallBackUrl(recordCallBackUrl);
 HttpAction recordCallBackMethod = HttpAction.fromString("GET");
 collect.setRecordCallBackMethod(recordCallBackMethod);
 
-Boolean transcribe = true;
+Boolean transcribe = false;
 collect.setTranscribe(transcribe);
 
 String transcribeCallBackUrl = "TranscribeCallBackUrl";
@@ -1433,19 +1433,19 @@ collect.setCallSid(callSid);
 AudioDirection audioDirection = AudioDirection.fromString("IN");
 collect.setAudioDirection(audioDirection);
 
-Double pitchSemiTones = 196.930490435069;
+Double pitchSemiTones = 88.2772337381156;
 collect.setPitchSemiTones(pitchSemiTones);
 
-Double pitchOctaves = 196.930490435069;
+Double pitchOctaves = 88.2772337381156;
 collect.setPitchOctaves(pitchOctaves);
 
-Double pitch = 196.930490435069;
+Double pitch = 88.2772337381156;
 collect.setPitch(pitch);
 
-Double rate = 196.930490435069;
+Double rate = 88.2772337381156;
 collect.setRate(rate);
 
-Double tempo = 196.930490435069;
+Double tempo = 88.2772337381156;
 collect.setTempo(tempo);
 
 String responseType = "json";
@@ -1503,7 +1503,7 @@ collect.setRecord(record);
 Direction direction = Direction.fromString("IN");
 collect.setDirection(direction);
 
-Integer timeLimit = 33;
+Integer timeLimit = 88;
 collect.setTimeLimit(timeLimit);
 
 String callBackUrl = "CallBackUrl";
@@ -1564,7 +1564,7 @@ collect.setCallSid(callSid);
 String audioUrl = "AudioUrl";
 collect.setAudioUrl(audioUrl);
 
-Integer length = 33;
+Integer length = 88;
 collect.setLength(length);
 
 Direction direction = Direction.fromString("IN");
@@ -1621,10 +1621,10 @@ void createListCallsAsync(
 ```java
 CreateListCallsInput collect = new CreateListCallsInput();
 
-Integer page = 33;
+Integer page = 88;
 collect.setPage(page);
 
-Integer pageSize = 33;
+Integer pageSize = 88;
 collect.setPageSize(pageSize);
 
 String to = "To";
@@ -1841,7 +1841,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 Boolean heartBeatMethod = false;
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 33;
+Integer timeout = 88;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -1968,7 +1968,7 @@ void createListInboundSMSAsync(
 ```java
 CreateListInboundSMSInput collect = new CreateListInboundSMSInput();
 
-Integer page = 33;
+Integer page = 88;
 collect.setPage(page);
 
 String pagesize = "pagesize";
@@ -2025,10 +2025,10 @@ void createListSMSAsync(
 ```java
 CreateListSMSInput collect = new CreateListSMSInput();
 
-Integer page = 33;
+Integer page = 88;
 collect.setPage(page);
 
-Integer pagesize = 33;
+Integer pagesize = 88;
 collect.setPagesize(pagesize);
 
 String from = "from";
@@ -2193,50 +2193,6 @@ The singleton instance of the ``` WebRTCController ``` class can be accessed fro
 WebRTCController webRTC = client.getWebRTC();
 ```
 
-#### <a name="create_token_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.WebRTCController.createTokenAsync") createTokenAsync
-
-> message360 webrtc
-
-
-```java
-void createTokenAsync(
-        final CreateTokenInput input,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| accountSid |  ``` Required ```  | Your message360 Account SID |
-| authToken |  ``` Required ```  | Your message360 Token |
-
-
-#### Example Usage
-
-```java
-CreateTokenInput collect = new CreateTokenInput();
-
-String accountSid = "account_sid";
-collect.setAccountSid(accountSid);
-
-String authToken = "auth_token";
-collect.setAuthToken(authToken);
-
-// Invoking the API call with sample inputs
-webRTC.createTokenAsync(collect, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
 #### <a name="create_check_funds_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.WebRTCController.createCheckFundsAsync") createCheckFundsAsync
 
 > TODO: Add a method description
@@ -2245,7 +2201,7 @@ webRTC.createTokenAsync(collect, new APICallBack<void>() {
 ```java
 void createCheckFundsAsync(
         final CreateCheckFundsInput input,
-        final APICallBack<Object> callBack)
+        final APICallBack<String> callBack)
 ```
 
 #### Parameters
@@ -2268,8 +2224,8 @@ String authToken = "auth_token";
 collect.setAuthToken(authToken);
 
 // Invoking the API call with sample inputs
-webRTC.createCheckFundsAsync(collect, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
+webRTC.createCheckFundsAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -2289,7 +2245,7 @@ webRTC.createCheckFundsAsync(collect, new APICallBack<void>() {
 ```java
 void createAuthenticateNumberAsync(
         final CreateAuthenticateNumberInput input,
-        final APICallBack<Object> callBack)
+        final APICallBack<String> callBack)
 ```
 
 #### Parameters
@@ -2316,8 +2272,52 @@ String authToken = "auth_token";
 collect.setAuthToken(authToken);
 
 // Invoking the API call with sample inputs
-webRTC.createAuthenticateNumberAsync(collect, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
+webRTC.createAuthenticateNumberAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_token_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.WebRTCController.createTokenAsync") createTokenAsync
+
+> message360 webrtc
+
+
+```java
+void createTokenAsync(
+        final CreateTokenInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountSid |  ``` Required ```  | Your message360 Account SID |
+| authToken |  ``` Required ```  | Your message360 Token |
+
+
+#### Example Usage
+
+```java
+CreateTokenInput collect = new CreateTokenInput();
+
+String accountSid = "account_sid";
+collect.setAccountSid(accountSid);
+
+String authToken = "auth_token";
+collect.setAuthToken(authToken);
+
+// Invoking the API call with sample inputs
+webRTC.createTokenAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -3032,10 +3032,10 @@ void createListNumberAsync(
 ```java
 CreateListNumberInput collect = new CreateListNumberInput();
 
-Integer page = 33;
+Integer page = 88;
 collect.setPage(page);
 
-Integer pageSize = 33;
+Integer pageSize = 88;
 collect.setPageSize(pageSize);
 
 NumberType numberType = NumberType.fromString("ALL");
@@ -3093,7 +3093,7 @@ collect.setNumberType(numberType);
 String areaCode = "AreaCode";
 collect.setAreaCode(areaCode);
 
-Integer pageSize = 33;
+Integer pageSize = 179;
 collect.setPageSize(pageSize);
 
 String responseType = "json";
@@ -3152,10 +3152,10 @@ void createListRecordingAsync(
 ```java
 CreateListRecordingInput collect = new CreateListRecordingInput();
 
-Integer page = 33;
+Integer page = 179;
 collect.setPage(page);
 
-Integer pageSize = 33;
+Integer pageSize = 179;
 collect.setPageSize(pageSize);
 
 String dateCreated = "DateCreated";
@@ -3440,10 +3440,10 @@ void createListTranscriptionAsync(
 ```java
 CreateListTranscriptionInput collect = new CreateListTranscriptionInput();
 
-Integer page = 33;
+Integer page = 179;
 collect.setPage(page);
 
-Integer pageSize = 33;
+Integer pageSize = 179;
 collect.setPageSize(pageSize);
 
 Status status = Status.fromString("INPROGRESS");

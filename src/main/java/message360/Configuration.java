@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/08/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
  */
 package message360;
 
@@ -33,7 +33,7 @@ public class Configuration {
     public static String getBaseUri(Servers server) {
         StringBuilder baseUrl = new StringBuilder(environmentsMap.get(Configuration.environment).get(server));
         Map<String, Object> parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4938632999935940816L;
+            private static final long serialVersionUID = 4893660447538465743L;
             {
             }
         };
@@ -53,22 +53,22 @@ public class Configuration {
      * Map of all base URLs by environments and server aliases 
      */
     private static EnumMap<Environments, EnumMap<Servers, String>> environmentsMap = new EnumMap<Environments, EnumMap<Servers,String>>(Environments.class) {
-        private static final long serialVersionUID = 4958540823700565351L;
+        private static final long serialVersionUID = 5088940898257151186L;
         {
             put(Environments.PRODUCTION , new EnumMap<Servers, String>(Servers.class) {
-                private static final long serialVersionUID = 5024299452091542650L;
+                private static final long serialVersionUID = 5240275600043655605L;
                 {
                     put(Servers.DEFAULT, "https://api.message360.com/api/v2");
                 }
             });
             put(Environments.PREPRODUCTION , new EnumMap<Servers, String>(Servers.class) {
-                private static final long serialVersionUID = 4928248691287465999L;
+                private static final long serialVersionUID = 5435624016502099844L;
                 {
                     put(Servers.DEFAULT, "https://api-preprod.message360.com/api/v2");
                 }
             });
             put(Environments.DEVELOPMENT , new EnumMap<Servers, String>(Servers.class) {
-                private static final long serialVersionUID = 5067117381775415344L;
+                private static final long serialVersionUID = 5415917213957071980L;
                 {
                     put(Servers.DEFAULT, "https://api-dev.message360.com/api/v2");
                 }
