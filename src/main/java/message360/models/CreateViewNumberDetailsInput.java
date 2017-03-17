@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateViewNumberDetailsInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4911126240094489337L;
+    private static final long serialVersionUID = 5082714349175710148L;
     private String phoneNumber;
     private String responseType = "json";
     /** GETTER

@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -18,23 +18,32 @@ public class CreateSubAccountInputBuilder {
         createSubAccountInput = new CreateSubAccountInput();
     }
 
-    public CreateSubAccountInputBuilder firstname(String firstname) {
-        createSubAccountInput.setFirstname(firstname);
+    /**
+     * Sub account user first name
+     */
+    public CreateSubAccountInputBuilder firstName(String firstName) {
+        createSubAccountInput.setFirstName(firstName);
         return this;
     }
 
-    public CreateSubAccountInputBuilder lastname(String lastname) {
-        createSubAccountInput.setLastname(lastname);
+    /**
+     * sub account user last name
+     */
+    public CreateSubAccountInputBuilder lastName(String lastName) {
+        createSubAccountInput.setLastName(lastName);
         return this;
     }
 
+    /**
+     * Sub account email address
+     */
     public CreateSubAccountInputBuilder email(String email) {
         createSubAccountInput.setEmail(email);
         return this;
     }
 
     /**
-     * ResponseType Format either json or xml
+     * Response type format xml or json
      */
     public CreateSubAccountInputBuilder responseType(String responseType) {
         createSubAccountInput.setResponseType(responseType);

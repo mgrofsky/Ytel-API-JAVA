@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateListUsageInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5665433518064560863L;
+    private static final long serialVersionUID = 5528175135867969968L;
     private ProductCode productCode = ProductCode.ALL;
     private String startDate = "2016-09-06";
     private String endDate = "2016-09-06";

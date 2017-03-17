@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -31,6 +31,22 @@ public class CreateTokenInputBuilder {
      */
     public CreateTokenInputBuilder authToken(String authToken) {
         createTokenInput.setAuthToken(authToken);
+        return this;
+    }
+
+    /**
+     * WebRTC username authentication
+     */
+    public CreateTokenInputBuilder username(String username) {
+        createTokenInput.setUsername(username);
+        return this;
+    }
+
+    /**
+     * WebRTC password authentication
+     */
+    public CreateTokenInputBuilder password(String password) {
+        createTokenInput.setPassword(password);
         return this;
     }
     /**

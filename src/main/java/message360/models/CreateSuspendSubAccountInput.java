@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -11,38 +11,38 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSuspendSubAccountInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5472918857713428569L;
-    private String subaccountsid;
-    private ActivateStatus activate;
+    private static final long serialVersionUID = 5702933375909718207L;
+    private String subAccountSID;
+    private ActivateStatus activate = ActivateStatus.DEACTIVATE;
     private String responseType;
     /** GETTER
-     * TODO: Write general description for this method
+     * The SubaccountSid to be activated or suspended
      */
-    @JsonGetter("subaccountsid")
-    public String getSubaccountsid ( ) { 
-        return this.subaccountsid;
+    @JsonGetter("SubAccountSID")
+    public String getSubAccountSID ( ) { 
+        return this.subAccountSID;
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * The SubaccountSid to be activated or suspended
      */
-    @JsonSetter("subaccountsid")
-    public void setSubaccountsid (String value) { 
-        this.subaccountsid = value;
+    @JsonSetter("SubAccountSID")
+    public void setSubAccountSID (String value) { 
+        this.subAccountSID = value;
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * 0 to suspend or 1 to activate
      */
-    @JsonGetter("activate")
+    @JsonGetter("Activate")
     public ActivateStatus getActivate ( ) { 
         return this.activate;
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * 0 to suspend or 1 to activate
      */
-    @JsonSetter("activate")
+    @JsonSetter("Activate")
     public void setActivate (ActivateStatus value) { 
         this.activate = value;
     }
