@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSuspendSubAccountInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5111082991371087949L;
+    private static final long serialVersionUID = 5452042521832236269L;
     private String subAccountSID;
     private ActivateStatusEnum activate = ActivateStatusEnum.DEACTIVATE;
     private String responseType;

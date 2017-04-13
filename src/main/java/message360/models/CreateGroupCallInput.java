@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateGroupCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4987276999807343939L;
+    private static final long serialVersionUID = 5020637347257043742L;
     private String fromCountryCode = "1";
     private String from;
     private String toCountryCode = "1";
