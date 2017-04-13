@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateAvailablePhoneNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4802174393003418754L;
-    private NumberType numberType;
+    private static final long serialVersionUID = 5068788831945285173L;
+    private NumberTypeEnum numberType;
     private String areaCode;
     private Integer pageSize = 10;
     private String responseType = "json";
@@ -20,7 +20,7 @@ public class CreateAvailablePhoneNumberInput
      * Number type either SMS,Voice or all
      */
     @JsonGetter("NumberType")
-    public NumberType getNumberType ( ) { 
+    public NumberTypeEnum getNumberType ( ) { 
         return this.numberType;
     }
     
@@ -28,7 +28,7 @@ public class CreateAvailablePhoneNumberInput
      * Number type either SMS,Voice or all
      */
     @JsonSetter("NumberType")
-    public void setNumberType (NumberType value) { 
+    public void setNumberType (NumberTypeEnum value) { 
         this.numberType = value;
     }
  

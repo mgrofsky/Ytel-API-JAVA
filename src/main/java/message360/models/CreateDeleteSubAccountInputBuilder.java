@@ -29,7 +29,7 @@ public class CreateDeleteSubAccountInputBuilder {
     /**
      * 0 to delete or 1 to merge numbers to parent account.
      */
-    public CreateDeleteSubAccountInputBuilder mergeNumber(MergeNumberStatus mergeNumber) {
+    public CreateDeleteSubAccountInputBuilder mergeNumber(MergeNumberStatusEnum mergeNumber) {
         createDeleteSubAccountInput.setMergeNumber(mergeNumber);
         return this;
     }

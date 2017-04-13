@@ -42,7 +42,7 @@ public class CreateListConferenceInputBuilder {
         return this;
     }
 
-    public CreateListConferenceInputBuilder status(InterruptedCallStatus status) {
+    public CreateListConferenceInputBuilder status(InterruptedCallStatusEnum status) {
         createListConferenceInput.setStatus(status);
         return this;
     }

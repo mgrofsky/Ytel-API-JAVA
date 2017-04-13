@@ -61,7 +61,7 @@ public class CreateSendSMSInputBuilder {
     /**
      * Specifies the HTTP method used to request the required URL once SMS sent.
      */
-    public CreateSendSMSInputBuilder method(HttpAction method) {
+    public CreateSendSMSInputBuilder method(HttpActionEnum method) {
         createSendSMSInput.setMethod(method);
         return this;
     }

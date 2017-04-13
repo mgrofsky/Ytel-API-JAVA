@@ -11,10 +11,10 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSendDigitInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5446536686258271726L;
+    private static final long serialVersionUID = 4675874565391921371L;
     private String callSid;
     private String playDtmf;
-    private Direction playDtmfDirection;
+    private DirectionEnum playDtmfDirection;
     private String responseType = "json";
     /** GETTER
      * The unique identifier of each call resource
@@ -52,7 +52,7 @@ public class CreateSendDigitInput
      * The leg of the call DTMF digits should be sent to
      */
     @JsonGetter("PlayDtmfDirection")
-    public Direction getPlayDtmfDirection ( ) { 
+    public DirectionEnum getPlayDtmfDirection ( ) { 
         return this.playDtmfDirection;
     }
     
@@ -60,7 +60,7 @@ public class CreateSendDigitInput
      * The leg of the call DTMF digits should be sent to
      */
     @JsonSetter("PlayDtmfDirection")
-    public void setPlayDtmfDirection (Direction value) { 
+    public void setPlayDtmfDirection (DirectionEnum value) { 
         this.playDtmfDirection = value;
     }
  

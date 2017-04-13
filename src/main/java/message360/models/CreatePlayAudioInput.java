@@ -11,11 +11,11 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreatePlayAudioInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5609129729757366211L;
+    private static final long serialVersionUID = 5247133655401480548L;
     private String callSid;
     private String audioUrl;
     private Integer length;
-    private Direction direction;
+    private DirectionEnum direction;
     private Boolean loop;
     private Boolean mix;
     private String responseType = "json";
@@ -71,7 +71,7 @@ public class CreatePlayAudioInput
      * The leg of the call audio will be played to
      */
     @JsonGetter("Direction")
-    public Direction getDirection ( ) { 
+    public DirectionEnum getDirection ( ) { 
         return this.direction;
     }
     
@@ -79,7 +79,7 @@ public class CreatePlayAudioInput
      * The leg of the call audio will be played to
      */
     @JsonSetter("Direction")
-    public void setDirection (Direction value) { 
+    public void setDirection (DirectionEnum value) { 
         this.direction = value;
     }
  

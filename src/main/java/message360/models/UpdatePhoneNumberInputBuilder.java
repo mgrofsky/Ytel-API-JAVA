@@ -36,7 +36,7 @@ public class UpdatePhoneNumberInputBuilder {
         return this;
     }
 
-    public UpdatePhoneNumberInputBuilder voiceMethod(HttpAction voiceMethod) {
+    public UpdatePhoneNumberInputBuilder voiceMethod(HttpActionEnum voiceMethod) {
         updatePhoneNumberInput.setVoiceMethod(voiceMethod);
         return this;
     }
@@ -49,7 +49,7 @@ public class UpdatePhoneNumberInputBuilder {
         return this;
     }
 
-    public UpdatePhoneNumberInputBuilder voiceFallbackMethod(HttpAction voiceFallbackMethod) {
+    public UpdatePhoneNumberInputBuilder voiceFallbackMethod(HttpActionEnum voiceFallbackMethod) {
         updatePhoneNumberInput.setVoiceFallbackMethod(voiceFallbackMethod);
         return this;
     }
@@ -59,7 +59,7 @@ public class UpdatePhoneNumberInputBuilder {
         return this;
     }
 
-    public UpdatePhoneNumberInputBuilder hangupCallbackMethod(HttpAction hangupCallbackMethod) {
+    public UpdatePhoneNumberInputBuilder hangupCallbackMethod(HttpActionEnum hangupCallbackMethod) {
         updatePhoneNumberInput.setHangupCallbackMethod(hangupCallbackMethod);
         return this;
     }
@@ -75,7 +75,7 @@ public class UpdatePhoneNumberInputBuilder {
     /**
      * URL that can be requested every 60 seconds during the call to notify of elapsed time
      */
-    public UpdatePhoneNumberInputBuilder heartbeatMethod(HttpAction heartbeatMethod) {
+    public UpdatePhoneNumberInputBuilder heartbeatMethod(HttpActionEnum heartbeatMethod) {
         updatePhoneNumberInput.setHeartbeatMethod(heartbeatMethod);
         return this;
     }
@@ -88,7 +88,7 @@ public class UpdatePhoneNumberInputBuilder {
         return this;
     }
 
-    public UpdatePhoneNumberInputBuilder smsMethod(HttpAction smsMethod) {
+    public UpdatePhoneNumberInputBuilder smsMethod(HttpActionEnum smsMethod) {
         updatePhoneNumberInput.setSmsMethod(smsMethod);
         return this;
     }
@@ -104,7 +104,7 @@ public class UpdatePhoneNumberInputBuilder {
     /**
      * URL requested if the sms URL is not available
      */
-    public UpdatePhoneNumberInputBuilder smsFallbackMethod(HttpAction smsFallbackMethod) {
+    public UpdatePhoneNumberInputBuilder smsFallbackMethod(HttpActionEnum smsFallbackMethod) {
         updatePhoneNumberInput.setSmsFallbackMethod(smsFallbackMethod);
         return this;
     }

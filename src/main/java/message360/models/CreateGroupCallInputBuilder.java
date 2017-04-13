@@ -43,7 +43,7 @@ public class CreateGroupCallInputBuilder {
         return this;
     }
 
-    public CreateGroupCallInputBuilder method(HttpAction method) {
+    public CreateGroupCallInputBuilder method(HttpActionEnum method) {
         createGroupCallInput.setMethod(method);
         return this;
     }
@@ -53,7 +53,7 @@ public class CreateGroupCallInputBuilder {
         return this;
     }
 
-    public CreateGroupCallInputBuilder statusCallBackMethod(HttpAction statusCallBackMethod) {
+    public CreateGroupCallInputBuilder statusCallBackMethod(HttpActionEnum statusCallBackMethod) {
         createGroupCallInput.setStatusCallBackMethod(statusCallBackMethod);
         return this;
     }
@@ -63,7 +63,7 @@ public class CreateGroupCallInputBuilder {
         return this;
     }
 
-    public CreateGroupCallInputBuilder fallBackMethod(HttpAction fallBackMethod) {
+    public CreateGroupCallInputBuilder fallBackMethod(HttpActionEnum fallBackMethod) {
         createGroupCallInput.setFallBackMethod(fallBackMethod);
         return this;
     }
@@ -73,7 +73,7 @@ public class CreateGroupCallInputBuilder {
         return this;
     }
 
-    public CreateGroupCallInputBuilder heartBeatMethod(HttpAction heartBeatMethod) {
+    public CreateGroupCallInputBuilder heartBeatMethod(HttpActionEnum heartBeatMethod) {
         createGroupCallInput.setHeartBeatMethod(heartBeatMethod);
         return this;
     }
@@ -103,7 +103,7 @@ public class CreateGroupCallInputBuilder {
         return this;
     }
 
-    public CreateGroupCallInputBuilder recordCallBackMethod(HttpAction recordCallBackMethod) {
+    public CreateGroupCallInputBuilder recordCallBackMethod(HttpActionEnum recordCallBackMethod) {
         createGroupCallInput.setRecordCallBackMethod(recordCallBackMethod);
         return this;
     }

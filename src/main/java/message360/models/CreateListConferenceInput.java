@@ -11,11 +11,11 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateListConferenceInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5287294475292140486L;
+    private static final long serialVersionUID = 5079861065135240876L;
     private Integer page;
     private Integer pageSize;
     private String friendlyName;
-    private InterruptedCallStatus status;
+    private InterruptedCallStatusEnum status;
     private String dateCreated;
     private String dateUpdated;
     private String responseType = "json";
@@ -71,7 +71,7 @@ public class CreateListConferenceInput
      * TODO: Write general description for this method
      */
     @JsonGetter("Status")
-    public InterruptedCallStatus getStatus ( ) { 
+    public InterruptedCallStatusEnum getStatus ( ) { 
         return this.status;
     }
     
@@ -79,7 +79,7 @@ public class CreateListConferenceInput
      * TODO: Write general description for this method
      */
     @JsonSetter("Status")
-    public void setStatus (InterruptedCallStatus value) { 
+    public void setStatus (InterruptedCallStatusEnum value) { 
         this.status = value;
     }
  

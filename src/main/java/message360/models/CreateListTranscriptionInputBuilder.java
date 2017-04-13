@@ -28,7 +28,7 @@ public class CreateListTranscriptionInputBuilder {
         return this;
     }
 
-    public CreateListTranscriptionInputBuilder status(Status status) {
+    public CreateListTranscriptionInputBuilder status(StatusEnum status) {
         createListTranscriptionInput.setStatus(status);
         return this;
     }

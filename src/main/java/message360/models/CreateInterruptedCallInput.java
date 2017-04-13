@@ -11,11 +11,11 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateInterruptedCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5403571901520172151L;
+    private static final long serialVersionUID = 5378024238619173612L;
     private String callSid;
     private String url;
-    private HttpAction method;
-    private InterruptedCallStatus status;
+    private HttpActionEnum method;
+    private InterruptedCallStatusEnum status;
     private String responseType = "json";
     /** GETTER
      * Call SId
@@ -53,7 +53,7 @@ public class CreateInterruptedCallInput
      * The method used to request the above Url parameter
      */
     @JsonGetter("Method")
-    public HttpAction getMethod ( ) { 
+    public HttpActionEnum getMethod ( ) { 
         return this.method;
     }
     
@@ -61,7 +61,7 @@ public class CreateInterruptedCallInput
      * The method used to request the above Url parameter
      */
     @JsonSetter("Method")
-    public void setMethod (HttpAction value) { 
+    public void setMethod (HttpActionEnum value) { 
         this.method = value;
     }
  
@@ -69,7 +69,7 @@ public class CreateInterruptedCallInput
      * Status to set the in-progress call to
      */
     @JsonGetter("Status")
-    public InterruptedCallStatus getStatus ( ) { 
+    public InterruptedCallStatusEnum getStatus ( ) { 
         return this.status;
     }
     
@@ -77,7 +77,7 @@ public class CreateInterruptedCallInput
      * Status to set the in-progress call to
      */
     @JsonSetter("Status")
-    public void setStatus (InterruptedCallStatus value) { 
+    public void setStatus (InterruptedCallStatusEnum value) { 
         this.status = value;
     }
  

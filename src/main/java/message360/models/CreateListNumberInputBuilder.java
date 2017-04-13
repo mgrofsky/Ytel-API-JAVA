@@ -34,7 +34,7 @@ public class CreateListNumberInputBuilder {
         return this;
     }
 
-    public CreateListNumberInputBuilder numberType(NumberType numberType) {
+    public CreateListNumberInputBuilder numberType(NumberTypeEnum numberType) {
         createListNumberInput.setNumberType(numberType);
         return this;
     }

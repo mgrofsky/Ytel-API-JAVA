@@ -78,7 +78,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4769762464526014408L;
+            private static final long serialVersionUID = 5744914519408267663L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +87,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5382044648614983824L;
+            private static final long serialVersionUID = 4871837771068888194L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -95,7 +95,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4984311891059176979L;
+            private static final long serialVersionUID = 5326765382628812924L;
             {
                     put( "templateid", input.getTemplateid() );
             }
@@ -208,7 +208,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4994703448581609778L;
+            private static final long serialVersionUID = 5725424093346909815L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -217,7 +217,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5538898728427087801L;
+            private static final long serialVersionUID = 5650519781030639259L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -225,7 +225,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4753499947454826145L;
+            private static final long serialVersionUID = 4991492397481551531L;
             {
                     put( "shortcode", input.getShortcode() );
                     put( "tocountrycode", input.getTocountrycode() );
@@ -327,14 +327,14 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5068870818057142985L;
+            private static final long serialVersionUID = 5596204365092884232L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5078647941894763004L;
+            private static final long serialVersionUID = 4869960779977684300L;
             {
                     put( "DateReceived", input.getDateReceived() );
             }});
@@ -343,7 +343,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5471066803589657820L;
+            private static final long serialVersionUID = 5730419025644518859L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -351,7 +351,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5695330097195092224L;
+            private static final long serialVersionUID = 5298207317675170365L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -450,7 +450,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4943175973714494658L;
+            private static final long serialVersionUID = 4654158362151809703L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -459,7 +459,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5737558023348425074L;
+            private static final long serialVersionUID = 5276192664071028159L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -467,7 +467,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5254540198795663179L;
+            private static final long serialVersionUID = 5514751820585639429L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -567,7 +567,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4619767717012456538L;
+            private static final long serialVersionUID = 5605712980102233665L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -576,7 +576,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5370498999038117861L;
+            private static final long serialVersionUID = 4670452567756132106L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -584,7 +584,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4679755905302755090L;
+            private static final long serialVersionUID = 5554294308154994908L;
             {
                     put( "type", input.getType() );
                     put( "page", input.getPage() );
@@ -686,7 +686,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5462495290295357754L;
+            private static final long serialVersionUID = 5195444460680174757L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -695,7 +695,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5620399168000795573L;
+            private static final long serialVersionUID = 5267104183924708533L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -703,7 +703,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5754131639061223903L;
+            private static final long serialVersionUID = 5273018267316527111L;
             {
                     put( "messagesid", input.getMessagesid() );
             }

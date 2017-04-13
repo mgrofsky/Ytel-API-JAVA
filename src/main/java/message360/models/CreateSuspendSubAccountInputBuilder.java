@@ -29,7 +29,7 @@ public class CreateSuspendSubAccountInputBuilder {
     /**
      * 0 to suspend or 1 to activate
      */
-    public CreateSuspendSubAccountInputBuilder activate(ActivateStatus activate) {
+    public CreateSuspendSubAccountInputBuilder activate(ActivateStatusEnum activate) {
         createSuspendSubAccountInput.setActivate(activate);
         return this;
     }

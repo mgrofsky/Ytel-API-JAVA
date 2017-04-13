@@ -37,7 +37,7 @@ public class CreateSendDigitInputBuilder {
     /**
      * The leg of the call DTMF digits should be sent to
      */
-    public CreateSendDigitInputBuilder playDtmfDirection(Direction playDtmfDirection) {
+    public CreateSendDigitInputBuilder playDtmfDirection(DirectionEnum playDtmfDirection) {
         createSendDigitInput.setPlayDtmfDirection(playDtmfDirection);
         return this;
     }

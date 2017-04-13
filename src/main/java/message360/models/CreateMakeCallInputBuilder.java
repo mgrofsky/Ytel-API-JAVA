@@ -61,7 +61,7 @@ public class CreateMakeCallInputBuilder {
     /**
      * Specifies the HTTP method used to request the required URL once call connects.
      */
-    public CreateMakeCallInputBuilder method(HttpAction method) {
+    public CreateMakeCallInputBuilder method(HttpActionEnum method) {
         createMakeCallInput.setMethod(method);
         return this;
     }
@@ -77,7 +77,7 @@ public class CreateMakeCallInputBuilder {
     /**
      * Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
      */
-    public CreateMakeCallInputBuilder statusCallBackMethod(HttpAction statusCallBackMethod) {
+    public CreateMakeCallInputBuilder statusCallBackMethod(HttpActionEnum statusCallBackMethod) {
         createMakeCallInput.setStatusCallBackMethod(statusCallBackMethod);
         return this;
     }
@@ -93,7 +93,7 @@ public class CreateMakeCallInputBuilder {
     /**
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
-    public CreateMakeCallInputBuilder fallBackMethod(HttpAction fallBackMethod) {
+    public CreateMakeCallInputBuilder fallBackMethod(HttpActionEnum fallBackMethod) {
         createMakeCallInput.setFallBackMethod(fallBackMethod);
         return this;
     }
@@ -157,7 +157,7 @@ public class CreateMakeCallInputBuilder {
     /**
      * Method used to request the RecordCallback URL.
      */
-    public CreateMakeCallInputBuilder recordCallBackMethod(HttpAction recordCallBackMethod) {
+    public CreateMakeCallInputBuilder recordCallBackMethod(HttpActionEnum recordCallBackMethod) {
         createMakeCallInput.setRecordCallBackMethod(recordCallBackMethod);
         return this;
     }
@@ -181,7 +181,7 @@ public class CreateMakeCallInputBuilder {
     /**
      * How Message360 should handle the receiving numbers voicemail machine
      */
-    public CreateMakeCallInputBuilder ifMachine(IfMachine ifMachine) {
+    public CreateMakeCallInputBuilder ifMachine(IfMachineEnum ifMachine) {
         createMakeCallInput.setIfMachine(ifMachine);
         return this;
     }

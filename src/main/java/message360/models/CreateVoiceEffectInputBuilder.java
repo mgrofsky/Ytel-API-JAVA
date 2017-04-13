@@ -23,7 +23,7 @@ public class CreateVoiceEffectInputBuilder {
         return this;
     }
 
-    public CreateVoiceEffectInputBuilder audioDirection(AudioDirection audioDirection) {
+    public CreateVoiceEffectInputBuilder audioDirection(AudioDirectionEnum audioDirection) {
         createVoiceEffectInput.setAudioDirection(audioDirection);
         return this;
     }

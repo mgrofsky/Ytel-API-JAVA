@@ -21,7 +21,7 @@ public class CreateListUsageInputBuilder {
     /**
      * Product Code
      */
-    public CreateListUsageInputBuilder productCode(ProductCode productCode) {
+    public CreateListUsageInputBuilder productCode(ProductCodeEnum productCode) {
         createListUsageInput.setProductCode(productCode);
         return this;
     }

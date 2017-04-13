@@ -45,7 +45,7 @@ public class CreatePlayAudioInputBuilder {
     /**
      * The leg of the call audio will be played to
      */
-    public CreatePlayAudioInputBuilder direction(Direction direction) {
+    public CreatePlayAudioInputBuilder direction(DirectionEnum direction) {
         createPlayAudioInput.setDirection(direction);
         return this;
     }

@@ -11,21 +11,21 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class UpdatePhoneNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5616792806309402620L;
+    private static final long serialVersionUID = 5310104736029143258L;
     private String phoneNumber;
     private String friendlyName;
     private String voiceUrl;
-    private HttpAction voiceMethod;
+    private HttpActionEnum voiceMethod;
     private String voiceFallbackUrl;
-    private HttpAction voiceFallbackMethod;
+    private HttpActionEnum voiceFallbackMethod;
     private String hangupCallback;
-    private HttpAction hangupCallbackMethod;
+    private HttpActionEnum hangupCallbackMethod;
     private String heartbeatUrl;
-    private HttpAction heartbeatMethod;
+    private HttpActionEnum heartbeatMethod;
     private String smsUrl;
-    private HttpAction smsMethod;
+    private HttpActionEnum smsMethod;
     private String smsFallbackUrl;
-    private HttpAction smsFallbackMethod;
+    private HttpActionEnum smsFallbackMethod;
     private String responseType = "json";
     /** GETTER
      * TODO: Write general description for this method
@@ -79,7 +79,7 @@ public class UpdatePhoneNumberInput
      * TODO: Write general description for this method
      */
     @JsonGetter("VoiceMethod")
-    public HttpAction getVoiceMethod ( ) { 
+    public HttpActionEnum getVoiceMethod ( ) { 
         return this.voiceMethod;
     }
     
@@ -87,7 +87,7 @@ public class UpdatePhoneNumberInput
      * TODO: Write general description for this method
      */
     @JsonSetter("VoiceMethod")
-    public void setVoiceMethod (HttpAction value) { 
+    public void setVoiceMethod (HttpActionEnum value) { 
         this.voiceMethod = value;
     }
  
@@ -111,7 +111,7 @@ public class UpdatePhoneNumberInput
      * TODO: Write general description for this method
      */
     @JsonGetter("VoiceFallbackMethod")
-    public HttpAction getVoiceFallbackMethod ( ) { 
+    public HttpActionEnum getVoiceFallbackMethod ( ) { 
         return this.voiceFallbackMethod;
     }
     
@@ -119,7 +119,7 @@ public class UpdatePhoneNumberInput
      * TODO: Write general description for this method
      */
     @JsonSetter("VoiceFallbackMethod")
-    public void setVoiceFallbackMethod (HttpAction value) { 
+    public void setVoiceFallbackMethod (HttpActionEnum value) { 
         this.voiceFallbackMethod = value;
     }
  
@@ -143,7 +143,7 @@ public class UpdatePhoneNumberInput
      * TODO: Write general description for this method
      */
     @JsonGetter("HangupCallbackMethod")
-    public HttpAction getHangupCallbackMethod ( ) { 
+    public HttpActionEnum getHangupCallbackMethod ( ) { 
         return this.hangupCallbackMethod;
     }
     
@@ -151,7 +151,7 @@ public class UpdatePhoneNumberInput
      * TODO: Write general description for this method
      */
     @JsonSetter("HangupCallbackMethod")
-    public void setHangupCallbackMethod (HttpAction value) { 
+    public void setHangupCallbackMethod (HttpActionEnum value) { 
         this.hangupCallbackMethod = value;
     }
  
@@ -175,7 +175,7 @@ public class UpdatePhoneNumberInput
      * URL that can be requested every 60 seconds during the call to notify of elapsed time
      */
     @JsonGetter("HeartbeatMethod")
-    public HttpAction getHeartbeatMethod ( ) { 
+    public HttpActionEnum getHeartbeatMethod ( ) { 
         return this.heartbeatMethod;
     }
     
@@ -183,7 +183,7 @@ public class UpdatePhoneNumberInput
      * URL that can be requested every 60 seconds during the call to notify of elapsed time
      */
     @JsonSetter("HeartbeatMethod")
-    public void setHeartbeatMethod (HttpAction value) { 
+    public void setHeartbeatMethod (HttpActionEnum value) { 
         this.heartbeatMethod = value;
     }
  
@@ -207,7 +207,7 @@ public class UpdatePhoneNumberInput
      * TODO: Write general description for this method
      */
     @JsonGetter("SmsMethod")
-    public HttpAction getSmsMethod ( ) { 
+    public HttpActionEnum getSmsMethod ( ) { 
         return this.smsMethod;
     }
     
@@ -215,7 +215,7 @@ public class UpdatePhoneNumberInput
      * TODO: Write general description for this method
      */
     @JsonSetter("SmsMethod")
-    public void setSmsMethod (HttpAction value) { 
+    public void setSmsMethod (HttpActionEnum value) { 
         this.smsMethod = value;
     }
  
@@ -239,7 +239,7 @@ public class UpdatePhoneNumberInput
      * URL requested if the sms URL is not available
      */
     @JsonGetter("SmsFallbackMethod")
-    public HttpAction getSmsFallbackMethod ( ) { 
+    public HttpActionEnum getSmsFallbackMethod ( ) { 
         return this.smsFallbackMethod;
     }
     
@@ -247,7 +247,7 @@ public class UpdatePhoneNumberInput
      * URL requested if the sms URL is not available
      */
     @JsonSetter("SmsFallbackMethod")
-    public void setSmsFallbackMethod (HttpAction value) { 
+    public void setSmsFallbackMethod (HttpActionEnum value) { 
         this.smsFallbackMethod = value;
     }
  

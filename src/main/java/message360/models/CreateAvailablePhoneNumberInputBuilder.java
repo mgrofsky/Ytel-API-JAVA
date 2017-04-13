@@ -21,7 +21,7 @@ public class CreateAvailablePhoneNumberInputBuilder {
     /**
      * Number type either SMS,Voice or all
      */
-    public CreateAvailablePhoneNumberInputBuilder numberType(NumberType numberType) {
+    public CreateAvailablePhoneNumberInputBuilder numberType(NumberTypeEnum numberType) {
         createAvailablePhoneNumberInput.setNumberType(numberType);
         return this;
     }

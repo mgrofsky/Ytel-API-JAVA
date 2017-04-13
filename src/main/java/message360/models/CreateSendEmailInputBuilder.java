@@ -37,7 +37,7 @@ public class CreateSendEmailInputBuilder {
     /**
      * email format type, html or text
      */
-    public CreateSendEmailInputBuilder type(SendEmailAs type) {
+    public CreateSendEmailInputBuilder type(SendEmailAsEnum type) {
         createSendEmailInput.setType(type);
         return this;
     }
