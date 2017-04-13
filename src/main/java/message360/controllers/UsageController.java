@@ -81,7 +81,7 @@ public class UsageController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5097939880176743091L;
+            private static final long serialVersionUID = 5023248890179151907L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -90,7 +90,7 @@ public class UsageController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5614818647612875911L;
+            private static final long serialVersionUID = 5287508150308826751L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -98,7 +98,7 @@ public class UsageController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4818796037835721829L;
+            private static final long serialVersionUID = 5683134661326698081L;
             {
                     put( "ProductCode", (input.getProductCode() != null) ? input.getProductCode().value() : 0 );
                     put( "startDate", input.getStartDate() );

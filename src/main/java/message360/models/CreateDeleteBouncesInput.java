@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateDeleteBouncesInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5335725324017112787L;
+    private static final long serialVersionUID = 4713169041287104226L;
     private String email;
     private String responseType = "json";
     /** GETTER

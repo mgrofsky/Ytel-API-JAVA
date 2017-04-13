@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSendRinglessVMInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4779506370794216489L;
+    private static final long serialVersionUID = 5277321593792948151L;
     private String fromCountryCode;
     private String from;
     private String toCountryCode;
