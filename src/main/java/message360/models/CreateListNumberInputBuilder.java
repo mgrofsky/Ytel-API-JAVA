@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -34,7 +34,7 @@ public class CreateListNumberInputBuilder {
         return this;
     }
 
-    public CreateListNumberInputBuilder numberType(NumberType numberType) {
+    public CreateListNumberInputBuilder numberType(NumberTypeEnum numberType) {
         createListNumberInput.setNumberType(numberType);
         return this;
     }

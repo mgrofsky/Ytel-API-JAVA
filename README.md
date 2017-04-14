@@ -1,27 +1,27 @@
-#Getting started
+# Getting started
 
 ## How to Build
 
 The generated code uses a few Maven dependencies e.g., Jackson, UniRest,
 and Apache HttpClient. The reference to these dependencies is already
 added in the pom.xml file will be installed automatically. Therefore,
-you will need internet access for successful build.
+you will need internet access for a successful build.
 
 * In order to open the client library in Eclipse click on ``` File -> Import ```.
 
-![Importing SDK into Eclipse - Step 1](http://apidocs.io/illustration/java?step=import0&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?step=import0&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 * In the import dialog, select ``` Existing Java Project ``` and click ``` Next ```.
 
-![Importing SDK into Eclipse - Step 2](http://apidocs.io/illustration/java?step=import1&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?step=import1&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 * Browse to locate the folder containing the source code. Select the detected location of the project and click ``` Finish ```.
 
-![Importing SDK into Eclipse - Step 3](http://apidocs.io/illustration/java?step=import2&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?step=import2&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 * Upon successful import, the project will be automatically built by Eclipse after automatically resolving the dependencies.
 
-![Importing SDK into Eclipse - Step 4](http://apidocs.io/illustration/java?step=import3&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?step=import3&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 ## How to Use
 
@@ -31,40 +31,40 @@ The following section explains how to use the Message360 library in a new consol
 
 For starting a new project, click the menu command ``` File > New > Project ```.
 
-![Add a new project in Eclipse](http://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Add a new project in Eclipse](https://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 Next, choose ``` Maven > Maven Project ```and click ``` Next ```.
 
-![Create a new Maven Project - Step 1](http://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 Here, make sure to use the current workspace by choosing ``` Use default Workspace location ```, as shown in the picture below and click ``` Next ```.
 
-![Create a new Maven Project - Step 2](http://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 Following this, select the *quick start* project type to create a simple project with an existing class and a ``` main ``` method. To do this, choose ``` maven-archetype-quickstart ``` item from the list and click ``` Next ```.
 
-![Create a new Maven Project - Step 3](http://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 In the last step, provide a ``` Group Id ``` and ``` Artifact Id ``` as shown in the picture below and click ``` Finish ```.
 
-![Create a new Maven Project - Step 4](http://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 ### 2. Add reference of the library project
 
 The created Maven project manages its dependencies using its ``` pom.xml ``` file. In order to add a dependency on the *Message360* client library, double click on the ``` pom.xml ``` file in the ``` Package Explorer ```. Opening the ``` pom.xml ``` file will render a graphical view on the cavas. Here, switch to the ``` Dependencies ``` tab and click the ``` Add ``` button as shown in the picture below.
 
-![Adding dependency to the client library - Step 1](http://apidocs.io/illustration/java?step=testProject0&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?step=testProject0&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 Clicking the ``` Add ``` button will open a dialog where you need to specify Message360 in ``` Group Id ``` and Message360 in the ``` Artifact Id ``` fields. Once added click ``` OK ```. Save the ``` pom.xml ``` file.
 
-![Adding dependency to the client library - Step 2](http://apidocs.io/illustration/java?step=testProject1&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject1&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 ### 3. Write sample code
 
 Once the ``` SimpleConsoleApp ``` is created, a file named ``` App.java ``` will be visible in the *Package Explorer* with a ``` main ``` method. This is the entry point for the execution of the created project.
 Here, you can add code to initialize the client library and instantiate a *Controller* class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
-![Adding dependency to the client library - Step 2](http://apidocs.io/illustration/java?step=testProject2&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject2&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
 
 ## How to Test
 
@@ -78,7 +78,7 @@ In Eclipse, for running the tests do the following:
 
 ## Initialization
 
-### Authentication and 
+### Authentication
 In order to setup authentication and initialization of the API client, you need the following information.
 
 | Parameter | Description |
@@ -112,22 +112,363 @@ Message360Client client = new Message360Client(basicAuthUserName, basicAuthPassw
 
 ### <a name="list_of_controllers"></a>List of Controllers
 
+* [ShortCodeController](#short_code_controller)
 * [ConferenceController](#conference_controller)
 * [EmailController](#email_controller)
 * [NumberVerificationController](#number_verification_controller)
 * [CarrierController](#carrier_controller)
 * [CallController](#call_controller)
-* [SMSController](#sms_controller)
-* [AccountController](#account_controller)
 * [WebRTCController](#web_rtc_controller)
 * [SubAccountController](#sub_account_controller)
 * [AddressController](#address_controller)
 * [PhoneNumberController](#phone_number_controller)
 * [RecordingController](#recording_controller)
+* [SMSController](#sms_controller)
 * [TranscriptionController](#transcription_controller)
 * [UsageController](#usage_controller)
+* [AccountController](#account_controller)
 
-### <a name="conference_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.ConferenceController") ConferenceController
+### <a name="short_code_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.ShortCodeController") ShortCodeController
+
+#### Get singleton instance
+
+The singleton instance of the ``` ShortCodeController ``` class can be accessed from the API Client.
+
+```java
+ShortCodeController shortCode = client.getShortCode();
+```
+
+#### <a name="create_view_template_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.createViewTemplateAsync") createViewTemplateAsync
+
+> View a Shared ShortCode Template
+
+
+```java
+void createViewTemplateAsync(
+        final CreateViewTemplateInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| templateid |  ``` Required ```  | The unique identifier for a template object |
+| responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+CreateViewTemplateInput collect = new CreateViewTemplateInput();
+
+UUID templateid = UUID.randomUUID();
+collect.setTemplateid(templateid);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+shortCode.createViewTemplateAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_send_short_code_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.createSendShortCodeAsync") createSendShortCodeAsync
+
+> Send an SMS from a message360 ShortCode
+
+
+```java
+void createSendShortCodeAsync(
+        final CreateSendShortCodeInput input,
+        Map<String, Object> fieldParameters,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| shortcode |  ``` Required ```  | The Short Code number that is the sender of this message |
+| tocountrycode |  ``` Required ```  ``` DefaultValue ```  | The country code for sending this message |
+| to |  ``` Required ```  | A valid 10-digit number that should receive the message+ |
+| templateid |  ``` Required ```  | The unique identifier for the template used for the message |
+| method |  ``` Optional ```  ``` DefaultValue ```  | Specifies the HTTP method used to request the required URL once the Short Code message is sent. |
+| messageStatusCallback |  ``` Optional ```  | URL that can be requested to receive notification when Short Code message was sent. |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+CreateSendShortCodeInput collect = new CreateSendShortCodeInput();
+
+String shortcode = "shortcode";
+collect.setShortcode(shortcode);
+
+String tocountrycode = "1";
+collect.setTocountrycode(tocountrycode);
+
+String to = "to";
+collect.setTo(to);
+
+UUID templateid = UUID.randomUUID();
+collect.setTemplateid(templateid);
+
+String method = "GET";
+collect.setMethod(method);
+
+String messageStatusCallback = "MessageStatusCallback";
+collect.setMessageStatusCallback(messageStatusCallback);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+shortCode.createSendShortCodeAsync(collect, , formParams, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_list_inbound_short_code_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.createListInboundShortCodeAsync") createListInboundShortCodeAsync
+
+> List All Inbound ShortCode
+
+
+```java
+void createListInboundShortCodeAsync(
+        final CreateListInboundShortCodeInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Which page of the overall response will be returned. Zero indexed |
+| pagesize |  ``` Optional ```  ``` DefaultValue ```  | Number of individual resources listed in the response per page |
+| from |  ``` Optional ```  | From Number to Inbound ShortCode |
+| shortcode |  ``` Optional ```  | Only list messages sent to this Short Code |
+| dateReceived |  ``` Optional ```  | Only list messages sent with the specified date |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+CreateListInboundShortCodeInput collect = new CreateListInboundShortCodeInput();
+
+Integer page = 87;
+collect.setPage(page);
+
+Integer pagesize = 10;
+collect.setPagesize(pagesize);
+
+String from = "from";
+collect.setFrom(from);
+
+String shortcode = "Shortcode";
+collect.setShortcode(shortcode);
+
+String dateReceived = "DateReceived";
+collect.setDateReceived(dateReceived);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+shortCode.createListInboundShortCodeAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_list_short_code_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.createListShortCodeAsync") createListShortCodeAsync
+
+> List ShortCode Messages
+
+
+```java
+void createListShortCodeAsync(
+        final CreateListShortCodeInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Which page of the overall response will be returned. Zero indexed |
+| pagesize |  ``` Optional ```  ``` DefaultValue ```  | Number of individual resources listed in the response per page |
+| from |  ``` Optional ```  | Messages sent from this number |
+| to |  ``` Optional ```  | Messages sent to this number |
+| datesent |  ``` Optional ```  | Only list SMS messages sent in the specified date range |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+CreateListShortCodeInput collect = new CreateListShortCodeInput();
+
+Integer page = 87;
+collect.setPage(page);
+
+Integer pagesize = 10;
+collect.setPagesize(pagesize);
+
+String from = "from";
+collect.setFrom(from);
+
+String to = "to";
+collect.setTo(to);
+
+String datesent = "datesent";
+collect.setDatesent(datesent);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+shortCode.createListShortCodeAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_list_templates_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.createListTemplatesAsync") createListTemplatesAsync
+
+> List Shortcode Templates by Type
+
+
+```java
+void createListTemplatesAsync(
+        final CreateListTemplatesInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| type |  ``` Optional ```  ``` DefaultValue ```  | The type (category) of template Valid values: marketing, authorization |
+| page |  ``` Optional ```  | The page count to retrieve from the total results in the collection. Page indexing starts at 1. |
+| pagesize |  ``` Optional ```  ``` DefaultValue ```  | The count of objects to return per page. |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+CreateListTemplatesInput collect = new CreateListTemplatesInput();
+
+String type = "authorization";
+collect.setType(type);
+
+Integer page = 87;
+collect.setPage(page);
+
+Integer pagesize = 10;
+collect.setPagesize(pagesize);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+shortCode.createListTemplatesAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_view_short_code_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.createViewShortCodeAsync") createViewShortCodeAsync
+
+> View a ShortCode Message
+
+
+```java
+void createViewShortCodeAsync(
+        final CreateViewShortCodeInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| messagesid |  ``` Required ```  | Message sid |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+CreateViewShortCodeInput collect = new CreateViewShortCodeInput();
+
+String messagesid = "messagesid";
+collect.setMessagesid(messagesid);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+shortCode.createViewShortCodeAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+### <a name="conference_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.ConferenceController") ConferenceController
 
 #### Get singleton instance
 
@@ -137,7 +478,7 @@ The singleton instance of the ``` ConferenceController ``` class can be accessed
 ConferenceController conference = client.getConference();
 ```
 
-#### <a name="create_deaf_mute_participant_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.ConferenceController.createDeafMuteParticipantAsync") createDeafMuteParticipantAsync
+#### <a name="create_deaf_mute_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.createDeafMuteParticipantAsync") createDeafMuteParticipantAsync
 
 > Deaf Mute Participant
 
@@ -170,10 +511,10 @@ collect.setConferenceSid(conferenceSid);
 String participantSid = "ParticipantSid";
 collect.setParticipantSid(participantSid);
 
-Boolean muted = true;
+Boolean muted = false;
 collect.setMuted(muted);
 
-Boolean deaf = true;
+Boolean deaf = false;
 collect.setDeaf(deaf);
 
 String responseType = "json";
@@ -193,7 +534,7 @@ conference.createDeafMuteParticipantAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_conference_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.ConferenceController.createListConferenceAsync") createListConferenceAsync
+#### <a name="create_list_conference_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.createListConferenceAsync") createListConferenceAsync
 
 > List Conference
 
@@ -222,16 +563,16 @@ void createListConferenceAsync(
 ```java
 CreateListConferenceInput collect = new CreateListConferenceInput();
 
-Integer page = 130;
+Integer page = 87;
 collect.setPage(page);
 
-Integer pageSize = 130;
+Integer pageSize = 87;
 collect.setPageSize(pageSize);
 
 String friendlyName = "FriendlyName";
 collect.setFriendlyName(friendlyName);
 
-InterruptedCallStatus status = InterruptedCallStatus.fromString("CANCELED");
+InterruptedCallStatusEnum status = InterruptedCallStatusEnum.fromString("CANCELED");
 collect.setStatus(status);
 
 String dateCreated = "DateCreated";
@@ -257,7 +598,7 @@ conference.createListConferenceAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_view_conference_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.ConferenceController.createViewConferenceAsync") createViewConferenceAsync
+#### <a name="create_view_conference_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.createViewConferenceAsync") createViewConferenceAsync
 
 > View Conference
 
@@ -301,7 +642,7 @@ conference.createViewConferenceAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="add_participant_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.ConferenceController.addParticipantAsync") addParticipantAsync
+#### <a name="add_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.addParticipantAsync") addParticipantAsync
 
 > Add Participant in conference 
 
@@ -335,7 +676,7 @@ collect.setConferencesid(conferencesid);
 String participantnumber = "participantnumber";
 collect.setParticipantnumber(participantnumber);
 
-int tocountrycode = 88;
+int tocountrycode = 87;
 collect.setTocountrycode(tocountrycode);
 
 Boolean muted = false;
@@ -361,7 +702,7 @@ conference.addParticipantAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_participant_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.ConferenceController.createListParticipantAsync") createListParticipantAsync
+#### <a name="create_list_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.createListParticipantAsync") createListParticipantAsync
 
 > List Participant
 
@@ -392,10 +733,10 @@ CreateListParticipantInput collect = new CreateListParticipantInput();
 String conferenceSid = "ConferenceSid";
 collect.setConferenceSid(conferenceSid);
 
-Integer page = 88;
+Integer page = 87;
 collect.setPage(page);
 
-Integer pagesize = 88;
+Integer pagesize = 87;
 collect.setPagesize(pagesize);
 
 Boolean muted = false;
@@ -421,7 +762,7 @@ conference.createListParticipantAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_view_participant_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.ConferenceController.createViewParticipantAsync") createViewParticipantAsync
+#### <a name="create_view_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.createViewParticipantAsync") createViewParticipantAsync
 
 > View Participant
 
@@ -471,7 +812,7 @@ conference.createViewParticipantAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="email_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.EmailController") EmailController
+### <a name="email_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.EmailController") EmailController
 
 #### Get singleton instance
 
@@ -481,7 +822,7 @@ The singleton instance of the ``` EmailController ``` class can be accessed from
 EmailController email = client.getEmail();
 ```
 
-#### <a name="create_delete_invalid_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteInvalidAsync") createDeleteInvalidAsync
+#### <a name="create_delete_invalid_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteInvalidAsync") createDeleteInvalidAsync
 
 > This endpoint allows you to delete entries in the Invalid Emails list.
 
@@ -525,7 +866,7 @@ email.createDeleteInvalidAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_blocks_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createListBlocksAsync") createListBlocksAsync
+#### <a name="create_list_blocks_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.createListBlocksAsync") createListBlocksAsync
 
 > Outputs email addresses on your blocklist
 
@@ -573,7 +914,7 @@ email.createListBlocksAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_spam_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createListSpamAsync") createListSpamAsync
+#### <a name="create_list_spam_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.createListSpamAsync") createListSpamAsync
 
 > List out all email addresses marked as spam
 
@@ -621,7 +962,7 @@ email.createListSpamAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_bounces_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createListBouncesAsync") createListBouncesAsync
+#### <a name="create_list_bounces_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.createListBouncesAsync") createListBouncesAsync
 
 > List out all email addresses that have bounced
 
@@ -669,7 +1010,7 @@ email.createListBouncesAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_delete_bounces_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteBouncesAsync") createDeleteBouncesAsync
+#### <a name="create_delete_bounces_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteBouncesAsync") createDeleteBouncesAsync
 
 > Delete an email address from the bounced address list
 
@@ -713,7 +1054,7 @@ email.createDeleteBouncesAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_invalid_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createListInvalidAsync") createListInvalidAsync
+#### <a name="create_list_invalid_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.createListInvalidAsync") createListInvalidAsync
 
 > List out all invalid email addresses
 
@@ -761,7 +1102,7 @@ email.createListInvalidAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_unsubscribes_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createListUnsubscribesAsync") createListUnsubscribesAsync
+#### <a name="create_list_unsubscribes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.createListUnsubscribesAsync") createListUnsubscribesAsync
 
 > List all unsubscribed email addresses
 
@@ -809,7 +1150,7 @@ email.createListUnsubscribesAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_delete_unsubscribes_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteUnsubscribesAsync") createDeleteUnsubscribesAsync
+#### <a name="create_delete_unsubscribes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteUnsubscribesAsync") createDeleteUnsubscribesAsync
 
 > Delete emails from the unsubscribe list
 
@@ -853,7 +1194,7 @@ email.createDeleteUnsubscribesAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="add_unsubscribes_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.addUnsubscribesAsync") addUnsubscribesAsync
+#### <a name="add_unsubscribes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.addUnsubscribesAsync") addUnsubscribesAsync
 
 > Add an email to the unsubscribe list
 
@@ -897,7 +1238,7 @@ email.addUnsubscribesAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_delete_block_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteBlockAsync") createDeleteBlockAsync
+#### <a name="create_delete_block_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteBlockAsync") createDeleteBlockAsync
 
 > Deletes a blocked email
 
@@ -941,7 +1282,7 @@ email.createDeleteBlockAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_delete_spam_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteSpamAsync") createDeleteSpamAsync
+#### <a name="create_delete_spam_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.createDeleteSpamAsync") createDeleteSpamAsync
 
 > Deletes a email address marked as spam from the spam list
 
@@ -985,7 +1326,7 @@ email.createDeleteSpamAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_send_email_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.EmailController.createSendEmailAsync") createSendEmailAsync
+#### <a name="create_send_email_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.createSendEmailAsync") createSendEmailAsync
 
 > Send out an email
 
@@ -1022,7 +1363,7 @@ collect.setTo(to);
 String from = "from";
 collect.setFrom(from);
 
-SendEmailAs type = SendEmailAs.fromString("HTML");
+SendEmailAsEnum type = SendEmailAsEnum.fromString("HTML");
 collect.setType(type);
 
 String subject = "subject";
@@ -1059,7 +1400,7 @@ email.createSendEmailAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="number_verification_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.NumberVerificationController") NumberVerificationController
+### <a name="number_verification_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.NumberVerificationController") NumberVerificationController
 
 #### Get singleton instance
 
@@ -1069,7 +1410,7 @@ The singleton instance of the ``` NumberVerificationController ``` class can be 
 NumberVerificationController numberVerification = client.getNumberVerification();
 ```
 
-#### <a name="create_verify_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.NumberVerificationController.createVerifyNumberAsync") createVerifyNumberAsync
+#### <a name="create_verify_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.NumberVerificationController.createVerifyNumberAsync") createVerifyNumberAsync
 
 > Number Verification
 
@@ -1119,7 +1460,7 @@ numberVerification.createVerifyNumberAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="carrier_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.CarrierController") CarrierController
+### <a name="carrier_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.CarrierController") CarrierController
 
 #### Get singleton instance
 
@@ -1129,7 +1470,7 @@ The singleton instance of the ``` CarrierController ``` class can be accessed fr
 CarrierController carrier = client.getCarrier();
 ```
 
-#### <a name="create_carrier_lookup_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.CarrierController.createCarrierLookupAsync") createCarrierLookupAsync
+#### <a name="create_carrier_lookup_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CarrierController.createCarrierLookupAsync") createCarrierLookupAsync
 
 > Get the Carrier Lookup
 
@@ -1173,7 +1514,7 @@ carrier.createCarrierLookupAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_carrier_lookup_list_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.CarrierController.createCarrierLookupListAsync") createCarrierLookupListAsync
+#### <a name="create_carrier_lookup_list_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CarrierController.createCarrierLookupListAsync") createCarrierLookupListAsync
 
 > Get the All Purchase Number's Carrier lookup
 
@@ -1198,10 +1539,10 @@ void createCarrierLookupListAsync(
 ```java
 CreateCarrierLookupListInput collect = new CreateCarrierLookupListInput();
 
-Integer page = 88;
+Integer page = 87;
 collect.setPage(page);
 
-Integer pagesize = 88;
+Integer pagesize = 87;
 collect.setPagesize(pagesize);
 
 String responseType = "json";
@@ -1223,7 +1564,7 @@ carrier.createCarrierLookupListAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="call_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.CallController") CallController
+### <a name="call_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.CallController") CallController
 
 #### Get singleton instance
 
@@ -1233,7 +1574,7 @@ The singleton instance of the ``` CallController ``` class can be accessed from 
 CallController call = client.getCall();
 ```
 
-#### <a name="create_view_call_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.CallController.createViewCallAsync") createViewCallAsync
+#### <a name="create_view_call_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.createViewCallAsync") createViewCallAsync
 
 > View Call Response
 
@@ -1277,7 +1618,7 @@ call.createViewCallAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_group_call_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.CallController.createGroupCallAsync") createGroupCallAsync
+#### <a name="create_group_call_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.createGroupCallAsync") createGroupCallAsync
 
 > Group Call
 
@@ -1335,28 +1676,28 @@ collect.setTo(to);
 String url = "Url";
 collect.setUrl(url);
 
-HttpAction method = HttpAction.fromString("GET");
+HttpActionEnum method = HttpActionEnum.fromString("GET");
 collect.setMethod(method);
 
 String statusCallBackUrl = "StatusCallBackUrl";
 collect.setStatusCallBackUrl(statusCallBackUrl);
 
-HttpAction statusCallBackMethod = HttpAction.fromString("GET");
+HttpActionEnum statusCallBackMethod = HttpActionEnum.fromString("GET");
 collect.setStatusCallBackMethod(statusCallBackMethod);
 
 String fallBackUrl = "FallBackUrl";
 collect.setFallBackUrl(fallBackUrl);
 
-HttpAction fallBackMethod = HttpAction.fromString("GET");
+HttpActionEnum fallBackMethod = HttpActionEnum.fromString("GET");
 collect.setFallBackMethod(fallBackMethod);
 
 String heartBeatUrl = "HeartBeatUrl";
 collect.setHeartBeatUrl(heartBeatUrl);
 
-HttpAction heartBeatMethod = HttpAction.fromString("GET");
+HttpActionEnum heartBeatMethod = HttpActionEnum.fromString("GET");
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 88;
+Integer timeout = 87;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -1371,7 +1712,7 @@ collect.setRecord(record);
 String recordCallBackUrl = "RecordCallBackUrl";
 collect.setRecordCallBackUrl(recordCallBackUrl);
 
-HttpAction recordCallBackMethod = HttpAction.fromString("GET");
+HttpActionEnum recordCallBackMethod = HttpActionEnum.fromString("GET");
 collect.setRecordCallBackMethod(recordCallBackMethod);
 
 Boolean transcribe = false;
@@ -1397,7 +1738,7 @@ call.createGroupCallAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_voice_effect_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.CallController.createVoiceEffectAsync") createVoiceEffectAsync
+#### <a name="create_voice_effect_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.createVoiceEffectAsync") createVoiceEffectAsync
 
 > Voice Effect
 
@@ -1430,22 +1771,22 @@ CreateVoiceEffectInput collect = new CreateVoiceEffectInput();
 String callSid = "CallSid";
 collect.setCallSid(callSid);
 
-AudioDirection audioDirection = AudioDirection.fromString("IN");
+AudioDirectionEnum audioDirection = AudioDirectionEnum.fromString("IN");
 collect.setAudioDirection(audioDirection);
 
-Double pitchSemiTones = 88.2772337381156;
+Double pitchSemiTones = 87.7680835024305;
 collect.setPitchSemiTones(pitchSemiTones);
 
-Double pitchOctaves = 88.2772337381156;
+Double pitchOctaves = 87.7680835024305;
 collect.setPitchOctaves(pitchOctaves);
 
-Double pitch = 88.2772337381156;
+Double pitch = 87.7680835024305;
 collect.setPitch(pitch);
 
-Double rate = 88.2772337381156;
+Double rate = 87.7680835024305;
 collect.setRate(rate);
 
-Double tempo = 88.2772337381156;
+Double tempo = 87.7680835024305;
 collect.setTempo(tempo);
 
 String responseType = "json";
@@ -1465,7 +1806,7 @@ call.createVoiceEffectAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_record_call_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.CallController.createRecordCallAsync") createRecordCallAsync
+#### <a name="create_record_call_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.createRecordCallAsync") createRecordCallAsync
 
 > Record a Call
 
@@ -1500,16 +1841,16 @@ collect.setCallSid(callSid);
 boolean record = false;
 collect.setRecord(record);
 
-Direction direction = Direction.fromString("IN");
+DirectionEnum direction = DirectionEnum.fromString("IN");
 collect.setDirection(direction);
 
-Integer timeLimit = 88;
+Integer timeLimit = 87;
 collect.setTimeLimit(timeLimit);
 
 String callBackUrl = "CallBackUrl";
 collect.setCallBackUrl(callBackUrl);
 
-AudioFormat fileformat = AudioFormat.fromString("mp3");
+AudioFormatEnum fileformat = AudioFormatEnum.fromString("mp3");
 collect.setFileformat(fileformat);
 
 String responseType = "json";
@@ -1529,7 +1870,7 @@ call.createRecordCallAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_play_audio_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.CallController.createPlayAudioAsync") createPlayAudioAsync
+#### <a name="create_play_audio_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.createPlayAudioAsync") createPlayAudioAsync
 
 > Play Dtmf and send the Digit
 
@@ -1564,10 +1905,10 @@ collect.setCallSid(callSid);
 String audioUrl = "AudioUrl";
 collect.setAudioUrl(audioUrl);
 
-Integer length = 88;
+Integer length = 46;
 collect.setLength(length);
 
-Direction direction = Direction.fromString("IN");
+DirectionEnum direction = DirectionEnum.fromString("IN");
 collect.setDirection(direction);
 
 Boolean loop = false;
@@ -1593,67 +1934,7 @@ call.createPlayAudioAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_calls_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.CallController.createListCallsAsync") createListCallsAsync
-
-> A list of calls associated with your Message360 account
-
-
-```java
-void createListCallsAsync(
-        final CreateListCallsInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Which page of the overall response will be returned. Zero indexed |
-| pageSize |  ``` Optional ```  | Number of individual resources listed in the response per page |
-| to |  ``` Optional ```  | Only list calls to this number |
-| from |  ``` Optional ```  | Only list calls from this number |
-| dateCreated |  ``` Optional ```  | Only list calls starting within the specified date range |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
-
-
-#### Example Usage
-
-```java
-CreateListCallsInput collect = new CreateListCallsInput();
-
-Integer page = 88;
-collect.setPage(page);
-
-Integer pageSize = 88;
-collect.setPageSize(pageSize);
-
-String to = "To";
-collect.setTo(to);
-
-String from = "From";
-collect.setFrom(from);
-
-String dateCreated = "DateCreated";
-collect.setDateCreated(dateCreated);
-
-String responseType = "json";
-collect.setResponseType(responseType);
-
-// Invoking the API call with sample inputs
-call.createListCallsAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
-#### <a name="create_interrupted_call_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.CallController.createInterruptedCallAsync") createInterruptedCallAsync
+#### <a name="create_interrupted_call_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.createInterruptedCallAsync") createInterruptedCallAsync
 
 > Interrupt the Call by Call Sid
 
@@ -1686,10 +1967,10 @@ collect.setCallSid(callSid);
 String url = "Url";
 collect.setUrl(url);
 
-HttpAction method = HttpAction.fromString("GET");
+HttpActionEnum method = HttpActionEnum.fromString("GET");
 collect.setMethod(method);
 
-InterruptedCallStatus status = InterruptedCallStatus.fromString("CANCELED");
+InterruptedCallStatusEnum status = InterruptedCallStatusEnum.fromString("CANCELED");
 collect.setStatus(status);
 
 String responseType = "json";
@@ -1709,7 +1990,7 @@ call.createInterruptedCallAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_send_digit_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.CallController.createSendDigitAsync") createSendDigitAsync
+#### <a name="create_send_digit_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.createSendDigitAsync") createSendDigitAsync
 
 > Play Dtmf and send the Digit
 
@@ -1741,7 +2022,7 @@ collect.setCallSid(callSid);
 String playDtmf = "PlayDtmf";
 collect.setPlayDtmf(playDtmf);
 
-Direction playDtmfDirection = Direction.fromString("IN");
+DirectionEnum playDtmfDirection = DirectionEnum.fromString("IN");
 collect.setPlayDtmfDirection(playDtmfDirection);
 
 String responseType = "json";
@@ -1761,7 +2042,7 @@ call.createSendDigitAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_make_call_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.CallController.createMakeCallAsync") createMakeCallAsync
+#### <a name="create_make_call_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.createMakeCallAsync") createMakeCallAsync
 
 > You can experiment with initiating a call through Message360 and view the request response generated when doing so and get the response in json
 
@@ -1820,19 +2101,19 @@ collect.setTo(to);
 String url = "Url";
 collect.setUrl(url);
 
-HttpAction method = HttpAction.fromString("GET");
+HttpActionEnum method = HttpActionEnum.fromString("GET");
 collect.setMethod(method);
 
 String statusCallBackUrl = "StatusCallBackUrl";
 collect.setStatusCallBackUrl(statusCallBackUrl);
 
-HttpAction statusCallBackMethod = HttpAction.fromString("GET");
+HttpActionEnum statusCallBackMethod = HttpActionEnum.fromString("GET");
 collect.setStatusCallBackMethod(statusCallBackMethod);
 
 String fallBackUrl = "FallBackUrl";
 collect.setFallBackUrl(fallBackUrl);
 
-HttpAction fallBackMethod = HttpAction.fromString("GET");
+HttpActionEnum fallBackMethod = HttpActionEnum.fromString("GET");
 collect.setFallBackMethod(fallBackMethod);
 
 String heartBeatUrl = "HeartBeatUrl";
@@ -1841,7 +2122,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 Boolean heartBeatMethod = false;
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 88;
+Integer timeout = 46;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -1856,7 +2137,7 @@ collect.setRecord(record);
 String recordCallBackUrl = "RecordCallBackUrl";
 collect.setRecordCallBackUrl(recordCallBackUrl);
 
-HttpAction recordCallBackMethod = HttpAction.fromString("GET");
+HttpActionEnum recordCallBackMethod = HttpActionEnum.fromString("GET");
 collect.setRecordCallBackMethod(recordCallBackMethod);
 
 Boolean transcribe = false;
@@ -1865,7 +2146,7 @@ collect.setTranscribe(transcribe);
 String transcribeCallBackUrl = "TranscribeCallBackUrl";
 collect.setTranscribeCallBackUrl(transcribeCallBackUrl);
 
-IfMachine ifMachine = IfMachine.fromString("CONTINUE");
+IfMachineEnum ifMachine = IfMachineEnum.fromString("CONTINUE");
 collect.setIfMachine(ifMachine);
 
 String responseType = "json";
@@ -1885,70 +2166,14 @@ call.createMakeCallAsync(collect, new APICallBack<String>() {
 ```
 
 
-[Back to List of Controllers](#list_of_controllers)
+#### <a name="create_list_calls_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.createListCallsAsync") createListCallsAsync
 
-### <a name="sms_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.SMSController") SMSController
-
-#### Get singleton instance
-
-The singleton instance of the ``` SMSController ``` class can be accessed from the API Client.
-
-```java
-SMSController sMS = client.getSMS();
-```
-
-#### <a name="create_view_sms_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.SMSController.createViewSMSAsync") createViewSMSAsync
-
-> View Particular SMS
+> A list of calls associated with your Message360 account
 
 
 ```java
-void createViewSMSAsync(
-        final CreateViewSMSInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| messagesid |  ``` Required ```  | Message sid |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
-
-
-#### Example Usage
-
-```java
-CreateViewSMSInput collect = new CreateViewSMSInput();
-
-String messagesid = "messagesid";
-collect.setMessagesid(messagesid);
-
-String responseType = "json";
-collect.setResponseType(responseType);
-
-// Invoking the API call with sample inputs
-sMS.createViewSMSAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
-#### <a name="create_list_inbound_sms_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.SMSController.createListInboundSMSAsync") createListInboundSMSAsync
-
-> List All Inbound SMS
-
-
-```java
-void createListInboundSMSAsync(
-        final CreateListInboundSMSInput input,
+void createListCallsAsync(
+        final CreateListCallsInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1957,34 +2182,38 @@ void createListInboundSMSAsync(
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | page |  ``` Optional ```  | Which page of the overall response will be returned. Zero indexed |
-| pagesize |  ``` Optional ```  | Number of individual resources listed in the response per page |
-| from |  ``` Optional ```  | From Number to Inbound SMS |
-| to |  ``` Optional ```  | To Number to get Inbound SMS |
+| pageSize |  ``` Optional ```  ``` DefaultValue ```  | Number of individual resources listed in the response per page |
+| to |  ``` Optional ```  | Only list calls to this number |
+| from |  ``` Optional ```  | Only list calls from this number |
+| dateCreated |  ``` Optional ```  | Only list calls starting within the specified date range |
 | responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
 
 
 #### Example Usage
 
 ```java
-CreateListInboundSMSInput collect = new CreateListInboundSMSInput();
+CreateListCallsInput collect = new CreateListCallsInput();
 
-Integer page = 88;
+Integer page = 46;
 collect.setPage(page);
 
-String pagesize = "pagesize";
-collect.setPagesize(pagesize);
+Integer pageSize = 10;
+collect.setPageSize(pageSize);
 
-String from = "from";
+String to = "To";
+collect.setTo(to);
+
+String from = "From";
 collect.setFrom(from);
 
-String to = "to";
-collect.setTo(to);
+String dateCreated = "DateCreated";
+collect.setDateCreated(dateCreated);
 
 String responseType = "json";
 collect.setResponseType(responseType);
 
 // Invoking the API call with sample inputs
-sMS.createListInboundSMSAsync(collect, new APICallBack<String>() {
+call.createListCallsAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
@@ -1997,14 +2226,14 @@ sMS.createListInboundSMSAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_sms_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.SMSController.createListSMSAsync") createListSMSAsync
+#### <a name="create_send_ringless_vm_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.createSendRinglessVMAsync") createSendRinglessVMAsync
 
-> List All SMS
+> API endpoint used to send a Ringless Voicemail
 
 
 ```java
-void createListSMSAsync(
-        final CreateListSMSInput input,
+void createSendRinglessVMAsync(
+        final CreateSendRinglessVMInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -2012,107 +2241,51 @@ void createListSMSAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| page |  ``` Optional ```  | Which page of the overall response will be returned. Zero indexed |
-| pagesize |  ``` Optional ```  | Number of individual resources listed in the response per page |
-| from |  ``` Optional ```  | Messages sent from this number |
-| to |  ``` Optional ```  | Messages sent to this number |
-| datesent |  ``` Optional ```  | Only list SMS messages sent in the specified date range |
+| fromCountryCode |  ``` Required ```  | From country code |
+| from |  ``` Required ```  | This number to display on Caller ID as calling |
+| toCountryCode |  ``` Required ```  | To country code |
+| to |  ``` Required ```  | To number |
+| voiceMailURL |  ``` Required ```  | URL to an audio file |
+| method |  ``` Required ```  ``` DefaultValue ```  | Not currently used in this version |
+| statusCallBackUrl |  ``` Optional ```  | URL to post the status of the Ringless request |
+| statsCallBackMethod |  ``` Optional ```  | POST or GET |
 | responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
 
 
 #### Example Usage
 
 ```java
-CreateListSMSInput collect = new CreateListSMSInput();
+CreateSendRinglessVMInput collect = new CreateSendRinglessVMInput();
 
-Integer page = 88;
-collect.setPage(page);
+String fromCountryCode = "FromCountryCode";
+collect.setFromCountryCode(fromCountryCode);
 
-Integer pagesize = 88;
-collect.setPagesize(pagesize);
-
-String from = "from";
+String from = "From";
 collect.setFrom(from);
 
-String to = "to";
+String toCountryCode = "ToCountryCode";
+collect.setToCountryCode(toCountryCode);
+
+String to = "To";
 collect.setTo(to);
 
-String datesent = "datesent";
-collect.setDatesent(datesent);
+String voiceMailURL = "VoiceMailURL";
+collect.setVoiceMailURL(voiceMailURL);
 
-String responseType = "json";
-collect.setResponseType(responseType);
-
-// Invoking the API call with sample inputs
-sMS.createListSMSAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
-#### <a name="create_send_sms_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.SMSController.createSendSMSAsync") createSendSMSAsync
-
-> Send an SMS from a message360 number
-
-
-```java
-void createSendSMSAsync(
-        final CreateSendSMSInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| fromcountrycode |  ``` Required ```  ``` DefaultValue ```  | From Country Code |
-| from |  ``` Required ```  | SMS enabled Message360 number to send this message from |
-| tocountrycode |  ``` Required ```  ``` DefaultValue ```  | To country code |
-| to |  ``` Required ```  | Number to send the SMS to |
-| body |  ``` Required ```  | Text Message To Send |
-| method |  ``` Optional ```  | Specifies the HTTP method used to request the required URL once SMS sent. |
-| messagestatuscallback |  ``` Optional ```  | URL that can be requested to receive notification when SMS has Sent. A set of default parameters will be sent here once the SMS is finished. |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
-
-
-#### Example Usage
-
-```java
-CreateSendSMSInput collect = new CreateSendSMSInput();
-
-int fromcountrycode = 1;
-collect.setFromcountrycode(fromcountrycode);
-
-String from = "from";
-collect.setFrom(from);
-
-int tocountrycode = 1;
-collect.setTocountrycode(tocountrycode);
-
-String to = "to";
-collect.setTo(to);
-
-String body = "body";
-collect.setBody(body);
-
-HttpAction method = HttpAction.fromString("GET");
+String method = "GET";
 collect.setMethod(method);
 
-String messagestatuscallback = "messagestatuscallback";
-collect.setMessagestatuscallback(messagestatuscallback);
+String statusCallBackUrl = "StatusCallBackUrl";
+collect.setStatusCallBackUrl(statusCallBackUrl);
+
+String statsCallBackMethod = "StatsCallBackMethod";
+collect.setStatsCallBackMethod(statsCallBackMethod);
 
 String responseType = "json";
 collect.setResponseType(responseType);
 
 // Invoking the API call with sample inputs
-sMS.createSendSMSAsync(collect, new APICallBack<String>() {
+call.createSendRinglessVMAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
@@ -2127,63 +2300,7 @@ sMS.createSendSMSAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="account_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.AccountController") AccountController
-
-#### Get singleton instance
-
-The singleton instance of the ``` AccountController ``` class can be accessed from the API Client.
-
-```java
-AccountController account = client.getAccount();
-```
-
-#### <a name="create_view_account_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.AccountController.createViewAccountAsync") createViewAccountAsync
-
-> Display Account Description
-
-
-```java
-void createViewAccountAsync(
-        final CreateViewAccountInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| date |  ``` Required ```  | TODO: Add a parameter description |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
-
-
-#### Example Usage
-
-```java
-CreateViewAccountInput collect = new CreateViewAccountInput();
-
-String date = "date";
-collect.setDate(date);
-
-String responseType = "json";
-collect.setResponseType(responseType);
-
-// Invoking the API call with sample inputs
-account.createViewAccountAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-### <a name="web_rtc_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.WebRTCController") WebRTCController
+### <a name="web_rtc_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.WebRTCController") WebRTCController
 
 #### Get singleton instance
 
@@ -2193,7 +2310,7 @@ The singleton instance of the ``` WebRTCController ``` class can be accessed fro
 WebRTCController webRTC = client.getWebRTC();
 ```
 
-#### <a name="create_check_funds_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.WebRTCController.createCheckFundsAsync") createCheckFundsAsync
+#### <a name="create_check_funds_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.WebRTCController.createCheckFundsAsync") createCheckFundsAsync
 
 > TODO: Add a method description
 
@@ -2237,55 +2354,7 @@ webRTC.createCheckFundsAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_authenticate_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.WebRTCController.createAuthenticateNumberAsync") createAuthenticateNumberAsync
-
-> Authenticate a message360 number for use
-
-
-```java
-void createAuthenticateNumberAsync(
-        final CreateAuthenticateNumberInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| phoneNumber |  ``` Required ```  | Phone number to authenticate for use |
-| accountSid |  ``` Required ```  | Your message360 Account SID |
-| authToken |  ``` Required ```  | Your message360 token |
-
-
-#### Example Usage
-
-```java
-CreateAuthenticateNumberInput collect = new CreateAuthenticateNumberInput();
-
-String phoneNumber = "phone_number";
-collect.setPhoneNumber(phoneNumber);
-
-String accountSid = "account_sid";
-collect.setAccountSid(accountSid);
-
-String authToken = "auth_token";
-collect.setAuthToken(authToken);
-
-// Invoking the API call with sample inputs
-webRTC.createAuthenticateNumberAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
-#### <a name="create_token_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.WebRTCController.createTokenAsync") createTokenAsync
+#### <a name="create_token_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.WebRTCController.createTokenAsync") createTokenAsync
 
 > message360 webrtc
 
@@ -2302,6 +2371,8 @@ void createTokenAsync(
 |-----------|------|-------------|
 | accountSid |  ``` Required ```  | Your message360 Account SID |
 | authToken |  ``` Required ```  | Your message360 Token |
+| username |  ``` Required ```  | WebRTC username authentication |
+| password |  ``` Required ```  | WebRTC password authentication |
 
 
 #### Example Usage
@@ -2314,6 +2385,12 @@ collect.setAccountSid(accountSid);
 
 String authToken = "auth_token";
 collect.setAuthToken(authToken);
+
+String username = "username";
+collect.setUsername(username);
+
+String password = "password";
+collect.setPassword(password);
 
 // Invoking the API call with sample inputs
 webRTC.createTokenAsync(collect, new APICallBack<String>() {
@@ -2331,7 +2408,7 @@ webRTC.createTokenAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="sub_account_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.SubAccountController") SubAccountController
+### <a name="sub_account_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.SubAccountController") SubAccountController
 
 #### Get singleton instance
 
@@ -2341,9 +2418,9 @@ The singleton instance of the ``` SubAccountController ``` class can be accessed
 SubAccountController subAccount = client.getSubAccount();
 ```
 
-#### <a name="create_sub_account_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.SubAccountController.createSubAccountAsync") createSubAccountAsync
+#### <a name="create_sub_account_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SubAccountController.createSubAccountAsync") createSubAccountAsync
 
-> Create Sub account
+> Create a sub user account under the parent account
 
 
 ```java
@@ -2356,10 +2433,10 @@ void createSubAccountAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| firstname |  ``` Required ```  | TODO: Add a parameter description |
-| lastname |  ``` Required ```  | TODO: Add a parameter description |
-| email |  ``` Required ```  | TODO: Add a parameter description |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | ResponseType Format either json or xml |
+| firstName |  ``` Required ```  | Sub account user first name |
+| lastName |  ``` Required ```  | sub account user last name |
+| email |  ``` Required ```  | Sub account email address |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
 
 
 #### Example Usage
@@ -2367,13 +2444,13 @@ void createSubAccountAsync(
 ```java
 CreateSubAccountInput collect = new CreateSubAccountInput();
 
-String firstname = "firstname";
-collect.setFirstname(firstname);
+String firstName = "FirstName";
+collect.setFirstName(firstName);
 
-String lastname = "lastname";
-collect.setLastname(lastname);
+String lastName = "LastName";
+collect.setLastName(lastName);
 
-String email = "email";
+String email = "Email";
 collect.setEmail(email);
 
 String responseType = "json";
@@ -2393,7 +2470,7 @@ subAccount.createSubAccountAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_suspend_sub_account_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.SubAccountController.createSuspendSubAccountAsync") createSuspendSubAccountAsync
+#### <a name="create_suspend_sub_account_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SubAccountController.createSuspendSubAccountAsync") createSuspendSubAccountAsync
 
 > Suspend or unsuspend
 
@@ -2408,8 +2485,8 @@ void createSuspendSubAccountAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subaccountsid |  ``` Required ```  | TODO: Add a parameter description |
-| activate |  ``` Required ```  | TODO: Add a parameter description |
+| subAccountSID |  ``` Required ```  | The SubaccountSid to be activated or suspended |
+| activate |  ``` Required ```  ``` DefaultValue ```  | 0 to suspend or 1 to activate |
 | responseType |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -2418,10 +2495,10 @@ void createSuspendSubAccountAsync(
 ```java
 CreateSuspendSubAccountInput collect = new CreateSuspendSubAccountInput();
 
-String subaccountsid = "subaccountsid";
-collect.setSubaccountsid(subaccountsid);
+String subAccountSID = "SubAccountSID";
+collect.setSubAccountSID(subAccountSID);
 
-ActivateStatus activate = ActivateStatus.fromInteger(1);
+ActivateStatusEnum activate = ActivateStatusEnum.fromInteger(0);
 collect.setActivate(activate);
 
 String responseType = "ResponseType";
@@ -2441,14 +2518,14 @@ subAccount.createSuspendSubAccountAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_delete_merge_sub_account_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.SubAccountController.createDeleteMergeSubAccountAsync") createDeleteMergeSubAccountAsync
+#### <a name="create_delete_sub_account_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SubAccountController.createDeleteSubAccountAsync") createDeleteSubAccountAsync
 
-> Delete or Merge Sub account
+> Delete sub account or merge numbers into parent
 
 
 ```java
-void createDeleteMergeSubAccountAsync(
-        final CreateDeleteMergeSubAccountInput input,
+void createDeleteSubAccountAsync(
+        final CreateDeleteSubAccountInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -2456,27 +2533,27 @@ void createDeleteMergeSubAccountAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subaccountsid |  ``` Required ```  | TODO: Add a parameter description |
-| mergenumber |  ``` Required ```  | TODO: Add a parameter description |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format either json or xml |
+| subAccountSID |  ``` Required ```  | The SubaccountSid to be deleted |
+| mergeNumber |  ``` Required ```  ``` DefaultValue ```  | 0 to delete or 1 to merge numbers to parent account. |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
 
 
 #### Example Usage
 
 ```java
-CreateDeleteMergeSubAccountInput collect = new CreateDeleteMergeSubAccountInput();
+CreateDeleteSubAccountInput collect = new CreateDeleteSubAccountInput();
 
-String subaccountsid = "subaccountsid";
-collect.setSubaccountsid(subaccountsid);
+String subAccountSID = "SubAccountSID";
+collect.setSubAccountSID(subAccountSID);
 
-MergeNumberStatus mergenumber = MergeNumberStatus.fromInteger(0);
-collect.setMergenumber(mergenumber);
+MergeNumberStatusEnum mergeNumber = MergeNumberStatusEnum.fromInteger(0);
+collect.setMergeNumber(mergeNumber);
 
 String responseType = "json";
 collect.setResponseType(responseType);
 
 // Invoking the API call with sample inputs
-subAccount.createDeleteMergeSubAccountAsync(collect, new APICallBack<String>() {
+subAccount.createDeleteSubAccountAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
@@ -2491,7 +2568,7 @@ subAccount.createDeleteMergeSubAccountAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="address_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.AddressController") AddressController
+### <a name="address_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.AddressController") AddressController
 
 #### Get singleton instance
 
@@ -2501,7 +2578,7 @@ The singleton instance of the ``` AddressController ``` class can be accessed fr
 AddressController address = client.getAddress();
 ```
 
-#### <a name="create_address_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.AddressController.createAddressAsync") createAddressAsync
+#### <a name="create_address_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AddressController.createAddressAsync") createAddressAsync
 
 > To add an address to your address book, you create a new address object. You can retrieve and delete individual addresses as well as get a list of addresses. Addresses are identified by a unique random ID.
 
@@ -2525,7 +2602,7 @@ void createAddressAsync(
 | description |  ``` Optional ```  | Description of addresses. |
 | email |  ``` Optional ```  | Email Id of user. |
 | phone |  ``` Optional ```  | Phone number of user. |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response Type Either json or xml |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type either json or xml |
 
 
 #### Example Usage
@@ -2533,31 +2610,31 @@ void createAddressAsync(
 ```java
 CreateAddressInput collect = new CreateAddressInput();
 
-String name = "name";
+String name = "Name";
 collect.setName(name);
 
-String address = "address";
+String address = "Address";
 collect.setAddress(address);
 
-String country = "country";
+String country = "Country";
 collect.setCountry(country);
 
-String state = "state";
+String state = "State";
 collect.setState(state);
 
-String city = "city";
+String city = "City";
 collect.setCity(city);
 
-String zip = "zip";
+String zip = "Zip";
 collect.setZip(zip);
 
-String description = "description";
+String description = "Description";
 collect.setDescription(description);
 
 String email = "email";
 collect.setEmail(email);
 
-String phone = "phone";
+String phone = "Phone";
 collect.setPhone(phone);
 
 String responseType = "json";
@@ -2577,7 +2654,7 @@ address.createAddressAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_delete_address_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.AddressController.createDeleteAddressAsync") createDeleteAddressAsync
+#### <a name="create_delete_address_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AddressController.createDeleteAddressAsync") createDeleteAddressAsync
 
 > To delete Address to your address book
 
@@ -2592,7 +2669,7 @@ void createDeleteAddressAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| addressid |  ``` Required ```  | The identifier of the address to be deleted. |
+| addressSID |  ``` Required ```  | The identifier of the address to be deleted. |
 | responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type either json or xml |
 
 
@@ -2601,8 +2678,8 @@ void createDeleteAddressAsync(
 ```java
 CreateDeleteAddressInput collect = new CreateDeleteAddressInput();
 
-String addressid = "addressid";
-collect.setAddressid(addressid);
+String addressSID = "AddressSID";
+collect.setAddressSID(addressSID);
 
 String responseType = "json";
 collect.setResponseType(responseType);
@@ -2621,7 +2698,7 @@ address.createDeleteAddressAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_verify_address_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.AddressController.createVerifyAddressAsync") createVerifyAddressAsync
+#### <a name="create_verify_address_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AddressController.createVerifyAddressAsync") createVerifyAddressAsync
 
 > Validates an address given.
 
@@ -2636,8 +2713,8 @@ void createVerifyAddressAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| addressid |  ``` Required ```  | The identifier of the address to be verified. |
-| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type either JSON or xml |
+| addressSID |  ``` Required ```  | The identifier of the address to be verified. |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type either json or xml |
 
 
 #### Example Usage
@@ -2645,8 +2722,8 @@ void createVerifyAddressAsync(
 ```java
 CreateVerifyAddressInput collect = new CreateVerifyAddressInput();
 
-String addressid = "addressid";
-collect.setAddressid(addressid);
+String addressSID = "AddressSID";
+collect.setAddressSID(addressSID);
 
 String responseType = "json";
 collect.setResponseType(responseType);
@@ -2665,7 +2742,7 @@ address.createVerifyAddressAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_address_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.AddressController.createListAddressAsync") createListAddressAsync
+#### <a name="create_list_address_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AddressController.createListAddressAsync") createListAddressAsync
 
 > List All Address 
 
@@ -2681,8 +2758,8 @@ void createListAddressAsync(
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | page |  ``` Optional ```  ``` DefaultValue ```  | Return requested # of items starting the value, default=0, must be an integer |
-| pageSize |  ``` Optional ```  ``` DefaultValue ```  | How many results to return, default=10, max 100, must be an integer |
-| addressId |  ``` Optional ```  | addresses Sid |
+| pageSize |  ``` Optional ```  ``` DefaultValue ```  | How many results to return, default is 10, max is 100, must be an integer |
+| addressSID |  ``` Optional ```  | addresses Sid |
 | dateCreated |  ``` Optional ```  | date created address. |
 | responseType |  ``` Optional ```  ``` DefaultValue ```  | Response Type either json or xml |
 
@@ -2698,10 +2775,10 @@ collect.setPage(page);
 Integer pageSize = 10;
 collect.setPageSize(pageSize);
 
-String addressId = "addressId";
-collect.setAddressId(addressId);
+String addressSID = "AddressSID";
+collect.setAddressSID(addressSID);
 
-String dateCreated = "dateCreated";
+String dateCreated = "DateCreated";
 collect.setDateCreated(dateCreated);
 
 String responseType = "json";
@@ -2721,7 +2798,7 @@ address.createListAddressAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_view_address_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.AddressController.createViewAddressAsync") createViewAddressAsync
+#### <a name="create_view_address_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AddressController.createViewAddressAsync") createViewAddressAsync
 
 > View Address Specific address Book by providing the address id
 
@@ -2736,7 +2813,7 @@ void createViewAddressAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| addressId |  ``` Required ```  | The identifier of the address to be retrieved. |
+| addressSID |  ``` Required ```  | The identifier of the address to be retrieved. |
 | responseType |  ``` Optional ```  ``` DefaultValue ```  | Response Type either json or xml |
 
 
@@ -2745,8 +2822,8 @@ void createViewAddressAsync(
 ```java
 CreateViewAddressInput collect = new CreateViewAddressInput();
 
-String addressId = "addressId";
-collect.setAddressId(addressId);
+String addressSID = "AddressSID";
+collect.setAddressSID(addressSID);
 
 String responseType = "json";
 collect.setResponseType(responseType);
@@ -2767,7 +2844,7 @@ address.createViewAddressAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="phone_number_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.PhoneNumberController") PhoneNumberController
+### <a name="phone_number_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.PhoneNumberController") PhoneNumberController
 
 #### Get singleton instance
 
@@ -2777,7 +2854,7 @@ The singleton instance of the ``` PhoneNumberController ``` class can be accesse
 PhoneNumberController phoneNumber = client.getPhoneNumber();
 ```
 
-#### <a name="update_phone_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.updatePhoneNumberAsync") updatePhoneNumberAsync
+#### <a name="update_phone_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.updatePhoneNumberAsync") updatePhoneNumberAsync
 
 > Update Phone Number Details
 
@@ -2823,37 +2900,37 @@ collect.setFriendlyName(friendlyName);
 String voiceUrl = "VoiceUrl";
 collect.setVoiceUrl(voiceUrl);
 
-HttpAction voiceMethod = HttpAction.fromString("GET");
+HttpActionEnum voiceMethod = HttpActionEnum.fromString("GET");
 collect.setVoiceMethod(voiceMethod);
 
 String voiceFallbackUrl = "VoiceFallbackUrl";
 collect.setVoiceFallbackUrl(voiceFallbackUrl);
 
-HttpAction voiceFallbackMethod = HttpAction.fromString("GET");
+HttpActionEnum voiceFallbackMethod = HttpActionEnum.fromString("GET");
 collect.setVoiceFallbackMethod(voiceFallbackMethod);
 
 String hangupCallback = "HangupCallback";
 collect.setHangupCallback(hangupCallback);
 
-HttpAction hangupCallbackMethod = HttpAction.fromString("GET");
+HttpActionEnum hangupCallbackMethod = HttpActionEnum.fromString("GET");
 collect.setHangupCallbackMethod(hangupCallbackMethod);
 
 String heartbeatUrl = "HeartbeatUrl";
 collect.setHeartbeatUrl(heartbeatUrl);
 
-HttpAction heartbeatMethod = HttpAction.fromString("GET");
+HttpActionEnum heartbeatMethod = HttpActionEnum.fromString("GET");
 collect.setHeartbeatMethod(heartbeatMethod);
 
 String smsUrl = "SmsUrl";
 collect.setSmsUrl(smsUrl);
 
-HttpAction smsMethod = HttpAction.fromString("GET");
+HttpActionEnum smsMethod = HttpActionEnum.fromString("GET");
 collect.setSmsMethod(smsMethod);
 
 String smsFallbackUrl = "SmsFallbackUrl";
 collect.setSmsFallbackUrl(smsFallbackUrl);
 
-HttpAction smsFallbackMethod = HttpAction.fromString("GET");
+HttpActionEnum smsFallbackMethod = HttpActionEnum.fromString("GET");
 collect.setSmsFallbackMethod(smsFallbackMethod);
 
 String responseType = "json";
@@ -2873,7 +2950,7 @@ phoneNumber.updatePhoneNumberAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_buy_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createBuyNumberAsync") createBuyNumberAsync
+#### <a name="create_buy_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createBuyNumberAsync") createBuyNumberAsync
 
 > Buy Phone Number 
 
@@ -2917,7 +2994,7 @@ phoneNumber.createBuyNumberAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_release_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createReleaseNumberAsync") createReleaseNumberAsync
+#### <a name="create_release_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createReleaseNumberAsync") createReleaseNumberAsync
 
 > Release number from account
 
@@ -2961,7 +3038,7 @@ phoneNumber.createReleaseNumberAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_view_number_details_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createViewNumberDetailsAsync") createViewNumberDetailsAsync
+#### <a name="create_view_number_details_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createViewNumberDetailsAsync") createViewNumberDetailsAsync
 
 > Get Phone Number Details
 
@@ -3005,7 +3082,7 @@ phoneNumber.createViewNumberDetailsAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createListNumberAsync") createListNumberAsync
+#### <a name="create_list_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createListNumberAsync") createListNumberAsync
 
 > List Account's Phone number details
 
@@ -3021,7 +3098,7 @@ void createListNumberAsync(
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | page |  ``` Optional ```  | Which page of the overall response will be returned. Zero indexed |
-| pageSize |  ``` Optional ```  | Number of individual resources listed in the response per page |
+| pageSize |  ``` Optional ```  ``` DefaultValue ```  | Number of individual resources listed in the response per page |
 | numberType |  ``` Optional ```  | TODO: Add a parameter description |
 | friendlyName |  ``` Optional ```  | TODO: Add a parameter description |
 | responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
@@ -3032,13 +3109,13 @@ void createListNumberAsync(
 ```java
 CreateListNumberInput collect = new CreateListNumberInput();
 
-Integer page = 88;
+Integer page = 46;
 collect.setPage(page);
 
-Integer pageSize = 88;
+Integer pageSize = 10;
 collect.setPageSize(pageSize);
 
-NumberType numberType = NumberType.fromString("ALL");
+NumberTypeEnum numberType = NumberTypeEnum.fromString("ALL");
 collect.setNumberType(numberType);
 
 String friendlyName = "FriendlyName";
@@ -3061,7 +3138,7 @@ phoneNumber.createListNumberAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_available_phone_number_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createAvailablePhoneNumberAsync") createAvailablePhoneNumberAsync
+#### <a name="create_available_phone_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.createAvailablePhoneNumberAsync") createAvailablePhoneNumberAsync
 
 > Available Phone Number
 
@@ -3078,7 +3155,7 @@ void createAvailablePhoneNumberAsync(
 |-----------|------|-------------|
 | numberType |  ``` Required ```  | Number type either SMS,Voice or all |
 | areaCode |  ``` Required ```  | Phone Number Area Code |
-| pageSize |  ``` Optional ```  | Page Size |
+| pageSize |  ``` Optional ```  ``` DefaultValue ```  | Page Size |
 | responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
 
 
@@ -3087,13 +3164,13 @@ void createAvailablePhoneNumberAsync(
 ```java
 CreateAvailablePhoneNumberInput collect = new CreateAvailablePhoneNumberInput();
 
-NumberType numberType = NumberType.fromString("ALL");
+NumberTypeEnum numberType = NumberTypeEnum.fromString("ALL");
 collect.setNumberType(numberType);
 
 String areaCode = "AreaCode";
 collect.setAreaCode(areaCode);
 
-Integer pageSize = 179;
+Integer pageSize = 10;
 collect.setPageSize(pageSize);
 
 String responseType = "json";
@@ -3115,7 +3192,7 @@ phoneNumber.createAvailablePhoneNumberAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="recording_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.RecordingController") RecordingController
+### <a name="recording_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.RecordingController") RecordingController
 
 #### Get singleton instance
 
@@ -3125,7 +3202,7 @@ The singleton instance of the ``` RecordingController ``` class can be accessed 
 RecordingController recording = client.getRecording();
 ```
 
-#### <a name="create_list_recording_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.RecordingController.createListRecordingAsync") createListRecordingAsync
+#### <a name="create_list_recording_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.RecordingController.createListRecordingAsync") createListRecordingAsync
 
 > List out Recordings
 
@@ -3152,10 +3229,10 @@ void createListRecordingAsync(
 ```java
 CreateListRecordingInput collect = new CreateListRecordingInput();
 
-Integer page = 179;
+Integer page = 46;
 collect.setPage(page);
 
-Integer pageSize = 179;
+Integer pageSize = 46;
 collect.setPageSize(pageSize);
 
 String dateCreated = "DateCreated";
@@ -3181,7 +3258,7 @@ recording.createListRecordingAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_delete_recording_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.RecordingController.createDeleteRecordingAsync") createDeleteRecordingAsync
+#### <a name="create_delete_recording_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.RecordingController.createDeleteRecordingAsync") createDeleteRecordingAsync
 
 > Delete Recording Record
 
@@ -3225,7 +3302,7 @@ recording.createDeleteRecordingAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_view_recording_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.RecordingController.createViewRecordingAsync") createViewRecordingAsync
+#### <a name="create_view_recording_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.RecordingController.createViewRecordingAsync") createViewRecordingAsync
 
 > View a specific Recording
 
@@ -3271,7 +3348,247 @@ recording.createViewRecordingAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="transcription_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.TranscriptionController") TranscriptionController
+### <a name="sms_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.SMSController") SMSController
+
+#### Get singleton instance
+
+The singleton instance of the ``` SMSController ``` class can be accessed from the API Client.
+
+```java
+SMSController sMS = client.getSMS();
+```
+
+#### <a name="create_list_inbound_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SMSController.createListInboundSMSAsync") createListInboundSMSAsync
+
+> List All Inbound SMS
+
+
+```java
+void createListInboundSMSAsync(
+        final CreateListInboundSMSInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Which page of the overall response will be returned. Zero indexed |
+| pagesize |  ``` Optional ```  | Number of individual resources listed in the response per page |
+| from |  ``` Optional ```  | From Number to Inbound SMS |
+| to |  ``` Optional ```  | To Number to get Inbound SMS |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+CreateListInboundSMSInput collect = new CreateListInboundSMSInput();
+
+Integer page = 46;
+collect.setPage(page);
+
+String pagesize = "pagesize";
+collect.setPagesize(pagesize);
+
+String from = "from";
+collect.setFrom(from);
+
+String to = "to";
+collect.setTo(to);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+sMS.createListInboundSMSAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_list_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SMSController.createListSMSAsync") createListSMSAsync
+
+> List All SMS
+
+
+```java
+void createListSMSAsync(
+        final CreateListSMSInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Which page of the overall response will be returned. Zero indexed |
+| pagesize |  ``` Optional ```  | Number of individual resources listed in the response per page |
+| from |  ``` Optional ```  | Messages sent from this number |
+| to |  ``` Optional ```  | Messages sent to this number |
+| datesent |  ``` Optional ```  | Only list SMS messages sent in the specified date range |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+CreateListSMSInput collect = new CreateListSMSInput();
+
+Integer page = 46;
+collect.setPage(page);
+
+Integer pagesize = 46;
+collect.setPagesize(pagesize);
+
+String from = "from";
+collect.setFrom(from);
+
+String to = "to";
+collect.setTo(to);
+
+String datesent = "datesent";
+collect.setDatesent(datesent);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+sMS.createListSMSAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_send_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SMSController.createSendSMSAsync") createSendSMSAsync
+
+> Send an SMS from a message360 number
+
+
+```java
+void createSendSMSAsync(
+        final CreateSendSMSInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| fromcountrycode |  ``` Required ```  ``` DefaultValue ```  | From Country Code |
+| from |  ``` Required ```  | SMS enabled Message360 number to send this message from |
+| tocountrycode |  ``` Required ```  ``` DefaultValue ```  | To country code |
+| to |  ``` Required ```  | Number to send the SMS to |
+| body |  ``` Required ```  | Text Message To Send |
+| method |  ``` Optional ```  | Specifies the HTTP method used to request the required URL once SMS sent. |
+| messagestatuscallback |  ``` Optional ```  | URL that can be requested to receive notification when SMS has Sent. A set of default parameters will be sent here once the SMS is finished. |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+CreateSendSMSInput collect = new CreateSendSMSInput();
+
+int fromcountrycode = 1;
+collect.setFromcountrycode(fromcountrycode);
+
+String from = "from";
+collect.setFrom(from);
+
+int tocountrycode = 1;
+collect.setTocountrycode(tocountrycode);
+
+String to = "to";
+collect.setTo(to);
+
+String body = "body";
+collect.setBody(body);
+
+HttpActionEnum method = HttpActionEnum.fromString("GET");
+collect.setMethod(method);
+
+String messagestatuscallback = "messagestatuscallback";
+collect.setMessagestatuscallback(messagestatuscallback);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+sMS.createSendSMSAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+#### <a name="create_view_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SMSController.createViewSMSAsync") createViewSMSAsync
+
+> View a Particular SMS
+
+
+```java
+void createViewSMSAsync(
+        final CreateViewSMSInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| messagesid |  ``` Required ```  | Message sid |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+CreateViewSMSInput collect = new CreateViewSMSInput();
+
+String messagesid = "messagesid";
+collect.setMessagesid(messagesid);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+sMS.createViewSMSAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+### <a name="transcription_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.TranscriptionController") TranscriptionController
 
 #### Get singleton instance
 
@@ -3281,7 +3598,7 @@ The singleton instance of the ``` TranscriptionController ``` class can be acces
 TranscriptionController transcription = client.getTranscription();
 ```
 
-#### <a name="create_audio_url_transcription_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.TranscriptionController.createAudioURLTranscriptionAsync") createAudioURLTranscriptionAsync
+#### <a name="create_audio_url_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.TranscriptionController.createAudioURLTranscriptionAsync") createAudioURLTranscriptionAsync
 
 > Audio URL Transcriptions
 
@@ -3325,7 +3642,7 @@ transcription.createAudioURLTranscriptionAsync(collect, new APICallBack<String>(
 ```
 
 
-#### <a name="create_recording_transcription_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.TranscriptionController.createRecordingTranscriptionAsync") createRecordingTranscriptionAsync
+#### <a name="create_recording_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.TranscriptionController.createRecordingTranscriptionAsync") createRecordingTranscriptionAsync
 
 > Recording Transcriptions
 
@@ -3369,7 +3686,7 @@ transcription.createRecordingTranscriptionAsync(collect, new APICallBack<String>
 ```
 
 
-#### <a name="create_view_transcription_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.TranscriptionController.createViewTranscriptionAsync") createViewTranscriptionAsync
+#### <a name="create_view_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.TranscriptionController.createViewTranscriptionAsync") createViewTranscriptionAsync
 
 > View Specific Transcriptions
 
@@ -3413,7 +3730,7 @@ transcription.createViewTranscriptionAsync(collect, new APICallBack<String>() {
 ```
 
 
-#### <a name="create_list_transcription_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.TranscriptionController.createListTranscriptionAsync") createListTranscriptionAsync
+#### <a name="create_list_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.TranscriptionController.createListTranscriptionAsync") createListTranscriptionAsync
 
 > Get All transcriptions
 
@@ -3440,13 +3757,13 @@ void createListTranscriptionAsync(
 ```java
 CreateListTranscriptionInput collect = new CreateListTranscriptionInput();
 
-Integer page = 179;
+Integer page = 46;
 collect.setPage(page);
 
-Integer pageSize = 179;
+Integer pageSize = 46;
 collect.setPageSize(pageSize);
 
-Status status = Status.fromString("INPROGRESS");
+StatusEnum status = StatusEnum.fromString("INPROGRESS");
 collect.setStatus(status);
 
 String dateTranscribed = "DateTranscribed";
@@ -3471,7 +3788,7 @@ transcription.createListTranscriptionAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-### <a name="usage_controller"></a>![Class: ](http://apidocs.io/img/class.png "message360.controllers.UsageController") UsageController
+### <a name="usage_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.UsageController") UsageController
 
 #### Get singleton instance
 
@@ -3481,7 +3798,7 @@ The singleton instance of the ``` UsageController ``` class can be accessed from
 UsageController usage = client.getUsage();
 ```
 
-#### <a name="create_list_usage_async"></a>![Method: ](http://apidocs.io/img/method.png "message360.controllers.UsageController.createListUsageAsync") createListUsageAsync
+#### <a name="create_list_usage_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.UsageController.createListUsageAsync") createListUsageAsync
 
 > Get all usage 
 
@@ -3507,7 +3824,7 @@ void createListUsageAsync(
 ```java
 CreateListUsageInput collect = new CreateListUsageInput();
 
-ProductCode productCode = ProductCode.fromInteger(0);
+ProductCodeEnum productCode = ProductCodeEnum.fromInteger(0);
 collect.setProductCode(productCode);
 
 String startDate = "2016-09-06";
@@ -3521,6 +3838,62 @@ collect.setResponseType(responseType);
 
 // Invoking the API call with sample inputs
 usage.createListUsageAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+### <a name="account_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.AccountController") AccountController
+
+#### Get singleton instance
+
+The singleton instance of the ``` AccountController ``` class can be accessed from the API Client.
+
+```java
+AccountController account = client.getAccount();
+```
+
+#### <a name="create_view_account_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AccountController.createViewAccountAsync") createViewAccountAsync
+
+> Display Account Description
+
+
+```java
+void createViewAccountAsync(
+        final CreateViewAccountInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| date |  ``` Required ```  | TODO: Add a parameter description |
+| responseType |  ``` Optional ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+CreateViewAccountInput collect = new CreateViewAccountInput();
+
+String date = "Date";
+collect.setDate(date);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+account.createViewAccountAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }

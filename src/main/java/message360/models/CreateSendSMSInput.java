@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -11,13 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSendSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5680221433060484538L;
+    private static final long serialVersionUID = 5176501513071156280L;
     private int fromcountrycode = 1;
     private String from;
     private int tocountrycode = 1;
     private String to;
     private String body;
-    private HttpAction method;
+    private HttpActionEnum method;
     private String messagestatuscallback;
     private String responseType = "json";
     /** GETTER
@@ -104,7 +104,7 @@ public class CreateSendSMSInput
      * Specifies the HTTP method used to request the required URL once SMS sent.
      */
     @JsonGetter("method")
-    public HttpAction getMethod ( ) { 
+    public HttpActionEnum getMethod ( ) { 
         return this.method;
     }
     
@@ -112,7 +112,7 @@ public class CreateSendSMSInput
      * Specifies the HTTP method used to request the required URL once SMS sent.
      */
     @JsonSetter("method")
-    public void setMethod (HttpAction value) { 
+    public void setMethod (HttpActionEnum value) { 
         this.method = value;
     }
  

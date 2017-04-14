@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -21,13 +21,13 @@ public class CreateVerifyAddressInputBuilder {
     /**
      * The identifier of the address to be verified.
      */
-    public CreateVerifyAddressInputBuilder addressid(String addressid) {
-        createVerifyAddressInput.setAddressid(addressid);
+    public CreateVerifyAddressInputBuilder addressSID(String addressSID) {
+        createVerifyAddressInput.setAddressSID(addressSID);
         return this;
     }
 
     /**
-     * Response type either JSON or xml
+     * Response type either json or xml
      */
     public CreateVerifyAddressInputBuilder responseType(String responseType) {
         createVerifyAddressInput.setResponseType(responseType);

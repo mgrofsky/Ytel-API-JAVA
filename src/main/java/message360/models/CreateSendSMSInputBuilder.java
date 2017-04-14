@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -61,7 +61,7 @@ public class CreateSendSMSInputBuilder {
     /**
      * Specifies the HTTP method used to request the required URL once SMS sent.
      */
-    public CreateSendSMSInputBuilder method(HttpAction method) {
+    public CreateSendSMSInputBuilder method(HttpActionEnum method) {
         createSendSMSInput.setMethod(method);
         return this;
     }

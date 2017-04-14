@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -27,7 +27,7 @@ public class CreateListAddressInputBuilder {
     }
 
     /**
-     * How many results to return, default=10, max 100, must be an integer
+     * How many results to return, default is 10, max is 100, must be an integer
      */
     public CreateListAddressInputBuilder pageSize(Integer pageSize) {
         createListAddressInput.setPageSize(pageSize);
@@ -37,8 +37,8 @@ public class CreateListAddressInputBuilder {
     /**
      * addresses Sid
      */
-    public CreateListAddressInputBuilder addressId(String addressId) {
-        createListAddressInput.setAddressId(addressId);
+    public CreateListAddressInputBuilder addressSID(String addressSID) {
+        createListAddressInput.setAddressSID(addressSID);
         return this;
     }
 

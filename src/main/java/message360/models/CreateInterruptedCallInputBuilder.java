@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -37,7 +37,7 @@ public class CreateInterruptedCallInputBuilder {
     /**
      * The method used to request the above Url parameter
      */
-    public CreateInterruptedCallInputBuilder method(HttpAction method) {
+    public CreateInterruptedCallInputBuilder method(HttpActionEnum method) {
         createInterruptedCallInput.setMethod(method);
         return this;
     }
@@ -45,7 +45,7 @@ public class CreateInterruptedCallInputBuilder {
     /**
      * Status to set the in-progress call to
      */
-    public CreateInterruptedCallInputBuilder status(InterruptedCallStatus status) {
+    public CreateInterruptedCallInputBuilder status(InterruptedCallStatusEnum status) {
         createInterruptedCallInput.setStatus(status);
         return this;
     }

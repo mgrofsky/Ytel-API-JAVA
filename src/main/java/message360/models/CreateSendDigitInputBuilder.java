@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -37,7 +37,7 @@ public class CreateSendDigitInputBuilder {
     /**
      * The leg of the call DTMF digits should be sent to
      */
-    public CreateSendDigitInputBuilder playDtmfDirection(Direction playDtmfDirection) {
+    public CreateSendDigitInputBuilder playDtmfDirection(DirectionEnum playDtmfDirection) {
         createSendDigitInput.setPlayDtmfDirection(playDtmfDirection);
         return this;
     }

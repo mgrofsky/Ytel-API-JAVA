@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -18,12 +18,18 @@ public class CreateSuspendSubAccountInputBuilder {
         createSuspendSubAccountInput = new CreateSuspendSubAccountInput();
     }
 
-    public CreateSuspendSubAccountInputBuilder subaccountsid(String subaccountsid) {
-        createSuspendSubAccountInput.setSubaccountsid(subaccountsid);
+    /**
+     * The SubaccountSid to be activated or suspended
+     */
+    public CreateSuspendSubAccountInputBuilder subAccountSID(String subAccountSID) {
+        createSuspendSubAccountInput.setSubAccountSID(subAccountSID);
         return this;
     }
 
-    public CreateSuspendSubAccountInputBuilder activate(ActivateStatus activate) {
+    /**
+     * 0 to suspend or 1 to activate
+     */
+    public CreateSuspendSubAccountInputBuilder activate(ActivateStatusEnum activate) {
         createSuspendSubAccountInput.setActivate(activate);
         return this;
     }

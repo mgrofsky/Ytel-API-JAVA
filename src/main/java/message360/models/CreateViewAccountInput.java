@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -11,13 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateViewAccountInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4738066819816030491L;
+    private static final long serialVersionUID = 5323877659223655455L;
     private String date;
     private String responseType = "json";
     /** GETTER
      * TODO: Write general description for this method
      */
-    @JsonGetter("date")
+    @JsonGetter("Date")
     public String getDate ( ) { 
         return this.date;
     }
@@ -25,7 +25,7 @@ public class CreateViewAccountInput
     /** SETTER
      * TODO: Write general description for this method
      */
-    @JsonSetter("date")
+    @JsonSetter("Date")
     public void setDate (String value) { 
         this.date = value;
     }

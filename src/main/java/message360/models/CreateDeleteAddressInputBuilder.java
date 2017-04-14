@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -21,8 +21,8 @@ public class CreateDeleteAddressInputBuilder {
     /**
      * The identifier of the address to be deleted.
      */
-    public CreateDeleteAddressInputBuilder addressid(String addressid) {
-        createDeleteAddressInput.setAddressid(addressid);
+    public CreateDeleteAddressInputBuilder addressSID(String addressSID) {
+        createDeleteAddressInput.setAddressSID(addressSID);
         return this;
     }
 

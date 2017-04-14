@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -11,13 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateRecordCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5194115158023372755L;
+    private static final long serialVersionUID = 5576533771110930160L;
     private String callSid;
     private boolean record;
-    private Direction direction;
+    private DirectionEnum direction;
     private Integer timeLimit;
     private String callBackUrl;
-    private AudioFormat fileformat;
+    private AudioFormatEnum fileformat;
     private String responseType = "json";
     /** GETTER
      * The unique identifier of each call resource
@@ -55,7 +55,7 @@ public class CreateRecordCallInput
      * The leg of the call to record
      */
     @JsonGetter("Direction")
-    public Direction getDirection ( ) { 
+    public DirectionEnum getDirection ( ) { 
         return this.direction;
     }
     
@@ -63,7 +63,7 @@ public class CreateRecordCallInput
      * The leg of the call to record
      */
     @JsonSetter("Direction")
-    public void setDirection (Direction value) { 
+    public void setDirection (DirectionEnum value) { 
         this.direction = value;
     }
  
@@ -103,7 +103,7 @@ public class CreateRecordCallInput
      * Format of the recording file. Can be .mp3 or .wav
      */
     @JsonGetter("Fileformat")
-    public AudioFormat getFileformat ( ) { 
+    public AudioFormatEnum getFileformat ( ) { 
         return this.fileformat;
     }
     
@@ -111,7 +111,7 @@ public class CreateRecordCallInput
      * Format of the recording file. Can be .mp3 or .wav
      */
     @JsonSetter("Fileformat")
-    public void setFileformat (AudioFormat value) { 
+    public void setFileformat (AudioFormatEnum value) { 
         this.fileformat = value;
     }
  

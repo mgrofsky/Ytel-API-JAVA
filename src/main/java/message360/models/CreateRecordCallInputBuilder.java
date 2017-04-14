@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -37,7 +37,7 @@ public class CreateRecordCallInputBuilder {
     /**
      * The leg of the call to record
      */
-    public CreateRecordCallInputBuilder direction(Direction direction) {
+    public CreateRecordCallInputBuilder direction(DirectionEnum direction) {
         createRecordCallInput.setDirection(direction);
         return this;
     }
@@ -61,7 +61,7 @@ public class CreateRecordCallInputBuilder {
     /**
      * Format of the recording file. Can be .mp3 or .wav
      */
-    public CreateRecordCallInputBuilder fileformat(AudioFormat fileformat) {
+    public CreateRecordCallInputBuilder fileformat(AudioFormatEnum fileformat) {
         createRecordCallInput.setFileformat(fileformat);
         return this;
     }

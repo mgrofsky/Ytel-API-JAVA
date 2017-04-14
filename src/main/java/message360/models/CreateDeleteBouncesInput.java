@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateDeleteBouncesInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4865278008250951110L;
+    private static final long serialVersionUID = 4713169041287104226L;
     private String email;
     private String responseType = "json";
     /** GETTER

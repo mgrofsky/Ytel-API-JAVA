@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -11,17 +11,17 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateMakeCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4930966858079803907L;
+    private static final long serialVersionUID = 5152809846981788309L;
     private String fromCountryCode;
     private String from;
     private String toCountryCode;
     private String to;
     private String url;
-    private HttpAction method;
+    private HttpActionEnum method;
     private String statusCallBackUrl;
-    private HttpAction statusCallBackMethod;
+    private HttpActionEnum statusCallBackMethod;
     private String fallBackUrl;
-    private HttpAction fallBackMethod;
+    private HttpActionEnum fallBackMethod;
     private String heartBeatUrl;
     private Boolean heartBeatMethod;
     private Integer timeout;
@@ -29,10 +29,10 @@ public class CreateMakeCallInput
     private Boolean hideCallerId;
     private Boolean record;
     private String recordCallBackUrl;
-    private HttpAction recordCallBackMethod;
+    private HttpActionEnum recordCallBackMethod;
     private Boolean transcribe;
     private String transcribeCallBackUrl;
-    private IfMachine ifMachine;
+    private IfMachineEnum ifMachine;
     private String responseType = "json";
     /** GETTER
      * from country code
@@ -118,7 +118,7 @@ public class CreateMakeCallInput
      * Specifies the HTTP method used to request the required URL once call connects.
      */
     @JsonGetter("Method")
-    public HttpAction getMethod ( ) { 
+    public HttpActionEnum getMethod ( ) { 
         return this.method;
     }
     
@@ -126,7 +126,7 @@ public class CreateMakeCallInput
      * Specifies the HTTP method used to request the required URL once call connects.
      */
     @JsonSetter("Method")
-    public void setMethod (HttpAction value) { 
+    public void setMethod (HttpActionEnum value) { 
         this.method = value;
     }
  
@@ -150,7 +150,7 @@ public class CreateMakeCallInput
      * Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
      */
     @JsonGetter("StatusCallBackMethod")
-    public HttpAction getStatusCallBackMethod ( ) { 
+    public HttpActionEnum getStatusCallBackMethod ( ) { 
         return this.statusCallBackMethod;
     }
     
@@ -158,7 +158,7 @@ public class CreateMakeCallInput
      * Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
      */
     @JsonSetter("StatusCallBackMethod")
-    public void setStatusCallBackMethod (HttpAction value) { 
+    public void setStatusCallBackMethod (HttpActionEnum value) { 
         this.statusCallBackMethod = value;
     }
  
@@ -182,7 +182,7 @@ public class CreateMakeCallInput
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
     @JsonGetter("FallBackMethod")
-    public HttpAction getFallBackMethod ( ) { 
+    public HttpActionEnum getFallBackMethod ( ) { 
         return this.fallBackMethod;
     }
     
@@ -190,7 +190,7 @@ public class CreateMakeCallInput
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
     @JsonSetter("FallBackMethod")
-    public void setFallBackMethod (HttpAction value) { 
+    public void setFallBackMethod (HttpActionEnum value) { 
         this.fallBackMethod = value;
     }
  
@@ -310,7 +310,7 @@ public class CreateMakeCallInput
      * Method used to request the RecordCallback URL.
      */
     @JsonGetter("RecordCallBackMethod")
-    public HttpAction getRecordCallBackMethod ( ) { 
+    public HttpActionEnum getRecordCallBackMethod ( ) { 
         return this.recordCallBackMethod;
     }
     
@@ -318,7 +318,7 @@ public class CreateMakeCallInput
      * Method used to request the RecordCallback URL.
      */
     @JsonSetter("RecordCallBackMethod")
-    public void setRecordCallBackMethod (HttpAction value) { 
+    public void setRecordCallBackMethod (HttpActionEnum value) { 
         this.recordCallBackMethod = value;
     }
  
@@ -358,7 +358,7 @@ public class CreateMakeCallInput
      * How Message360 should handle the receiving numbers voicemail machine
      */
     @JsonGetter("IfMachine")
-    public IfMachine getIfMachine ( ) { 
+    public IfMachineEnum getIfMachine ( ) { 
         return this.ifMachine;
     }
     
@@ -366,7 +366,7 @@ public class CreateMakeCallInput
      * How Message360 should handle the receiving numbers voicemail machine
      */
     @JsonSetter("IfMachine")
-    public void setIfMachine (IfMachine value) { 
+    public void setIfMachine (IfMachineEnum value) { 
         this.ifMachine = value;
     }
  

@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -21,7 +21,7 @@ public class CreateListUsageInputBuilder {
     /**
      * Product Code
      */
-    public CreateListUsageInputBuilder productCode(ProductCode productCode) {
+    public CreateListUsageInputBuilder productCode(ProductCodeEnum productCode) {
         createListUsageInput.setProductCode(productCode);
         return this;
     }

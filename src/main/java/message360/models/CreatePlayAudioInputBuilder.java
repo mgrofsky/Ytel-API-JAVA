@@ -1,7 +1,7 @@
 /*
  * Message360
  *
- * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ) on 12/12/2016
+ * This file was automatically generated for message360 by APIMATIC v2.0 ( https://apimatic.io ).
  */
 package message360.models;
 
@@ -45,7 +45,7 @@ public class CreatePlayAudioInputBuilder {
     /**
      * The leg of the call audio will be played to
      */
-    public CreatePlayAudioInputBuilder direction(Direction direction) {
+    public CreatePlayAudioInputBuilder direction(DirectionEnum direction) {
         createPlayAudioInput.setDirection(direction);
         return this;
     }
