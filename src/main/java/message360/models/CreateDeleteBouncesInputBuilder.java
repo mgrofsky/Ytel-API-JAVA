@@ -19,18 +19,18 @@ public class CreateDeleteBouncesInputBuilder {
     }
 
     /**
-     * The email address to remove from the bounce list
-     */
-    public CreateDeleteBouncesInputBuilder email(String email) {
-        createDeleteBouncesInput.setEmail(email);
-        return this;
-    }
-
-    /**
      * Response type format xml or json
      */
     public CreateDeleteBouncesInputBuilder responseType(String responseType) {
         createDeleteBouncesInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
+     * The email address to remove from the bounce list
+     */
+    public CreateDeleteBouncesInputBuilder email(String email) {
+        createDeleteBouncesInput.setEmail(email);
         return this;
     }
     /**

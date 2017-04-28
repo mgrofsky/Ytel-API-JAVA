@@ -11,8 +11,9 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class UpdatePhoneNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5507207609492398207L;
+    private static final long serialVersionUID = 4797086675702037078L;
     private String phoneNumber;
+    private String responseType = "json";
     private String friendlyName;
     private String voiceUrl;
     private HttpActionEnum voiceMethod;
@@ -26,7 +27,6 @@ public class UpdatePhoneNumberInput
     private HttpActionEnum smsMethod;
     private String smsFallbackUrl;
     private HttpActionEnum smsFallbackMethod;
-    private String responseType = "json";
     /** GETTER
      * TODO: Write general description for this method
      */
@@ -41,6 +41,22 @@ public class UpdatePhoneNumberInput
     @JsonSetter("PhoneNumber")
     public void setPhoneNumber (String value) { 
         this.phoneNumber = value;
+    }
+ 
+    /** GETTER
+     * Response type format xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response type format xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
     }
  
     /** GETTER
@@ -249,22 +265,6 @@ public class UpdatePhoneNumberInput
     @JsonSetter("SmsFallbackMethod")
     public void setSmsFallbackMethod (HttpActionEnum value) { 
         this.smsFallbackMethod = value;
-    }
- 
-    /** GETTER
-     * Response type format xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response type format xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

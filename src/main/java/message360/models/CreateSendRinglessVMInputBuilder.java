@@ -67,6 +67,14 @@ public class CreateSendRinglessVMInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateSendRinglessVMInputBuilder responseType(String responseType) {
+        createSendRinglessVMInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * URL to post the status of the Ringless request
      */
     public CreateSendRinglessVMInputBuilder statusCallBackUrl(String statusCallBackUrl) {
@@ -79,14 +87,6 @@ public class CreateSendRinglessVMInputBuilder {
      */
     public CreateSendRinglessVMInputBuilder statsCallBackMethod(String statsCallBackMethod) {
         createSendRinglessVMInput.setStatsCallBackMethod(statsCallBackMethod);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateSendRinglessVMInputBuilder responseType(String responseType) {
-        createSendRinglessVMInput.setResponseType(responseType);
         return this;
     }
     /**

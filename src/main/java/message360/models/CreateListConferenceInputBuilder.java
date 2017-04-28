@@ -19,6 +19,14 @@ public class CreateListConferenceInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateListConferenceInputBuilder responseType(String responseType) {
+        createListConferenceInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Which page of the overall response will be returned. Zero indexed
      */
     public CreateListConferenceInputBuilder page(Integer page) {
@@ -54,14 +62,6 @@ public class CreateListConferenceInputBuilder {
 
     public CreateListConferenceInputBuilder dateUpdated(String dateUpdated) {
         createListConferenceInput.setDateUpdated(dateUpdated);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateListConferenceInputBuilder responseType(String responseType) {
-        createListConferenceInput.setResponseType(responseType);
         return this;
     }
     /**

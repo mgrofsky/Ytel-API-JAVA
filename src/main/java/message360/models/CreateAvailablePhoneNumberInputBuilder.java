@@ -35,18 +35,18 @@ public class CreateAvailablePhoneNumberInputBuilder {
     }
 
     /**
-     * Page Size
-     */
-    public CreateAvailablePhoneNumberInputBuilder pageSize(Integer pageSize) {
-        createAvailablePhoneNumberInput.setPageSize(pageSize);
-        return this;
-    }
-
-    /**
      * Response type format xml or json
      */
     public CreateAvailablePhoneNumberInputBuilder responseType(String responseType) {
         createAvailablePhoneNumberInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
+     * Page Size
+     */
+    public CreateAvailablePhoneNumberInputBuilder pageSize(Integer pageSize) {
+        createAvailablePhoneNumberInput.setPageSize(pageSize);
         return this;
     }
     /**

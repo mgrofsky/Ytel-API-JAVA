@@ -39,6 +39,14 @@ public class AddParticipantInputBuilder {
         return this;
     }
 
+    /**
+     * Response type format xml or json
+     */
+    public AddParticipantInputBuilder responseType(String responseType) {
+        addParticipantInput.setResponseType(responseType);
+        return this;
+    }
+
     public AddParticipantInputBuilder muted(Boolean muted) {
         addParticipantInput.setMuted(muted);
         return this;
@@ -46,14 +54,6 @@ public class AddParticipantInputBuilder {
 
     public AddParticipantInputBuilder deaf(Boolean deaf) {
         addParticipantInput.setDeaf(deaf);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public AddParticipantInputBuilder responseType(String responseType) {
-        addParticipantInput.setResponseType(responseType);
         return this;
     }
     /**

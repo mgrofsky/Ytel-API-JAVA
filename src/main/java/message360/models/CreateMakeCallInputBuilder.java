@@ -59,6 +59,14 @@ public class CreateMakeCallInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateMakeCallInputBuilder responseType(String responseType) {
+        createMakeCallInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Specifies the HTTP method used to request the required URL once call connects.
      */
     public CreateMakeCallInputBuilder method(HttpActionEnum method) {
@@ -183,14 +191,6 @@ public class CreateMakeCallInputBuilder {
      */
     public CreateMakeCallInputBuilder ifMachine(IfMachineEnum ifMachine) {
         createMakeCallInput.setIfMachine(ifMachine);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateMakeCallInputBuilder responseType(String responseType) {
-        createMakeCallInput.setResponseType(responseType);
         return this;
     }
     /**

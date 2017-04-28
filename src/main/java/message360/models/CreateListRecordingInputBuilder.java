@@ -19,6 +19,14 @@ public class CreateListRecordingInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateListRecordingInputBuilder responseType(String responseType) {
+        createListRecordingInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Which page of the overall response will be returned. Zero indexed
      */
     public CreateListRecordingInputBuilder page(Integer page) {
@@ -41,14 +49,6 @@ public class CreateListRecordingInputBuilder {
 
     public CreateListRecordingInputBuilder callSid(String callSid) {
         createListRecordingInput.setCallSid(callSid);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateListRecordingInputBuilder responseType(String responseType) {
-        createListRecordingInput.setResponseType(responseType);
         return this;
     }
     /**

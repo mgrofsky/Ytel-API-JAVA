@@ -27,6 +27,14 @@ public class CreateInterruptedCallInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateInterruptedCallInputBuilder responseType(String responseType) {
+        createInterruptedCallInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * URL the in-progress call will be redirected to
      */
     public CreateInterruptedCallInputBuilder url(String url) {
@@ -47,14 +55,6 @@ public class CreateInterruptedCallInputBuilder {
      */
     public CreateInterruptedCallInputBuilder status(InterruptedCallStatusEnum status) {
         createInterruptedCallInput.setStatus(status);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateInterruptedCallInputBuilder responseType(String responseType) {
-        createInterruptedCallInput.setResponseType(responseType);
         return this;
     }
     /**

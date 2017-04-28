@@ -28,6 +28,14 @@ public class CreateDeafMuteParticipantInputBuilder {
         return this;
     }
 
+    /**
+     * Response Type either json or xml
+     */
+    public CreateDeafMuteParticipantInputBuilder responseType(String responseType) {
+        createDeafMuteParticipantInput.setResponseType(responseType);
+        return this;
+    }
+
     public CreateDeafMuteParticipantInputBuilder muted(Boolean muted) {
         createDeafMuteParticipantInput.setMuted(muted);
         return this;
@@ -35,14 +43,6 @@ public class CreateDeafMuteParticipantInputBuilder {
 
     public CreateDeafMuteParticipantInputBuilder deaf(Boolean deaf) {
         createDeafMuteParticipantInput.setDeaf(deaf);
-        return this;
-    }
-
-    /**
-     * Response Type either json or xml
-     */
-    public CreateDeafMuteParticipantInputBuilder responseType(String responseType) {
-        createDeafMuteParticipantInput.setResponseType(responseType);
         return this;
     }
     /**

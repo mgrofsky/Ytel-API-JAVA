@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateCheckFundsInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5209141628577288216L;
+    private static final long serialVersionUID = 5125844201291265533L;
     private String accountSid;
     private String authToken;
     /** GETTER

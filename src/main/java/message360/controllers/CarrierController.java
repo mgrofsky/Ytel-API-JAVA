@@ -39,43 +39,43 @@ public class CarrierController extends BaseController {
     }
 
     /**
-     * Get the Carrier Lookup
-     * @param    CreateCarrierLookupInput    Object containing request parameters
+     * Get the All Purchase Number's Carrier lookup
+     * @param    CreateCarrierLookupListInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createCarrierLookup(
-                final CreateCarrierLookupInput input
+    public String createCarrierLookupList(
+                final CreateCarrierLookupListInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createCarrierLookupAsync(input, callback);
+        createCarrierLookupListAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * Get the Carrier Lookup
-     * @param    CreateCarrierLookupInput    Object containing request parameters
+     * Get the All Purchase Number's Carrier lookup
+     * @param    CreateCarrierLookupListInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createCarrierLookupAsync(
-                final CreateCarrierLookupInput input,
+    public void createCarrierLookupListAsync(
+                final CreateCarrierLookupListInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == input.getPhonenumber())
-            throw new NullPointerException("The property \"Phonenumber\" in the input object cannot be null.");
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
 
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/carrier/lookup.{ResponseType}");
+        _queryBuilder.append("/carrier/lookuplist.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5204518868829974893L;
+            private static final long serialVersionUID = 5537713634536436103L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -84,7 +84,7 @@ public class CarrierController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4669148912799515104L;
+            private static final long serialVersionUID = 4644768803908488356L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -92,9 +92,10 @@ public class CarrierController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5156944533264395752L;
+            private static final long serialVersionUID = 5573050139109110670L;
             {
-                    put( "phonenumber", input.getPhonenumber() );
+                    put( "page", input.getPage() );
+                    put( "pagesize", input.getPagesize() );
             }
         };
 
@@ -156,39 +157,46 @@ public class CarrierController extends BaseController {
     }
 
     /**
-     * Get the All Purchase Number's Carrier lookup
-     * @param    CreateCarrierLookupListInput    Object containing request parameters
+     * Get the Carrier Lookup
+     * @param    CreateCarrierLookupInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createCarrierLookupList(
-                final CreateCarrierLookupListInput input
+    public String createCarrierLookup(
+                final CreateCarrierLookupInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createCarrierLookupListAsync(input, callback);
+        createCarrierLookupAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * Get the All Purchase Number's Carrier lookup
-     * @param    CreateCarrierLookupListInput    Object containing request parameters
+     * Get the Carrier Lookup
+     * @param    CreateCarrierLookupInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createCarrierLookupListAsync(
-                final CreateCarrierLookupListInput input,
+    public void createCarrierLookupAsync(
+                final CreateCarrierLookupInput input,
                 final APICallBack<String> callBack
     ) {
+        //validating required parameters
+        if (null == input.getPhonenumber())
+            throw new NullPointerException("The property \"Phonenumber\" in the input object cannot be null.");
+
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/carrier/lookuplist.{ResponseType}");
+        _queryBuilder.append("/carrier/lookup.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5744776093961306273L;
+            private static final long serialVersionUID = 4868053218912193192L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -197,7 +205,7 @@ public class CarrierController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5362285947660855470L;
+            private static final long serialVersionUID = 5635344130426976482L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -205,10 +213,9 @@ public class CarrierController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4997513398280285925L;
+            private static final long serialVersionUID = 4870931472927865837L;
             {
-                    put( "page", input.getPage() );
-                    put( "pagesize", input.getPagesize() );
+                    put( "phonenumber", input.getPhonenumber() );
             }
         };
 

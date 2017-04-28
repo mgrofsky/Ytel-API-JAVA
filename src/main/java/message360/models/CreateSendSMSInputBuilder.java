@@ -59,6 +59,14 @@ public class CreateSendSMSInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateSendSMSInputBuilder responseType(String responseType) {
+        createSendSMSInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Specifies the HTTP method used to request the required URL once SMS sent.
      */
     public CreateSendSMSInputBuilder method(HttpActionEnum method) {
@@ -71,14 +79,6 @@ public class CreateSendSMSInputBuilder {
      */
     public CreateSendSMSInputBuilder messagestatuscallback(String messagestatuscallback) {
         createSendSMSInput.setMessagestatuscallback(messagestatuscallback);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateSendSMSInputBuilder responseType(String responseType) {
-        createSendSMSInput.setResponseType(responseType);
         return this;
     }
     /**

@@ -43,6 +43,11 @@ public class CreateGroupCallInputBuilder {
         return this;
     }
 
+    public CreateGroupCallInputBuilder responseType(String responseType) {
+        createGroupCallInput.setResponseType(responseType);
+        return this;
+    }
+
     public CreateGroupCallInputBuilder method(HttpActionEnum method) {
         createGroupCallInput.setMethod(method);
         return this;
@@ -115,11 +120,6 @@ public class CreateGroupCallInputBuilder {
 
     public CreateGroupCallInputBuilder transcribeCallBackUrl(String transcribeCallBackUrl) {
         createGroupCallInput.setTranscribeCallBackUrl(transcribeCallBackUrl);
-        return this;
-    }
-
-    public CreateGroupCallInputBuilder responseType(String responseType) {
-        createGroupCallInput.setResponseType(responseType);
         return this;
     }
     /**

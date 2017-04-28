@@ -11,14 +11,14 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreatePlayAudioInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5022293831705599192L;
+    private static final long serialVersionUID = 4784227904322821283L;
     private String callSid;
     private String audioUrl;
+    private String responseType = "json";
     private Integer length;
     private DirectionEnum direction;
     private Boolean loop;
     private Boolean mix;
-    private String responseType = "json";
     /** GETTER
      * The unique identifier of each call resource
      */
@@ -49,6 +49,22 @@ public class CreatePlayAudioInput
     @JsonSetter("AudioUrl")
     public void setAudioUrl (String value) { 
         this.audioUrl = value;
+    }
+ 
+    /** GETTER
+     * Response type format xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response type format xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
     }
  
     /** GETTER
@@ -113,22 +129,6 @@ public class CreatePlayAudioInput
     @JsonSetter("Mix")
     public void setMix (Boolean value) { 
         this.mix = value;
-    }
- 
-    /** GETTER
-     * Response type format xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response type format xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

@@ -11,10 +11,26 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateCarrierLookupListInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4881785030205385810L;
+    private static final long serialVersionUID = 5577793162980372830L;
+    private String responseType = "json";
     private Integer page;
     private Integer pagesize;
-    private String responseType = "json";
+    /** GETTER
+     * Response type format xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response type format xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
+    }
+ 
     /** GETTER
      * Page Number
      */
@@ -45,22 +61,6 @@ public class CreateCarrierLookupListInput
     @JsonSetter("pagesize")
     public void setPagesize (Integer value) { 
         this.pagesize = value;
-    }
- 
-    /** GETTER
-     * Response type format xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response type format xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

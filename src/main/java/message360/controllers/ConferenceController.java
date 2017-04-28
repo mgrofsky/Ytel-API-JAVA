@@ -69,6 +69,9 @@ public class ConferenceController extends BaseController {
         if (null == input.getParticipantSid())
             throw new NullPointerException("The property \"ParticipantSid\" in the input object cannot be null.");
 
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -78,7 +81,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5586973180438941477L;
+            private static final long serialVersionUID = 4963076231576058065L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +90,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4646420335629961838L;
+            private static final long serialVersionUID = 5436392460554346000L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -95,7 +98,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5755233009062925696L;
+            private static final long serialVersionUID = 4799046629923498114L;
             {
                     put( "conferenceSid", input.getConferenceSid() );
                     put( "ParticipantSid", input.getParticipantSid() );
@@ -185,6 +188,10 @@ public class ConferenceController extends BaseController {
                 final CreateListConferenceInput input,
                 final APICallBack<String> callBack
     ) {
+        //validating required parameters
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -194,7 +201,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5693041082398905725L;
+            private static final long serialVersionUID = 4630730221046155445L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -203,7 +210,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5514554403604204894L;
+            private static final long serialVersionUID = 4733360582219580147L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -211,7 +218,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5058378205328108842L;
+            private static final long serialVersionUID = 5607742842015433651L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -307,6 +314,9 @@ public class ConferenceController extends BaseController {
         if (null == input.getConferencesid())
             throw new NullPointerException("The property \"Conferencesid\" in the input object cannot be null.");
 
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -316,7 +326,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5725751784483220725L;
+            private static final long serialVersionUID = 5171792263775604650L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -325,7 +335,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4734236537062000974L;
+            private static final long serialVersionUID = 5175112695194163174L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -333,7 +343,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5341162950336454455L;
+            private static final long serialVersionUID = 4824175046163202216L;
             {
                     put( "conferencesid", input.getConferencesid() );
             }
@@ -427,6 +437,9 @@ public class ConferenceController extends BaseController {
         if (null == input.getParticipantnumber())
             throw new NullPointerException("The property \"Participantnumber\" in the input object cannot be null.");
 
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -436,7 +449,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4703970771385660512L;
+            private static final long serialVersionUID = 5610461893528135820L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -445,7 +458,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4884244922773260836L;
+            private static final long serialVersionUID = 5603973730320864928L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -453,7 +466,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5538414681793713510L;
+            private static final long serialVersionUID = 5684137104142410617L;
             {
                     put( "conferencesid", input.getConferencesid() );
                     put( "participantnumber", input.getParticipantnumber() );
@@ -548,6 +561,9 @@ public class ConferenceController extends BaseController {
         if (null == input.getConferenceSid())
             throw new NullPointerException("The property \"ConferenceSid\" in the input object cannot be null.");
 
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -557,7 +573,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5183197933467201988L;
+            private static final long serialVersionUID = 4796378901038162720L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -566,7 +582,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5010307276977379825L;
+            private static final long serialVersionUID = 5318774067899917289L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -574,7 +590,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5343708374416846554L;
+            private static final long serialVersionUID = 5247997289597601636L;
             {
                     put( "ConferenceSid", input.getConferenceSid() );
                     put( "Page", input.getPage() );
@@ -672,6 +688,9 @@ public class ConferenceController extends BaseController {
         if (null == input.getParticipantSid())
             throw new NullPointerException("The property \"ParticipantSid\" in the input object cannot be null.");
 
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -681,7 +700,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5376321710004977717L;
+            private static final long serialVersionUID = 5261132211361181512L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -690,7 +709,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4830868506321626679L;
+            private static final long serialVersionUID = 5413408196809486263L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -698,7 +717,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4994605282625084138L;
+            private static final long serialVersionUID = 5564654535500215368L;
             {
                     put( "ConferenceSid", input.getConferenceSid() );
                     put( "ParticipantSid", input.getParticipantSid() );

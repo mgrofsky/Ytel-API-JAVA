@@ -11,13 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateListParticipantInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4704037409984014247L;
+    private static final long serialVersionUID = 4973768525356080518L;
     private String conferenceSid;
+    private String responseType = "json";
     private Integer page;
     private Integer pagesize;
     private Boolean muted;
     private Boolean deaf;
-    private String responseType = "json";
     /** GETTER
      * unique conference sid
      */
@@ -32,6 +32,22 @@ public class CreateListParticipantInput
     @JsonSetter("ConferenceSid")
     public void setConferenceSid (String value) { 
         this.conferenceSid = value;
+    }
+ 
+    /** GETTER
+     * Response format, xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response format, xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
     }
  
     /** GETTER
@@ -96,22 +112,6 @@ public class CreateListParticipantInput
     @JsonSetter("Deaf")
     public void setDeaf (Boolean value) { 
         this.deaf = value;
-    }
- 
-    /** GETTER
-     * Response format, xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response format, xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

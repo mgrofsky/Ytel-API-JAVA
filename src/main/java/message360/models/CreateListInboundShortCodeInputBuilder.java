@@ -19,6 +19,14 @@ public class CreateListInboundShortCodeInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateListInboundShortCodeInputBuilder responseType(String responseType) {
+        createListInboundShortCodeInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Which page of the overall response will be returned. Zero indexed
      */
     public CreateListInboundShortCodeInputBuilder page(Integer page) {
@@ -55,14 +63,6 @@ public class CreateListInboundShortCodeInputBuilder {
      */
     public CreateListInboundShortCodeInputBuilder dateReceived(String dateReceived) {
         createListInboundShortCodeInput.setDateReceived(dateReceived);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateListInboundShortCodeInputBuilder responseType(String responseType) {
-        createListInboundShortCodeInput.setResponseType(responseType);
         return this;
     }
     /**

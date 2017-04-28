@@ -35,6 +35,14 @@ public class CreatePlayAudioInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreatePlayAudioInputBuilder responseType(String responseType) {
+        createPlayAudioInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Time limit in seconds for audio play back
      */
     public CreatePlayAudioInputBuilder length(Integer length) {
@@ -63,14 +71,6 @@ public class CreatePlayAudioInputBuilder {
      */
     public CreatePlayAudioInputBuilder mix(Boolean mix) {
         createPlayAudioInput.setMix(mix);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreatePlayAudioInputBuilder responseType(String responseType) {
-        createPlayAudioInput.setResponseType(responseType);
         return this;
     }
     /**

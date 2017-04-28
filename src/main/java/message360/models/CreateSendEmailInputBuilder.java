@@ -59,6 +59,14 @@ public class CreateSendEmailInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateSendEmailInputBuilder responseType(String responseType) {
+        createSendEmailInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * CC Email address
      */
     public CreateSendEmailInputBuilder cc(String cc) {
@@ -79,14 +87,6 @@ public class CreateSendEmailInputBuilder {
      */
     public CreateSendEmailInputBuilder attachment(String attachment) {
         createSendEmailInput.setAttachment(attachment);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateSendEmailInputBuilder responseType(String responseType) {
-        createSendEmailInput.setResponseType(responseType);
         return this;
     }
     /**

@@ -11,13 +11,29 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateListSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5661117137557833847L;
+    private static final long serialVersionUID = 5681263121106014644L;
+    private String responseType = "json";
     private Integer page;
     private Integer pagesize;
     private String from;
     private String to;
     private String datesent;
-    private String responseType = "json";
+    /** GETTER
+     * Response type format xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response type format xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
+    }
+ 
     /** GETTER
      * Which page of the overall response will be returned. Zero indexed
      */
@@ -96,22 +112,6 @@ public class CreateListSMSInput
     @JsonSetter("datesent")
     public void setDatesent (String value) { 
         this.datesent = value;
-    }
- 
-    /** GETTER
-     * Response type format xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response type format xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

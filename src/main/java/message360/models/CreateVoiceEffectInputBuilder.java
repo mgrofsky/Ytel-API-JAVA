@@ -23,6 +23,14 @@ public class CreateVoiceEffectInputBuilder {
         return this;
     }
 
+    /**
+     * Response type format xml or json
+     */
+    public CreateVoiceEffectInputBuilder responseType(String responseType) {
+        createVoiceEffectInput.setResponseType(responseType);
+        return this;
+    }
+
     public CreateVoiceEffectInputBuilder audioDirection(AudioDirectionEnum audioDirection) {
         createVoiceEffectInput.setAudioDirection(audioDirection);
         return this;
@@ -65,14 +73,6 @@ public class CreateVoiceEffectInputBuilder {
      */
     public CreateVoiceEffectInputBuilder tempo(Double tempo) {
         createVoiceEffectInput.setTempo(tempo);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateVoiceEffectInputBuilder responseType(String responseType) {
-        createVoiceEffectInput.setResponseType(responseType);
         return this;
     }
     /**

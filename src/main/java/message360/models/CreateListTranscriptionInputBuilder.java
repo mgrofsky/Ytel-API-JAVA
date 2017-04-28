@@ -18,6 +18,14 @@ public class CreateListTranscriptionInputBuilder {
         createListTranscriptionInput = new CreateListTranscriptionInput();
     }
 
+    /**
+     * Response type format xml or json
+     */
+    public CreateListTranscriptionInputBuilder responseType(String responseType) {
+        createListTranscriptionInput.setResponseType(responseType);
+        return this;
+    }
+
     public CreateListTranscriptionInputBuilder page(Integer page) {
         createListTranscriptionInput.setPage(page);
         return this;
@@ -35,14 +43,6 @@ public class CreateListTranscriptionInputBuilder {
 
     public CreateListTranscriptionInputBuilder dateTranscribed(String dateTranscribed) {
         createListTranscriptionInput.setDateTranscribed(dateTranscribed);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateListTranscriptionInputBuilder responseType(String responseType) {
-        createListTranscriptionInput.setResponseType(responseType);
         return this;
     }
     /**

@@ -19,6 +19,14 @@ public class CreateListTemplatesInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateListTemplatesInputBuilder responseType(String responseType) {
+        createListTemplatesInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * The type (category) of template Valid values: marketing, authorization
      */
     public CreateListTemplatesInputBuilder type(String type) {
@@ -39,14 +47,6 @@ public class CreateListTemplatesInputBuilder {
      */
     public CreateListTemplatesInputBuilder pagesize(Integer pagesize) {
         createListTemplatesInput.setPagesize(pagesize);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateListTemplatesInputBuilder responseType(String responseType) {
-        createListTemplatesInput.setResponseType(responseType);
         return this;
     }
     /**

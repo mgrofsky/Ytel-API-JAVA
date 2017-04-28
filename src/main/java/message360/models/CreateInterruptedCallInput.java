@@ -11,12 +11,12 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateInterruptedCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5406116504102453318L;
+    private static final long serialVersionUID = 4814263025735785838L;
     private String callSid;
+    private String responseType = "json";
     private String url;
     private HttpActionEnum method;
     private InterruptedCallStatusEnum status;
-    private String responseType = "json";
     /** GETTER
      * Call SId
      */
@@ -31,6 +31,22 @@ public class CreateInterruptedCallInput
     @JsonSetter("CallSid")
     public void setCallSid (String value) { 
         this.callSid = value;
+    }
+ 
+    /** GETTER
+     * Response type format xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response type format xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
     }
  
     /** GETTER
@@ -79,22 +95,6 @@ public class CreateInterruptedCallInput
     @JsonSetter("Status")
     public void setStatus (InterruptedCallStatusEnum value) { 
         this.status = value;
-    }
- 
-    /** GETTER
-     * Response type format xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response type format xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

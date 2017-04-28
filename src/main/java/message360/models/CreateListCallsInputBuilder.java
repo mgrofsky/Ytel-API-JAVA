@@ -19,6 +19,14 @@ public class CreateListCallsInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateListCallsInputBuilder responseType(String responseType) {
+        createListCallsInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Which page of the overall response will be returned. Zero indexed
      */
     public CreateListCallsInputBuilder page(Integer page) {
@@ -55,14 +63,6 @@ public class CreateListCallsInputBuilder {
      */
     public CreateListCallsInputBuilder dateCreated(String dateCreated) {
         createListCallsInput.setDateCreated(dateCreated);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateListCallsInputBuilder responseType(String responseType) {
-        createListCallsInput.setResponseType(responseType);
         return this;
     }
     /**
