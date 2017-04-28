@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSendDigitInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5383444929233117777L;
+    private static final long serialVersionUID = 4916621842381810957L;
     private String callSid;
     private String playDtmf;
     private String responseType = "json";

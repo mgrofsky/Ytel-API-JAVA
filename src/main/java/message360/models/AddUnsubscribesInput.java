@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class AddUnsubscribesInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5758372225118336877L;
+    private static final long serialVersionUID = 5588586537810357185L;
     private String email;
     private String responseType = "json";
     /** GETTER

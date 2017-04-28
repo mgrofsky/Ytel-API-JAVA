@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class Data17Model 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5534862213127494641L;
+    private static final long serialVersionUID = 4881536004767882074L;
     private String companyname;
     private int otpcode;
     /** GETTER

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateCarrierLookupListInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5577793162980372830L;
+    private static final long serialVersionUID = 5524379864341326408L;
     private String responseType = "json";
     private Integer page;
     private Integer pagesize;

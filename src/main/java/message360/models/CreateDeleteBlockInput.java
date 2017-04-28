@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateDeleteBlockInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4920588265484025373L;
+    private static final long serialVersionUID = 5606828602868475329L;
     private String email;
     private String responseType = "json";
     /** GETTER

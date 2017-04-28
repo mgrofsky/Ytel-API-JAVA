@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateViewNumberDetailsInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4645620783199079211L;
+    private static final long serialVersionUID = 4755101771826389864L;
     private String phoneNumber;
     private String responseType = "json";
     /** GETTER

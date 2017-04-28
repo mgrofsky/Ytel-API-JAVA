@@ -281,7 +281,7 @@ CreateListInboundShortCodeInput collect = new CreateListInboundShortCodeInput();
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer page = 46;
+Integer page = 71;
 collect.setPage(page);
 
 Integer pagesize = 10;
@@ -341,7 +341,7 @@ CreateListShortCodeInput collect = new CreateListShortCodeInput();
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer page = 46;
+Integer page = 71;
 collect.setPage(page);
 
 Integer pagesize = 10;
@@ -402,7 +402,7 @@ collect.setResponseType(responseType);
 String type = "authorization";
 collect.setType(type);
 
-Integer page = 46;
+Integer page = 71;
 collect.setPage(page);
 
 Integer pagesize = 10;
@@ -566,10 +566,10 @@ CreateListConferenceInput collect = new CreateListConferenceInput();
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer page = 46;
+Integer page = 71;
 collect.setPage(page);
 
-Integer pageSize = 46;
+Integer pageSize = 71;
 collect.setPageSize(pageSize);
 
 String friendlyName = "FriendlyName";
@@ -676,7 +676,7 @@ collect.setConferencesid(conferencesid);
 String participantnumber = "participantnumber";
 collect.setParticipantnumber(participantnumber);
 
-int tocountrycode = 46;
+int tocountrycode = 71;
 collect.setTocountrycode(tocountrycode);
 
 String responseType = "json";
@@ -736,10 +736,10 @@ collect.setConferenceSid(conferenceSid);
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer page = 46;
+Integer page = 71;
 collect.setPage(page);
 
-Integer pagesize = 46;
+Integer pagesize = 71;
 collect.setPagesize(pagesize);
 
 Boolean muted = false;
@@ -1072,7 +1072,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 HttpActionEnum heartBeatMethod = HttpActionEnum.fromString("GET");
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 137;
+Integer timeout = 71;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -1081,7 +1081,7 @@ collect.setPlayDtmf(playDtmf);
 String hideCallerId = "HideCallerId";
 collect.setHideCallerId(hideCallerId);
 
-Boolean record = true;
+Boolean record = false;
 collect.setRecord(record);
 
 String recordCallBackUrl = "RecordCallBackUrl";
@@ -1090,7 +1090,7 @@ collect.setRecordCallBackUrl(recordCallBackUrl);
 HttpActionEnum recordCallBackMethod = HttpActionEnum.fromString("GET");
 collect.setRecordCallBackMethod(recordCallBackMethod);
 
-Boolean transcribe = true;
+Boolean transcribe = false;
 collect.setTranscribe(transcribe);
 
 String transcribeCallBackUrl = "TranscribeCallBackUrl";
@@ -1149,19 +1149,19 @@ collect.setResponseType(responseType);
 AudioDirectionEnum audioDirection = AudioDirectionEnum.fromString("IN");
 collect.setAudioDirection(audioDirection);
 
-Double pitchSemiTones = 137.765464267119;
+Double pitchSemiTones = 71.4299391682399;
 collect.setPitchSemiTones(pitchSemiTones);
 
-Double pitchOctaves = 137.765464267119;
+Double pitchOctaves = 71.4299391682399;
 collect.setPitchOctaves(pitchOctaves);
 
-Double pitch = 137.765464267119;
+Double pitch = 71.4299391682399;
 collect.setPitch(pitch);
 
-Double rate = 137.765464267119;
+Double rate = 71.4299391682399;
 collect.setRate(rate);
 
-Double tempo = 137.765464267119;
+Double tempo = 71.4299391682399;
 collect.setTempo(tempo);
 
 // Invoking the API call with sample inputs
@@ -1210,7 +1210,7 @@ CreateRecordCallInput collect = new CreateRecordCallInput();
 String callSid = "CallSid";
 collect.setCallSid(callSid);
 
-boolean record = true;
+boolean record = false;
 collect.setRecord(record);
 
 String responseType = "json";
@@ -1219,7 +1219,7 @@ collect.setResponseType(responseType);
 DirectionEnum direction = DirectionEnum.fromString("IN");
 collect.setDirection(direction);
 
-Integer timeLimit = 137;
+Integer timeLimit = 71;
 collect.setTimeLimit(timeLimit);
 
 String callBackUrl = "CallBackUrl";
@@ -1280,16 +1280,16 @@ collect.setAudioUrl(audioUrl);
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer length = 137;
+Integer length = 71;
 collect.setLength(length);
 
 DirectionEnum direction = DirectionEnum.fromString("IN");
 collect.setDirection(direction);
 
-Boolean loop = true;
+Boolean loop = false;
 collect.setLoop(loop);
 
-Boolean mix = true;
+Boolean mix = false;
 collect.setMix(mix);
 
 // Invoking the API call with sample inputs
@@ -1494,19 +1494,19 @@ collect.setFallBackMethod(fallBackMethod);
 String heartBeatUrl = "HeartBeatUrl";
 collect.setHeartBeatUrl(heartBeatUrl);
 
-Boolean heartBeatMethod = true;
+Boolean heartBeatMethod = false;
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 137;
+Integer timeout = 71;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
 collect.setPlayDtmf(playDtmf);
 
-Boolean hideCallerId = true;
+Boolean hideCallerId = false;
 collect.setHideCallerId(hideCallerId);
 
-Boolean record = true;
+Boolean record = false;
 collect.setRecord(record);
 
 String recordCallBackUrl = "RecordCallBackUrl";
@@ -1515,7 +1515,7 @@ collect.setRecordCallBackUrl(recordCallBackUrl);
 HttpActionEnum recordCallBackMethod = HttpActionEnum.fromString("GET");
 collect.setRecordCallBackMethod(recordCallBackMethod);
 
-Boolean transcribe = true;
+Boolean transcribe = false;
 collect.setTranscribe(transcribe);
 
 String transcribeCallBackUrl = "TranscribeCallBackUrl";
@@ -1569,7 +1569,7 @@ CreateListCallsInput collect = new CreateListCallsInput();
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer page = 137;
+Integer page = 71;
 collect.setPage(page);
 
 Integer pageSize = 10;
@@ -2781,10 +2781,10 @@ CreateListSMSInput collect = new CreateListSMSInput();
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer page = 96;
+Integer page = 162;
 collect.setPage(page);
 
-Integer pagesize = 96;
+Integer pagesize = 162;
 collect.setPagesize(pagesize);
 
 String from = "from";
@@ -2840,7 +2840,7 @@ CreateListInboundSMSInput collect = new CreateListInboundSMSInput();
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer page = 96;
+Integer page = 162;
 collect.setPage(page);
 
 String pagesize = "pagesize";
@@ -3020,10 +3020,10 @@ CreateListRecordingInput collect = new CreateListRecordingInput();
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer page = 96;
+Integer page = 162;
 collect.setPage(page);
 
-Integer pageSize = 96;
+Integer pageSize = 162;
 collect.setPageSize(pageSize);
 
 String dateCreated = "DateCreated";
@@ -3174,10 +3174,10 @@ CreateCarrierLookupListInput collect = new CreateCarrierLookupListInput();
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer page = 96;
+Integer page = 162;
 collect.setPage(page);
 
-Integer pagesize = 96;
+Integer pagesize = 162;
 collect.setPagesize(pagesize);
 
 // Invoking the API call with sample inputs
@@ -3412,7 +3412,7 @@ CreateListNumberInput collect = new CreateListNumberInput();
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer page = 96;
+Integer page = 162;
 collect.setPage(page);
 
 Integer pageSize = 10;
@@ -3760,10 +3760,10 @@ CreateListTranscriptionInput collect = new CreateListTranscriptionInput();
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer page = 187;
+Integer page = 162;
 collect.setPage(page);
 
-Integer pageSize = 187;
+Integer pageSize = 162;
 collect.setPageSize(pageSize);
 
 StatusEnum status = StatusEnum.fromString("INPROGRESS");

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateDeafMuteParticipantInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5577548339899602402L;
+    private static final long serialVersionUID = 5175896189897884795L;
     private String conferenceSid;
     private String participantSid;
     private String responseType = "json";

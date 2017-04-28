@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SendShortCodeTestResponseModel 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5733939528536424718L;
+    private static final long serialVersionUID = 5623238541513898703L;
     private Message360Model message360;
     /** GETTER
      * TODO: Write general description for this method

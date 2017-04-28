@@ -75,7 +75,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4990869438520890874L;
+            private static final long serialVersionUID = 4710605365100341339L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -84,7 +84,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5160546214395778997L;
+            private static final long serialVersionUID = 4667872642309510071L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -92,7 +92,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5720193430759380946L;
+            private static final long serialVersionUID = 4872362449612999083L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -196,7 +196,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5453245873847832128L;
+            private static final long serialVersionUID = 5656994776959032530L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -205,7 +205,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5391640385974960824L;
+            private static final long serialVersionUID = 5623858193940387535L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -213,7 +213,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5267309699407854617L;
+            private static final long serialVersionUID = 5746213324590484246L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -325,7 +325,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4779214989765363641L;
+            private static final long serialVersionUID = 4903353781928870517L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -334,7 +334,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5315670329162606581L;
+            private static final long serialVersionUID = 5634567568635001743L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -342,7 +342,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5466965641370281628L;
+            private static final long serialVersionUID = 4692577599860018465L;
             {
                     put( "fromcountrycode", input.getFromcountrycode() );
                     put( "from", input.getFrom() );
@@ -451,7 +451,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4949752067048588073L;
+            private static final long serialVersionUID = 4612160159103622583L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -460,7 +460,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5119298689447420958L;
+            private static final long serialVersionUID = 5137971213170191963L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -468,7 +468,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4768525681089312041L;
+            private static final long serialVersionUID = 5434206390317962318L;
             {
                     put( "messagesid", input.getMessagesid() );
             }
