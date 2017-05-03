@@ -11,16 +11,16 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSendEmailInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5019842301342804602L;
+    private static final long serialVersionUID = 5136804394388544541L;
     private String to;
     private String from;
     private SendEmailAsEnum type = SendEmailAsEnum.HTML;
     private String subject;
     private String message;
+    private String responseType = "json";
     private String cc;
     private String bcc;
     private String attachment;
-    private String responseType = "json";
     /** GETTER
      * The to email address
      */
@@ -102,6 +102,22 @@ public class CreateSendEmailInput
     }
  
     /** GETTER
+     * Response type format xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response type format xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
+    }
+ 
+    /** GETTER
      * CC Email address
      */
     @JsonGetter("cc")
@@ -147,22 +163,6 @@ public class CreateSendEmailInput
     @JsonSetter("attachment")
     public void setAttachment (String value) { 
         this.attachment = value;
-    }
- 
-    /** GETTER
-     * Response type format xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response type format xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

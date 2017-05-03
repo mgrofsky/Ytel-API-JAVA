@@ -27,6 +27,14 @@ public class CreateListParticipantInputBuilder {
     }
 
     /**
+     * Response format, xml or json
+     */
+    public CreateListParticipantInputBuilder responseType(String responseType) {
+        createListParticipantInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * page number
      */
     public CreateListParticipantInputBuilder page(Integer page) {
@@ -46,14 +54,6 @@ public class CreateListParticipantInputBuilder {
 
     public CreateListParticipantInputBuilder deaf(Boolean deaf) {
         createListParticipantInput.setDeaf(deaf);
-        return this;
-    }
-
-    /**
-     * Response format, xml or json
-     */
-    public CreateListParticipantInputBuilder responseType(String responseType) {
-        createListParticipantInput.setResponseType(responseType);
         return this;
     }
     /**

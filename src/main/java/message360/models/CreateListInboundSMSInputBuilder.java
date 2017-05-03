@@ -19,6 +19,14 @@ public class CreateListInboundSMSInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateListInboundSMSInputBuilder responseType(String responseType) {
+        createListInboundSMSInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Which page of the overall response will be returned. Zero indexed
      */
     public CreateListInboundSMSInputBuilder page(Integer page) {
@@ -47,14 +55,6 @@ public class CreateListInboundSMSInputBuilder {
      */
     public CreateListInboundSMSInputBuilder to(String to) {
         createListInboundSMSInput.setTo(to);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateListInboundSMSInputBuilder responseType(String responseType) {
-        createListInboundSMSInput.setResponseType(responseType);
         return this;
     }
     /**

@@ -11,12 +11,28 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateListAddressInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5754050642116137790L;
+    private static final long serialVersionUID = 5564737617920007693L;
+    private String responseType = "json";
     private Integer page = 1;
     private Integer pageSize = 10;
     private String addressSID;
     private String dateCreated;
-    private String responseType = "json";
+    /** GETTER
+     * Response Type either json or xml
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response Type either json or xml
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
+    }
+ 
     /** GETTER
      * Return requested # of items starting the value, default=0, must be an integer
      */
@@ -79,22 +95,6 @@ public class CreateListAddressInput
     @JsonSetter("DateCreated")
     public void setDateCreated (String value) { 
         this.dateCreated = value;
-    }
- 
-    /** GETTER
-     * Response Type either json or xml
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response Type either json or xml
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

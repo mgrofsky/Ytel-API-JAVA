@@ -72,6 +72,9 @@ public class SubAccountController extends BaseController {
         if (null == input.getEmail())
             throw new NullPointerException("The property \"Email\" in the input object cannot be null.");
 
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -81,7 +84,7 @@ public class SubAccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5166338562755565514L;
+            private static final long serialVersionUID = 4981630515419029524L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -90,7 +93,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5495349650409235896L;
+            private static final long serialVersionUID = 5086073889629144425L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -98,7 +101,7 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5049230428975834931L;
+            private static final long serialVersionUID = 5166684833450659622L;
             {
                     put( "FirstName", input.getFirstName() );
                     put( "LastName", input.getLastName() );
@@ -194,6 +197,9 @@ public class SubAccountController extends BaseController {
         if (null == input.getActivate())
             throw new NullPointerException("The property \"Activate\" in the input object cannot be null.");
 
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -203,7 +209,7 @@ public class SubAccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5654760799334358231L;
+            private static final long serialVersionUID = 4857678485604221923L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -212,7 +218,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4939783878230412776L;
+            private static final long serialVersionUID = 4748215262196175226L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -220,7 +226,7 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5558332782604484712L;
+            private static final long serialVersionUID = 5241330316572462583L;
             {
                     put( "SubAccountSID", input.getSubAccountSID() );
                     put( "Activate", (input.getActivate() != null) ? input.getActivate().value() : 0 );
@@ -315,6 +321,9 @@ public class SubAccountController extends BaseController {
         if (null == input.getMergeNumber())
             throw new NullPointerException("The property \"MergeNumber\" in the input object cannot be null.");
 
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -324,7 +333,7 @@ public class SubAccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5435226626868903432L;
+            private static final long serialVersionUID = 5622134186390423506L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -333,7 +342,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5038565781828247133L;
+            private static final long serialVersionUID = 5370511867228335881L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -341,7 +350,7 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5141543823655304876L;
+            private static final long serialVersionUID = 4826244005547556127L;
             {
                     put( "SubAccountSID", input.getSubAccountSID() );
                     put( "MergeNumber", (input.getMergeNumber() != null) ? input.getMergeNumber().value() : 0 );

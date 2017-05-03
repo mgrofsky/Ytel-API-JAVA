@@ -19,6 +19,14 @@ public class CreateListNumberInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateListNumberInputBuilder responseType(String responseType) {
+        createListNumberInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Which page of the overall response will be returned. Zero indexed
      */
     public CreateListNumberInputBuilder page(Integer page) {
@@ -41,14 +49,6 @@ public class CreateListNumberInputBuilder {
 
     public CreateListNumberInputBuilder friendlyName(String friendlyName) {
         createListNumberInput.setFriendlyName(friendlyName);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateListNumberInputBuilder responseType(String responseType) {
-        createListNumberInput.setResponseType(responseType);
         return this;
     }
     /**

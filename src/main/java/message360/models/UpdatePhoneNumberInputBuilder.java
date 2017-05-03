@@ -23,6 +23,14 @@ public class UpdatePhoneNumberInputBuilder {
         return this;
     }
 
+    /**
+     * Response type format xml or json
+     */
+    public UpdatePhoneNumberInputBuilder responseType(String responseType) {
+        updatePhoneNumberInput.setResponseType(responseType);
+        return this;
+    }
+
     public UpdatePhoneNumberInputBuilder friendlyName(String friendlyName) {
         updatePhoneNumberInput.setFriendlyName(friendlyName);
         return this;
@@ -106,14 +114,6 @@ public class UpdatePhoneNumberInputBuilder {
      */
     public UpdatePhoneNumberInputBuilder smsFallbackMethod(HttpActionEnum smsFallbackMethod) {
         updatePhoneNumberInput.setSmsFallbackMethod(smsFallbackMethod);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public UpdatePhoneNumberInputBuilder responseType(String responseType) {
-        updatePhoneNumberInput.setResponseType(responseType);
         return this;
     }
     /**

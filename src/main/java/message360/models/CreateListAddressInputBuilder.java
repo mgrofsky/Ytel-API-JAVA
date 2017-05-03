@@ -19,6 +19,14 @@ public class CreateListAddressInputBuilder {
     }
 
     /**
+     * Response Type either json or xml
+     */
+    public CreateListAddressInputBuilder responseType(String responseType) {
+        createListAddressInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Return requested # of items starting the value, default=0, must be an integer
      */
     public CreateListAddressInputBuilder page(Integer page) {
@@ -47,14 +55,6 @@ public class CreateListAddressInputBuilder {
      */
     public CreateListAddressInputBuilder dateCreated(String dateCreated) {
         createListAddressInput.setDateCreated(dateCreated);
-        return this;
-    }
-
-    /**
-     * Response Type either json or xml
-     */
-    public CreateListAddressInputBuilder responseType(String responseType) {
-        createListAddressInput.setResponseType(responseType);
         return this;
     }
     /**

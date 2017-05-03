@@ -51,6 +51,22 @@ public class CreateSendShortCodeInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateSendShortCodeInputBuilder responseType(String responseType) {
+        createSendShortCodeInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
+     * format of your data, example: {companyname}:test,{otpcode}:1234
+     */
+    public CreateSendShortCodeInputBuilder data(String data) {
+        createSendShortCodeInput.setData(data);
+        return this;
+    }
+
+    /**
      * Specifies the HTTP method used to request the required URL once the Short Code message is sent.
      */
     public CreateSendShortCodeInputBuilder method(String method) {
@@ -63,14 +79,6 @@ public class CreateSendShortCodeInputBuilder {
      */
     public CreateSendShortCodeInputBuilder messageStatusCallback(String messageStatusCallback) {
         createSendShortCodeInput.setMessageStatusCallback(messageStatusCallback);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateSendShortCodeInputBuilder responseType(String responseType) {
-        createSendShortCodeInput.setResponseType(responseType);
         return this;
     }
     /**

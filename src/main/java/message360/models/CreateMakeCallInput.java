@@ -11,12 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateMakeCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5152809846981788309L;
+    private static final long serialVersionUID = 5145754448849375208L;
     private String fromCountryCode;
     private String from;
     private String toCountryCode;
     private String to;
     private String url;
+    private String responseType = "json";
     private HttpActionEnum method;
     private String statusCallBackUrl;
     private HttpActionEnum statusCallBackMethod;
@@ -33,7 +34,6 @@ public class CreateMakeCallInput
     private Boolean transcribe;
     private String transcribeCallBackUrl;
     private IfMachineEnum ifMachine;
-    private String responseType = "json";
     /** GETTER
      * from country code
      */
@@ -112,6 +112,22 @@ public class CreateMakeCallInput
     @JsonSetter("Url")
     public void setUrl (String value) { 
         this.url = value;
+    }
+ 
+    /** GETTER
+     * Response type format xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response type format xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
     }
  
     /** GETTER
@@ -368,22 +384,6 @@ public class CreateMakeCallInput
     @JsonSetter("IfMachine")
     public void setIfMachine (IfMachineEnum value) { 
         this.ifMachine = value;
-    }
- 
-    /** GETTER
-     * Response type format xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response type format xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

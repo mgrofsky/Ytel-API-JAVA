@@ -19,6 +19,14 @@ public class CreateCarrierLookupListInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateCarrierLookupListInputBuilder responseType(String responseType) {
+        createCarrierLookupListInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Page Number
      */
     public CreateCarrierLookupListInputBuilder page(Integer page) {
@@ -31,14 +39,6 @@ public class CreateCarrierLookupListInputBuilder {
      */
     public CreateCarrierLookupListInputBuilder pagesize(Integer pagesize) {
         createCarrierLookupListInput.setPagesize(pagesize);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateCarrierLookupListInputBuilder responseType(String responseType) {
-        createCarrierLookupListInput.setResponseType(responseType);
         return this;
     }
     /**

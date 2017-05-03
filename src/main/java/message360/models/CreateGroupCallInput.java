@@ -11,12 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateGroupCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5702859762476140186L;
+    private static final long serialVersionUID = 5104019449786086897L;
     private String fromCountryCode = "1";
     private String from;
     private String toCountryCode = "1";
     private String to;
     private String url;
+    private String responseType = "json";
     private HttpActionEnum method;
     private String statusCallBackUrl;
     private HttpActionEnum statusCallBackMethod;
@@ -32,7 +33,6 @@ public class CreateGroupCallInput
     private HttpActionEnum recordCallBackMethod;
     private Boolean transcribe;
     private String transcribeCallBackUrl;
-    private String responseType = "json";
     /** GETTER
      * TODO: Write general description for this method
      */
@@ -111,6 +111,22 @@ public class CreateGroupCallInput
     @JsonSetter("Url")
     public void setUrl (String value) { 
         this.url = value;
+    }
+ 
+    /** GETTER
+     * TODO: Write general description for this method
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * TODO: Write general description for this method
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
     }
  
     /** GETTER
@@ -351,22 +367,6 @@ public class CreateGroupCallInput
     @JsonSetter("TranscribeCallBackUrl")
     public void setTranscribeCallBackUrl (String value) { 
         this.transcribeCallBackUrl = value;
-    }
- 
-    /** GETTER
-     * TODO: Write general description for this method
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * TODO: Write general description for this method
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

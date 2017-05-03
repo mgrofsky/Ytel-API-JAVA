@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateDeleteRecordingInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4795783727582952538L;
+    private static final long serialVersionUID = 4804711417653274074L;
     private String recordingSid;
     private String responseType = "json";
     /** GETTER

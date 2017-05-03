@@ -19,6 +19,14 @@ public class CreateListBlocksInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateListBlocksInputBuilder responseType(String responseType) {
+        createListBlocksInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Where to start in the output list
      */
     public CreateListBlocksInputBuilder offset(String offset) {
@@ -31,14 +39,6 @@ public class CreateListBlocksInputBuilder {
      */
     public CreateListBlocksInputBuilder limit(String limit) {
         createListBlocksInput.setLimit(limit);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateListBlocksInputBuilder responseType(String responseType) {
-        createListBlocksInput.setResponseType(responseType);
         return this;
     }
     /**

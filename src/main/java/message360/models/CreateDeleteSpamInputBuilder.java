@@ -19,18 +19,18 @@ public class CreateDeleteSpamInputBuilder {
     }
 
     /**
-     * Email address
-     */
-    public CreateDeleteSpamInputBuilder email(String email) {
-        createDeleteSpamInput.setEmail(email);
-        return this;
-    }
-
-    /**
      * Response type format xml or json
      */
     public CreateDeleteSpamInputBuilder responseType(String responseType) {
         createDeleteSpamInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
+     * Email address
+     */
+    public CreateDeleteSpamInputBuilder email(String email) {
+        createDeleteSpamInput.setEmail(email);
         return this;
     }
     /**

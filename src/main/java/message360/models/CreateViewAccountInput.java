@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateViewAccountInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5323877659223655455L;
+    private static final long serialVersionUID = 5436394738055322986L;
     private String date;
     private String responseType = "json";
     /** GETTER

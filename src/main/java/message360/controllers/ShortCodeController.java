@@ -78,7 +78,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4726506400936233846L;
+            private static final long serialVersionUID = 4859792947764852804L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +87,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4630512696694124248L;
+            private static final long serialVersionUID = 5456413331510143116L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -95,7 +95,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4974085178172830516L;
+            private static final long serialVersionUID = 4901859095440399584L;
             {
                     put( "templateid", input.getTemplateid() );
             }
@@ -161,15 +161,13 @@ public class ShortCodeController extends BaseController {
     /**
      * Send an SMS from a message360 ShortCode
      * @param    CreateSendShortCodeInput    Object containing request parameters
-     * @param    fieldParameters    Additional optional form parameters are supported by this endpoint
      * @return    Returns the String response from the API call 
      */
     public String createSendShortCode(
-                final CreateSendShortCodeInput input,
-                Map<String, Object> fieldParameters
+                final CreateSendShortCodeInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createSendShortCodeAsync(input, fieldParameters, callback);
+        createSendShortCodeAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -178,12 +176,10 @@ public class ShortCodeController extends BaseController {
     /**
      * Send an SMS from a message360 ShortCode
      * @param    CreateSendShortCodeInput    Object containing request parameters
-     * @param    fieldParameters    Additional optional form parameters are supported by this endpoint
      * @return    Returns the void response from the API call 
      */
     public void createSendShortCodeAsync(
                 final CreateSendShortCodeInput input,
-                Map<String, Object> fieldParameters,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -199,6 +195,12 @@ public class ShortCodeController extends BaseController {
         if (null == input.getTemplateid())
             throw new NullPointerException("The property \"Templateid\" in the input object cannot be null.");
 
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
+        if (null == input.getData())
+            throw new NullPointerException("The property \"Data\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -208,7 +210,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5362471097894287911L;
+            private static final long serialVersionUID = 5412972993868367633L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -217,7 +219,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5328585561636323671L;
+            private static final long serialVersionUID = 5186264162164316462L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -225,17 +227,17 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5708464558979010277L;
+            private static final long serialVersionUID = 5447061504334748296L;
             {
                     put( "shortcode", input.getShortcode() );
                     put( "tocountrycode", input.getTocountrycode() );
                     put( "to", input.getTo() );
                     put( "templateid", input.getTemplateid() );
+                    put( "data", input.getData() );
                     put( "Method", input.getMethod() );
                     put( "MessageStatusCallback", input.getMessageStatusCallback() );
             }
         };
-        _parameters.putAll( fieldParameters );
 
         //prepare and invoke the API call request to fetch the response
         final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
@@ -318,6 +320,10 @@ public class ShortCodeController extends BaseController {
                 final CreateListInboundShortCodeInput input,
                 final APICallBack<String> callBack
     ) {
+        //validating required parameters
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -327,14 +333,14 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5226871237337176719L;
+            private static final long serialVersionUID = 5168110614044310666L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4919420536613034816L;
+            private static final long serialVersionUID = 4962263071520469026L;
             {
                     put( "DateReceived", input.getDateReceived() );
             }});
@@ -343,7 +349,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5577893892252796858L;
+            private static final long serialVersionUID = 5255988403113598405L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -351,7 +357,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4691464152599261049L;
+            private static final long serialVersionUID = 4739248582645830605L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -441,6 +447,10 @@ public class ShortCodeController extends BaseController {
                 final CreateListShortCodeInput input,
                 final APICallBack<String> callBack
     ) {
+        //validating required parameters
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -450,7 +460,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5597383118757842947L;
+            private static final long serialVersionUID = 4943343808530246944L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -459,7 +469,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5496549447265400416L;
+            private static final long serialVersionUID = 5159178656943795477L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -467,7 +477,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4939951437233266369L;
+            private static final long serialVersionUID = 4702932618694919356L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -558,6 +568,10 @@ public class ShortCodeController extends BaseController {
                 final CreateListTemplatesInput input,
                 final APICallBack<String> callBack
     ) {
+        //validating required parameters
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -567,7 +581,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5536606132444487826L;
+            private static final long serialVersionUID = 5383980733865091879L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -576,7 +590,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5235355513638258469L;
+            private static final long serialVersionUID = 4986770488788241212L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -584,7 +598,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4725104280689343490L;
+            private static final long serialVersionUID = 5011028530177366819L;
             {
                     put( "type", input.getType() );
                     put( "page", input.getPage() );
@@ -677,6 +691,9 @@ public class ShortCodeController extends BaseController {
         if (null == input.getMessagesid())
             throw new NullPointerException("The property \"Messagesid\" in the input object cannot be null.");
 
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -686,7 +703,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5310070763745196147L;
+            private static final long serialVersionUID = 5337222962413389323L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -695,7 +712,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5384497825257043926L;
+            private static final long serialVersionUID = 5525195405710122070L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -703,7 +720,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4959116855407903017L;
+            private static final long serialVersionUID = 5240629082754897983L;
             {
                     put( "messagesid", input.getMessagesid() );
             }

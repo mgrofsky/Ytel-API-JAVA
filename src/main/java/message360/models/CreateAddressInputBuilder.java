@@ -67,6 +67,14 @@ public class CreateAddressInputBuilder {
     }
 
     /**
+     * Response type either json or xml
+     */
+    public CreateAddressInputBuilder responseType(String responseType) {
+        createAddressInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Description of addresses.
      */
     public CreateAddressInputBuilder description(String description) {
@@ -87,14 +95,6 @@ public class CreateAddressInputBuilder {
      */
     public CreateAddressInputBuilder phone(String phone) {
         createAddressInput.setPhone(phone);
-        return this;
-    }
-
-    /**
-     * Response type either json or xml
-     */
-    public CreateAddressInputBuilder responseType(String responseType) {
-        createAddressInput.setResponseType(responseType);
         return this;
     }
     /**

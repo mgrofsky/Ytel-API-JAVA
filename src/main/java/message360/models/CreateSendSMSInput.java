@@ -11,15 +11,15 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSendSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5176501513071156280L;
+    private static final long serialVersionUID = 4965737747948313407L;
     private int fromcountrycode = 1;
     private String from;
     private int tocountrycode = 1;
     private String to;
     private String body;
+    private String responseType = "json";
     private HttpActionEnum method;
     private String messagestatuscallback;
-    private String responseType = "json";
     /** GETTER
      * From Country Code
      */
@@ -101,6 +101,22 @@ public class CreateSendSMSInput
     }
  
     /** GETTER
+     * Response type format xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response type format xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
+    }
+ 
+    /** GETTER
      * Specifies the HTTP method used to request the required URL once SMS sent.
      */
     @JsonGetter("method")
@@ -130,22 +146,6 @@ public class CreateSendSMSInput
     @JsonSetter("messagestatuscallback")
     public void setMessagestatuscallback (String value) { 
         this.messagestatuscallback = value;
-    }
- 
-    /** GETTER
-     * Response type format xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response type format xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

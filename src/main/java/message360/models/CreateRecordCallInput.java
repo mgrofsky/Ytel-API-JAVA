@@ -11,14 +11,14 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateRecordCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5576533771110930160L;
+    private static final long serialVersionUID = 5234188998990679631L;
     private String callSid;
     private boolean record;
+    private String responseType = "json";
     private DirectionEnum direction;
     private Integer timeLimit;
     private String callBackUrl;
     private AudioFormatEnum fileformat;
-    private String responseType = "json";
     /** GETTER
      * The unique identifier of each call resource
      */
@@ -49,6 +49,22 @@ public class CreateRecordCallInput
     @JsonSetter("Record")
     public void setRecord (boolean value) { 
         this.record = value;
+    }
+ 
+    /** GETTER
+     * Response format, xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response format, xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
     }
  
     /** GETTER
@@ -113,22 +129,6 @@ public class CreateRecordCallInput
     @JsonSetter("Fileformat")
     public void setFileformat (AudioFormatEnum value) { 
         this.fileformat = value;
-    }
- 
-    /** GETTER
-     * Response format, xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response format, xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

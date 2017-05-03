@@ -35,6 +35,14 @@ public class CreateRecordCallInputBuilder {
     }
 
     /**
+     * Response format, xml or json
+     */
+    public CreateRecordCallInputBuilder responseType(String responseType) {
+        createRecordCallInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * The leg of the call to record
      */
     public CreateRecordCallInputBuilder direction(DirectionEnum direction) {
@@ -63,14 +71,6 @@ public class CreateRecordCallInputBuilder {
      */
     public CreateRecordCallInputBuilder fileformat(AudioFormatEnum fileformat) {
         createRecordCallInput.setFileformat(fileformat);
-        return this;
-    }
-
-    /**
-     * Response format, xml or json
-     */
-    public CreateRecordCallInputBuilder responseType(String responseType) {
-        createRecordCallInput.setResponseType(responseType);
         return this;
     }
     /**

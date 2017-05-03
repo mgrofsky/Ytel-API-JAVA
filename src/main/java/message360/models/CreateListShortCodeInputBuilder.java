@@ -19,6 +19,14 @@ public class CreateListShortCodeInputBuilder {
     }
 
     /**
+     * Response type format xml or json
+     */
+    public CreateListShortCodeInputBuilder responseType(String responseType) {
+        createListShortCodeInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
      * Which page of the overall response will be returned. Zero indexed
      */
     public CreateListShortCodeInputBuilder page(Integer page) {
@@ -55,14 +63,6 @@ public class CreateListShortCodeInputBuilder {
      */
     public CreateListShortCodeInputBuilder datesent(String datesent) {
         createListShortCodeInput.setDatesent(datesent);
-        return this;
-    }
-
-    /**
-     * Response type format xml or json
-     */
-    public CreateListShortCodeInputBuilder responseType(String responseType) {
-        createListShortCodeInput.setResponseType(responseType);
         return this;
     }
     /**

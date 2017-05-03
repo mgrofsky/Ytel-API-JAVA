@@ -11,14 +11,15 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSendShortCodeInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4918756787168814849L;
+    private static final long serialVersionUID = 5165303258505868029L;
     private String shortcode;
     private String tocountrycode = "1";
     private String to;
     private UUID templateid;
+    private String responseType = "json";
+    private String data;
     private String method = "GET";
     private String messageStatusCallback;
-    private String responseType = "json";
     /** GETTER
      * The Short Code number that is the sender of this message
      */
@@ -84,6 +85,38 @@ public class CreateSendShortCodeInput
     }
  
     /** GETTER
+     * Response type format xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response type format xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
+    }
+ 
+    /** GETTER
+     * format of your data, example: {companyname}:test,{otpcode}:1234
+     */
+    @JsonGetter("data")
+    public String getData ( ) { 
+        return this.data;
+    }
+    
+    /** SETTER
+     * format of your data, example: {companyname}:test,{otpcode}:1234
+     */
+    @JsonSetter("data")
+    public void setData (String value) { 
+        this.data = value;
+    }
+ 
+    /** GETTER
      * Specifies the HTTP method used to request the required URL once the Short Code message is sent.
      */
     @JsonGetter("Method")
@@ -113,22 +146,6 @@ public class CreateSendShortCodeInput
     @JsonSetter("MessageStatusCallback")
     public void setMessageStatusCallback (String value) { 
         this.messageStatusCallback = value;
-    }
- 
-    /** GETTER
-     * Response type format xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response type format xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

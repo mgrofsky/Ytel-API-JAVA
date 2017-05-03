@@ -11,16 +11,16 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSendRinglessVMInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5277321593792948151L;
+    private static final long serialVersionUID = 4852805846214835030L;
     private String fromCountryCode;
     private String from;
     private String toCountryCode;
     private String to;
     private String voiceMailURL;
     private String method = "GET";
+    private String responseType = "json";
     private String statusCallBackUrl;
     private String statsCallBackMethod;
-    private String responseType = "json";
     /** GETTER
      * From country code
      */
@@ -118,6 +118,22 @@ public class CreateSendRinglessVMInput
     }
  
     /** GETTER
+     * Response type format xml or json
+     */
+    @JsonGetter("ResponseType")
+    public String getResponseType ( ) { 
+        return this.responseType;
+    }
+    
+    /** SETTER
+     * Response type format xml or json
+     */
+    @JsonSetter("ResponseType")
+    public void setResponseType (String value) { 
+        this.responseType = value;
+    }
+ 
+    /** GETTER
      * URL to post the status of the Ringless request
      */
     @JsonGetter("StatusCallBackUrl")
@@ -147,22 +163,6 @@ public class CreateSendRinglessVMInput
     @JsonSetter("StatsCallBackMethod")
     public void setStatsCallBackMethod (String value) { 
         this.statsCallBackMethod = value;
-    }
- 
-    /** GETTER
-     * Response type format xml or json
-     */
-    @JsonGetter("ResponseType")
-    public String getResponseType ( ) { 
-        return this.responseType;
-    }
-    
-    /** SETTER
-     * Response type format xml or json
-     */
-    @JsonSetter("ResponseType")
-    public void setResponseType (String value) { 
-        this.responseType = value;
     }
  
 }

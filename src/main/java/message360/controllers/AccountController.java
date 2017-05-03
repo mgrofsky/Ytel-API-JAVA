@@ -66,6 +66,9 @@ public class AccountController extends BaseController {
         if (null == input.getDate())
             throw new NullPointerException("The property \"Date\" in the input object cannot be null.");
 
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -75,7 +78,7 @@ public class AccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5296397980112940753L;
+            private static final long serialVersionUID = 4792188215067111577L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -84,7 +87,7 @@ public class AccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5239055941508645106L;
+            private static final long serialVersionUID = 4808578118369484488L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -92,7 +95,7 @@ public class AccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5123740169628227576L;
+            private static final long serialVersionUID = 5617219071192157985L;
             {
                     put( "Date", input.getDate() );
             }
