@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class AddParticipantInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4626445332253427465L;
+    private static final long serialVersionUID = 5485393841422215457L;
     private String conferencesid;
     private String participantnumber;
     private String responseType = "json";

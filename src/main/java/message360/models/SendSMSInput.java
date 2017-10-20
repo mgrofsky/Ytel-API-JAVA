@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SendSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5216483110090687902L;
+    private static final long serialVersionUID = 5210847839865532209L;
     private String from;
     private String to;
     private String body;

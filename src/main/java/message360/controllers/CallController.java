@@ -87,14 +87,14 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4744041178410600901L;
+            private static final long serialVersionUID = 4643707728118519356L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5044006845422309462L;
+            private static final long serialVersionUID = 5316132593524369319L;
             {
                     put( "Method", (input.getMethod() != null) ? input.getMethod().value() : null );
             }});
@@ -103,7 +103,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4926438033116432414L;
+            private static final long serialVersionUID = 5728130241563414526L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -111,7 +111,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5316543935625819238L;
+            private static final long serialVersionUID = 4862357736710456609L;
             {
                     put( "From", input.getFrom() );
                     put( "To", input.getTo() );
@@ -241,7 +241,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5040034654377226431L;
+            private static final long serialVersionUID = 5287567063436755822L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -250,7 +250,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4704308332454578716L;
+            private static final long serialVersionUID = 4992371501844708571L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -258,7 +258,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5416597970872960921L;
+            private static final long serialVersionUID = 5029227314568946779L;
             {
                     put( "CallSid", input.getCallSid() );
                     put( "AudioUrl", input.getAudioUrl() );
@@ -366,7 +366,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5179237312837564801L;
+            private static final long serialVersionUID = 5216557333928090030L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -375,7 +375,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5216384642062906274L;
+            private static final long serialVersionUID = 5411880625795464739L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -383,7 +383,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4764256332502945110L;
+            private static final long serialVersionUID = 4726310235818093663L;
             {
                     put( "CallSid", input.getCallSid() );
                     put( "Record", input.getRecord() );
@@ -491,7 +491,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4686414164611659808L;
+            private static final long serialVersionUID = 5513421129191562005L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -500,7 +500,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4853908753093443506L;
+            private static final long serialVersionUID = 5402739747935323351L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -508,7 +508,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5308702942655974635L;
+            private static final long serialVersionUID = 5639119118784634010L;
             {
                     put( "CallSid", input.getCallSid() );
                     put( "AudioDirection", (input.getAudioDirection() != null) ? input.getAudioDirection().value() : null );
@@ -620,7 +620,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4935401740647444014L;
+            private static final long serialVersionUID = 5656189353792232092L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -629,7 +629,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5035412975497846194L;
+            private static final long serialVersionUID = 5743581349895267709L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -637,7 +637,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4812724001573416875L;
+            private static final long serialVersionUID = 5415505679904849176L;
             {
                     put( "CallSid", input.getCallSid() );
                     put( "PlayDtmf", input.getPlayDtmf() );
@@ -742,7 +742,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4701080217177687891L;
+            private static final long serialVersionUID = 4704598752087079418L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -751,7 +751,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5632637082469231411L;
+            private static final long serialVersionUID = 4955080812929178828L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -759,7 +759,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5539741361362082571L;
+            private static final long serialVersionUID = 5075405723242314101L;
             {
                     put( "CallSid", input.getCallSid() );
                     put( "Url", input.getUrl() );
@@ -877,7 +877,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5656095949570327858L;
+            private static final long serialVersionUID = 4667438889632772988L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -886,7 +886,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4848543806559081306L;
+            private static final long serialVersionUID = 5676336730810893250L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -894,7 +894,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5706348584525694908L;
+            private static final long serialVersionUID = 4866032081039097693L;
             {
                     put( "From", input.getFrom() );
                     put( "To", input.getTo() );
@@ -1013,7 +1013,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4782954791608728981L;
+            private static final long serialVersionUID = 5147775152789039942L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -1022,7 +1022,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5122424025114995304L;
+            private static final long serialVersionUID = 5533549629881867598L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1030,7 +1030,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5641518356440428725L;
+            private static final long serialVersionUID = 4680206745542040284L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -1146,7 +1146,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5230482851892797245L;
+            private static final long serialVersionUID = 5582614578499139286L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -1155,7 +1155,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5295619346447264498L;
+            private static final long serialVersionUID = 5598738880055414372L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1163,7 +1163,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4900086375301312151L;
+            private static final long serialVersionUID = 5252052547737733169L;
             {
                     put( "From", input.getFrom() );
                     put( "RVMCallerId", input.getRVMCallerId() );
@@ -1272,7 +1272,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4744961256040867922L;
+            private static final long serialVersionUID = 5160546373776174049L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -1281,7 +1281,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5742216302728868886L;
+            private static final long serialVersionUID = 4921059811269913297L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1289,7 +1289,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5575693108745320908L;
+            private static final long serialVersionUID = 4993100189052817193L;
             {
                     put( "callsid", input.getCallsid() );
             }
