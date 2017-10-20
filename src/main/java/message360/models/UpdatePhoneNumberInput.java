@@ -11,11 +11,11 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class UpdatePhoneNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5293215015272887048L;
+    private static final long serialVersionUID = 4989063852202624652L;
     private String phoneNumber;
+    private String voiceUrl;
     private String responseType = "json";
     private String friendlyName;
-    private String voiceUrl;
     private HttpActionEnum voiceMethod;
     private String voiceFallbackUrl;
     private HttpActionEnum voiceFallbackMethod;
@@ -41,6 +41,22 @@ public class UpdatePhoneNumberInput
     @JsonSetter("PhoneNumber")
     public void setPhoneNumber (String value) { 
         this.phoneNumber = value;
+    }
+ 
+    /** GETTER
+     * URL requested once the call connects
+     */
+    @JsonGetter("VoiceUrl")
+    public String getVoiceUrl ( ) { 
+        return this.voiceUrl;
+    }
+    
+    /** SETTER
+     * URL requested once the call connects
+     */
+    @JsonSetter("VoiceUrl")
+    public void setVoiceUrl (String value) { 
+        this.voiceUrl = value;
     }
  
     /** GETTER
@@ -73,22 +89,6 @@ public class UpdatePhoneNumberInput
     @JsonSetter("FriendlyName")
     public void setFriendlyName (String value) { 
         this.friendlyName = value;
-    }
- 
-    /** GETTER
-     * URL requested once the call connects
-     */
-    @JsonGetter("VoiceUrl")
-    public String getVoiceUrl ( ) { 
-        return this.voiceUrl;
-    }
-    
-    /** SETTER
-     * URL requested once the call connects
-     */
-    @JsonSetter("VoiceUrl")
-    public void setVoiceUrl (String value) { 
-        this.voiceUrl = value;
     }
  
     /** GETTER

@@ -39,15 +39,802 @@ public class CallController extends BaseController {
     }
 
     /**
-     * Group Call
-     * @param    CreateGroupCallInput    Object containing request parameters
+     * You can experiment with initiating a call through Message360 and view the request response generated when doing so and get the response in json
+     * @param    MakeCallInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createGroupCall(
-                final CreateGroupCallInput input
+    public String makeCall(
+                final MakeCallInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createGroupCallAsync(input, callback);
+        makeCallAsync(input, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * You can experiment with initiating a call through Message360 and view the request response generated when doing so and get the response in json
+     * @param    MakeCallInput    Object containing request parameters
+     * @return    Returns the void response from the API call 
+     */
+    public void makeCallAsync(
+                final MakeCallInput input,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == input.getFrom())
+            throw new NullPointerException("The property \"From\" in the input object cannot be null.");
+
+        if (null == input.getTo())
+            throw new NullPointerException("The property \"To\" in the input object cannot be null.");
+
+        if (null == input.getUrl())
+            throw new NullPointerException("The property \"Url\" in the input object cannot be null.");
+
+        if (null == input.getSurveyId())
+            throw new NullPointerException("The property \"SurveyId\" in the input object cannot be null.");
+
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.getBaseUri();
+        
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/calls/makecall.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 4744041178410600901L;
+            {
+                    put( "ResponseType", input.getResponseType() );
+            }});
+
+        //process query parameters
+        APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5044006845422309462L;
+            {
+                    put( "Method", (input.getMethod() != null) ? input.getMethod().value() : null );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 4926438033116432414L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5316543935625819238L;
+            {
+                    put( "From", input.getFrom() );
+                    put( "To", input.getTo() );
+                    put( "Url", input.getUrl() );
+                    put( "SurveyId", input.getSurveyId() );
+                    put( "StatusCallBackUrl", input.getStatusCallBackUrl() );
+                    put( "StatusCallBackMethod", (input.getStatusCallBackMethod() != null) ? input.getStatusCallBackMethod().value() : null );
+                    put( "FallBackUrl", input.getFallBackUrl() );
+                    put( "FallBackMethod", (input.getFallBackMethod() != null) ? input.getFallBackMethod().value() : null );
+                    put( "HeartBeatUrl", input.getHeartBeatUrl() );
+                    put( "HeartBeatMethod", input.getHeartBeatMethod() );
+                    put( "Timeout", input.getTimeout() );
+                    put( "PlayDtmf", input.getPlayDtmf() );
+                    put( "HideCallerId", input.getHideCallerId() );
+                    put( "Record", input.getRecord() );
+                    put( "RecordCallBackUrl", input.getRecordCallBackUrl() );
+                    put( "RecordCallBackMethod", (input.getRecordCallBackMethod() != null) ? input.getRecordCallBackMethod().value() : null );
+                    put( "Transcribe", input.getTranscribe() );
+                    put( "TranscribeCallBackUrl", input.getTranscribeCallBackUrl() );
+                    put( "IfMachine", (input.getIfMachine() != null) ? input.getIfMachine().value() : null );
+                    put( "IfMachineUrl", input.getIfMachineUrl() );
+                    put( "IfMachineMethod", (input.getIfMachineMethod() != null) ? input.getIfMachineMethod().value() : null );
+                    put( "Feedback", input.getFeedback() );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * Play Dtmf and send the Digit
+     * @param    PlayAudioInput    Object containing request parameters
+     * @return    Returns the String response from the API call 
+     */
+    public String playAudio(
+                final PlayAudioInput input
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        playAudioAsync(input, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * Play Dtmf and send the Digit
+     * @param    PlayAudioInput    Object containing request parameters
+     * @return    Returns the void response from the API call 
+     */
+    public void playAudioAsync(
+                final PlayAudioInput input,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == input.getCallSid())
+            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
+
+        if (null == input.getAudioUrl())
+            throw new NullPointerException("The property \"AudioUrl\" in the input object cannot be null.");
+
+        if (null == input.getSayText())
+            throw new NullPointerException("The property \"SayText\" in the input object cannot be null.");
+
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.getBaseUri();
+        
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/calls/playaudios.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5040034654377226431L;
+            {
+                    put( "ResponseType", input.getResponseType() );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 4704308332454578716L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5416597970872960921L;
+            {
+                    put( "CallSid", input.getCallSid() );
+                    put( "AudioUrl", input.getAudioUrl() );
+                    put( "SayText", input.getSayText() );
+                    put( "Length", input.getLength() );
+                    put( "Direction", (input.getDirection() != null) ? input.getDirection().value() : null );
+                    put( "Mix", input.getMix() );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * Record a Call
+     * @param    RecordCallInput    Object containing request parameters
+     * @return    Returns the String response from the API call 
+     */
+    public String recordCall(
+                final RecordCallInput input
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        recordCallAsync(input, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * Record a Call
+     * @param    RecordCallInput    Object containing request parameters
+     * @return    Returns the void response from the API call 
+     */
+    public void recordCallAsync(
+                final RecordCallInput input,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == input.getCallSid())
+            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
+
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.getBaseUri();
+        
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/calls/recordcalls.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5179237312837564801L;
+            {
+                    put( "ResponseType", input.getResponseType() );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 5216384642062906274L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 4764256332502945110L;
+            {
+                    put( "CallSid", input.getCallSid() );
+                    put( "Record", input.getRecord() );
+                    put( "Direction", (input.getDirection() != null) ? input.getDirection().value() : null );
+                    put( "TimeLimit", input.getTimeLimit() );
+                    put( "CallBackUrl", input.getCallBackUrl() );
+                    put( "Fileformat", (input.getFileformat() != null) ? input.getFileformat().value() : null );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * Voice Effect
+     * @param    VoiceEffectInput    Object containing request parameters
+     * @return    Returns the String response from the API call 
+     */
+    public String voiceEffect(
+                final VoiceEffectInput input
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        voiceEffectAsync(input, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * Voice Effect
+     * @param    VoiceEffectInput    Object containing request parameters
+     * @return    Returns the void response from the API call 
+     */
+    public void voiceEffectAsync(
+                final VoiceEffectInput input,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == input.getCallSid())
+            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
+
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.getBaseUri();
+        
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/calls/voiceeffect.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 4686414164611659808L;
+            {
+                    put( "ResponseType", input.getResponseType() );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 4853908753093443506L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5308702942655974635L;
+            {
+                    put( "CallSid", input.getCallSid() );
+                    put( "AudioDirection", (input.getAudioDirection() != null) ? input.getAudioDirection().value() : null );
+                    put( "PitchSemiTones", input.getPitchSemiTones() );
+                    put( "PitchOctaves", input.getPitchOctaves() );
+                    put( "Pitch", input.getPitch() );
+                    put( "Rate", input.getRate() );
+                    put( "Tempo", input.getTempo() );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * Play Dtmf and send the Digit
+     * @param    SendDigitInput    Object containing request parameters
+     * @return    Returns the String response from the API call 
+     */
+    public String sendDigit(
+                final SendDigitInput input
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        sendDigitAsync(input, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * Play Dtmf and send the Digit
+     * @param    SendDigitInput    Object containing request parameters
+     * @return    Returns the void response from the API call 
+     */
+    public void sendDigitAsync(
+                final SendDigitInput input,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == input.getCallSid())
+            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
+
+        if (null == input.getPlayDtmf())
+            throw new NullPointerException("The property \"PlayDtmf\" in the input object cannot be null.");
+
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.getBaseUri();
+        
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/calls/senddigits.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 4935401740647444014L;
+            {
+                    put( "ResponseType", input.getResponseType() );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 5035412975497846194L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 4812724001573416875L;
+            {
+                    put( "CallSid", input.getCallSid() );
+                    put( "PlayDtmf", input.getPlayDtmf() );
+                    put( "PlayDtmfDirection", (input.getPlayDtmfDirection() != null) ? input.getPlayDtmfDirection().value() : null );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * Interrupt the Call by Call Sid
+     * @param    InterruptedCallInput    Object containing request parameters
+     * @return    Returns the String response from the API call 
+     */
+    public String interruptedCall(
+                final InterruptedCallInput input
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        interruptedCallAsync(input, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * Interrupt the Call by Call Sid
+     * @param    InterruptedCallInput    Object containing request parameters
+     * @return    Returns the void response from the API call 
+     */
+    public void interruptedCallAsync(
+                final InterruptedCallInput input,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == input.getCallSid())
+            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
+
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.getBaseUri();
+        
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/calls/interruptcalls.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 4701080217177687891L;
+            {
+                    put( "ResponseType", input.getResponseType() );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 5632637082469231411L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5539741361362082571L;
+            {
+                    put( "CallSid", input.getCallSid() );
+                    put( "Url", input.getUrl() );
+                    put( "Method", (input.getMethod() != null) ? input.getMethod().value() : null );
+                    put( "Status", (input.getStatus() != null) ? input.getStatus().value() : null );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * Group Call
+     * @param    GroupCallInput    Object containing request parameters
+     * @return    Returns the String response from the API call 
+     */
+    public String groupCall(
+                final GroupCallInput input
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        groupCallAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -55,22 +842,16 @@ public class CallController extends BaseController {
 
     /**
      * Group Call
-     * @param    CreateGroupCallInput    Object containing request parameters
+     * @param    GroupCallInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createGroupCallAsync(
-                final CreateGroupCallInput input,
+    public void groupCallAsync(
+                final GroupCallInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == input.getFromCountryCode())
-            throw new NullPointerException("The property \"FromCountryCode\" in the input object cannot be null.");
-
         if (null == input.getFrom())
             throw new NullPointerException("The property \"From\" in the input object cannot be null.");
-
-        if (null == input.getToCountryCode())
-            throw new NullPointerException("The property \"ToCountryCode\" in the input object cannot be null.");
 
         if (null == input.getTo())
             throw new NullPointerException("The property \"To\" in the input object cannot be null.");
@@ -81,6 +862,12 @@ public class CallController extends BaseController {
         if (null == input.getResponseType())
             throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
 
+        if (null == input.getGroupConfirmKey())
+            throw new NullPointerException("The property \"GroupConfirmKey\" in the input object cannot be null.");
+
+        if (null == input.getGroupConfirmFile())
+            throw new NullPointerException("The property \"GroupConfirmFile\" in the input object cannot be null.");
+
         //the base uri for api requests
         String _baseUri = Configuration.getBaseUri();
         
@@ -90,7 +877,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4889457132908771577L;
+            private static final long serialVersionUID = 5656095949570327858L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -99,7 +886,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5175058913461560276L;
+            private static final long serialVersionUID = 4848543806559081306L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -107,13 +894,13 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5742444693101683473L;
+            private static final long serialVersionUID = 5706348584525694908L;
             {
-                    put( "FromCountryCode", input.getFromCountryCode() );
                     put( "From", input.getFrom() );
-                    put( "ToCountryCode", input.getToCountryCode() );
                     put( "To", input.getTo() );
                     put( "Url", input.getUrl() );
+                    put( "GroupConfirmKey", input.getGroupConfirmKey() );
+                    put( "GroupConfirmFile", (input.getGroupConfirmFile() != null) ? input.getGroupConfirmFile().value() : null );
                     put( "Method", (input.getMethod() != null) ? input.getMethod().value() : null );
                     put( "StatusCallBackUrl", input.getStatusCallBackUrl() );
                     put( "StatusCallBackMethod", (input.getStatusCallBackMethod() != null) ? input.getStatusCallBackMethod().value() : null );
@@ -190,800 +977,15 @@ public class CallController extends BaseController {
     }
 
     /**
-     * Voice Effect
-     * @param    CreateVoiceEffectInput    Object containing request parameters
-     * @return    Returns the String response from the API call 
-     */
-    public String createVoiceEffect(
-                final CreateVoiceEffectInput input
-    ) throws Throwable {
-        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createVoiceEffectAsync(input, callback);
-        if(!callback.isSuccess())
-            throw callback.getError();
-        return callback.getResult();
-    }
-
-    /**
-     * Voice Effect
-     * @param    CreateVoiceEffectInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
-     */
-    public void createVoiceEffectAsync(
-                final CreateVoiceEffectInput input,
-                final APICallBack<String> callBack
-    ) {
-        //validating required parameters
-        if (null == input.getCallSid())
-            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
-
-        if (null == input.getResponseType())
-            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
-
-        //the base uri for api requests
-        String _baseUri = Configuration.getBaseUri();
-        
-        //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/voiceeffect.{ResponseType}");
-
-        //process template parameters
-        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4838425778344384864L;
-            {
-                    put( "ResponseType", input.getResponseType() );
-            }});
-        //validate and preprocess url
-        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
-
-        //load all headers for the outgoing API request
-        Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5740944572837801462L;
-            {
-                    put( "user-agent", "message360-api" );
-            }
-        };
-
-        //load all fields for the outgoing API request
-        Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5066808040412824267L;
-            {
-                    put( "CallSid", input.getCallSid() );
-                    put( "AudioDirection", (input.getAudioDirection() != null) ? input.getAudioDirection().value() : null );
-                    put( "PitchSemiTones", input.getPitchSemiTones() );
-                    put( "PitchOctaves", input.getPitchOctaves() );
-                    put( "Pitch", input.getPitch() );
-                    put( "Rate", input.getRate() );
-                    put( "Tempo", input.getTempo() );
-            }
-        };
-
-        //prepare and invoke the API call request to fetch the response
-        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
-                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
-
-        //invoke the callback before request if its not null
-        if (getHttpCallBack() != null)
-        {
-            getHttpCallBack().OnBeforeRequest(_request);
-        }
-
-        //invoke request and get response
-        Runnable _responseTask = new Runnable() {
-            public void run() {
-                //make the API call
-                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
-                    public void onSuccess(HttpContext _context, HttpResponse _response) {
-                        try {
-
-                            //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
-                            {
-                                getHttpCallBack().OnAfterResponse(_context);
-                            }
-
-                            //handle errors defined at the API level
-                            validateResponse(_response, _context);
-
-                            //extract result from the http response
-                            String _result = ((HttpStringResponse)_response).getBody();
-                            //let the caller know of the success
-                            callBack.onSuccess(_context, _result);
-                        } catch (APIException error) {
-                            //let the caller know of the error
-                            callBack.onFailure(_context, error);
-                        } catch (Exception exception) {
-                            //let the caller know of the caught Exception
-                            callBack.onFailure(_context, exception);
-                        }
-                    }
-                    public void onFailure(HttpContext _context, Throwable _error) {
-                        //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
-                            getHttpCallBack().OnAfterResponse(_context);
-                        }
-
-                        //let the caller know of the failure
-                        callBack.onFailure(_context, _error);
-                    }
-                });
-            }
-        };
-
-        //execute async using thread pool
-        APIHelper.getScheduler().execute(_responseTask);
-    }
-
-    /**
-     * Record a Call
-     * @param    CreateRecordCallInput    Object containing request parameters
-     * @return    Returns the String response from the API call 
-     */
-    public String createRecordCall(
-                final CreateRecordCallInput input
-    ) throws Throwable {
-        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createRecordCallAsync(input, callback);
-        if(!callback.isSuccess())
-            throw callback.getError();
-        return callback.getResult();
-    }
-
-    /**
-     * Record a Call
-     * @param    CreateRecordCallInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
-     */
-    public void createRecordCallAsync(
-                final CreateRecordCallInput input,
-                final APICallBack<String> callBack
-    ) {
-        //validating required parameters
-        if (null == input.getCallSid())
-            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
-
-        if (null == input.getResponseType())
-            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
-
-        //the base uri for api requests
-        String _baseUri = Configuration.getBaseUri();
-        
-        //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/recordcalls.{ResponseType}");
-
-        //process template parameters
-        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5706917238884855194L;
-            {
-                    put( "ResponseType", input.getResponseType() );
-            }});
-        //validate and preprocess url
-        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
-
-        //load all headers for the outgoing API request
-        Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4837293946630791978L;
-            {
-                    put( "user-agent", "message360-api" );
-            }
-        };
-
-        //load all fields for the outgoing API request
-        Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4751737415088033732L;
-            {
-                    put( "CallSid", input.getCallSid() );
-                    put( "Record", input.getRecord() );
-                    put( "Direction", (input.getDirection() != null) ? input.getDirection().value() : null );
-                    put( "TimeLimit", input.getTimeLimit() );
-                    put( "CallBackUrl", input.getCallBackUrl() );
-                    put( "Fileformat", (input.getFileformat() != null) ? input.getFileformat().value() : null );
-            }
-        };
-
-        //prepare and invoke the API call request to fetch the response
-        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
-                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
-
-        //invoke the callback before request if its not null
-        if (getHttpCallBack() != null)
-        {
-            getHttpCallBack().OnBeforeRequest(_request);
-        }
-
-        //invoke request and get response
-        Runnable _responseTask = new Runnable() {
-            public void run() {
-                //make the API call
-                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
-                    public void onSuccess(HttpContext _context, HttpResponse _response) {
-                        try {
-
-                            //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
-                            {
-                                getHttpCallBack().OnAfterResponse(_context);
-                            }
-
-                            //handle errors defined at the API level
-                            validateResponse(_response, _context);
-
-                            //extract result from the http response
-                            String _result = ((HttpStringResponse)_response).getBody();
-                            //let the caller know of the success
-                            callBack.onSuccess(_context, _result);
-                        } catch (APIException error) {
-                            //let the caller know of the error
-                            callBack.onFailure(_context, error);
-                        } catch (Exception exception) {
-                            //let the caller know of the caught Exception
-                            callBack.onFailure(_context, exception);
-                        }
-                    }
-                    public void onFailure(HttpContext _context, Throwable _error) {
-                        //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
-                            getHttpCallBack().OnAfterResponse(_context);
-                        }
-
-                        //let the caller know of the failure
-                        callBack.onFailure(_context, _error);
-                    }
-                });
-            }
-        };
-
-        //execute async using thread pool
-        APIHelper.getScheduler().execute(_responseTask);
-    }
-
-    /**
-     * Play Dtmf and send the Digit
-     * @param    CreatePlayAudioInput    Object containing request parameters
-     * @return    Returns the String response from the API call 
-     */
-    public String createPlayAudio(
-                final CreatePlayAudioInput input
-    ) throws Throwable {
-        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createPlayAudioAsync(input, callback);
-        if(!callback.isSuccess())
-            throw callback.getError();
-        return callback.getResult();
-    }
-
-    /**
-     * Play Dtmf and send the Digit
-     * @param    CreatePlayAudioInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
-     */
-    public void createPlayAudioAsync(
-                final CreatePlayAudioInput input,
-                final APICallBack<String> callBack
-    ) {
-        //validating required parameters
-        if (null == input.getCallSid())
-            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
-
-        if (null == input.getAudioUrl())
-            throw new NullPointerException("The property \"AudioUrl\" in the input object cannot be null.");
-
-        if (null == input.getResponseType())
-            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
-
-        //the base uri for api requests
-        String _baseUri = Configuration.getBaseUri();
-        
-        //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/playaudios.{ResponseType}");
-
-        //process template parameters
-        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4868790383287129342L;
-            {
-                    put( "ResponseType", input.getResponseType() );
-            }});
-        //validate and preprocess url
-        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
-
-        //load all headers for the outgoing API request
-        Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4994856729346528522L;
-            {
-                    put( "user-agent", "message360-api" );
-            }
-        };
-
-        //load all fields for the outgoing API request
-        Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4935446916766696193L;
-            {
-                    put( "CallSid", input.getCallSid() );
-                    put( "AudioUrl", input.getAudioUrl() );
-                    put( "Length", input.getLength() );
-                    put( "Direction", (input.getDirection() != null) ? input.getDirection().value() : null );
-                    put( "Loop", input.getLoop() );
-                    put( "Mix", input.getMix() );
-            }
-        };
-
-        //prepare and invoke the API call request to fetch the response
-        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
-                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
-
-        //invoke the callback before request if its not null
-        if (getHttpCallBack() != null)
-        {
-            getHttpCallBack().OnBeforeRequest(_request);
-        }
-
-        //invoke request and get response
-        Runnable _responseTask = new Runnable() {
-            public void run() {
-                //make the API call
-                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
-                    public void onSuccess(HttpContext _context, HttpResponse _response) {
-                        try {
-
-                            //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
-                            {
-                                getHttpCallBack().OnAfterResponse(_context);
-                            }
-
-                            //handle errors defined at the API level
-                            validateResponse(_response, _context);
-
-                            //extract result from the http response
-                            String _result = ((HttpStringResponse)_response).getBody();
-                            //let the caller know of the success
-                            callBack.onSuccess(_context, _result);
-                        } catch (APIException error) {
-                            //let the caller know of the error
-                            callBack.onFailure(_context, error);
-                        } catch (Exception exception) {
-                            //let the caller know of the caught Exception
-                            callBack.onFailure(_context, exception);
-                        }
-                    }
-                    public void onFailure(HttpContext _context, Throwable _error) {
-                        //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
-                            getHttpCallBack().OnAfterResponse(_context);
-                        }
-
-                        //let the caller know of the failure
-                        callBack.onFailure(_context, _error);
-                    }
-                });
-            }
-        };
-
-        //execute async using thread pool
-        APIHelper.getScheduler().execute(_responseTask);
-    }
-
-    /**
-     * Interrupt the Call by Call Sid
-     * @param    CreateInterruptedCallInput    Object containing request parameters
-     * @return    Returns the String response from the API call 
-     */
-    public String createInterruptedCall(
-                final CreateInterruptedCallInput input
-    ) throws Throwable {
-        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createInterruptedCallAsync(input, callback);
-        if(!callback.isSuccess())
-            throw callback.getError();
-        return callback.getResult();
-    }
-
-    /**
-     * Interrupt the Call by Call Sid
-     * @param    CreateInterruptedCallInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
-     */
-    public void createInterruptedCallAsync(
-                final CreateInterruptedCallInput input,
-                final APICallBack<String> callBack
-    ) {
-        //validating required parameters
-        if (null == input.getCallSid())
-            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
-
-        if (null == input.getResponseType())
-            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
-
-        //the base uri for api requests
-        String _baseUri = Configuration.getBaseUri();
-        
-        //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/interruptcalls.{ResponseType}");
-
-        //process template parameters
-        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5217789250870163432L;
-            {
-                    put( "ResponseType", input.getResponseType() );
-            }});
-        //validate and preprocess url
-        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
-
-        //load all headers for the outgoing API request
-        Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5056538247224159060L;
-            {
-                    put( "user-agent", "message360-api" );
-            }
-        };
-
-        //load all fields for the outgoing API request
-        Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4613655378663387561L;
-            {
-                    put( "CallSid", input.getCallSid() );
-                    put( "Url", input.getUrl() );
-                    put( "Method", (input.getMethod() != null) ? input.getMethod().value() : null );
-                    put( "Status", (input.getStatus() != null) ? input.getStatus().value() : null );
-            }
-        };
-
-        //prepare and invoke the API call request to fetch the response
-        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
-                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
-
-        //invoke the callback before request if its not null
-        if (getHttpCallBack() != null)
-        {
-            getHttpCallBack().OnBeforeRequest(_request);
-        }
-
-        //invoke request and get response
-        Runnable _responseTask = new Runnable() {
-            public void run() {
-                //make the API call
-                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
-                    public void onSuccess(HttpContext _context, HttpResponse _response) {
-                        try {
-
-                            //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
-                            {
-                                getHttpCallBack().OnAfterResponse(_context);
-                            }
-
-                            //handle errors defined at the API level
-                            validateResponse(_response, _context);
-
-                            //extract result from the http response
-                            String _result = ((HttpStringResponse)_response).getBody();
-                            //let the caller know of the success
-                            callBack.onSuccess(_context, _result);
-                        } catch (APIException error) {
-                            //let the caller know of the error
-                            callBack.onFailure(_context, error);
-                        } catch (Exception exception) {
-                            //let the caller know of the caught Exception
-                            callBack.onFailure(_context, exception);
-                        }
-                    }
-                    public void onFailure(HttpContext _context, Throwable _error) {
-                        //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
-                            getHttpCallBack().OnAfterResponse(_context);
-                        }
-
-                        //let the caller know of the failure
-                        callBack.onFailure(_context, _error);
-                    }
-                });
-            }
-        };
-
-        //execute async using thread pool
-        APIHelper.getScheduler().execute(_responseTask);
-    }
-
-    /**
-     * Play Dtmf and send the Digit
-     * @param    CreateSendDigitInput    Object containing request parameters
-     * @return    Returns the String response from the API call 
-     */
-    public String createSendDigit(
-                final CreateSendDigitInput input
-    ) throws Throwable {
-        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createSendDigitAsync(input, callback);
-        if(!callback.isSuccess())
-            throw callback.getError();
-        return callback.getResult();
-    }
-
-    /**
-     * Play Dtmf and send the Digit
-     * @param    CreateSendDigitInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
-     */
-    public void createSendDigitAsync(
-                final CreateSendDigitInput input,
-                final APICallBack<String> callBack
-    ) {
-        //validating required parameters
-        if (null == input.getCallSid())
-            throw new NullPointerException("The property \"CallSid\" in the input object cannot be null.");
-
-        if (null == input.getPlayDtmf())
-            throw new NullPointerException("The property \"PlayDtmf\" in the input object cannot be null.");
-
-        if (null == input.getResponseType())
-            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
-
-        //the base uri for api requests
-        String _baseUri = Configuration.getBaseUri();
-        
-        //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/senddigits.{ResponseType}");
-
-        //process template parameters
-        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5540470882171997260L;
-            {
-                    put( "ResponseType", input.getResponseType() );
-            }});
-        //validate and preprocess url
-        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
-
-        //load all headers for the outgoing API request
-        Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5116811582706856404L;
-            {
-                    put( "user-agent", "message360-api" );
-            }
-        };
-
-        //load all fields for the outgoing API request
-        Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4686518687641136583L;
-            {
-                    put( "CallSid", input.getCallSid() );
-                    put( "PlayDtmf", input.getPlayDtmf() );
-                    put( "PlayDtmfDirection", (input.getPlayDtmfDirection() != null) ? input.getPlayDtmfDirection().value() : null );
-            }
-        };
-
-        //prepare and invoke the API call request to fetch the response
-        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
-                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
-
-        //invoke the callback before request if its not null
-        if (getHttpCallBack() != null)
-        {
-            getHttpCallBack().OnBeforeRequest(_request);
-        }
-
-        //invoke request and get response
-        Runnable _responseTask = new Runnable() {
-            public void run() {
-                //make the API call
-                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
-                    public void onSuccess(HttpContext _context, HttpResponse _response) {
-                        try {
-
-                            //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
-                            {
-                                getHttpCallBack().OnAfterResponse(_context);
-                            }
-
-                            //handle errors defined at the API level
-                            validateResponse(_response, _context);
-
-                            //extract result from the http response
-                            String _result = ((HttpStringResponse)_response).getBody();
-                            //let the caller know of the success
-                            callBack.onSuccess(_context, _result);
-                        } catch (APIException error) {
-                            //let the caller know of the error
-                            callBack.onFailure(_context, error);
-                        } catch (Exception exception) {
-                            //let the caller know of the caught Exception
-                            callBack.onFailure(_context, exception);
-                        }
-                    }
-                    public void onFailure(HttpContext _context, Throwable _error) {
-                        //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
-                            getHttpCallBack().OnAfterResponse(_context);
-                        }
-
-                        //let the caller know of the failure
-                        callBack.onFailure(_context, _error);
-                    }
-                });
-            }
-        };
-
-        //execute async using thread pool
-        APIHelper.getScheduler().execute(_responseTask);
-    }
-
-    /**
-     * You can experiment with initiating a call through Message360 and view the request response generated when doing so and get the response in json
-     * @param    CreateMakeCallInput    Object containing request parameters
-     * @return    Returns the String response from the API call 
-     */
-    public String createMakeCall(
-                final CreateMakeCallInput input
-    ) throws Throwable {
-        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createMakeCallAsync(input, callback);
-        if(!callback.isSuccess())
-            throw callback.getError();
-        return callback.getResult();
-    }
-
-    /**
-     * You can experiment with initiating a call through Message360 and view the request response generated when doing so and get the response in json
-     * @param    CreateMakeCallInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
-     */
-    public void createMakeCallAsync(
-                final CreateMakeCallInput input,
-                final APICallBack<String> callBack
-    ) {
-        //validating required parameters
-        if (null == input.getFromCountryCode())
-            throw new NullPointerException("The property \"FromCountryCode\" in the input object cannot be null.");
-
-        if (null == input.getFrom())
-            throw new NullPointerException("The property \"From\" in the input object cannot be null.");
-
-        if (null == input.getToCountryCode())
-            throw new NullPointerException("The property \"ToCountryCode\" in the input object cannot be null.");
-
-        if (null == input.getTo())
-            throw new NullPointerException("The property \"To\" in the input object cannot be null.");
-
-        if (null == input.getUrl())
-            throw new NullPointerException("The property \"Url\" in the input object cannot be null.");
-
-        if (null == input.getResponseType())
-            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
-
-        //the base uri for api requests
-        String _baseUri = Configuration.getBaseUri();
-        
-        //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/calls/makecall.{ResponseType}");
-
-        //process template parameters
-        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4805750632777528963L;
-            {
-                    put( "ResponseType", input.getResponseType() );
-            }});
-
-        //process query parameters
-        APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5649136631410664889L;
-            {
-                    put( "Method", (input.getMethod() != null) ? input.getMethod().value() : null );
-            }});
-        //validate and preprocess url
-        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
-
-        //load all headers for the outgoing API request
-        Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5595363606640413280L;
-            {
-                    put( "user-agent", "message360-api" );
-            }
-        };
-
-        //load all fields for the outgoing API request
-        Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5546806091910372093L;
-            {
-                    put( "FromCountryCode", input.getFromCountryCode() );
-                    put( "From", input.getFrom() );
-                    put( "ToCountryCode", input.getToCountryCode() );
-                    put( "To", input.getTo() );
-                    put( "Url", input.getUrl() );
-                    put( "StatusCallBackUrl", input.getStatusCallBackUrl() );
-                    put( "StatusCallBackMethod", (input.getStatusCallBackMethod() != null) ? input.getStatusCallBackMethod().value() : null );
-                    put( "FallBackUrl", input.getFallBackUrl() );
-                    put( "FallBackMethod", (input.getFallBackMethod() != null) ? input.getFallBackMethod().value() : null );
-                    put( "HeartBeatUrl", input.getHeartBeatUrl() );
-                    put( "HeartBeatMethod", input.getHeartBeatMethod() );
-                    put( "Timeout", input.getTimeout() );
-                    put( "PlayDtmf", input.getPlayDtmf() );
-                    put( "HideCallerId", input.getHideCallerId() );
-                    put( "Record", input.getRecord() );
-                    put( "RecordCallBackUrl", input.getRecordCallBackUrl() );
-                    put( "RecordCallBackMethod", (input.getRecordCallBackMethod() != null) ? input.getRecordCallBackMethod().value() : null );
-                    put( "Transcribe", input.getTranscribe() );
-                    put( "TranscribeCallBackUrl", input.getTranscribeCallBackUrl() );
-                    put( "IfMachine", (input.getIfMachine() != null) ? input.getIfMachine().value() : null );
-            }
-        };
-
-        //prepare and invoke the API call request to fetch the response
-        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
-                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
-
-        //invoke the callback before request if its not null
-        if (getHttpCallBack() != null)
-        {
-            getHttpCallBack().OnBeforeRequest(_request);
-        }
-
-        //invoke request and get response
-        Runnable _responseTask = new Runnable() {
-            public void run() {
-                //make the API call
-                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
-                    public void onSuccess(HttpContext _context, HttpResponse _response) {
-                        try {
-
-                            //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
-                            {
-                                getHttpCallBack().OnAfterResponse(_context);
-                            }
-
-                            //handle errors defined at the API level
-                            validateResponse(_response, _context);
-
-                            //extract result from the http response
-                            String _result = ((HttpStringResponse)_response).getBody();
-                            //let the caller know of the success
-                            callBack.onSuccess(_context, _result);
-                        } catch (APIException error) {
-                            //let the caller know of the error
-                            callBack.onFailure(_context, error);
-                        } catch (Exception exception) {
-                            //let the caller know of the caught Exception
-                            callBack.onFailure(_context, exception);
-                        }
-                    }
-                    public void onFailure(HttpContext _context, Throwable _error) {
-                        //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
-                            getHttpCallBack().OnAfterResponse(_context);
-                        }
-
-                        //let the caller know of the failure
-                        callBack.onFailure(_context, _error);
-                    }
-                });
-            }
-        };
-
-        //execute async using thread pool
-        APIHelper.getScheduler().execute(_responseTask);
-    }
-
-    /**
      * A list of calls associated with your Message360 account
-     * @param    CreateListCallsInput    Object containing request parameters
+     * @param    ListCallsInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createListCalls(
-                final CreateListCallsInput input
+    public String listCalls(
+                final ListCallsInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createListCallsAsync(input, callback);
+        listCallsAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -991,11 +993,11 @@ public class CallController extends BaseController {
 
     /**
      * A list of calls associated with your Message360 account
-     * @param    CreateListCallsInput    Object containing request parameters
+     * @param    ListCallsInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createListCallsAsync(
-                final CreateListCallsInput input,
+    public void listCallsAsync(
+                final ListCallsInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -1011,7 +1013,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4963765683314778852L;
+            private static final long serialVersionUID = 4782954791608728981L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -1020,7 +1022,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5366587905742441283L;
+            private static final long serialVersionUID = 5122424025114995304L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1028,7 +1030,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4790688097431302735L;
+            private static final long serialVersionUID = 5641518356440428725L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -1097,14 +1099,14 @@ public class CallController extends BaseController {
 
     /**
      * API endpoint used to send a Ringless Voicemail
-     * @param    CreateSendRinglessVMInput    Object containing request parameters
+     * @param    SendRinglessVMInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createSendRinglessVM(
-                final CreateSendRinglessVMInput input
+    public String sendRinglessVM(
+                final SendRinglessVMInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createSendRinglessVMAsync(input, callback);
+        sendRinglessVMAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -1112,31 +1114,25 @@ public class CallController extends BaseController {
 
     /**
      * API endpoint used to send a Ringless Voicemail
-     * @param    CreateSendRinglessVMInput    Object containing request parameters
+     * @param    SendRinglessVMInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createSendRinglessVMAsync(
-                final CreateSendRinglessVMInput input,
+    public void sendRinglessVMAsync(
+                final SendRinglessVMInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == input.getFromCountryCode())
-            throw new NullPointerException("The property \"FromCountryCode\" in the input object cannot be null.");
-
         if (null == input.getFrom())
             throw new NullPointerException("The property \"From\" in the input object cannot be null.");
 
-        if (null == input.getToCountryCode())
-            throw new NullPointerException("The property \"ToCountryCode\" in the input object cannot be null.");
+        if (null == input.getRVMCallerId())
+            throw new NullPointerException("The property \"RVMCallerId\" in the input object cannot be null.");
 
         if (null == input.getTo())
             throw new NullPointerException("The property \"To\" in the input object cannot be null.");
 
         if (null == input.getVoiceMailURL())
             throw new NullPointerException("The property \"VoiceMailURL\" in the input object cannot be null.");
-
-        if (null == input.getMethod())
-            throw new NullPointerException("The property \"Method\" in the input object cannot be null.");
 
         if (null == input.getResponseType())
             throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
@@ -1150,7 +1146,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5218813675839574501L;
+            private static final long serialVersionUID = 5230482851892797245L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -1159,7 +1155,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4719515660931334605L;
+            private static final long serialVersionUID = 5295619346447264498L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1167,11 +1163,10 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5607683388657365195L;
+            private static final long serialVersionUID = 4900086375301312151L;
             {
-                    put( "FromCountryCode", input.getFromCountryCode() );
                     put( "From", input.getFrom() );
-                    put( "ToCountryCode", input.getToCountryCode() );
+                    put( "RVMCallerId", input.getRVMCallerId() );
                     put( "To", input.getTo() );
                     put( "VoiceMailURL", input.getVoiceMailURL() );
                     put( "Method", input.getMethod() );
@@ -1239,14 +1234,14 @@ public class CallController extends BaseController {
 
     /**
      * View Call Response
-     * @param    CreateViewCallInput    Object containing request parameters
+     * @param    ViewCallInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createViewCall(
-                final CreateViewCallInput input
+    public String viewCall(
+                final ViewCallInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewCallAsync(input, callback);
+        viewCallAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -1254,11 +1249,11 @@ public class CallController extends BaseController {
 
     /**
      * View Call Response
-     * @param    CreateViewCallInput    Object containing request parameters
+     * @param    ViewCallInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createViewCallAsync(
-                final CreateViewCallInput input,
+    public void viewCallAsync(
+                final ViewCallInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -1277,7 +1272,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5396445627089299269L;
+            private static final long serialVersionUID = 4744961256040867922L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -1286,7 +1281,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5224117943870722364L;
+            private static final long serialVersionUID = 5742216302728868886L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1294,7 +1289,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4866686374290912735L;
+            private static final long serialVersionUID = 5575693108745320908L;
             {
                     put( "callsid", input.getCallsid() );
             }

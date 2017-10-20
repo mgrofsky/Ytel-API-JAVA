@@ -40,14 +40,14 @@ public class UsageController extends BaseController {
 
     /**
      * Get all usage 
-     * @param    CreateListUsageInput    Object containing request parameters
+     * @param    ListUsageInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createListUsage(
-                final CreateListUsageInput input
+    public String listUsage(
+                final ListUsageInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createListUsageAsync(input, callback);
+        listUsageAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -55,23 +55,14 @@ public class UsageController extends BaseController {
 
     /**
      * Get all usage 
-     * @param    CreateListUsageInput    Object containing request parameters
+     * @param    ListUsageInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createListUsageAsync(
-                final CreateListUsageInput input,
+    public void listUsageAsync(
+                final ListUsageInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == input.getProductCode())
-            throw new NullPointerException("The property \"ProductCode\" in the input object cannot be null.");
-
-        if (null == input.getStartDate())
-            throw new NullPointerException("The property \"StartDate\" in the input object cannot be null.");
-
-        if (null == input.getEndDate())
-            throw new NullPointerException("The property \"EndDate\" in the input object cannot be null.");
-
         if (null == input.getResponseType())
             throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
 
@@ -84,7 +75,7 @@ public class UsageController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4665091549422608026L;
+            private static final long serialVersionUID = 5558491535052480889L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -93,7 +84,7 @@ public class UsageController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4686519369269582256L;
+            private static final long serialVersionUID = 5520665726049816033L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -101,7 +92,7 @@ public class UsageController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4819954605286439559L;
+            private static final long serialVersionUID = 5093017232128642779L;
             {
                     put( "ProductCode", (input.getProductCode() != null) ? input.getProductCode().value() : 0 );
                     put( "startDate", input.getStartDate() );

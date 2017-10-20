@@ -40,14 +40,14 @@ public class AccountController extends BaseController {
 
     /**
      * Display Account Description
-     * @param    CreateViewAccountInput    Object containing request parameters
+     * @param    ViewAccountInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createViewAccount(
-                final CreateViewAccountInput input
+    public String viewAccount(
+                final ViewAccountInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewAccountAsync(input, callback);
+        viewAccountAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -55,11 +55,11 @@ public class AccountController extends BaseController {
 
     /**
      * Display Account Description
-     * @param    CreateViewAccountInput    Object containing request parameters
+     * @param    ViewAccountInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createViewAccountAsync(
-                final CreateViewAccountInput input,
+    public void viewAccountAsync(
+                final ViewAccountInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -78,7 +78,7 @@ public class AccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4792188215067111577L;
+            private static final long serialVersionUID = 5640528121747630064L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +87,7 @@ public class AccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4808578118369484488L;
+            private static final long serialVersionUID = 5183292845547773821L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -95,7 +95,7 @@ public class AccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5617219071192157985L;
+            private static final long serialVersionUID = 5574310518371606931L;
             {
                     put( "Date", input.getDate() );
             }

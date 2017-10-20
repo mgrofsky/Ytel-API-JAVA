@@ -33,7 +33,7 @@ public class Configuration {
     public static String getBaseUri(Servers server) {
         StringBuilder baseUrl = new StringBuilder(environmentsMap.get(Configuration.environment).get(server));
         Map<String, Object> parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5412782837031500772L;
+            private static final long serialVersionUID = 4742869242822542877L;
             {
             }
         };
@@ -53,24 +53,18 @@ public class Configuration {
      * Map of all base URLs by environments and server aliases 
      */
     private static EnumMap<Environments, EnumMap<Servers, String>> environmentsMap = new EnumMap<Environments, EnumMap<Servers,String>>(Environments.class) {
-        private static final long serialVersionUID = 5077409813282754099L;
+        private static final long serialVersionUID = 4643632211941932562L;
         {
             put(Environments.PRODUCTION , new EnumMap<Servers, String>(Servers.class) {
-                private static final long serialVersionUID = 4666884969230967610L;
+                private static final long serialVersionUID = 5555015705025052270L;
                 {
                     put(Servers.DEFAULT, "https://api.message360.com/api/v3");
                 }
             });
             put(Environments.PREPRODUCTION , new EnumMap<Servers, String>(Servers.class) {
-                private static final long serialVersionUID = 4919436277882119757L;
+                private static final long serialVersionUID = 4648400485971301184L;
                 {
                     put(Servers.DEFAULT, "https://api-preprod.message360.com/api/v2");
-                }
-            });
-            put(Environments.DEVELOPMENT , new EnumMap<Servers, String>(Servers.class) {
-                private static final long serialVersionUID = 4970452405019551877L;
-                {
-                    put(Servers.DEFAULT, "https://lara-dev.message360.com/api/v2");
                 }
             });
         }

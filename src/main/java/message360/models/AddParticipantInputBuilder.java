@@ -34,11 +34,6 @@ public class AddParticipantInputBuilder {
         return this;
     }
 
-    public AddParticipantInputBuilder tocountrycode(int tocountrycode) {
-        addParticipantInput.setTocountrycode(tocountrycode);
-        return this;
-    }
-
     /**
      * Response type format xml or json
      */

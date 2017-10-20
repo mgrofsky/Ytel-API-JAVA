@@ -93,7 +93,7 @@ public class AddressController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5054801256518535291L;
+            private static final long serialVersionUID = 5007680494212000052L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -102,7 +102,7 @@ public class AddressController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4861790653869604125L;
+            private static final long serialVersionUID = 5043899887816866431L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -110,7 +110,7 @@ public class AddressController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4704899601291007118L;
+            private static final long serialVersionUID = 5370932405625848429L;
             {
                     put( "Name", input.getName() );
                     put( "Address", input.getAddress() );
@@ -182,27 +182,27 @@ public class AddressController extends BaseController {
     }
 
     /**
-     * To delete Address to your address book
-     * @param    CreateDeleteAddressInput    Object containing request parameters
+     * View Address Specific address Book by providing the address id
+     * @param    ViewAddressInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createDeleteAddress(
-                final CreateDeleteAddressInput input
+    public String viewAddress(
+                final ViewAddressInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createDeleteAddressAsync(input, callback);
+        viewAddressAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * To delete Address to your address book
-     * @param    CreateDeleteAddressInput    Object containing request parameters
+     * View Address Specific address Book by providing the address id
+     * @param    ViewAddressInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createDeleteAddressAsync(
-                final CreateDeleteAddressInput input,
+    public void viewAddressAsync(
+                final ViewAddressInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -217,11 +217,11 @@ public class AddressController extends BaseController {
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/address/deleteaddress.{ResponseType}");
+        _queryBuilder.append("/address/viewaddress.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5480485654797971825L;
+            private static final long serialVersionUID = 5728686727737494816L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -230,7 +230,7 @@ public class AddressController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4987285268007428749L;
+            private static final long serialVersionUID = 5044740605930045966L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -238,127 +238,7 @@ public class AddressController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4697574967173303050L;
-            {
-                    put( "AddressSID", input.getAddressSID() );
-            }
-        };
-
-        //prepare and invoke the API call request to fetch the response
-        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
-                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
-
-        //invoke the callback before request if its not null
-        if (getHttpCallBack() != null)
-        {
-            getHttpCallBack().OnBeforeRequest(_request);
-        }
-
-        //invoke request and get response
-        Runnable _responseTask = new Runnable() {
-            public void run() {
-                //make the API call
-                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
-                    public void onSuccess(HttpContext _context, HttpResponse _response) {
-                        try {
-
-                            //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
-                            {
-                                getHttpCallBack().OnAfterResponse(_context);
-                            }
-
-                            //handle errors defined at the API level
-                            validateResponse(_response, _context);
-
-                            //extract result from the http response
-                            String _result = ((HttpStringResponse)_response).getBody();
-                            //let the caller know of the success
-                            callBack.onSuccess(_context, _result);
-                        } catch (APIException error) {
-                            //let the caller know of the error
-                            callBack.onFailure(_context, error);
-                        } catch (Exception exception) {
-                            //let the caller know of the caught Exception
-                            callBack.onFailure(_context, exception);
-                        }
-                    }
-                    public void onFailure(HttpContext _context, Throwable _error) {
-                        //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
-                            getHttpCallBack().OnAfterResponse(_context);
-                        }
-
-                        //let the caller know of the failure
-                        callBack.onFailure(_context, _error);
-                    }
-                });
-            }
-        };
-
-        //execute async using thread pool
-        APIHelper.getScheduler().execute(_responseTask);
-    }
-
-    /**
-     * Validates an address given.
-     * @param    CreateVerifyAddressInput    Object containing request parameters
-     * @return    Returns the String response from the API call 
-     */
-    public String createVerifyAddress(
-                final CreateVerifyAddressInput input
-    ) throws Throwable {
-        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createVerifyAddressAsync(input, callback);
-        if(!callback.isSuccess())
-            throw callback.getError();
-        return callback.getResult();
-    }
-
-    /**
-     * Validates an address given.
-     * @param    CreateVerifyAddressInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
-     */
-    public void createVerifyAddressAsync(
-                final CreateVerifyAddressInput input,
-                final APICallBack<String> callBack
-    ) {
-        //validating required parameters
-        if (null == input.getAddressSID())
-            throw new NullPointerException("The property \"AddressSID\" in the input object cannot be null.");
-
-        if (null == input.getResponseType())
-            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
-
-        //the base uri for api requests
-        String _baseUri = Configuration.getBaseUri();
-        
-        //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/address/verifyaddress.{ResponseType}");
-
-        //process template parameters
-        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5179959879843255732L;
-            {
-                    put( "ResponseType", input.getResponseType() );
-            }});
-        //validate and preprocess url
-        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
-
-        //load all headers for the outgoing API request
-        Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5306317650010213193L;
-            {
-                    put( "user-agent", "message360-api" );
-            }
-        };
-
-        //load all fields for the outgoing API request
-        Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4845607569337820416L;
+            private static final long serialVersionUID = 5104804231873504934L;
             {
                     put( "AddressSID", input.getAddressSID() );
             }
@@ -423,14 +303,14 @@ public class AddressController extends BaseController {
 
     /**
      * List All Address 
-     * @param    CreateListAddressInput    Object containing request parameters
+     * @param    ListAddressInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createListAddress(
-                final CreateListAddressInput input
+    public String listAddress(
+                final ListAddressInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createListAddressAsync(input, callback);
+        listAddressAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -438,11 +318,11 @@ public class AddressController extends BaseController {
 
     /**
      * List All Address 
-     * @param    CreateListAddressInput    Object containing request parameters
+     * @param    ListAddressInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createListAddressAsync(
-                final CreateListAddressInput input,
+    public void listAddressAsync(
+                final ListAddressInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -458,7 +338,7 @@ public class AddressController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5274730265915448248L;
+            private static final long serialVersionUID = 5505272900401997806L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -467,7 +347,7 @@ public class AddressController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4887576682718750872L;
+            private static final long serialVersionUID = 5145959032633250375L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -475,7 +355,7 @@ public class AddressController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5546179632717634774L;
+            private static final long serialVersionUID = 4926761791675891374L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -542,27 +422,27 @@ public class AddressController extends BaseController {
     }
 
     /**
-     * View Address Specific address Book by providing the address id
-     * @param    CreateViewAddressInput    Object containing request parameters
+     * Validates an address given.
+     * @param    VerifyAddressInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createViewAddress(
-                final CreateViewAddressInput input
+    public String verifyAddress(
+                final VerifyAddressInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewAddressAsync(input, callback);
+        verifyAddressAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * View Address Specific address Book by providing the address id
-     * @param    CreateViewAddressInput    Object containing request parameters
+     * Validates an address given.
+     * @param    VerifyAddressInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createViewAddressAsync(
-                final CreateViewAddressInput input,
+    public void verifyAddressAsync(
+                final VerifyAddressInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -577,11 +457,11 @@ public class AddressController extends BaseController {
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/address/viewaddress.{ResponseType}");
+        _queryBuilder.append("/address/verifyaddress.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5544898478397263301L;
+            private static final long serialVersionUID = 5355823763397751513L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -590,7 +470,7 @@ public class AddressController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5116831502595042154L;
+            private static final long serialVersionUID = 5337971763687031993L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -598,7 +478,127 @@ public class AddressController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5445260877389808126L;
+            private static final long serialVersionUID = 4985888214082742399L;
+            {
+                    put( "AddressSID", input.getAddressSID() );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * To delete Address to your address book
+     * @param    DeleteAddressInput    Object containing request parameters
+     * @return    Returns the String response from the API call 
+     */
+    public String deleteAddress(
+                final DeleteAddressInput input
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        deleteAddressAsync(input, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * To delete Address to your address book
+     * @param    DeleteAddressInput    Object containing request parameters
+     * @return    Returns the void response from the API call 
+     */
+    public void deleteAddressAsync(
+                final DeleteAddressInput input,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == input.getAddressSID())
+            throw new NullPointerException("The property \"AddressSID\" in the input object cannot be null.");
+
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.getBaseUri();
+        
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/address/deleteaddress.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 4837448808678033528L;
+            {
+                    put( "ResponseType", input.getResponseType() );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 5242951568068251982L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5451295054033853495L;
             {
                     put( "AddressSID", input.getAddressSID() );
             }
