@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListInvalidInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5448101378111042577L;
+    private static final long serialVersionUID = 4896954116892255273L;
     private String responseType = "json";
     private String offet;
     private String limit;

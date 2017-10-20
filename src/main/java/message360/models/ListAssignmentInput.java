@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListAssignmentInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4873578378496090364L;
+    private static final long serialVersionUID = 5099375605667362351L;
     private String responseType;
     private String page;
     private String pageSize;

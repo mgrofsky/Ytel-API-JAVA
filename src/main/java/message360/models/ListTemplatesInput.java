@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListTemplatesInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4911778515649599516L;
+    private static final long serialVersionUID = 5060534140183620828L;
     private String responseType = "json";
     private String type = "authorization";
     private Integer page;

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class UpdateAssignmentInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5421460109109941126L;
+    private static final long serialVersionUID = 4789636889574122368L;
     private String shortcode;
     private String responseType;
     private String friendlyName;

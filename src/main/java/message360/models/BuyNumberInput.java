@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class BuyNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5709394276449955706L;
+    private static final long serialVersionUID = 4854316219091972464L;
     private String phoneNumber;
     private String responseType = "json";
     /** GETTER
