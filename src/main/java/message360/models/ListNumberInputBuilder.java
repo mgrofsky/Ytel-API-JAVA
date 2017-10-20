@@ -42,11 +42,17 @@ public class ListNumberInputBuilder {
         return this;
     }
 
+    /**
+     * SMS or Voice
+     */
     public ListNumberInputBuilder numberType(NumberTypeEnum numberType) {
         listNumberInput.setNumberType(numberType);
         return this;
     }
 
+    /**
+     * Friendly name of the number
+     */
     public ListNumberInputBuilder friendlyName(String friendlyName) {
         listNumberInput.setFriendlyName(friendlyName);
         return this;

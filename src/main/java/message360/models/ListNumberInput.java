@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4887197770971587119L;
+    private static final long serialVersionUID = 4616332158187076632L;
     private String responseType = "json";
     private Integer page;
     private Integer pageSize = 10;
@@ -66,7 +66,7 @@ public class ListNumberInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * SMS or Voice
      */
     @JsonGetter("NumberType")
     public NumberTypeEnum getNumberType ( ) { 
@@ -74,7 +74,7 @@ public class ListNumberInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * SMS or Voice
      */
     @JsonSetter("NumberType")
     public void setNumberType (NumberTypeEnum value) { 
@@ -82,7 +82,7 @@ public class ListNumberInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Friendly name of the number
      */
     @JsonGetter("FriendlyName")
     public String getFriendlyName ( ) { 
@@ -90,7 +90,7 @@ public class ListNumberInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Friendly name of the number
      */
     @JsonSetter("FriendlyName")
     public void setFriendlyName (String value) { 

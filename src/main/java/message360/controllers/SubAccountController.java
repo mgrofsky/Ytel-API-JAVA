@@ -81,7 +81,7 @@ public class SubAccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4872954484023406249L;
+            private static final long serialVersionUID = 5421077288410923618L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -90,7 +90,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4622649085738902158L;
+            private static final long serialVersionUID = 5612266876603341718L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -98,7 +98,7 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5127079257537070416L;
+            private static final long serialVersionUID = 5037984590076298100L;
             {
                     put( "SubAccountSID", input.getSubAccountSID() );
                     put( "MergeNumber", (input.getMergeNumber() != null) ? input.getMergeNumber().value() : 0 );
@@ -205,7 +205,7 @@ public class SubAccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5330543767884909072L;
+            private static final long serialVersionUID = 5183932889219604304L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -214,7 +214,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5508228528654960540L;
+            private static final long serialVersionUID = 5300283280674799319L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -222,7 +222,7 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5419346422462917037L;
+            private static final long serialVersionUID = 4859994138918516078L;
             {
                     put( "SubAccountSID", input.getSubAccountSID() );
                     put( "Activate", (input.getActivate() != null) ? input.getActivate().value() : 0 );
@@ -332,7 +332,7 @@ public class SubAccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4872411750046757475L;
+            private static final long serialVersionUID = 5210390787388093013L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -341,7 +341,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4634486156383329227L;
+            private static final long serialVersionUID = 5309104067734807560L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -349,7 +349,7 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5359567156064959440L;
+            private static final long serialVersionUID = 5351596241462174453L;
             {
                     put( "FirstName", input.getFirstName() );
                     put( "LastName", input.getLastName() );

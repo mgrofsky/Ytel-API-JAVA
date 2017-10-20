@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListRecordingInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4928520434759106430L;
+    private static final long serialVersionUID = 5186092188832439402L;
     private String responseType = "json";
     private Integer page;
     private Integer pageSize;
@@ -66,7 +66,7 @@ public class ListRecordingInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Recording date
      */
     @JsonGetter("DateCreated")
     public String getDateCreated ( ) { 
@@ -74,7 +74,7 @@ public class ListRecordingInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Recording date
      */
     @JsonSetter("DateCreated")
     public void setDateCreated (String value) { 
@@ -82,7 +82,7 @@ public class ListRecordingInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Call ID
      */
     @JsonGetter("CallSid")
     public String getCallSid ( ) { 
@@ -90,7 +90,7 @@ public class ListRecordingInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Call ID
      */
     @JsonSetter("CallSid")
     public void setCallSid (String value) { 

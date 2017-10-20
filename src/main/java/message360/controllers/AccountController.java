@@ -78,7 +78,7 @@ public class AccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5640528121747630064L;
+            private static final long serialVersionUID = 5704370986169441616L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +87,7 @@ public class AccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5183292845547773821L;
+            private static final long serialVersionUID = 4844959348754018019L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -95,7 +95,7 @@ public class AccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5574310518371606931L;
+            private static final long serialVersionUID = 5511503239667150477L;
             {
                     put( "Date", input.getDate() );
             }

@@ -42,11 +42,17 @@ public class ListRecordingInputBuilder {
         return this;
     }
 
+    /**
+     * Recording date
+     */
     public ListRecordingInputBuilder dateCreated(String dateCreated) {
         listRecordingInput.setDateCreated(dateCreated);
         return this;
     }
 
+    /**
+     * Call ID
+     */
     public ListRecordingInputBuilder callSid(String callSid) {
         listRecordingInput.setCallSid(callSid);
         return this;

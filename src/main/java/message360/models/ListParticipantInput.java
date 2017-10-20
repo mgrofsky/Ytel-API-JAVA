@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListParticipantInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4928564180342798640L;
+    private static final long serialVersionUID = 5048105731585303247L;
     private String conferenceSid;
     private String responseType = "json";
     private Integer page;
@@ -67,7 +67,7 @@ public class ListParticipantInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Amount of records to return per page
      */
     @JsonGetter("Pagesize")
     public Integer getPagesize ( ) { 
@@ -75,7 +75,7 @@ public class ListParticipantInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Amount of records to return per page
      */
     @JsonSetter("Pagesize")
     public void setPagesize (Integer value) { 
@@ -83,7 +83,7 @@ public class ListParticipantInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Participants that are muted
      */
     @JsonGetter("Muted")
     public Boolean getMuted ( ) { 
@@ -91,7 +91,7 @@ public class ListParticipantInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Participants that are muted
      */
     @JsonSetter("Muted")
     public void setMuted (Boolean value) { 
@@ -99,7 +99,7 @@ public class ListParticipantInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Participants cant hear
      */
     @JsonGetter("Deaf")
     public Boolean getDeaf ( ) { 
@@ -107,7 +107,7 @@ public class ListParticipantInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Participants cant hear
      */
     @JsonSetter("Deaf")
     public void setDeaf (Boolean value) { 

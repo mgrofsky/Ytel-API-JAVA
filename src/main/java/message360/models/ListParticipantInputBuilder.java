@@ -42,16 +42,25 @@ public class ListParticipantInputBuilder {
         return this;
     }
 
+    /**
+     * Amount of records to return per page
+     */
     public ListParticipantInputBuilder pagesize(Integer pagesize) {
         listParticipantInput.setPagesize(pagesize);
         return this;
     }
 
+    /**
+     * Participants that are muted
+     */
     public ListParticipantInputBuilder muted(Boolean muted) {
         listParticipantInput.setMuted(muted);
         return this;
     }
 
+    /**
+     * Participants cant hear
+     */
     public ListParticipantInputBuilder deaf(Boolean deaf) {
         listParticipantInput.setDeaf(deaf);
         return this;
