@@ -39,33 +39,30 @@ public class TranscriptionController extends BaseController {
     }
 
     /**
-     * Audio URL Transcriptions
-     * @param    CreateAudioURLTranscriptionInput    Object containing request parameters
+     * Get All transcriptions
+     * @param    ListTranscriptionInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createAudioURLTranscription(
-                final CreateAudioURLTranscriptionInput input
+    public String listTranscription(
+                final ListTranscriptionInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createAudioURLTranscriptionAsync(input, callback);
+        listTranscriptionAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * Audio URL Transcriptions
-     * @param    CreateAudioURLTranscriptionInput    Object containing request parameters
+     * Get All transcriptions
+     * @param    ListTranscriptionInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createAudioURLTranscriptionAsync(
-                final CreateAudioURLTranscriptionInput input,
+    public void listTranscriptionAsync(
+                final ListTranscriptionInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == input.getAudioUrl())
-            throw new NullPointerException("The property \"AudioUrl\" in the input object cannot be null.");
-
         if (null == input.getResponseType())
             throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
 
@@ -74,11 +71,11 @@ public class TranscriptionController extends BaseController {
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/transcriptions/audiourltranscription.{ResponseType}");
+        _queryBuilder.append("/transcriptions/listtranscription.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5100428335050700834L;
+            private static final long serialVersionUID = 5495584238740035462L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +84,7 @@ public class TranscriptionController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5128699924767209694L;
+            private static final long serialVersionUID = 4878828442219836089L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -95,129 +92,12 @@ public class TranscriptionController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5014356365336700463L;
+            private static final long serialVersionUID = 4710016614468625399L;
             {
-                    put( "AudioUrl", input.getAudioUrl() );
-            }
-        };
-
-        //prepare and invoke the API call request to fetch the response
-        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
-                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
-
-        //invoke the callback before request if its not null
-        if (getHttpCallBack() != null)
-        {
-            getHttpCallBack().OnBeforeRequest(_request);
-        }
-
-        //invoke request and get response
-        Runnable _responseTask = new Runnable() {
-            public void run() {
-                //make the API call
-                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
-                    public void onSuccess(HttpContext _context, HttpResponse _response) {
-                        try {
-
-                            //invoke the callback after response if its not null
-                            if (getHttpCallBack() != null)	
-                            {
-                                getHttpCallBack().OnAfterResponse(_context);
-                            }
-
-                            //handle errors defined at the API level
-                            validateResponse(_response, _context);
-
-                            //extract result from the http response
-                            String _result = ((HttpStringResponse)_response).getBody();
-                            //let the caller know of the success
-                            callBack.onSuccess(_context, _result);
-                        } catch (APIException error) {
-                            //let the caller know of the error
-                            callBack.onFailure(_context, error);
-                        } catch (Exception exception) {
-                            //let the caller know of the caught Exception
-                            callBack.onFailure(_context, exception);
-                        }
-                    }
-                    public void onFailure(HttpContext _context, Throwable _error) {
-                        //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
-                            getHttpCallBack().OnAfterResponse(_context);
-                        }
-
-                        //let the caller know of the failure
-                        callBack.onFailure(_context, _error);
-                    }
-                });
-            }
-        };
-
-        //execute async using thread pool
-        APIHelper.getScheduler().execute(_responseTask);
-    }
-
-    /**
-     * Recording Transcriptions
-     * @param    CreateRecordingTranscriptionInput    Object containing request parameters
-     * @return    Returns the String response from the API call 
-     */
-    public String createRecordingTranscription(
-                final CreateRecordingTranscriptionInput input
-    ) throws Throwable {
-        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createRecordingTranscriptionAsync(input, callback);
-        if(!callback.isSuccess())
-            throw callback.getError();
-        return callback.getResult();
-    }
-
-    /**
-     * Recording Transcriptions
-     * @param    CreateRecordingTranscriptionInput    Object containing request parameters
-     * @return    Returns the void response from the API call 
-     */
-    public void createRecordingTranscriptionAsync(
-                final CreateRecordingTranscriptionInput input,
-                final APICallBack<String> callBack
-    ) {
-        //validating required parameters
-        if (null == input.getRecordingSid())
-            throw new NullPointerException("The property \"RecordingSid\" in the input object cannot be null.");
-
-        if (null == input.getResponseType())
-            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
-
-        //the base uri for api requests
-        String _baseUri = Configuration.getBaseUri();
-        
-        //prepare query string for API call
-        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/transcriptions/recordingtranscription.{ResponseType}");
-
-        //process template parameters
-        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4860107202151105921L;
-            {
-                    put( "ResponseType", input.getResponseType() );
-            }});
-        //validate and preprocess url
-        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
-
-        //load all headers for the outgoing API request
-        Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5597008189958014440L;
-            {
-                    put( "user-agent", "message360-api" );
-            }
-        };
-
-        //load all fields for the outgoing API request
-        Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5609893912430476597L;
-            {
-                    put( "RecordingSid", input.getRecordingSid() );
+                    put( "Page", input.getPage() );
+                    put( "PageSize", input.getPageSize() );
+                    put( "Status", (input.getStatus() != null) ? input.getStatus().value() : null );
+                    put( "DateTranscribed", input.getDateTranscribed() );
             }
         };
 
@@ -280,14 +160,14 @@ public class TranscriptionController extends BaseController {
 
     /**
      * View Specific Transcriptions
-     * @param    CreateViewTranscriptionInput    Object containing request parameters
+     * @param    ViewTranscriptionInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createViewTranscription(
-                final CreateViewTranscriptionInput input
+    public String viewTranscription(
+                final ViewTranscriptionInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createViewTranscriptionAsync(input, callback);
+        viewTranscriptionAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -295,11 +175,11 @@ public class TranscriptionController extends BaseController {
 
     /**
      * View Specific Transcriptions
-     * @param    CreateViewTranscriptionInput    Object containing request parameters
+     * @param    ViewTranscriptionInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createViewTranscriptionAsync(
-                final CreateViewTranscriptionInput input,
+    public void viewTranscriptionAsync(
+                final ViewTranscriptionInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -318,7 +198,7 @@ public class TranscriptionController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4841422997800142601L;
+            private static final long serialVersionUID = 5219695583570321105L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -327,7 +207,7 @@ public class TranscriptionController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5235062335709296812L;
+            private static final long serialVersionUID = 4745313590746605511L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -335,7 +215,7 @@ public class TranscriptionController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5313192174894910767L;
+            private static final long serialVersionUID = 4711869764152787679L;
             {
                     put( "TranscriptionSid", input.getTranscriptionSid() );
             }
@@ -399,30 +279,33 @@ public class TranscriptionController extends BaseController {
     }
 
     /**
-     * Get All transcriptions
-     * @param    CreateListTranscriptionInput    Object containing request parameters
+     * Recording Transcriptions
+     * @param    RecordingTranscriptionInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createListTranscription(
-                final CreateListTranscriptionInput input
+    public String recordingTranscription(
+                final RecordingTranscriptionInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createListTranscriptionAsync(input, callback);
+        recordingTranscriptionAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * Get All transcriptions
-     * @param    CreateListTranscriptionInput    Object containing request parameters
+     * Recording Transcriptions
+     * @param    RecordingTranscriptionInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createListTranscriptionAsync(
-                final CreateListTranscriptionInput input,
+    public void recordingTranscriptionAsync(
+                final RecordingTranscriptionInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
+        if (null == input.getRecordingSid())
+            throw new NullPointerException("The property \"RecordingSid\" in the input object cannot be null.");
+
         if (null == input.getResponseType())
             throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
 
@@ -431,11 +314,11 @@ public class TranscriptionController extends BaseController {
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/transcriptions/listtranscription.{ResponseType}");
+        _queryBuilder.append("/transcriptions/recordingtranscription.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5130680824191864980L;
+            private static final long serialVersionUID = 4775713863923339588L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -444,7 +327,7 @@ public class TranscriptionController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5703408797959262108L;
+            private static final long serialVersionUID = 5098523158128834756L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -452,12 +335,129 @@ public class TranscriptionController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4919628488823350404L;
+            private static final long serialVersionUID = 5547227883247394746L;
             {
-                    put( "Page", input.getPage() );
-                    put( "PageSize", input.getPageSize() );
-                    put( "Status", (input.getStatus() != null) ? input.getStatus().value() : null );
-                    put( "DateTranscribed", input.getDateTranscribed() );
+                    put( "RecordingSid", input.getRecordingSid() );
+            }
+        };
+
+        //prepare and invoke the API call request to fetch the response
+        final HttpRequest _request = getClientInstance().post(_queryUrl, _headers, APIHelper.prepareFormFields(_parameters),
+                                        Configuration.basicAuthUserName, Configuration.basicAuthPassword);
+
+        //invoke the callback before request if its not null
+        if (getHttpCallBack() != null)
+        {
+            getHttpCallBack().OnBeforeRequest(_request);
+        }
+
+        //invoke request and get response
+        Runnable _responseTask = new Runnable() {
+            public void run() {
+                //make the API call
+                getClientInstance().executeAsStringAsync(_request, new APICallBack<HttpResponse>() {
+                    public void onSuccess(HttpContext _context, HttpResponse _response) {
+                        try {
+
+                            //invoke the callback after response if its not null
+                            if (getHttpCallBack() != null)	
+                            {
+                                getHttpCallBack().OnAfterResponse(_context);
+                            }
+
+                            //handle errors defined at the API level
+                            validateResponse(_response, _context);
+
+                            //extract result from the http response
+                            String _result = ((HttpStringResponse)_response).getBody();
+                            //let the caller know of the success
+                            callBack.onSuccess(_context, _result);
+                        } catch (APIException error) {
+                            //let the caller know of the error
+                            callBack.onFailure(_context, error);
+                        } catch (Exception exception) {
+                            //let the caller know of the caught Exception
+                            callBack.onFailure(_context, exception);
+                        }
+                    }
+                    public void onFailure(HttpContext _context, Throwable _error) {
+                        //invoke the callback after response if its not null
+                        if (getHttpCallBack() != null)	
+                            {
+                            getHttpCallBack().OnAfterResponse(_context);
+                        }
+
+                        //let the caller know of the failure
+                        callBack.onFailure(_context, _error);
+                    }
+                });
+            }
+        };
+
+        //execute async using thread pool
+        APIHelper.getScheduler().execute(_responseTask);
+    }
+
+    /**
+     * Audio URL Transcriptions
+     * @param    AudioURLTranscriptionInput    Object containing request parameters
+     * @return    Returns the String response from the API call 
+     */
+    public String audioURLTranscription(
+                final AudioURLTranscriptionInput input
+    ) throws Throwable {
+        APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
+        audioURLTranscriptionAsync(input, callback);
+        if(!callback.isSuccess())
+            throw callback.getError();
+        return callback.getResult();
+    }
+
+    /**
+     * Audio URL Transcriptions
+     * @param    AudioURLTranscriptionInput    Object containing request parameters
+     * @return    Returns the void response from the API call 
+     */
+    public void audioURLTranscriptionAsync(
+                final AudioURLTranscriptionInput input,
+                final APICallBack<String> callBack
+    ) {
+        //validating required parameters
+        if (null == input.getAudioUrl())
+            throw new NullPointerException("The property \"AudioUrl\" in the input object cannot be null.");
+
+        if (null == input.getResponseType())
+            throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
+
+        //the base uri for api requests
+        String _baseUri = Configuration.getBaseUri();
+        
+        //prepare query string for API call
+        StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+        _queryBuilder.append("/transcriptions/audiourltranscription.{ResponseType}");
+
+        //process template parameters
+        APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5435582817206847867L;
+            {
+                    put( "ResponseType", input.getResponseType() );
+            }});
+        //validate and preprocess url
+        String _queryUrl = APIHelper.cleanUrl(_queryBuilder);
+
+        //load all headers for the outgoing API request
+        Map<String, String> _headers = new HashMap<String, String>() {
+            private static final long serialVersionUID = 5490433876119517144L;
+            {
+                    put( "user-agent", "message360-api" );
+            }
+        };
+
+        //load all fields for the outgoing API request
+        Map<String, Object> _parameters = new HashMap<String, Object>() {
+            private static final long serialVersionUID = 5675557998757347547L;
+            {
+                    put( "AudioUrl", input.getAudioUrl() );
             }
         };
 

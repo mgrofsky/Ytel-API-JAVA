@@ -39,38 +39,35 @@ public class SubAccountController extends BaseController {
     }
 
     /**
-     * Create a sub user account under the parent account
-     * @param    CreateSubAccountInput    Object containing request parameters
+     * Delete sub account or merge numbers into parent
+     * @param    DeleteSubAccountInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createSubAccount(
-                final CreateSubAccountInput input
+    public String deleteSubAccount(
+                final DeleteSubAccountInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createSubAccountAsync(input, callback);
+        deleteSubAccountAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * Create a sub user account under the parent account
-     * @param    CreateSubAccountInput    Object containing request parameters
+     * Delete sub account or merge numbers into parent
+     * @param    DeleteSubAccountInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createSubAccountAsync(
-                final CreateSubAccountInput input,
+    public void deleteSubAccountAsync(
+                final DeleteSubAccountInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == input.getFirstName())
-            throw new NullPointerException("The property \"FirstName\" in the input object cannot be null.");
+        if (null == input.getSubAccountSID())
+            throw new NullPointerException("The property \"SubAccountSID\" in the input object cannot be null.");
 
-        if (null == input.getLastName())
-            throw new NullPointerException("The property \"LastName\" in the input object cannot be null.");
-
-        if (null == input.getEmail())
-            throw new NullPointerException("The property \"Email\" in the input object cannot be null.");
+        if (null == input.getMergeNumber())
+            throw new NullPointerException("The property \"MergeNumber\" in the input object cannot be null.");
 
         if (null == input.getResponseType())
             throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
@@ -80,11 +77,11 @@ public class SubAccountController extends BaseController {
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/user/createsubaccount.{ResponseType}");
+        _queryBuilder.append("/user/deletesubaccount.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4981630515419029524L;
+            private static final long serialVersionUID = 4872954484023406249L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -93,7 +90,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5086073889629144425L;
+            private static final long serialVersionUID = 4622649085738902158L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -101,11 +98,10 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5166684833450659622L;
+            private static final long serialVersionUID = 5127079257537070416L;
             {
-                    put( "FirstName", input.getFirstName() );
-                    put( "LastName", input.getLastName() );
-                    put( "Email", input.getEmail() );
+                    put( "SubAccountSID", input.getSubAccountSID() );
+                    put( "MergeNumber", (input.getMergeNumber() != null) ? input.getMergeNumber().value() : 0 );
             }
         };
 
@@ -168,14 +164,14 @@ public class SubAccountController extends BaseController {
 
     /**
      * Suspend or unsuspend
-     * @param    CreateSuspendSubAccountInput    Object containing request parameters
+     * @param    SuspendSubAccountInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createSuspendSubAccount(
-                final CreateSuspendSubAccountInput input
+    public String suspendSubAccount(
+                final SuspendSubAccountInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createSuspendSubAccountAsync(input, callback);
+        suspendSubAccountAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -183,11 +179,11 @@ public class SubAccountController extends BaseController {
 
     /**
      * Suspend or unsuspend
-     * @param    CreateSuspendSubAccountInput    Object containing request parameters
+     * @param    SuspendSubAccountInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createSuspendSubAccountAsync(
-                final CreateSuspendSubAccountInput input,
+    public void suspendSubAccountAsync(
+                final SuspendSubAccountInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -209,7 +205,7 @@ public class SubAccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4857678485604221923L;
+            private static final long serialVersionUID = 5330543767884909072L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -218,7 +214,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4748215262196175226L;
+            private static final long serialVersionUID = 5508228528654960540L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -226,7 +222,7 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5241330316572462583L;
+            private static final long serialVersionUID = 5419346422462917037L;
             {
                     put( "SubAccountSID", input.getSubAccountSID() );
                     put( "Activate", (input.getActivate() != null) ? input.getActivate().value() : 0 );
@@ -291,35 +287,38 @@ public class SubAccountController extends BaseController {
     }
 
     /**
-     * Delete sub account or merge numbers into parent
-     * @param    CreateDeleteSubAccountInput    Object containing request parameters
+     * Create a sub user account under the parent account
+     * @param    CreateSubAccountInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createDeleteSubAccount(
-                final CreateDeleteSubAccountInput input
+    public String createSubAccount(
+                final CreateSubAccountInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createDeleteSubAccountAsync(input, callback);
+        createSubAccountAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
     }
 
     /**
-     * Delete sub account or merge numbers into parent
-     * @param    CreateDeleteSubAccountInput    Object containing request parameters
+     * Create a sub user account under the parent account
+     * @param    CreateSubAccountInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createDeleteSubAccountAsync(
-                final CreateDeleteSubAccountInput input,
+    public void createSubAccountAsync(
+                final CreateSubAccountInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == input.getSubAccountSID())
-            throw new NullPointerException("The property \"SubAccountSID\" in the input object cannot be null.");
+        if (null == input.getFirstName())
+            throw new NullPointerException("The property \"FirstName\" in the input object cannot be null.");
 
-        if (null == input.getMergeNumber())
-            throw new NullPointerException("The property \"MergeNumber\" in the input object cannot be null.");
+        if (null == input.getLastName())
+            throw new NullPointerException("The property \"LastName\" in the input object cannot be null.");
+
+        if (null == input.getEmail())
+            throw new NullPointerException("The property \"Email\" in the input object cannot be null.");
 
         if (null == input.getResponseType())
             throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
@@ -329,11 +328,11 @@ public class SubAccountController extends BaseController {
         
         //prepare query string for API call
         StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-        _queryBuilder.append("/user/deletesubaccount.{ResponseType}");
+        _queryBuilder.append("/user/createsubaccount.{ResponseType}");
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5622134186390423506L;
+            private static final long serialVersionUID = 4872411750046757475L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -342,7 +341,7 @@ public class SubAccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5370511867228335881L;
+            private static final long serialVersionUID = 4634486156383329227L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -350,10 +349,11 @@ public class SubAccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4826244005547556127L;
+            private static final long serialVersionUID = 5359567156064959440L;
             {
-                    put( "SubAccountSID", input.getSubAccountSID() );
-                    put( "MergeNumber", (input.getMergeNumber() != null) ? input.getMergeNumber().value() : 0 );
+                    put( "FirstName", input.getFirstName() );
+                    put( "LastName", input.getLastName() );
+                    put( "Email", input.getEmail() );
             }
         };
 

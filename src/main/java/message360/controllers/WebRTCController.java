@@ -40,14 +40,14 @@ public class WebRTCController extends BaseController {
 
     /**
      * TODO: type endpoint description here
-     * @param    CreateCheckFundsInput    Object containing request parameters
+     * @param    CheckFundsInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createCheckFunds(
-                final CreateCheckFundsInput input
+    public String checkFunds(
+                final CheckFundsInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createCheckFundsAsync(input, callback);
+        checkFundsAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -55,11 +55,11 @@ public class WebRTCController extends BaseController {
 
     /**
      * TODO: type endpoint description here
-     * @param    CreateCheckFundsInput    Object containing request parameters
+     * @param    CheckFundsInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createCheckFundsAsync(
-                final CreateCheckFundsInput input,
+    public void checkFundsAsync(
+                final CheckFundsInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -80,7 +80,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5358798018140128065L;
+            private static final long serialVersionUID = 5432107129558932478L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -88,7 +88,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5576212322054524396L;
+            private static final long serialVersionUID = 5482228127780018540L;
             {
                     put( "account_sid", input.getAccountSid() );
                     put( "auth_token", input.getAuthToken() );
@@ -200,7 +200,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5329423331026240778L;
+            private static final long serialVersionUID = 5726813765339448008L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -208,7 +208,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5114245725546377297L;
+            private static final long serialVersionUID = 5403276458711609881L;
             {
                     put( "account_sid", input.getAccountSid() );
                     put( "auth_token", input.getAuthToken() );

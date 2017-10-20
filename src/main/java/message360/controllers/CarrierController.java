@@ -40,14 +40,14 @@ public class CarrierController extends BaseController {
 
     /**
      * Get the All Purchase Number's Carrier lookup
-     * @param    CreateCarrierLookupListInput    Object containing request parameters
+     * @param    CarrierLookupListInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createCarrierLookupList(
-                final CreateCarrierLookupListInput input
+    public String carrierLookupList(
+                final CarrierLookupListInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createCarrierLookupListAsync(input, callback);
+        carrierLookupListAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -55,11 +55,11 @@ public class CarrierController extends BaseController {
 
     /**
      * Get the All Purchase Number's Carrier lookup
-     * @param    CreateCarrierLookupListInput    Object containing request parameters
+     * @param    CarrierLookupListInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createCarrierLookupListAsync(
-                final CreateCarrierLookupListInput input,
+    public void carrierLookupListAsync(
+                final CarrierLookupListInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -75,7 +75,7 @@ public class CarrierController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5064420411882255400L;
+            private static final long serialVersionUID = 5041808066034240418L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -84,7 +84,7 @@ public class CarrierController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5269967265261266543L;
+            private static final long serialVersionUID = 5651013087506713284L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -92,7 +92,7 @@ public class CarrierController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5202181565340114014L;
+            private static final long serialVersionUID = 4650268041372662868L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -158,14 +158,14 @@ public class CarrierController extends BaseController {
 
     /**
      * Get the Carrier Lookup
-     * @param    CreateCarrierLookupInput    Object containing request parameters
+     * @param    CarrierLookupInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String createCarrierLookup(
-                final CreateCarrierLookupInput input
+    public String carrierLookup(
+                final CarrierLookupInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        createCarrierLookupAsync(input, callback);
+        carrierLookupAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -173,11 +173,11 @@ public class CarrierController extends BaseController {
 
     /**
      * Get the Carrier Lookup
-     * @param    CreateCarrierLookupInput    Object containing request parameters
+     * @param    CarrierLookupInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void createCarrierLookupAsync(
-                final CreateCarrierLookupInput input,
+    public void carrierLookupAsync(
+                final CarrierLookupInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -196,7 +196,7 @@ public class CarrierController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5691948803043441096L;
+            private static final long serialVersionUID = 5021403032435783437L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -205,7 +205,7 @@ public class CarrierController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4727788208908711567L;
+            private static final long serialVersionUID = 5664037173353187610L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -213,7 +213,7 @@ public class CarrierController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5507044112244347676L;
+            private static final long serialVersionUID = 4777545073874304444L;
             {
                     put( "phonenumber", input.getPhonenumber() );
             }

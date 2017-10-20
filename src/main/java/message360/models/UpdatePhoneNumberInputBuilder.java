@@ -24,6 +24,14 @@ public class UpdatePhoneNumberInputBuilder {
     }
 
     /**
+     * URL requested once the call connects
+     */
+    public UpdatePhoneNumberInputBuilder voiceUrl(String voiceUrl) {
+        updatePhoneNumberInput.setVoiceUrl(voiceUrl);
+        return this;
+    }
+
+    /**
      * Response type format xml or json
      */
     public UpdatePhoneNumberInputBuilder responseType(String responseType) {
@@ -33,14 +41,6 @@ public class UpdatePhoneNumberInputBuilder {
 
     public UpdatePhoneNumberInputBuilder friendlyName(String friendlyName) {
         updatePhoneNumberInput.setFriendlyName(friendlyName);
-        return this;
-    }
-
-    /**
-     * URL requested once the call connects
-     */
-    public UpdatePhoneNumberInputBuilder voiceUrl(String voiceUrl) {
-        updatePhoneNumberInput.setVoiceUrl(voiceUrl);
         return this;
     }
 
