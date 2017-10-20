@@ -42,11 +42,17 @@ public class AddParticipantInputBuilder {
         return this;
     }
 
+    /**
+     * add muted
+     */
     public AddParticipantInputBuilder muted(Boolean muted) {
         addParticipantInput.setMuted(muted);
         return this;
     }
 
+    /**
+     * add without volume
+     */
     public AddParticipantInputBuilder deaf(Boolean deaf) {
         addParticipantInput.setDeaf(deaf);
         return this;

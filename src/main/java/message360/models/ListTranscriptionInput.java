@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListTranscriptionInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4628067935016496869L;
+    private static final long serialVersionUID = 5296678650035840211L;
     private String responseType = "json";
     private Integer page;
     private Integer pageSize;
@@ -34,7 +34,7 @@ public class ListTranscriptionInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * page number
      */
     @JsonGetter("Page")
     public Integer getPage ( ) { 
@@ -42,7 +42,7 @@ public class ListTranscriptionInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * page number
      */
     @JsonSetter("Page")
     public void setPage (Integer value) { 
@@ -50,7 +50,7 @@ public class ListTranscriptionInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Amount of data per page
      */
     @JsonGetter("PageSize")
     public Integer getPageSize ( ) { 
@@ -58,7 +58,7 @@ public class ListTranscriptionInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Amount of data per page
      */
     @JsonSetter("PageSize")
     public void setPageSize (Integer value) { 
@@ -66,7 +66,7 @@ public class ListTranscriptionInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Transcription status
      */
     @JsonGetter("Status")
     public StatusEnum getStatus ( ) { 
@@ -74,7 +74,7 @@ public class ListTranscriptionInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Transcription status
      */
     @JsonSetter("Status")
     public void setStatus (StatusEnum value) { 
@@ -82,7 +82,7 @@ public class ListTranscriptionInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Transcription date
      */
     @JsonGetter("DateTranscribed")
     public String getDateTranscribed ( ) { 
@@ -90,7 +90,7 @@ public class ListTranscriptionInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Transcription date
      */
     @JsonSetter("DateTranscribed")
     public void setDateTranscribed (String value) { 

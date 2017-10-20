@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListConferenceInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5246140242188785417L;
+    private static final long serialVersionUID = 5456571180031114983L;
     private String responseType = "json";
     private Integer page;
     private Integer pageSize;
@@ -82,7 +82,7 @@ public class ListConferenceInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Conference created date
      */
     @JsonGetter("DateCreated")
     public String getDateCreated ( ) { 
@@ -90,7 +90,7 @@ public class ListConferenceInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Conference created date
      */
     @JsonSetter("DateCreated")
     public void setDateCreated (String value) { 

@@ -26,21 +26,33 @@ public class ListTranscriptionInputBuilder {
         return this;
     }
 
+    /**
+     * page number
+     */
     public ListTranscriptionInputBuilder page(Integer page) {
         listTranscriptionInput.setPage(page);
         return this;
     }
 
+    /**
+     * Amount of data per page
+     */
     public ListTranscriptionInputBuilder pageSize(Integer pageSize) {
         listTranscriptionInput.setPageSize(pageSize);
         return this;
     }
 
+    /**
+     * Transcription status
+     */
     public ListTranscriptionInputBuilder status(StatusEnum status) {
         listTranscriptionInput.setStatus(status);
         return this;
     }
 
+    /**
+     * Transcription date
+     */
     public ListTranscriptionInputBuilder dateTranscribed(String dateTranscribed) {
         listTranscriptionInput.setDateTranscribed(dateTranscribed);
         return this;

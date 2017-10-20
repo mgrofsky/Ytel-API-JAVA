@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class UpdatePhoneNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5743152343732247629L;
+    private static final long serialVersionUID = 4669645923616049396L;
     private String phoneNumber;
     private String voiceUrl;
     private String responseType = "json";
@@ -28,7 +28,7 @@ public class UpdatePhoneNumberInput
     private String smsFallbackUrl;
     private HttpActionEnum smsFallbackMethod;
     /** GETTER
-     * TODO: Write general description for this method
+     * The phone number to update
      */
     @JsonGetter("PhoneNumber")
     public String getPhoneNumber ( ) { 
@@ -36,7 +36,7 @@ public class UpdatePhoneNumberInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * The phone number to update
      */
     @JsonSetter("PhoneNumber")
     public void setPhoneNumber (String value) { 
@@ -76,7 +76,7 @@ public class UpdatePhoneNumberInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Phone number friendly name description
      */
     @JsonGetter("FriendlyName")
     public String getFriendlyName ( ) { 
@@ -84,7 +84,7 @@ public class UpdatePhoneNumberInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Phone number friendly name description
      */
     @JsonSetter("FriendlyName")
     public void setFriendlyName (String value) { 
@@ -92,7 +92,7 @@ public class UpdatePhoneNumberInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Post or Get
      */
     @JsonGetter("VoiceMethod")
     public HttpActionEnum getVoiceMethod ( ) { 
@@ -100,7 +100,7 @@ public class UpdatePhoneNumberInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Post or Get
      */
     @JsonSetter("VoiceMethod")
     public void setVoiceMethod (HttpActionEnum value) { 
@@ -124,7 +124,7 @@ public class UpdatePhoneNumberInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Post or Get
      */
     @JsonGetter("VoiceFallbackMethod")
     public HttpActionEnum getVoiceFallbackMethod ( ) { 
@@ -132,7 +132,7 @@ public class UpdatePhoneNumberInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Post or Get
      */
     @JsonSetter("VoiceFallbackMethod")
     public void setVoiceFallbackMethod (HttpActionEnum value) { 
@@ -140,7 +140,7 @@ public class UpdatePhoneNumberInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * callback url after a hangup occurs
      */
     @JsonGetter("HangupCallback")
     public String getHangupCallback ( ) { 
@@ -148,7 +148,7 @@ public class UpdatePhoneNumberInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * callback url after a hangup occurs
      */
     @JsonSetter("HangupCallback")
     public void setHangupCallback (String value) { 
@@ -156,7 +156,7 @@ public class UpdatePhoneNumberInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Post or Get
      */
     @JsonGetter("HangupCallbackMethod")
     public HttpActionEnum getHangupCallbackMethod ( ) { 
@@ -164,7 +164,7 @@ public class UpdatePhoneNumberInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Post or Get
      */
     @JsonSetter("HangupCallbackMethod")
     public void setHangupCallbackMethod (HttpActionEnum value) { 
@@ -220,7 +220,7 @@ public class UpdatePhoneNumberInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Post or Get
      */
     @JsonGetter("SmsMethod")
     public HttpActionEnum getSmsMethod ( ) { 
@@ -228,7 +228,7 @@ public class UpdatePhoneNumberInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Post or Get
      */
     @JsonSetter("SmsMethod")
     public void setSmsMethod (HttpActionEnum value) { 

@@ -11,14 +11,14 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class DeafMuteParticipantInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5719509937885256196L;
+    private static final long serialVersionUID = 4698867016286334098L;
     private String conferenceSid;
     private String participantSid;
     private String responseType = "json";
     private Boolean muted;
     private Boolean deaf;
     /** GETTER
-     * TODO: Write general description for this method
+     * ID of the active conference
      */
     @JsonGetter("conferenceSid")
     public String getConferenceSid ( ) { 
@@ -26,7 +26,7 @@ public class DeafMuteParticipantInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * ID of the active conference
      */
     @JsonSetter("conferenceSid")
     public void setConferenceSid (String value) { 
@@ -34,7 +34,7 @@ public class DeafMuteParticipantInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * ID of an active participant
      */
     @JsonGetter("ParticipantSid")
     public String getParticipantSid ( ) { 
@@ -42,7 +42,7 @@ public class DeafMuteParticipantInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * ID of an active participant
      */
     @JsonSetter("ParticipantSid")
     public void setParticipantSid (String value) { 
@@ -66,7 +66,7 @@ public class DeafMuteParticipantInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Mute a participant
      */
     @JsonGetter("Muted")
     public Boolean getMuted ( ) { 
@@ -74,7 +74,7 @@ public class DeafMuteParticipantInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Mute a participant
      */
     @JsonSetter("Muted")
     public void setMuted (Boolean value) { 
@@ -82,7 +82,7 @@ public class DeafMuteParticipantInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Make it so a participant cant hear
      */
     @JsonGetter("Deaf")
     public Boolean getDeaf ( ) { 
@@ -90,7 +90,7 @@ public class DeafMuteParticipantInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Make it so a participant cant hear
      */
     @JsonSetter("Deaf")
     public void setDeaf (Boolean value) { 

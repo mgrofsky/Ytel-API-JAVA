@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListInboundSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5272901548990552923L;
+    private static final long serialVersionUID = 5659374590515367883L;
     private String responseType = "json";
     private Integer page;
     private Integer pagesize = 10;

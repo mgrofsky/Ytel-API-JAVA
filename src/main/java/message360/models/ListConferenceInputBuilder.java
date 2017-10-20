@@ -50,6 +50,9 @@ public class ListConferenceInputBuilder {
         return this;
     }
 
+    /**
+     * Conference created date
+     */
     public ListConferenceInputBuilder dateCreated(String dateCreated) {
         listConferenceInput.setDateCreated(dateCreated);
         return this;

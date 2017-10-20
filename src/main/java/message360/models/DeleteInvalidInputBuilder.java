@@ -18,11 +18,17 @@ public class DeleteInvalidInputBuilder {
         deleteInvalidInput = new DeleteInvalidInput();
     }
 
+    /**
+     * Email that was marked invalid
+     */
     public DeleteInvalidInputBuilder email(String email) {
         deleteInvalidInput.setEmail(email);
         return this;
     }
 
+    /**
+     * Json or xml
+     */
     public DeleteInvalidInputBuilder responseType(String responseType) {
         deleteInvalidInput.setResponseType(responseType);
         return this;

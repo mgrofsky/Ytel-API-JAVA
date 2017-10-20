@@ -18,6 +18,9 @@ public class UpdatePhoneNumberInputBuilder {
         updatePhoneNumberInput = new UpdatePhoneNumberInput();
     }
 
+    /**
+     * The phone number to update
+     */
     public UpdatePhoneNumberInputBuilder phoneNumber(String phoneNumber) {
         updatePhoneNumberInput.setPhoneNumber(phoneNumber);
         return this;
@@ -39,11 +42,17 @@ public class UpdatePhoneNumberInputBuilder {
         return this;
     }
 
+    /**
+     * Phone number friendly name description
+     */
     public UpdatePhoneNumberInputBuilder friendlyName(String friendlyName) {
         updatePhoneNumberInput.setFriendlyName(friendlyName);
         return this;
     }
 
+    /**
+     * Post or Get
+     */
     public UpdatePhoneNumberInputBuilder voiceMethod(HttpActionEnum voiceMethod) {
         updatePhoneNumberInput.setVoiceMethod(voiceMethod);
         return this;
@@ -57,16 +66,25 @@ public class UpdatePhoneNumberInputBuilder {
         return this;
     }
 
+    /**
+     * Post or Get
+     */
     public UpdatePhoneNumberInputBuilder voiceFallbackMethod(HttpActionEnum voiceFallbackMethod) {
         updatePhoneNumberInput.setVoiceFallbackMethod(voiceFallbackMethod);
         return this;
     }
 
+    /**
+     * callback url after a hangup occurs
+     */
     public UpdatePhoneNumberInputBuilder hangupCallback(String hangupCallback) {
         updatePhoneNumberInput.setHangupCallback(hangupCallback);
         return this;
     }
 
+    /**
+     * Post or Get
+     */
     public UpdatePhoneNumberInputBuilder hangupCallbackMethod(HttpActionEnum hangupCallbackMethod) {
         updatePhoneNumberInput.setHangupCallbackMethod(hangupCallbackMethod);
         return this;
@@ -96,6 +114,9 @@ public class UpdatePhoneNumberInputBuilder {
         return this;
     }
 
+    /**
+     * Post or Get
+     */
     public UpdatePhoneNumberInputBuilder smsMethod(HttpActionEnum smsMethod) {
         updatePhoneNumberInput.setSmsMethod(smsMethod);
         return this;
