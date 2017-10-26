@@ -11,10 +11,10 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListTranscriptionInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5296678650035840211L;
+    private static final long serialVersionUID = 5457497146499135967L;
     private String responseType = "json";
-    private Integer page;
-    private Integer pageSize;
+    private Integer page = 1;
+    private Integer pageSize = 10;
     private StatusEnum status;
     private String dateTranscribed;
     /** GETTER

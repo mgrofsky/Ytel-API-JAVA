@@ -11,10 +11,10 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListAssignmentInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5374026213729143222L;
-    private String responseType;
-    private String page;
-    private String pageSize;
+    private static final long serialVersionUID = 4917346422134675905L;
+    private String responseType = "json";
+    private Integer page = 1;
+    private Integer pageSize = 10;
     private String shortcode;
     /** GETTER
      * Response type format xml or json
@@ -36,7 +36,7 @@ public class ListAssignmentInput
      * Which page of the overall response will be returned. Zero indexed
      */
     @JsonGetter("Page")
-    public String getPage ( ) { 
+    public Integer getPage ( ) { 
         return this.page;
     }
     
@@ -44,7 +44,7 @@ public class ListAssignmentInput
      * Which page of the overall response will be returned. Zero indexed
      */
     @JsonSetter("Page")
-    public void setPage (String value) { 
+    public void setPage (Integer value) { 
         this.page = value;
     }
  
@@ -52,7 +52,7 @@ public class ListAssignmentInput
      * Number of individual resources listed in the response per page
      */
     @JsonGetter("PageSize")
-    public String getPageSize ( ) { 
+    public Integer getPageSize ( ) { 
         return this.pageSize;
     }
     
@@ -60,7 +60,7 @@ public class ListAssignmentInput
      * Number of individual resources listed in the response per page
      */
     @JsonSetter("PageSize")
-    public void setPageSize (String value) { 
+    public void setPageSize (Integer value) { 
         this.pageSize = value;
     }
  

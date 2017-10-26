@@ -11,14 +11,14 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class UpdateAssignmentInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5556477104904346206L;
+    private static final long serialVersionUID = 4987007443477213658L;
     private String shortcode;
-    private String responseType;
+    private String responseType = "json";
     private String friendlyName;
     private String callbackUrl;
-    private String callbackMethod;
+    private HttpActionEnum callbackMethod;
     private String fallbackUrl;
-    private String fallbackUrlMethod;
+    private HttpActionEnum fallbackUrlMethod;
     /** GETTER
      * List of valid shortcode to your message360 account
      */
@@ -87,7 +87,7 @@ public class UpdateAssignmentInput
      * Specifies the HTTP method used to request the required StatusCallBackUrl once call connects.
      */
     @JsonGetter("CallbackMethod")
-    public String getCallbackMethod ( ) { 
+    public HttpActionEnum getCallbackMethod ( ) { 
         return this.callbackMethod;
     }
     
@@ -95,7 +95,7 @@ public class UpdateAssignmentInput
      * Specifies the HTTP method used to request the required StatusCallBackUrl once call connects.
      */
     @JsonSetter("CallbackMethod")
-    public void setCallbackMethod (String value) { 
+    public void setCallbackMethod (HttpActionEnum value) { 
         this.callbackMethod = value;
     }
  
@@ -119,7 +119,7 @@ public class UpdateAssignmentInput
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
     @JsonGetter("FallbackUrlMethod")
-    public String getFallbackUrlMethod ( ) { 
+    public HttpActionEnum getFallbackUrlMethod ( ) { 
         return this.fallbackUrlMethod;
     }
     
@@ -127,7 +127,7 @@ public class UpdateAssignmentInput
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
     @JsonSetter("FallbackUrlMethod")
-    public void setFallbackUrlMethod (String value) { 
+    public void setFallbackUrlMethod (HttpActionEnum value) { 
         this.fallbackUrlMethod = value;
     }
  

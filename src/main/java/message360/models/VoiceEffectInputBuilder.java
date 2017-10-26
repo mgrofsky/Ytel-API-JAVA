@@ -18,6 +18,9 @@ public class VoiceEffectInputBuilder {
         voiceEffectInput = new VoiceEffectInput();
     }
 
+    /**
+     * The unique identifier for the in-progress voice call.
+     */
     public VoiceEffectInputBuilder callSid(String callSid) {
         voiceEffectInput.setCallSid(callSid);
         return this;
@@ -31,6 +34,9 @@ public class VoiceEffectInputBuilder {
         return this;
     }
 
+    /**
+     * The direction the audio effect should be placed on. If IN, the effects will occur on the incoming audio stream. If OUT, the effects will occur on the outgoing audio stream.
+     */
     public VoiceEffectInputBuilder audioDirection(AudioDirectionEnum audioDirection) {
         voiceEffectInput.setAudioDirection(audioDirection);
         return this;

@@ -11,13 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListInboundShortcodeInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5394205132944743536L;
-    private String responseType;
-    private String page;
-    private String pageSize;
+    private static final long serialVersionUID = 4916201210275942208L;
+    private String responseType = "json";
+    private Integer page = 1;
+    private Integer pageSize = 10;
     private String from;
     private String shortcode;
-    private Date dateReceived;
+    private String dateReceived;
     /** GETTER
      * Response type format xml or json
      */
@@ -38,7 +38,7 @@ public class ListInboundShortcodeInput
      * Which page of the overall response will be returned. Zero indexed
      */
     @JsonGetter("Page")
-    public String getPage ( ) { 
+    public Integer getPage ( ) { 
         return this.page;
     }
     
@@ -46,7 +46,7 @@ public class ListInboundShortcodeInput
      * Which page of the overall response will be returned. Zero indexed
      */
     @JsonSetter("Page")
-    public void setPage (String value) { 
+    public void setPage (Integer value) { 
         this.page = value;
     }
  
@@ -54,7 +54,7 @@ public class ListInboundShortcodeInput
      * Number of individual resources listed in the response per page
      */
     @JsonGetter("PageSize")
-    public String getPageSize ( ) { 
+    public Integer getPageSize ( ) { 
         return this.pageSize;
     }
     
@@ -62,7 +62,7 @@ public class ListInboundShortcodeInput
      * Number of individual resources listed in the response per page
      */
     @JsonSetter("PageSize")
-    public void setPageSize (String value) { 
+    public void setPageSize (Integer value) { 
         this.pageSize = value;
     }
  
@@ -102,7 +102,7 @@ public class ListInboundShortcodeInput
      * Only list SMS messages sent in the specified date MAKE REQUEST
      */
     @JsonGetter("DateReceived")
-    public Date getDateReceived ( ) { 
+    public String getDateReceived ( ) { 
         return this.dateReceived;
     }
     
@@ -110,7 +110,7 @@ public class ListInboundShortcodeInput
      * Only list SMS messages sent in the specified date MAKE REQUEST
      */
     @JsonSetter("DateReceived")
-    public void setDateReceived (Date value) { 
+    public void setDateReceived (String value) { 
         this.dateReceived = value;
     }
  

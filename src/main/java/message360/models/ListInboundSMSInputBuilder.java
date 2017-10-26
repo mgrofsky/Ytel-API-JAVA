@@ -67,14 +67,6 @@ public class ListInboundSMSInputBuilder {
     }
 
     /**
-     * Number of individual resources listed in the response per page
-     */
-    public ListInboundSMSInputBuilder pagesize(String pagesize) {
-        listInboundSMSInput.setPagesize(pagesize);
-        return this;
-    }
-
-    /**
      * To Number to get Inbound SMS
      */
     public ListInboundSMSInputBuilder to(String to) {
@@ -85,7 +77,7 @@ public class ListInboundSMSInputBuilder {
     /**
      * Filter sms message objects by this date.
      */
-    public ListInboundSMSInputBuilder dateSent(Date dateSent) {
+    public ListInboundSMSInputBuilder dateSent(String dateSent) {
         listInboundSMSInput.setDateSent(dateSent);
         return this;
     }

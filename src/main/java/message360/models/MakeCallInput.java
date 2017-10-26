@@ -11,11 +11,10 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class MakeCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5232439398673147036L;
+    private static final long serialVersionUID = 5402396835701456631L;
     private String from;
     private String to;
     private String url;
-    private String surveyId;
     private String responseType = "json";
     private HttpActionEnum method;
     private String statusCallBackUrl;
@@ -23,7 +22,7 @@ public class MakeCallInput
     private String fallBackUrl;
     private HttpActionEnum fallBackMethod;
     private String heartBeatUrl;
-    private Boolean heartBeatMethod;
+    private HttpActionEnum heartBeatMethod;
     private Integer timeout;
     private String playDtmf;
     private Boolean hideCallerId;
@@ -36,6 +35,7 @@ public class MakeCallInput
     private String ifMachineUrl;
     private HttpActionEnum ifMachineMethod;
     private Boolean feedback;
+    private String surveyId;
     /** GETTER
      * This number to display on Caller ID as calling
      */
@@ -82,22 +82,6 @@ public class MakeCallInput
     @JsonSetter("Url")
     public void setUrl (String value) { 
         this.url = value;
-    }
- 
-    /** GETTER
-     * The unique identifier for the survey.
-     */
-    @JsonGetter("SurveyId")
-    public String getSurveyId ( ) { 
-        return this.surveyId;
-    }
-    
-    /** SETTER
-     * The unique identifier for the survey.
-     */
-    @JsonSetter("SurveyId")
-    public void setSurveyId (String value) { 
-        this.surveyId = value;
     }
  
     /** GETTER
@@ -216,7 +200,7 @@ public class MakeCallInput
      * Specifies the HTTP method used to request HeartbeatUrl.
      */
     @JsonGetter("HeartBeatMethod")
-    public Boolean getHeartBeatMethod ( ) { 
+    public HttpActionEnum getHeartBeatMethod ( ) { 
         return this.heartBeatMethod;
     }
     
@@ -224,7 +208,7 @@ public class MakeCallInput
      * Specifies the HTTP method used to request HeartbeatUrl.
      */
     @JsonSetter("HeartBeatMethod")
-    public void setHeartBeatMethod (Boolean value) { 
+    public void setHeartBeatMethod (HttpActionEnum value) { 
         this.heartBeatMethod = value;
     }
  
@@ -418,6 +402,22 @@ public class MakeCallInput
     @JsonSetter("Feedback")
     public void setFeedback (Boolean value) { 
         this.feedback = value;
+    }
+ 
+    /** GETTER
+     * The unique identifier for the survey.
+     */
+    @JsonGetter("SurveyId")
+    public String getSurveyId ( ) { 
+        return this.surveyId;
+    }
+    
+    /** SETTER
+     * The unique identifier for the survey.
+     */
+    @JsonSetter("SurveyId")
+    public void setSurveyId (String value) { 
+        this.surveyId = value;
     }
  
 }

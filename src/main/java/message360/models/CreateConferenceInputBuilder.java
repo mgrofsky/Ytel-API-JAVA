@@ -77,7 +77,7 @@ public class CreateConferenceInputBuilder {
     /**
      * Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
      */
-    public CreateConferenceInputBuilder statusCallBackMethod(String statusCallBackMethod) {
+    public CreateConferenceInputBuilder statusCallBackMethod(HttpActionEnum statusCallBackMethod) {
         createConferenceInput.setStatusCallBackMethod(statusCallBackMethod);
         return this;
     }
@@ -93,7 +93,7 @@ public class CreateConferenceInputBuilder {
     /**
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
-    public CreateConferenceInputBuilder fallBackMethod(String fallBackMethod) {
+    public CreateConferenceInputBuilder fallBackMethod(HttpActionEnum fallBackMethod) {
         createConferenceInput.setFallBackMethod(fallBackMethod);
         return this;
     }

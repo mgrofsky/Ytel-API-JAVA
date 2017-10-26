@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class VoiceEffectInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4987009454298462014L;
+    private static final long serialVersionUID = 5341505868086282705L;
     private String callSid;
     private String responseType = "json";
     private AudioDirectionEnum audioDirection;
@@ -21,7 +21,7 @@ public class VoiceEffectInput
     private Double rate;
     private Double tempo;
     /** GETTER
-     * TODO: Write general description for this method
+     * The unique identifier for the in-progress voice call.
      */
     @JsonGetter("CallSid")
     public String getCallSid ( ) { 
@@ -29,7 +29,7 @@ public class VoiceEffectInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * The unique identifier for the in-progress voice call.
      */
     @JsonSetter("CallSid")
     public void setCallSid (String value) { 
@@ -53,7 +53,7 @@ public class VoiceEffectInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * The direction the audio effect should be placed on. If IN, the effects will occur on the incoming audio stream. If OUT, the effects will occur on the outgoing audio stream.
      */
     @JsonGetter("AudioDirection")
     public AudioDirectionEnum getAudioDirection ( ) { 
@@ -61,7 +61,7 @@ public class VoiceEffectInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * The direction the audio effect should be placed on. If IN, the effects will occur on the incoming audio stream. If OUT, the effects will occur on the outgoing audio stream.
      */
     @JsonSetter("AudioDirection")
     public void setAudioDirection (AudioDirectionEnum value) { 

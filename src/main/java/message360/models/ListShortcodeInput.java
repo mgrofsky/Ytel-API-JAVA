@@ -11,13 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListShortcodeInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4894178498814683011L;
-    private String responseType;
+    private static final long serialVersionUID = 5074629371330900136L;
+    private String responseType = "json";
     private String shortcode;
     private String to;
     private Date dateSent;
-    private Integer page;
-    private Integer pageSize;
+    private Integer page = 1;
+    private Integer pageSize = 10;
     /** GETTER
      * Response type format xml or json
      */

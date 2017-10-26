@@ -61,7 +61,7 @@ public class SendRinglessVMInputBuilder {
     /**
      * Not currently used in this version
      */
-    public SendRinglessVMInputBuilder method(String method) {
+    public SendRinglessVMInputBuilder method(HttpActionEnum method) {
         sendRinglessVMInput.setMethod(method);
         return this;
     }
@@ -77,7 +77,7 @@ public class SendRinglessVMInputBuilder {
     /**
      * POST or GET
      */
-    public SendRinglessVMInputBuilder statsCallBackMethod(String statsCallBackMethod) {
+    public SendRinglessVMInputBuilder statsCallBackMethod(HttpActionEnum statsCallBackMethod) {
         sendRinglessVMInput.setStatsCallBackMethod(statsCallBackMethod);
         return this;
     }

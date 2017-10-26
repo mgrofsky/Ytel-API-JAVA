@@ -53,7 +53,7 @@ public class SendDedicatedShortcodeInputBuilder {
     /**
      * Callback status method, POST or GET
      */
-    public SendDedicatedShortcodeInputBuilder method(String method) {
+    public SendDedicatedShortcodeInputBuilder method(HttpActionEnum method) {
         sendDedicatedShortcodeInput.setMethod(method);
         return this;
     }

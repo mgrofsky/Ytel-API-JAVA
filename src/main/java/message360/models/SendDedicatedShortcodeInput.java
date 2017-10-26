@@ -11,12 +11,12 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SendDedicatedShortcodeInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5475024420669290460L;
+    private static final long serialVersionUID = 4756986853038625249L;
     private int shortcode;
     private double to;
     private String body;
     private String responseType = "json";
-    private String method;
+    private HttpActionEnum method;
     private String messagestatuscallback;
     /** GETTER
      * Your dedicated shortcode
@@ -86,7 +86,7 @@ public class SendDedicatedShortcodeInput
      * Callback status method, POST or GET
      */
     @JsonGetter("method")
-    public String getMethod ( ) { 
+    public HttpActionEnum getMethod ( ) { 
         return this.method;
     }
     
@@ -94,7 +94,7 @@ public class SendDedicatedShortcodeInput
      * Callback status method, POST or GET
      */
     @JsonSetter("method")
-    public void setMethod (String value) { 
+    public void setMethod (HttpActionEnum value) { 
         this.method = value;
     }
  

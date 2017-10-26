@@ -11,12 +11,12 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListKeywordInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5174593722684647513L;
-    private String responseType;
-    private String page;
-    private String pageSize;
+    private static final long serialVersionUID = 4971584487708212293L;
+    private String responseType = "json";
+    private Integer page = 1;
+    private Integer pageSize = 10;
     private String keyword;
-    private String shortcode;
+    private Integer shortcode;
     /** GETTER
      * Response type format xml or json
      */
@@ -37,7 +37,7 @@ public class ListKeywordInput
      * Which page of the overall response will be returned. Zero indexed
      */
     @JsonGetter("Page")
-    public String getPage ( ) { 
+    public Integer getPage ( ) { 
         return this.page;
     }
     
@@ -45,7 +45,7 @@ public class ListKeywordInput
      * Which page of the overall response will be returned. Zero indexed
      */
     @JsonSetter("Page")
-    public void setPage (String value) { 
+    public void setPage (Integer value) { 
         this.page = value;
     }
  
@@ -53,7 +53,7 @@ public class ListKeywordInput
      * Number of individual resources listed in the response per page
      */
     @JsonGetter("PageSize")
-    public String getPageSize ( ) { 
+    public Integer getPageSize ( ) { 
         return this.pageSize;
     }
     
@@ -61,7 +61,7 @@ public class ListKeywordInput
      * Number of individual resources listed in the response per page
      */
     @JsonSetter("PageSize")
-    public void setPageSize (String value) { 
+    public void setPageSize (Integer value) { 
         this.pageSize = value;
     }
  
@@ -82,18 +82,18 @@ public class ListKeywordInput
     }
  
     /** GETTER
-     * Only list keywords of shortcode MAKE REQUEST
+     * Only list keywords of shortcode
      */
     @JsonGetter("Shortcode")
-    public String getShortcode ( ) { 
+    public Integer getShortcode ( ) { 
         return this.shortcode;
     }
     
     /** SETTER
-     * Only list keywords of shortcode MAKE REQUEST
+     * Only list keywords of shortcode
      */
     @JsonSetter("Shortcode")
-    public void setShortcode (String value) { 
+    public void setShortcode (Integer value) { 
         this.shortcode = value;
     }
  

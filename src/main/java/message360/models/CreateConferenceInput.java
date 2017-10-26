@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateConferenceInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5292428622643951399L;
+    private static final long serialVersionUID = 5695356529414783225L;
     private String from;
     private String to;
     private String url;
@@ -19,9 +19,9 @@ public class CreateConferenceInput
     private String recordCallbackUrl;
     private String responseType = "json";
     private String statusCallBackUrl;
-    private String statusCallBackMethod;
+    private HttpActionEnum statusCallBackMethod;
     private String fallBackUrl;
-    private String fallBackMethod;
+    private HttpActionEnum fallBackMethod;
     private Boolean record;
     private HttpActionEnum recordCallbackMethod;
     private String schdeuleTime;
@@ -142,7 +142,7 @@ public class CreateConferenceInput
      * Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
      */
     @JsonGetter("StatusCallBackMethod")
-    public String getStatusCallBackMethod ( ) { 
+    public HttpActionEnum getStatusCallBackMethod ( ) { 
         return this.statusCallBackMethod;
     }
     
@@ -150,7 +150,7 @@ public class CreateConferenceInput
      * Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
      */
     @JsonSetter("StatusCallBackMethod")
-    public void setStatusCallBackMethod (String value) { 
+    public void setStatusCallBackMethod (HttpActionEnum value) { 
         this.statusCallBackMethod = value;
     }
  
@@ -174,7 +174,7 @@ public class CreateConferenceInput
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
     @JsonGetter("FallBackMethod")
-    public String getFallBackMethod ( ) { 
+    public HttpActionEnum getFallBackMethod ( ) { 
         return this.fallBackMethod;
     }
     
@@ -182,7 +182,7 @@ public class CreateConferenceInput
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
     @JsonSetter("FallBackMethod")
-    public void setFallBackMethod (String value) { 
+    public void setFallBackMethod (HttpActionEnum value) { 
         this.fallBackMethod = value;
     }
  

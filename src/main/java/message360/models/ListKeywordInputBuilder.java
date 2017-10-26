@@ -29,7 +29,7 @@ public class ListKeywordInputBuilder {
     /**
      * Which page of the overall response will be returned. Zero indexed
      */
-    public ListKeywordInputBuilder page(String page) {
+    public ListKeywordInputBuilder page(Integer page) {
         listKeywordInput.setPage(page);
         return this;
     }
@@ -37,7 +37,7 @@ public class ListKeywordInputBuilder {
     /**
      * Number of individual resources listed in the response per page
      */
-    public ListKeywordInputBuilder pageSize(String pageSize) {
+    public ListKeywordInputBuilder pageSize(Integer pageSize) {
         listKeywordInput.setPageSize(pageSize);
         return this;
     }
@@ -51,9 +51,9 @@ public class ListKeywordInputBuilder {
     }
 
     /**
-     * Only list keywords of shortcode MAKE REQUEST
+     * Only list keywords of shortcode
      */
-    public ListKeywordInputBuilder shortcode(String shortcode) {
+    public ListKeywordInputBuilder shortcode(Integer shortcode) {
         listKeywordInput.setShortcode(shortcode);
         return this;
     }
