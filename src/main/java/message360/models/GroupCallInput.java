@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class GroupCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5520176726728383240L;
+    private static final long serialVersionUID = 5481791183542012300L;
     private String from;
     private String to;
     private String url;
@@ -34,7 +34,7 @@ public class GroupCallInput
     private Boolean transcribe;
     private String transcribeCallBackUrl;
     /** GETTER
-     * TODO: Write general description for this method
+     * This number to display on Caller ID as calling
      */
     @JsonGetter("From")
     public String getFrom ( ) { 
@@ -42,7 +42,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * This number to display on Caller ID as calling
      */
     @JsonSetter("From")
     public void setFrom (String value) { 
@@ -50,7 +50,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Please enter multiple E164 number. You can add max 10 numbers. Add numbers separated with comma. e.g : 1111111111,2222222222
      */
     @JsonGetter("To")
     public String getTo ( ) { 
@@ -58,7 +58,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Please enter multiple E164 number. You can add max 10 numbers. Add numbers separated with comma. e.g : 1111111111,2222222222
      */
     @JsonSetter("To")
     public void setTo (String value) { 
@@ -66,7 +66,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * URL requested once the call connects
      */
     @JsonGetter("Url")
     public String getUrl ( ) { 
@@ -74,7 +74,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * URL requested once the call connects
      */
     @JsonSetter("Url")
     public void setUrl (String value) { 
@@ -130,7 +130,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Specifies the HTTP method used to request the required URL once call connects.
      */
     @JsonGetter("Method")
     public HttpActionEnum getMethod ( ) { 
@@ -138,7 +138,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Specifies the HTTP method used to request the required URL once call connects.
      */
     @JsonSetter("Method")
     public void setMethod (HttpActionEnum value) { 
@@ -146,7 +146,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Specifies the HTTP method used to request the required URL once call connects.
      */
     @JsonGetter("StatusCallBackUrl")
     public String getStatusCallBackUrl ( ) { 
@@ -154,7 +154,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Specifies the HTTP method used to request the required URL once call connects.
      */
     @JsonSetter("StatusCallBackUrl")
     public void setStatusCallBackUrl (String value) { 
@@ -162,7 +162,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
      */
     @JsonGetter("StatusCallBackMethod")
     public HttpActionEnum getStatusCallBackMethod ( ) { 
@@ -170,7 +170,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
      */
     @JsonSetter("StatusCallBackMethod")
     public void setStatusCallBackMethod (HttpActionEnum value) { 
@@ -178,7 +178,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * URL requested if the initial Url parameter fails or encounters an error
      */
     @JsonGetter("FallBackUrl")
     public String getFallBackUrl ( ) { 
@@ -186,7 +186,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * URL requested if the initial Url parameter fails or encounters an error
      */
     @JsonSetter("FallBackUrl")
     public void setFallBackUrl (String value) { 
@@ -194,7 +194,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
     @JsonGetter("FallBackMethod")
     public HttpActionEnum getFallBackMethod ( ) { 
@@ -202,7 +202,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
     @JsonSetter("FallBackMethod")
     public void setFallBackMethod (HttpActionEnum value) { 
@@ -210,7 +210,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * URL that can be requested every 60 seconds during the call to notify of elapsed tim
      */
     @JsonGetter("HeartBeatUrl")
     public String getHeartBeatUrl ( ) { 
@@ -218,7 +218,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * URL that can be requested every 60 seconds during the call to notify of elapsed tim
      */
     @JsonSetter("HeartBeatUrl")
     public void setHeartBeatUrl (String value) { 
@@ -226,7 +226,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Specifies the HTTP method used to request HeartbeatUrl.
      */
     @JsonGetter("HeartBeatMethod")
     public HttpActionEnum getHeartBeatMethod ( ) { 
@@ -234,7 +234,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Specifies the HTTP method used to request HeartbeatUrl.
      */
     @JsonSetter("HeartBeatMethod")
     public void setHeartBeatMethod (HttpActionEnum value) { 
@@ -242,7 +242,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Time (in seconds) Message360 should wait while the call is ringing before canceling the call
      */
     @JsonGetter("Timeout")
     public Integer getTimeout ( ) { 
@@ -250,7 +250,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Time (in seconds) Message360 should wait while the call is ringing before canceling the call
      */
     @JsonSetter("Timeout")
     public void setTimeout (Integer value) { 
@@ -258,7 +258,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * DTMF Digits to play to the call once it connects. 0-9, #, or *
      */
     @JsonGetter("PlayDtmf")
     public String getPlayDtmf ( ) { 
@@ -266,7 +266,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * DTMF Digits to play to the call once it connects. 0-9, #, or *
      */
     @JsonSetter("PlayDtmf")
     public void setPlayDtmf (String value) { 
@@ -274,7 +274,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Specifies if the caller id will be hidden
      */
     @JsonGetter("HideCallerId")
     public String getHideCallerId ( ) { 
@@ -282,7 +282,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Specifies if the caller id will be hidden
      */
     @JsonSetter("HideCallerId")
     public void setHideCallerId (String value) { 
@@ -290,7 +290,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Specifies if the call should be recorded
      */
     @JsonGetter("Record")
     public Boolean getRecord ( ) { 
@@ -298,7 +298,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Specifies if the call should be recorded
      */
     @JsonSetter("Record")
     public void setRecord (Boolean value) { 
@@ -306,7 +306,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Recording parameters will be sent here upon completion
      */
     @JsonGetter("RecordCallBackUrl")
     public String getRecordCallBackUrl ( ) { 
@@ -314,7 +314,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Recording parameters will be sent here upon completion
      */
     @JsonSetter("RecordCallBackUrl")
     public void setRecordCallBackUrl (String value) { 
@@ -322,7 +322,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Method used to request the RecordCallback URL.
      */
     @JsonGetter("RecordCallBackMethod")
     public HttpActionEnum getRecordCallBackMethod ( ) { 
@@ -330,7 +330,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Method used to request the RecordCallback URL.
      */
     @JsonSetter("RecordCallBackMethod")
     public void setRecordCallBackMethod (HttpActionEnum value) { 
@@ -338,7 +338,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Specifies if the call recording should be transcribed
      */
     @JsonGetter("Transcribe")
     public Boolean getTranscribe ( ) { 
@@ -346,7 +346,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Specifies if the call recording should be transcribed
      */
     @JsonSetter("Transcribe")
     public void setTranscribe (Boolean value) { 
@@ -354,7 +354,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * Transcription parameters will be sent here upon completion
      */
     @JsonGetter("TranscribeCallBackUrl")
     public String getTranscribeCallBackUrl ( ) { 
@@ -362,7 +362,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * Transcription parameters will be sent here upon completion
      */
     @JsonSetter("TranscribeCallBackUrl")
     public void setTranscribeCallBackUrl (String value) { 

@@ -11,11 +11,11 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListParticipantInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5048105731585303247L;
+    private static final long serialVersionUID = 5270907176931156311L;
     private String conferenceSid;
     private String responseType = "json";
-    private Integer page;
-    private Integer pagesize;
+    private Integer page = 1;
+    private Integer pagesize = 10;
     private Boolean muted;
     private Boolean deaf;
     /** GETTER

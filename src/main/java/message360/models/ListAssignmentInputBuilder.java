@@ -29,7 +29,7 @@ public class ListAssignmentInputBuilder {
     /**
      * Which page of the overall response will be returned. Zero indexed
      */
-    public ListAssignmentInputBuilder page(String page) {
+    public ListAssignmentInputBuilder page(Integer page) {
         listAssignmentInput.setPage(page);
         return this;
     }
@@ -37,7 +37,7 @@ public class ListAssignmentInputBuilder {
     /**
      * Number of individual resources listed in the response per page
      */
-    public ListAssignmentInputBuilder pageSize(String pageSize) {
+    public ListAssignmentInputBuilder pageSize(Integer pageSize) {
         listAssignmentInput.setPageSize(pageSize);
         return this;
     }

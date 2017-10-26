@@ -11,10 +11,10 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SuspendSubAccountInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4768883091354171241L;
+    private static final long serialVersionUID = 5704887288828904830L;
     private String subAccountSID;
     private ActivateStatusEnum activate = ActivateStatusEnum.DEACTIVATE;
-    private String responseType;
+    private String responseType = "json";
     /** GETTER
      * The SubaccountSid to be activated or suspended
      */

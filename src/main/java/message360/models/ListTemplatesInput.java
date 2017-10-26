@@ -11,10 +11,10 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListTemplatesInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5595173368225359061L;
+    private static final long serialVersionUID = 4889667609408396161L;
     private String responseType = "json";
     private String type = "authorization";
-    private Integer page;
+    private Integer page = 1;
     private Integer pagesize = 10;
     private String shortcode;
     /** GETTER

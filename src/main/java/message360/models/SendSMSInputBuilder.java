@@ -101,7 +101,7 @@ public class SendSMSInputBuilder {
     /**
      * Specifies the HTTP method used to request the required URL once the Short Code message is sent.
      */
-    public SendSMSInputBuilder method(String method) {
+    public SendSMSInputBuilder method(HttpActionEnum method) {
         sendSMSInput.setMethod(method);
         return this;
     }

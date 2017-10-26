@@ -43,14 +43,6 @@ public class MakeCallInputBuilder {
     }
 
     /**
-     * The unique identifier for the survey.
-     */
-    public MakeCallInputBuilder surveyId(String surveyId) {
-        makeCallInput.setSurveyId(surveyId);
-        return this;
-    }
-
-    /**
      * Response type format xml or json
      */
     public MakeCallInputBuilder responseType(String responseType) {
@@ -109,7 +101,7 @@ public class MakeCallInputBuilder {
     /**
      * Specifies the HTTP method used to request HeartbeatUrl.
      */
-    public MakeCallInputBuilder heartBeatMethod(Boolean heartBeatMethod) {
+    public MakeCallInputBuilder heartBeatMethod(HttpActionEnum heartBeatMethod) {
         makeCallInput.setHeartBeatMethod(heartBeatMethod);
         return this;
     }
@@ -207,6 +199,14 @@ public class MakeCallInputBuilder {
      */
     public MakeCallInputBuilder feedback(Boolean feedback) {
         makeCallInput.setFeedback(feedback);
+        return this;
+    }
+
+    /**
+     * The unique identifier for the survey.
+     */
+    public MakeCallInputBuilder surveyId(String surveyId) {
+        makeCallInput.setSurveyId(surveyId);
         return this;
     }
     /**

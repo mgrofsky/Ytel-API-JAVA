@@ -53,7 +53,7 @@ public class UpdateAssignmentInputBuilder {
     /**
      * Specifies the HTTP method used to request the required StatusCallBackUrl once call connects.
      */
-    public UpdateAssignmentInputBuilder callbackMethod(String callbackMethod) {
+    public UpdateAssignmentInputBuilder callbackMethod(HttpActionEnum callbackMethod) {
         updateAssignmentInput.setCallbackMethod(callbackMethod);
         return this;
     }
@@ -69,7 +69,7 @@ public class UpdateAssignmentInputBuilder {
     /**
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
-    public UpdateAssignmentInputBuilder fallbackUrlMethod(String fallbackUrlMethod) {
+    public UpdateAssignmentInputBuilder fallbackUrlMethod(HttpActionEnum fallbackUrlMethod) {
         updateAssignmentInput.setFallbackUrlMethod(fallbackUrlMethod);
         return this;
     }

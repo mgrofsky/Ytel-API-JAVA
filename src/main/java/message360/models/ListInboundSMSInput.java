@@ -11,16 +11,15 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListInboundSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5659374590515367883L;
+    private static final long serialVersionUID = 4916733249559991715L;
     private String responseType = "json";
-    private Integer page;
+    private Integer page = 1;
     private Integer pagesize = 10;
     private String from;
     private String shortcode;
     private String dateReceived;
-    private String pagesize;
     private String to;
-    private Date dateSent;
+    private String dateSent;
     /** GETTER
      * Response type format xml or json
      */
@@ -118,22 +117,6 @@ public class ListInboundSMSInput
     }
  
     /** GETTER
-     * Number of individual resources listed in the response per page
-     */
-    @JsonGetter("pagesize")
-    public String getPagesize ( ) { 
-        return this.pagesize;
-    }
-    
-    /** SETTER
-     * Number of individual resources listed in the response per page
-     */
-    @JsonSetter("pagesize")
-    public void setPagesize (String value) { 
-        this.pagesize = value;
-    }
- 
-    /** GETTER
      * To Number to get Inbound SMS
      */
     @JsonGetter("to")
@@ -153,7 +136,7 @@ public class ListInboundSMSInput
      * Filter sms message objects by this date.
      */
     @JsonGetter("DateSent")
-    public Date getDateSent ( ) { 
+    public String getDateSent ( ) { 
         return this.dateSent;
     }
     
@@ -161,7 +144,7 @@ public class ListInboundSMSInput
      * Filter sms message objects by this date.
      */
     @JsonSetter("DateSent")
-    public void setDateSent (Date value) { 
+    public void setDateSent (String value) { 
         this.dateSent = value;
     }
  

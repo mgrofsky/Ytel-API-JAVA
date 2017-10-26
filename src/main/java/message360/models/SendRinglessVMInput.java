@@ -11,15 +11,15 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SendRinglessVMInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5487691598327373771L;
+    private static final long serialVersionUID = 5056734265869406781L;
     private String from;
     private String rVMCallerId;
     private String to;
     private String voiceMailURL;
     private String responseType = "json";
-    private String method = "GET";
+    private HttpActionEnum method = HttpActionEnum.GET;
     private String statusCallBackUrl;
-    private String statsCallBackMethod;
+    private HttpActionEnum statsCallBackMethod;
     /** GETTER
      * This number to display on Caller ID as calling
      */
@@ -104,7 +104,7 @@ public class SendRinglessVMInput
      * Not currently used in this version
      */
     @JsonGetter("Method")
-    public String getMethod ( ) { 
+    public HttpActionEnum getMethod ( ) { 
         return this.method;
     }
     
@@ -112,7 +112,7 @@ public class SendRinglessVMInput
      * Not currently used in this version
      */
     @JsonSetter("Method")
-    public void setMethod (String value) { 
+    public void setMethod (HttpActionEnum value) { 
         this.method = value;
     }
  
@@ -136,7 +136,7 @@ public class SendRinglessVMInput
      * POST or GET
      */
     @JsonGetter("StatsCallBackMethod")
-    public String getStatsCallBackMethod ( ) { 
+    public HttpActionEnum getStatsCallBackMethod ( ) { 
         return this.statsCallBackMethod;
     }
     
@@ -144,7 +144,7 @@ public class SendRinglessVMInput
      * POST or GET
      */
     @JsonSetter("StatsCallBackMethod")
-    public void setStatsCallBackMethod (String value) { 
+    public void setStatsCallBackMethod (HttpActionEnum value) { 
         this.statsCallBackMethod = value;
     }
  

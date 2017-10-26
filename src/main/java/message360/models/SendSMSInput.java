@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SendSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5611046759470183302L;
+    private static final long serialVersionUID = 5296986679735556004L;
     private String from;
     private String to;
     private String body;
@@ -22,7 +22,7 @@ public class SendSMSInput
     private String shortcode;
     private UUID templateid;
     private String data;
-    private String method = "GET";
+    private HttpActionEnum method = HttpActionEnum.GET;
     private String messageStatusCallback;
     /** GETTER
      * SMS enabled Message360 number to send this message from
@@ -188,7 +188,7 @@ public class SendSMSInput
      * Specifies the HTTP method used to request the required URL once the Short Code message is sent.
      */
     @JsonGetter("Method")
-    public String getMethod ( ) { 
+    public HttpActionEnum getMethod ( ) { 
         return this.method;
     }
     
@@ -196,7 +196,7 @@ public class SendSMSInput
      * Specifies the HTTP method used to request the required URL once the Short Code message is sent.
      */
     @JsonSetter("Method")
-    public void setMethod (String value) { 
+    public void setMethod (HttpActionEnum value) { 
         this.method = value;
     }
  

@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ViewAssignementInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5127596681979469760L;
+    private static final long serialVersionUID = 5476394847531792146L;
     private String shortcode;
-    private String responseType;
+    private String responseType = "json";
     /** GETTER
      * List of valid Shortcode to your message360 account
      */
