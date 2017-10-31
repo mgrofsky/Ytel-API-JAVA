@@ -78,7 +78,7 @@ public class SharedShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5600200890037986491L;
+            private static final long serialVersionUID = 5178525981520621131L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +87,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5133701252658044463L;
+            private static final long serialVersionUID = 5434107197783663696L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -95,7 +95,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5720539194441090960L;
+            private static final long serialVersionUID = 4842426134437283755L;
             {
                     put( "templateid", input.getTemplateid() );
             }
@@ -142,8 +142,8 @@ public class SharedShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -160,14 +160,14 @@ public class SharedShortCodeController extends BaseController {
 
     /**
      * View a ShortCode Message
-     * @param    ViewSMSInput    Object containing request parameters
+     * @param    ViewSharedShortcodesInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String viewSMS(
-                final ViewSMSInput input
+    public String viewSharedShortcodes(
+                final ViewSharedShortcodesInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        viewSMSAsync(input, callback);
+        viewSharedShortcodesAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -175,11 +175,11 @@ public class SharedShortCodeController extends BaseController {
 
     /**
      * View a ShortCode Message
-     * @param    ViewSMSInput    Object containing request parameters
+     * @param    ViewSharedShortcodesInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void viewSMSAsync(
-                final ViewSMSInput input,
+    public void viewSharedShortcodesAsync(
+                final ViewSharedShortcodesInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -198,7 +198,7 @@ public class SharedShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4634867121091655864L;
+            private static final long serialVersionUID = 4683881263401270337L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -207,7 +207,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4997942736204996538L;
+            private static final long serialVersionUID = 5328554622311075783L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -215,7 +215,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5637867771136603320L;
+            private static final long serialVersionUID = 4636309477822992377L;
             {
                     put( "messagesid", input.getMessagesid() );
             }
@@ -262,8 +262,8 @@ public class SharedShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -280,14 +280,14 @@ public class SharedShortCodeController extends BaseController {
 
     /**
      * List ShortCode Messages
-     * @param    ListOutboundSMSInput    Object containing request parameters
+     * @param    ListOutboundSharedShortcodesInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String listOutboundSMS(
-                final ListOutboundSMSInput input
+    public String listOutboundSharedShortcodes(
+                final ListOutboundSharedShortcodesInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        listOutboundSMSAsync(input, callback);
+        listOutboundSharedShortcodesAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -295,11 +295,11 @@ public class SharedShortCodeController extends BaseController {
 
     /**
      * List ShortCode Messages
-     * @param    ListOutboundSMSInput    Object containing request parameters
+     * @param    ListOutboundSharedShortcodesInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void listOutboundSMSAsync(
-                final ListOutboundSMSInput input,
+    public void listOutboundSharedShortcodesAsync(
+                final ListOutboundSharedShortcodesInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -315,7 +315,7 @@ public class SharedShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5316420501192501186L;
+            private static final long serialVersionUID = 5228348580806391289L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -324,7 +324,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4946979617195854018L;
+            private static final long serialVersionUID = 5191765252060370923L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -332,7 +332,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5175142143019455162L;
+            private static final long serialVersionUID = 5374770251262113021L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -383,8 +383,8 @@ public class SharedShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -401,14 +401,14 @@ public class SharedShortCodeController extends BaseController {
 
     /**
      * List All Inbound ShortCode
-     * @param    ListInboundSMSInput    Object containing request parameters
+     * @param    ListInboundSharedShortcodesInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String listInboundSMS(
-                final ListInboundSMSInput input
+    public String listInboundSharedShortcodes(
+                final ListInboundSharedShortcodesInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        listInboundSMSAsync(input, callback);
+        listInboundSharedShortcodesAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -416,11 +416,11 @@ public class SharedShortCodeController extends BaseController {
 
     /**
      * List All Inbound ShortCode
-     * @param    ListInboundSMSInput    Object containing request parameters
+     * @param    ListInboundSharedShortcodesInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void listInboundSMSAsync(
-                final ListInboundSMSInput input,
+    public void listInboundSharedShortcodesAsync(
+                final ListInboundSharedShortcodesInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -436,14 +436,14 @@ public class SharedShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5611443103410928165L;
+            private static final long serialVersionUID = 4790416529861591263L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5541534807997019344L;
+            private static final long serialVersionUID = 5239029777618603513L;
             {
                     put( "DateReceived", input.getDateReceived() );
             }});
@@ -452,7 +452,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4652201090197166482L;
+            private static final long serialVersionUID = 5090277924491526018L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -460,7 +460,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5339797992583194827L;
+            private static final long serialVersionUID = 4873049304537649488L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -510,8 +510,8 @@ public class SharedShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -528,14 +528,14 @@ public class SharedShortCodeController extends BaseController {
 
     /**
      * Send an SMS from a message360 ShortCode
-     * @param    SendSMSInput    Object containing request parameters
+     * @param    SendSharedShortcodeInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String sendSMS(
-                final SendSMSInput input
+    public String sendSharedShortcode(
+                final SendSharedShortcodeInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        sendSMSAsync(input, callback);
+        sendSharedShortcodeAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -543,11 +543,11 @@ public class SharedShortCodeController extends BaseController {
 
     /**
      * Send an SMS from a message360 ShortCode
-     * @param    SendSMSInput    Object containing request parameters
+     * @param    SendSharedShortcodeInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void sendSMSAsync(
-                final SendSMSInput input,
+    public void sendSharedShortcodeAsync(
+                final SendSharedShortcodeInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -575,7 +575,7 @@ public class SharedShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5148385453379964386L;
+            private static final long serialVersionUID = 4907179985326879837L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -584,7 +584,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5143348310319636678L;
+            private static final long serialVersionUID = 4714769215738060174L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -592,7 +592,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4927824193665798277L;
+            private static final long serialVersionUID = 5503053204975439143L;
             {
                     put( "shortcode", input.getShortcode() );
                     put( "to", input.getTo() );
@@ -644,8 +644,8 @@ public class SharedShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -697,7 +697,7 @@ public class SharedShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5208333763163216048L;
+            private static final long serialVersionUID = 5155335872072286254L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -706,7 +706,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5172323691411503083L;
+            private static final long serialVersionUID = 4848833064452494727L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -714,7 +714,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5557566403967522982L;
+            private static final long serialVersionUID = 4695832053669039107L;
             {
                     put( "type", input.getType() );
                     put( "page", input.getPage() );
@@ -764,8 +764,8 @@ public class SharedShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -820,7 +820,7 @@ public class SharedShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4879736124991122199L;
+            private static final long serialVersionUID = 4923532272639777378L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -829,7 +829,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5695197997034946298L;
+            private static final long serialVersionUID = 5073718720823783969L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -837,7 +837,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5475355095427051155L;
+            private static final long serialVersionUID = 5173585880404477108L;
             {
                     put( "Keywordid", input.getKeywordid() );
             }
@@ -884,8 +884,8 @@ public class SharedShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -937,7 +937,7 @@ public class SharedShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5517174373559986214L;
+            private static final long serialVersionUID = 5278698093444252610L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -946,7 +946,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4716122173249754234L;
+            private static final long serialVersionUID = 5497101054479320300L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -954,7 +954,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5628466193024644520L;
+            private static final long serialVersionUID = 5171292564214139638L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -1004,8 +1004,8 @@ public class SharedShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -1060,7 +1060,7 @@ public class SharedShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5199853380180361505L;
+            private static final long serialVersionUID = 5304243951037138312L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -1069,7 +1069,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5378023189371731842L;
+            private static final long serialVersionUID = 5151189614084079209L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1077,7 +1077,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5530448104271176756L;
+            private static final long serialVersionUID = 4960224923004124174L;
             {
                     put( "Shortcode", input.getShortcode() );
             }
@@ -1124,8 +1124,8 @@ public class SharedShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -1177,14 +1177,14 @@ public class SharedShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5387988095655192425L;
+            private static final long serialVersionUID = 4882089727427461545L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4925068880713388520L;
+            private static final long serialVersionUID = 5245735405065154710L;
             {
                     put( "Shortcode", input.getShortcode() );
             }});
@@ -1193,7 +1193,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5390532051179807768L;
+            private static final long serialVersionUID = 4830851172903819569L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1201,7 +1201,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5095486959620403662L;
+            private static final long serialVersionUID = 5118951507889989263L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -1249,8 +1249,8 @@ public class SharedShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -1305,7 +1305,7 @@ public class SharedShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5518041868760199590L;
+            private static final long serialVersionUID = 5432810894613345104L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -1314,7 +1314,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4636143304416987777L;
+            private static final long serialVersionUID = 5100081221771387002L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1322,7 +1322,7 @@ public class SharedShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5430084609521230249L;
+            private static final long serialVersionUID = 5062139783015302361L;
             {
                     put( "Shortcode", input.getShortcode() );
                     put( "FriendlyName", input.getFriendlyName() );
@@ -1374,8 +1374,8 @@ public class SharedShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 

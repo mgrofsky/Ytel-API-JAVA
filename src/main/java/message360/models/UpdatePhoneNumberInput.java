@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class UpdatePhoneNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5337067254577710733L;
+    private static final long serialVersionUID = 4869879347546384742L;
     private String phoneNumber;
     private String voiceUrl;
     private String responseType = "json";

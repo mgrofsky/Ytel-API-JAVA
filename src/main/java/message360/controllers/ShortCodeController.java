@@ -8,6 +8,7 @@ package message360.controllers;
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.*;
+import org.joda.time.LocalDate;
 
 import message360.*;
 import message360.models.*;
@@ -78,7 +79,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5212379782884885110L;
+            private static final long serialVersionUID = 4620976592419738425L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +88,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5488434438408805409L;
+            private static final long serialVersionUID = 5336750453505204583L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -95,7 +96,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5333833395726307045L;
+            private static final long serialVersionUID = 5678833747051778551L;
             {
                     put( "shortcode", input.getShortcode() );
                     put( "to", input.getTo() );
@@ -146,8 +147,8 @@ public class ShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -202,7 +203,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5559078949057074008L;
+            private static final long serialVersionUID = 5078498204530370567L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -211,7 +212,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5001618728247271227L;
+            private static final long serialVersionUID = 5452555889992514385L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -219,7 +220,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5142979343815428506L;
+            private static final long serialVersionUID = 5562010020457096024L;
             {
                     put( "MessageSid", input.getMessageSid() );
             }
@@ -266,8 +267,8 @@ public class ShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -319,7 +320,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5041923574503015991L;
+            private static final long serialVersionUID = 5001169344836206276L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -328,7 +329,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5021237515150652981L;
+            private static final long serialVersionUID = 4629037143140299787L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -336,11 +337,11 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4637242891215150769L;
+            private static final long serialVersionUID = 5441848310820275468L;
             {
                     put( "Shortcode", input.getShortcode() );
                     put( "To", input.getTo() );
-                    put( "DateSent", input.getDateSent() );
+                    put( "DateSent", DateTimeHelper.toSimpleDate(input.getDateSent()) );
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
             }
@@ -387,8 +388,8 @@ public class ShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -440,7 +441,7 @@ public class ShortCodeController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4989022387084466860L;
+            private static final long serialVersionUID = 5537122055810943881L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -449,7 +450,7 @@ public class ShortCodeController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5004171614912989006L;
+            private static final long serialVersionUID = 4765399874965806972L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -457,7 +458,7 @@ public class ShortCodeController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4695710171088705407L;
+            private static final long serialVersionUID = 5204218769658598682L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -508,8 +509,8 @@ public class ShortCodeController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 

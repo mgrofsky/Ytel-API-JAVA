@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class PlayAudioInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5700543973085385613L;
+    private static final long serialVersionUID = 5670962160268888032L;
     private String callSid;
     private String audioUrl;
     private String sayText;
@@ -19,9 +19,6 @@ public class PlayAudioInput
     private Integer length;
     private DirectionEnum direction;
     private Boolean mix;
-    private String conferenceSid;
-    private String participantSid;
-    private AudioFormatEnum audioUrl;
     /** GETTER
      * The unique identifier of each call resource
      */
@@ -132,54 +129,6 @@ public class PlayAudioInput
     @JsonSetter("Mix")
     public void setMix (Boolean value) { 
         this.mix = value;
-    }
- 
-    /** GETTER
-     * The unique identifier for a conference object.
-     */
-    @JsonGetter("ConferenceSid")
-    public String getConferenceSid ( ) { 
-        return this.conferenceSid;
-    }
-    
-    /** SETTER
-     * The unique identifier for a conference object.
-     */
-    @JsonSetter("ConferenceSid")
-    public void setConferenceSid (String value) { 
-        this.conferenceSid = value;
-    }
- 
-    /** GETTER
-     * The unique identifier for a participant object.
-     */
-    @JsonGetter("ParticipantSid")
-    public String getParticipantSid ( ) { 
-        return this.participantSid;
-    }
-    
-    /** SETTER
-     * The unique identifier for a participant object.
-     */
-    @JsonSetter("ParticipantSid")
-    public void setParticipantSid (String value) { 
-        this.participantSid = value;
-    }
- 
-    /** GETTER
-     * The URL for the audio file that is to be played during the conference. Multiple audio files can be chained by using a semicolon.
-     */
-    @JsonGetter("AudioUrl")
-    public AudioFormatEnum getAudioUrl ( ) { 
-        return this.audioUrl;
-    }
-    
-    /** SETTER
-     * The URL for the audio file that is to be played during the conference. Multiple audio files can be chained by using a semicolon.
-     */
-    @JsonSetter("AudioUrl")
-    public void setAudioUrl (AudioFormatEnum value) { 
-        this.audioUrl = value;
     }
  
 }

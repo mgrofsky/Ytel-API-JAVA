@@ -9,9 +9,9 @@ import java.util.*;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
-public class ListOutboundSMSInput 
+public class ListOutboundSharedShortcodesInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5452806456302956672L;
+    private static final long serialVersionUID = 5255013716501418016L;
     private String responseType = "json";
     private Integer page = 1;
     private Integer pagesize = 10;

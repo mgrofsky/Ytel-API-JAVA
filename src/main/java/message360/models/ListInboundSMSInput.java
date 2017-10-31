@@ -11,13 +11,11 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListInboundSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4916733249559991715L;
+    private static final long serialVersionUID = 5333477712624688914L;
     private String responseType = "json";
     private Integer page = 1;
     private Integer pagesize = 10;
     private String from;
-    private String shortcode;
-    private String dateReceived;
     private String to;
     private String dateSent;
     /** GETTER
@@ -69,7 +67,7 @@ public class ListInboundSMSInput
     }
  
     /** GETTER
-     * From Number to Inbound ShortCode
+     * From Number to Inbound SMS
      */
     @JsonGetter("from")
     public String getFrom ( ) { 
@@ -77,43 +75,11 @@ public class ListInboundSMSInput
     }
     
     /** SETTER
-     * From Number to Inbound ShortCode
+     * From Number to Inbound SMS
      */
     @JsonSetter("from")
     public void setFrom (String value) { 
         this.from = value;
-    }
- 
-    /** GETTER
-     * Only list messages sent to this Short Code
-     */
-    @JsonGetter("Shortcode")
-    public String getShortcode ( ) { 
-        return this.shortcode;
-    }
-    
-    /** SETTER
-     * Only list messages sent to this Short Code
-     */
-    @JsonSetter("Shortcode")
-    public void setShortcode (String value) { 
-        this.shortcode = value;
-    }
- 
-    /** GETTER
-     * Only list messages sent with the specified date
-     */
-    @JsonGetter("DateReceived")
-    public String getDateReceived ( ) { 
-        return this.dateReceived;
-    }
-    
-    /** SETTER
-     * Only list messages sent with the specified date
-     */
-    @JsonSetter("DateReceived")
-    public void setDateReceived (String value) { 
-        this.dateReceived = value;
     }
  
     /** GETTER

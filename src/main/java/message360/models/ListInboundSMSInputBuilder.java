@@ -43,26 +43,10 @@ public class ListInboundSMSInputBuilder {
     }
 
     /**
-     * From Number to Inbound ShortCode
+     * From Number to Inbound SMS
      */
     public ListInboundSMSInputBuilder from(String from) {
         listInboundSMSInput.setFrom(from);
-        return this;
-    }
-
-    /**
-     * Only list messages sent to this Short Code
-     */
-    public ListInboundSMSInputBuilder shortcode(String shortcode) {
-        listInboundSMSInput.setShortcode(shortcode);
-        return this;
-    }
-
-    /**
-     * Only list messages sent with the specified date
-     */
-    public ListInboundSMSInputBuilder dateReceived(String dateReceived) {
-        listInboundSMSInput.setDateReceived(dateReceived);
         return this;
     }
 

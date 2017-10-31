@@ -175,14 +175,14 @@ sharedShortCode.viewTemplateAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.viewSMSAsync") viewSMSAsync
+### <a name="view_shared_shortcodes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.viewSharedShortcodesAsync") viewSharedShortcodesAsync
 
 > View a ShortCode Message
 
 
 ```java
-void viewSMSAsync(
-        final ViewSMSInput input,
+void viewSharedShortcodesAsync(
+        final ViewSharedShortcodesInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -197,7 +197,7 @@ void viewSMSAsync(
 #### Example Usage
 
 ```java
-ViewSMSInput collect = new ViewSMSInput();
+ViewSharedShortcodesInput collect = new ViewSharedShortcodesInput();
 
 String messagesid = "messagesid";
 collect.setMessagesid(messagesid);
@@ -206,7 +206,7 @@ String responseType = "json";
 collect.setResponseType(responseType);
 
 // Invoking the API call with sample inputs
-sharedShortCode.viewSMSAsync(collect, new APICallBack<String>() {
+sharedShortCode.viewSharedShortcodesAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
@@ -219,14 +219,14 @@ sharedShortCode.viewSMSAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_outbound_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.listOutboundSMSAsync") listOutboundSMSAsync
+### <a name="list_outbound_shared_shortcodes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.listOutboundSharedShortcodesAsync") listOutboundSharedShortcodesAsync
 
 > List ShortCode Messages
 
 
 ```java
-void listOutboundSMSAsync(
-        final ListOutboundSMSInput input,
+void listOutboundSharedShortcodesAsync(
+        final ListOutboundSharedShortcodesInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -245,7 +245,7 @@ void listOutboundSMSAsync(
 #### Example Usage
 
 ```java
-ListOutboundSMSInput collect = new ListOutboundSMSInput();
+ListOutboundSharedShortcodesInput collect = new ListOutboundSharedShortcodesInput();
 
 String responseType = "json";
 collect.setResponseType(responseType);
@@ -266,7 +266,7 @@ String datesent = "datesent";
 collect.setDatesent(datesent);
 
 // Invoking the API call with sample inputs
-sharedShortCode.listOutboundSMSAsync(collect, new APICallBack<String>() {
+sharedShortCode.listOutboundSharedShortcodesAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
@@ -279,14 +279,14 @@ sharedShortCode.listOutboundSMSAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_inbound_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.listInboundSMSAsync") listInboundSMSAsync
+### <a name="list_inbound_shared_shortcodes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.listInboundSharedShortcodesAsync") listInboundSharedShortcodesAsync
 
 > List All Inbound ShortCode
 
 
 ```java
-void listInboundSMSAsync(
-        final ListInboundSMSInput input,
+void listInboundSharedShortcodesAsync(
+        final ListInboundSharedShortcodesInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -305,7 +305,7 @@ void listInboundSMSAsync(
 #### Example Usage
 
 ```java
-ListInboundSMSInput collect = new ListInboundSMSInput();
+ListInboundSharedShortcodesInput collect = new ListInboundSharedShortcodesInput();
 
 String responseType = "json";
 collect.setResponseType(responseType);
@@ -326,7 +326,7 @@ String dateReceived = "DateReceived";
 collect.setDateReceived(dateReceived);
 
 // Invoking the API call with sample inputs
-sharedShortCode.listInboundSMSAsync(collect, new APICallBack<String>() {
+sharedShortCode.listInboundSharedShortcodesAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
@@ -339,14 +339,14 @@ sharedShortCode.listInboundSMSAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="send_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.sendSMSAsync") sendSMSAsync
+### <a name="send_shared_shortcode_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.sendSharedShortcodeAsync") sendSharedShortcodeAsync
 
 > Send an SMS from a message360 ShortCode
 
 
 ```java
-void sendSMSAsync(
-        final SendSMSInput input,
+void sendSharedShortcodeAsync(
+        final SendSharedShortcodeInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -366,7 +366,7 @@ void sendSMSAsync(
 #### Example Usage
 
 ```java
-SendSMSInput collect = new SendSMSInput();
+SendSharedShortcodeInput collect = new SendSharedShortcodeInput();
 
 String shortcode = "shortcode";
 collect.setShortcode(shortcode);
@@ -390,7 +390,7 @@ String messageStatusCallback = "MessageStatusCallback";
 collect.setMessageStatusCallback(messageStatusCallback);
 
 // Invoking the API call with sample inputs
-sharedShortCode.sendSMSAsync(collect, new APICallBack<String>() {
+sharedShortCode.sendSharedShortcodeAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
@@ -542,7 +542,7 @@ collect.setPageSize(pageSize);
 String keyword = "Keyword";
 collect.setKeyword(keyword);
 
-Integer shortcode = 52;
+Integer shortcode = 248;
 collect.setShortcode(shortcode);
 
 // Invoking the API call with sample inputs
@@ -767,10 +767,10 @@ collect.setParticipantSid(participantSid);
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Boolean muted = false;
+Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 // Invoking the API call with sample inputs
@@ -871,10 +871,10 @@ collect.setParticipantnumber(participantnumber);
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Boolean muted = false;
+Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 // Invoking the API call with sample inputs
@@ -1001,7 +1001,7 @@ collect.setFallBackUrl(fallBackUrl);
 HttpActionEnum fallBackMethod = HttpActionEnum.fromString("GET");
 collect.setFallBackMethod(fallBackMethod);
 
-Boolean record = false;
+Boolean record = true;
 collect.setRecord(record);
 
 HttpActionEnum recordCallbackMethod = HttpActionEnum.fromString("GET");
@@ -1010,7 +1010,7 @@ collect.setRecordCallbackMethod(recordCallbackMethod);
 String schdeuleTime = "SchdeuleTime";
 collect.setSchdeuleTime(schdeuleTime);
 
-Integer timeout = 52;
+Integer timeout = 248;
 collect.setTimeout(timeout);
 
 // Invoking the API call with sample inputs
@@ -1075,14 +1075,14 @@ conference.hangupParticipantAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="play_audio_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.playAudioAsync") playAudioAsync
+### <a name="play_conference_audio_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.playConferenceAudioAsync") playConferenceAudioAsync
 
 > Play an audio file during a conference.
 
 
 ```java
-void playAudioAsync(
-        final PlayAudioInput input,
+void playConferenceAudioAsync(
+        final PlayConferenceAudioInput input,
         final APICallBack<String> callBack)
 ```
 
@@ -1099,7 +1099,7 @@ void playAudioAsync(
 #### Example Usage
 
 ```java
-PlayAudioInput collect = new PlayAudioInput();
+PlayConferenceAudioInput collect = new PlayConferenceAudioInput();
 
 String conferenceSid = "ConferenceSid";
 collect.setConferenceSid(conferenceSid);
@@ -1114,7 +1114,7 @@ String responseType = "json";
 collect.setResponseType(responseType);
 
 // Invoking the API call with sample inputs
-conference.playAudioAsync(collect, new APICallBack<String>() {
+conference.playConferenceAudioAsync(collect, new APICallBack<String>() {
     public void onSuccess(HttpContext context, String response) {
         // TODO success callback handler
     }
@@ -1167,10 +1167,10 @@ collect.setPage(page);
 Integer pagesize = 10;
 collect.setPagesize(pagesize);
 
-Boolean muted = false;
+Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 // Invoking the API call with sample inputs
@@ -3038,7 +3038,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 HttpActionEnum heartBeatMethod = HttpActionEnum.fromString("GET");
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 10;
+Integer timeout = 248;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -3132,7 +3132,7 @@ collect.setSayText(sayText);
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer length = 10;
+Integer length = 85;
 collect.setLength(length);
 
 DirectionEnum direction = DirectionEnum.fromString("IN");
@@ -3196,7 +3196,7 @@ collect.setResponseType(responseType);
 DirectionEnum direction = DirectionEnum.fromString("IN");
 collect.setDirection(direction);
 
-Integer timeLimit = 10;
+Integer timeLimit = 85;
 collect.setTimeLimit(timeLimit);
 
 String callBackUrl = "CallBackUrl";
@@ -3258,19 +3258,19 @@ collect.setResponseType(responseType);
 AudioDirectionEnum audioDirection = AudioDirectionEnum.fromString("IN");
 collect.setAudioDirection(audioDirection);
 
-Double pitchSemiTones = 10.4706659030498;
+Double pitchSemiTones = 85.0203956035061;
 collect.setPitchSemiTones(pitchSemiTones);
 
-Double pitchOctaves = 10.4706659030498;
+Double pitchOctaves = 85.0203956035061;
 collect.setPitchOctaves(pitchOctaves);
 
-Double pitch = 10.4706659030498;
+Double pitch = 85.0203956035061;
 collect.setPitch(pitch);
 
-Double rate = 10.4706659030498;
+Double rate = 85.0203956035061;
 collect.setRate(rate);
 
-Double tempo = 10.4706659030498;
+Double tempo = 85.0203956035061;
 collect.setTempo(tempo);
 
 // Invoking the API call with sample inputs
@@ -3477,7 +3477,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 HttpActionEnum heartBeatMethod = HttpActionEnum.fromString("GET");
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 10;
+Integer timeout = 85;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -4323,10 +4323,10 @@ void sendDedicatedShortcodeAsync(
 ```java
 SendDedicatedShortcodeInput collect = new SendDedicatedShortcodeInput();
 
-int shortcode = 10;
+int shortcode = 85;
 collect.setShortcode(shortcode);
 
-double to = 10.4706659030498;
+double to = 85.0203956035061;
 collect.setTo(to);
 
 String body = "body";
@@ -4436,7 +4436,7 @@ collect.setShortcode(shortcode);
 String to = "To";
 collect.setTo(to);
 
-Date dateSent = new Date();
+LocalDate dateSent = new Date();
 collect.setDateSent(dateSent);
 
 Integer page = 1;

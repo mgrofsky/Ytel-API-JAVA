@@ -6,6 +6,7 @@
 package message360.models;
 
 import java.util.*;
+import org.joda.time.LocalDate;
 
 public class ListShortcodeInputBuilder {
     //the instance to build
@@ -45,7 +46,7 @@ public class ListShortcodeInputBuilder {
     /**
      * Only list messages sent with the specified date
      */
-    public ListShortcodeInputBuilder dateSent(Date dateSent) {
+    public ListShortcodeInputBuilder dateSent(LocalDate dateSent) {
         listShortcodeInput.setDateSent(dateSent);
         return this;
     }

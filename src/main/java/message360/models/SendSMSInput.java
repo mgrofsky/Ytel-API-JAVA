@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SendSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5296986679735556004L;
+    private static final long serialVersionUID = 5255329298002512946L;
     private String from;
     private String to;
     private String body;
@@ -19,11 +19,6 @@ public class SendSMSInput
     private HttpActionEnum method;
     private String messagestatuscallback;
     private Boolean smartsms = false;
-    private String shortcode;
-    private UUID templateid;
-    private String data;
-    private HttpActionEnum method = HttpActionEnum.GET;
-    private String messageStatusCallback;
     /** GETTER
      * SMS enabled Message360 number to send this message from
      */
@@ -134,86 +129,6 @@ public class SendSMSInput
     @JsonSetter("smartsms")
     public void setSmartsms (Boolean value) { 
         this.smartsms = value;
-    }
- 
-    /** GETTER
-     * The Short Code number that is the sender of this message
-     */
-    @JsonGetter("shortcode")
-    public String getShortcode ( ) { 
-        return this.shortcode;
-    }
-    
-    /** SETTER
-     * The Short Code number that is the sender of this message
-     */
-    @JsonSetter("shortcode")
-    public void setShortcode (String value) { 
-        this.shortcode = value;
-    }
- 
-    /** GETTER
-     * The unique identifier for the template used for the message
-     */
-    @JsonGetter("templateid")
-    public UUID getTemplateid ( ) { 
-        return this.templateid;
-    }
-    
-    /** SETTER
-     * The unique identifier for the template used for the message
-     */
-    @JsonSetter("templateid")
-    public void setTemplateid (UUID value) { 
-        this.templateid = value;
-    }
- 
-    /** GETTER
-     * format of your data, example: {companyname}:test,{otpcode}:1234
-     */
-    @JsonGetter("data")
-    public String getData ( ) { 
-        return this.data;
-    }
-    
-    /** SETTER
-     * format of your data, example: {companyname}:test,{otpcode}:1234
-     */
-    @JsonSetter("data")
-    public void setData (String value) { 
-        this.data = value;
-    }
- 
-    /** GETTER
-     * Specifies the HTTP method used to request the required URL once the Short Code message is sent.
-     */
-    @JsonGetter("Method")
-    public HttpActionEnum getMethod ( ) { 
-        return this.method;
-    }
-    
-    /** SETTER
-     * Specifies the HTTP method used to request the required URL once the Short Code message is sent.
-     */
-    @JsonSetter("Method")
-    public void setMethod (HttpActionEnum value) { 
-        this.method = value;
-    }
- 
-    /** GETTER
-     * URL that can be requested to receive notification when Short Code message was sent.
-     */
-    @JsonGetter("MessageStatusCallback")
-    public String getMessageStatusCallback ( ) { 
-        return this.messageStatusCallback;
-    }
-    
-    /** SETTER
-     * URL that can be requested to receive notification when Short Code message was sent.
-     */
-    @JsonSetter("MessageStatusCallback")
-    public void setMessageStatusCallback (String value) { 
-        this.messageStatusCallback = value;
     }
  
 }
