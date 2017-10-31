@@ -84,7 +84,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4774597404290025283L;
+            private static final long serialVersionUID = 5118133742773141964L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -93,7 +93,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5398440520571488538L;
+            private static final long serialVersionUID = 5397830060733353886L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -101,7 +101,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4727491694278479361L;
+            private static final long serialVersionUID = 5314474391575438141L;
             {
                     put( "from", input.getFrom() );
                     put( "to", input.getTo() );
@@ -153,8 +153,8 @@ public class SMSController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -209,7 +209,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4815871243565895319L;
+            private static final long serialVersionUID = 5580408714274620535L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -218,7 +218,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5195154108147277461L;
+            private static final long serialVersionUID = 4614000493280635538L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -226,7 +226,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5161092377512414180L;
+            private static final long serialVersionUID = 5584185407429670256L;
             {
                     put( "messagesid", input.getMessagesid() );
             }
@@ -273,8 +273,8 @@ public class SMSController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -326,7 +326,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5721268896795037041L;
+            private static final long serialVersionUID = 4942594851145771514L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -335,7 +335,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5379381281228350308L;
+            private static final long serialVersionUID = 5395425300929556023L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -343,7 +343,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5334046180197607610L;
+            private static final long serialVersionUID = 5713100596547272297L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -394,8 +394,8 @@ public class SMSController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -447,7 +447,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5013058996694968656L;
+            private static final long serialVersionUID = 5196404519902968221L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -456,7 +456,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4894116973445523057L;
+            private static final long serialVersionUID = 5024314170639017696L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -464,7 +464,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5264808571577593248L;
+            private static final long serialVersionUID = 5489329125659441887L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -515,8 +515,8 @@ public class SMSController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 

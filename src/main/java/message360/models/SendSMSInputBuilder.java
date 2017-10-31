@@ -73,46 +73,6 @@ public class SendSMSInputBuilder {
         sendSMSInput.setSmartsms(smartsms);
         return this;
     }
-
-    /**
-     * The Short Code number that is the sender of this message
-     */
-    public SendSMSInputBuilder shortcode(String shortcode) {
-        sendSMSInput.setShortcode(shortcode);
-        return this;
-    }
-
-    /**
-     * The unique identifier for the template used for the message
-     */
-    public SendSMSInputBuilder templateid(UUID templateid) {
-        sendSMSInput.setTemplateid(templateid);
-        return this;
-    }
-
-    /**
-     * format of your data, example: {companyname}:test,{otpcode}:1234
-     */
-    public SendSMSInputBuilder data(String data) {
-        sendSMSInput.setData(data);
-        return this;
-    }
-
-    /**
-     * Specifies the HTTP method used to request the required URL once the Short Code message is sent.
-     */
-    public SendSMSInputBuilder method(HttpActionEnum method) {
-        sendSMSInput.setMethod(method);
-        return this;
-    }
-
-    /**
-     * URL that can be requested to receive notification when Short Code message was sent.
-     */
-    public SendSMSInputBuilder messageStatusCallback(String messageStatusCallback) {
-        sendSMSInput.setMessageStatusCallback(messageStatusCallback);
-        return this;
-    }
     /**
      * Build the instance with the given values
      */

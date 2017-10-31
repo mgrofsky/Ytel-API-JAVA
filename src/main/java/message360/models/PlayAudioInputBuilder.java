@@ -73,30 +73,6 @@ public class PlayAudioInputBuilder {
         playAudioInput.setMix(mix);
         return this;
     }
-
-    /**
-     * The unique identifier for a conference object.
-     */
-    public PlayAudioInputBuilder conferenceSid(String conferenceSid) {
-        playAudioInput.setConferenceSid(conferenceSid);
-        return this;
-    }
-
-    /**
-     * The unique identifier for a participant object.
-     */
-    public PlayAudioInputBuilder participantSid(String participantSid) {
-        playAudioInput.setParticipantSid(participantSid);
-        return this;
-    }
-
-    /**
-     * The URL for the audio file that is to be played during the conference. Multiple audio files can be chained by using a semicolon.
-     */
-    public PlayAudioInputBuilder audioUrl(AudioFormatEnum audioUrl) {
-        playAudioInput.setAudioUrl(audioUrl);
-        return this;
-    }
     /**
      * Build the instance with the given values
      */

@@ -81,7 +81,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5590495204538223243L;
+            private static final long serialVersionUID = 4888039930197791487L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -90,7 +90,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4719266285154049299L;
+            private static final long serialVersionUID = 4998103315059161999L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -98,7 +98,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4695966381699199788L;
+            private static final long serialVersionUID = 5148180245377343650L;
             {
                     put( "conferenceSid", input.getConferenceSid() );
                     put( "ParticipantSid", input.getParticipantSid() );
@@ -148,8 +148,8 @@ public class ConferenceController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -207,7 +207,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5402394830092146088L;
+            private static final long serialVersionUID = 4863471954495455033L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -216,7 +216,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5744777256351752304L;
+            private static final long serialVersionUID = 5572496842360497388L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -224,7 +224,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4923218758655322180L;
+            private static final long serialVersionUID = 5421661283023124164L;
             {
                     put( "ConferenceSid", input.getConferenceSid() );
                     put( "ParticipantSid", input.getParticipantSid() );
@@ -272,8 +272,8 @@ public class ConferenceController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -331,7 +331,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4970100425190963466L;
+            private static final long serialVersionUID = 5737379653440495424L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -340,7 +340,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5330398910040002576L;
+            private static final long serialVersionUID = 5624702631402379963L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -348,7 +348,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5264274560222590059L;
+            private static final long serialVersionUID = 5056605269692109925L;
             {
                     put( "conferencesid", input.getConferencesid() );
                     put( "participantnumber", input.getParticipantnumber() );
@@ -398,8 +398,8 @@ public class ConferenceController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -454,7 +454,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4923981468950983269L;
+            private static final long serialVersionUID = 5680134719140934066L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -463,7 +463,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5368874289507845405L;
+            private static final long serialVersionUID = 5013892519543274839L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -471,7 +471,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5528128628762618654L;
+            private static final long serialVersionUID = 4964644088671069810L;
             {
                     put( "conferencesid", input.getConferencesid() );
             }
@@ -518,8 +518,8 @@ public class ConferenceController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -586,14 +586,14 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5057048923526825589L;
+            private static final long serialVersionUID = 4677001600612202129L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5268138266273859527L;
+            private static final long serialVersionUID = 5138345636387279439L;
             {
                     put( "Url", input.getUrl() );
             }});
@@ -602,7 +602,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5582665089606570514L;
+            private static final long serialVersionUID = 5302329447951498091L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -610,7 +610,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5417698119282484834L;
+            private static final long serialVersionUID = 4751453902662326520L;
             {
                     put( "From", input.getFrom() );
                     put( "To", input.getTo() );
@@ -668,8 +668,8 @@ public class ConferenceController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -727,14 +727,14 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5079330549148008536L;
+            private static final long serialVersionUID = 5419023510354243500L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5703562652684143088L;
+            private static final long serialVersionUID = 5180279971881826177L;
             {
                     put( "ParticipantSid", input.getParticipantSid() );
             }});
@@ -743,7 +743,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5385315614462440960L;
+            private static final long serialVersionUID = 5047127559244719962L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -751,7 +751,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5371808758951100856L;
+            private static final long serialVersionUID = 4635804037330777827L;
             {
                     put( "ConferenceSid", input.getConferenceSid() );
             }
@@ -798,8 +798,8 @@ public class ConferenceController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -816,14 +816,14 @@ public class ConferenceController extends BaseController {
 
     /**
      * Play an audio file during a conference.
-     * @param    PlayAudioInput    Object containing request parameters
+     * @param    PlayConferenceAudioInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
-    public String playAudio(
-                final PlayAudioInput input
+    public String playConferenceAudio(
+                final PlayConferenceAudioInput input
     ) throws Throwable {
         APICallBackCatcher<String> callback = new APICallBackCatcher<String>();
-        playAudioAsync(input, callback);
+        playConferenceAudioAsync(input, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -831,11 +831,11 @@ public class ConferenceController extends BaseController {
 
     /**
      * Play an audio file during a conference.
-     * @param    PlayAudioInput    Object containing request parameters
+     * @param    PlayConferenceAudioInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
-    public void playAudioAsync(
-                final PlayAudioInput input,
+    public void playConferenceAudioAsync(
+                final PlayConferenceAudioInput input,
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
@@ -860,7 +860,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4784821067027195496L;
+            private static final long serialVersionUID = 5241122089985239271L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -869,7 +869,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5717346763758380678L;
+            private static final long serialVersionUID = 5322534083738297463L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -877,7 +877,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5246795454782604817L;
+            private static final long serialVersionUID = 4622659205808794494L;
             {
                     put( "ConferenceSid", input.getConferenceSid() );
                     put( "ParticipantSid", input.getParticipantSid() );
@@ -926,8 +926,8 @@ public class ConferenceController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -982,7 +982,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5409128030596554000L;
+            private static final long serialVersionUID = 5156750783547071320L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -991,7 +991,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5183593179609476162L;
+            private static final long serialVersionUID = 5031381280248790256L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -999,7 +999,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5014815867833663986L;
+            private static final long serialVersionUID = 5481298104288505177L;
             {
                     put( "ConferenceSid", input.getConferenceSid() );
                     put( "Page", input.getPage() );
@@ -1050,8 +1050,8 @@ public class ConferenceController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 
@@ -1103,7 +1103,7 @@ public class ConferenceController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5536909696387681741L;
+            private static final long serialVersionUID = 5094448246934411372L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -1112,7 +1112,7 @@ public class ConferenceController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5352820797876914077L;
+            private static final long serialVersionUID = 5089785085754393012L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -1120,7 +1120,7 @@ public class ConferenceController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5490261490236763195L;
+            private static final long serialVersionUID = 5645606003085819087L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -1170,8 +1170,8 @@ public class ConferenceController extends BaseController {
                     }
                     public void onFailure(HttpContext _context, Throwable _error) {
                         //invoke the callback after response if its not null
-                        if (getHttpCallBack() != null)	
-                            {
+                        if (getHttpCallBack() != null)
+                        {
                             getHttpCallBack().OnAfterResponse(_context);
                         }
 

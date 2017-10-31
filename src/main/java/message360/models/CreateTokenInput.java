@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateTokenInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5066865135535625354L;
+    private static final long serialVersionUID = 5535968444980778410L;
     private String accountSid;
     private String authToken;
     private String username;
