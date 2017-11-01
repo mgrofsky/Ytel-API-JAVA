@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class InterruptedCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5248668133909945895L;
+    private static final long serialVersionUID = 4785611135212472706L;
     private String callSid;
     private String responseType = "json";
     private String url;
