@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ViewKeywordInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5135086745525353831L;
+    private static final long serialVersionUID = 5021609160455064427L;
     private String keywordid;
     private String responseType = "json";
     /** GETTER

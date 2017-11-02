@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListAddressInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5523348211347862309L;
+    private static final long serialVersionUID = 5046181419365889573L;
     private String responseType = "json";
     private Integer page = 1;
     private Integer pageSize = 10;
