@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class MessageModel 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5386614046839957169L;
+    private static final long serialVersionUID = 5542293033955546769L;
     private String apiVersion;
     private String messageSid;
     private String from;

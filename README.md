@@ -542,7 +542,7 @@ collect.setPageSize(pageSize);
 String keyword = "Keyword";
 collect.setKeyword(keyword);
 
-Integer shortcode = 44;
+Integer shortcode = 57;
 collect.setShortcode(shortcode);
 
 // Invoking the API call with sample inputs
@@ -1010,7 +1010,7 @@ collect.setRecordCallbackMethod(recordCallbackMethod);
 String schdeuleTime = "SchdeuleTime";
 collect.setSchdeuleTime(schdeuleTime);
 
-Integer timeout = 44;
+Integer timeout = 57;
 collect.setTimeout(timeout);
 
 // Invoking the API call with sample inputs
@@ -3038,7 +3038,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 HttpActionEnum heartBeatMethod = HttpActionEnum.fromString("GET");
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 44;
+Integer timeout = 15;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -3132,7 +3132,7 @@ collect.setSayText(sayText);
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer length = 44;
+Integer length = 15;
 collect.setLength(length);
 
 DirectionEnum direction = DirectionEnum.fromString("IN");
@@ -3196,7 +3196,7 @@ collect.setResponseType(responseType);
 DirectionEnum direction = DirectionEnum.fromString("IN");
 collect.setDirection(direction);
 
-Integer timeLimit = 44;
+Integer timeLimit = 15;
 collect.setTimeLimit(timeLimit);
 
 String callBackUrl = "CallBackUrl";
@@ -3258,19 +3258,19 @@ collect.setResponseType(responseType);
 AudioDirectionEnum audioDirection = AudioDirectionEnum.fromString("IN");
 collect.setAudioDirection(audioDirection);
 
-Double pitchSemiTones = 44.8686547739751;
+Double pitchSemiTones = 15.8378498795619;
 collect.setPitchSemiTones(pitchSemiTones);
 
-Double pitchOctaves = 44.8686547739751;
+Double pitchOctaves = 15.8378498795619;
 collect.setPitchOctaves(pitchOctaves);
 
-Double pitch = 44.8686547739751;
+Double pitch = 15.8378498795619;
 collect.setPitch(pitch);
 
-Double rate = 44.8686547739751;
+Double rate = 15.8378498795619;
 collect.setRate(rate);
 
-Double tempo = 44.8686547739751;
+Double tempo = 15.8378498795619;
 collect.setTempo(tempo);
 
 // Invoking the API call with sample inputs
@@ -3477,7 +3477,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 HttpActionEnum heartBeatMethod = HttpActionEnum.fromString("GET");
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 136;
+Integer timeout = 15;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -3486,7 +3486,7 @@ collect.setPlayDtmf(playDtmf);
 String hideCallerId = "HideCallerId";
 collect.setHideCallerId(hideCallerId);
 
-Boolean record = true;
+Boolean record = false;
 collect.setRecord(record);
 
 String recordCallBackUrl = "RecordCallBackUrl";
@@ -3495,7 +3495,7 @@ collect.setRecordCallBackUrl(recordCallBackUrl);
 HttpActionEnum recordCallBackMethod = HttpActionEnum.fromString("GET");
 collect.setRecordCallBackMethod(recordCallBackMethod);
 
-Boolean transcribe = true;
+Boolean transcribe = false;
 collect.setTranscribe(transcribe);
 
 String transcribeCallBackUrl = "TranscribeCallBackUrl";
@@ -4323,10 +4323,10 @@ void sendDedicatedShortcodeAsync(
 ```java
 SendDedicatedShortcodeInput collect = new SendDedicatedShortcodeInput();
 
-int shortcode = 136;
+int shortcode = 15;
 collect.setShortcode(shortcode);
 
-double to = 136.363936665637;
+double to = 15.8378498795619;
 collect.setTo(to);
 
 String body = "body";
