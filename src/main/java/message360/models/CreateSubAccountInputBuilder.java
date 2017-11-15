@@ -43,6 +43,22 @@ public class CreateSubAccountInputBuilder {
     }
 
     /**
+     * Descriptive name of the sub account
+     */
+    public CreateSubAccountInputBuilder friendlyName(String friendlyName) {
+        createSubAccountInput.setFriendlyName(friendlyName);
+        return this;
+    }
+
+    /**
+     * The password of the sub account.  Please make sure to make as password that is at least 8 characters long, contain a symbol, uppercase and a number.
+     */
+    public CreateSubAccountInputBuilder password(String password) {
+        createSubAccountInput.setPassword(password);
+        return this;
+    }
+
+    /**
      * Response type format xml or json
      */
     public CreateSubAccountInputBuilder responseType(String responseType) {
