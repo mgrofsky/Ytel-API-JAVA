@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateConferenceInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5061077076314480305L;
+    private static final long serialVersionUID = 4667641405029054381L;
     private String from;
     private String to;
     private String url;

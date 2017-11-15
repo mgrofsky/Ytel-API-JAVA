@@ -11,10 +11,12 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSubAccountInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5511245820508519674L;
+    private static final long serialVersionUID = 5295961440519302166L;
     private String firstName;
     private String lastName;
     private String email;
+    private String friendlyName;
+    private String password;
     private String responseType = "json";
     /** GETTER
      * Sub account user first name
@@ -62,6 +64,38 @@ public class CreateSubAccountInput
     @JsonSetter("Email")
     public void setEmail (String value) { 
         this.email = value;
+    }
+ 
+    /** GETTER
+     * Descriptive name of the sub account
+     */
+    @JsonGetter("FriendlyName")
+    public String getFriendlyName ( ) { 
+        return this.friendlyName;
+    }
+    
+    /** SETTER
+     * Descriptive name of the sub account
+     */
+    @JsonSetter("FriendlyName")
+    public void setFriendlyName (String value) { 
+        this.friendlyName = value;
+    }
+ 
+    /** GETTER
+     * The password of the sub account.  Please make sure to make as password that is at least 8 characters long, contain a symbol, uppercase and a number.
+     */
+    @JsonGetter("Password")
+    public String getPassword ( ) { 
+        return this.password;
+    }
+    
+    /** SETTER
+     * The password of the sub account.  Please make sure to make as password that is at least 8 characters long, contain a symbol, uppercase and a number.
+     */
+    @JsonSetter("Password")
+    public void setPassword (String value) { 
+        this.password = value;
     }
  
     /** GETTER

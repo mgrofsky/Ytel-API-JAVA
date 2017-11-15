@@ -542,7 +542,7 @@ collect.setPageSize(pageSize);
 String keyword = "Keyword";
 collect.setKeyword(keyword);
 
-Integer shortcode = 57;
+Integer shortcode = 207;
 collect.setShortcode(shortcode);
 
 // Invoking the API call with sample inputs
@@ -767,10 +767,10 @@ collect.setParticipantSid(participantSid);
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Boolean muted = false;
+Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 // Invoking the API call with sample inputs
@@ -871,10 +871,10 @@ collect.setParticipantnumber(participantnumber);
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Boolean muted = false;
+Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 // Invoking the API call with sample inputs
@@ -1001,7 +1001,7 @@ collect.setFallBackUrl(fallBackUrl);
 HttpActionEnum fallBackMethod = HttpActionEnum.fromString("GET");
 collect.setFallBackMethod(fallBackMethod);
 
-Boolean record = false;
+Boolean record = true;
 collect.setRecord(record);
 
 HttpActionEnum recordCallbackMethod = HttpActionEnum.fromString("GET");
@@ -1010,7 +1010,7 @@ collect.setRecordCallbackMethod(recordCallbackMethod);
 String schdeuleTime = "SchdeuleTime";
 collect.setSchdeuleTime(schdeuleTime);
 
-Integer timeout = 57;
+Integer timeout = 207;
 collect.setTimeout(timeout);
 
 // Invoking the API call with sample inputs
@@ -1167,10 +1167,10 @@ collect.setPage(page);
 Integer pagesize = 10;
 collect.setPagesize(pagesize);
 
-Boolean muted = false;
+Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 // Invoking the API call with sample inputs
@@ -3038,7 +3038,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 HttpActionEnum heartBeatMethod = HttpActionEnum.fromString("GET");
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 15;
+Integer timeout = 43;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -3132,7 +3132,7 @@ collect.setSayText(sayText);
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer length = 15;
+Integer length = 43;
 collect.setLength(length);
 
 DirectionEnum direction = DirectionEnum.fromString("IN");
@@ -3196,7 +3196,7 @@ collect.setResponseType(responseType);
 DirectionEnum direction = DirectionEnum.fromString("IN");
 collect.setDirection(direction);
 
-Integer timeLimit = 15;
+Integer timeLimit = 43;
 collect.setTimeLimit(timeLimit);
 
 String callBackUrl = "CallBackUrl";
@@ -3258,19 +3258,19 @@ collect.setResponseType(responseType);
 AudioDirectionEnum audioDirection = AudioDirectionEnum.fromString("IN");
 collect.setAudioDirection(audioDirection);
 
-Double pitchSemiTones = 15.8378498795619;
+Double pitchSemiTones = 43.6348971950984;
 collect.setPitchSemiTones(pitchSemiTones);
 
-Double pitchOctaves = 15.8378498795619;
+Double pitchOctaves = 43.6348971950984;
 collect.setPitchOctaves(pitchOctaves);
 
-Double pitch = 15.8378498795619;
+Double pitch = 43.6348971950984;
 collect.setPitch(pitch);
 
-Double rate = 15.8378498795619;
+Double rate = 43.6348971950984;
 collect.setRate(rate);
 
-Double tempo = 15.8378498795619;
+Double tempo = 43.6348971950984;
 collect.setTempo(tempo);
 
 // Invoking the API call with sample inputs
@@ -3477,7 +3477,7 @@ collect.setHeartBeatUrl(heartBeatUrl);
 HttpActionEnum heartBeatMethod = HttpActionEnum.fromString("GET");
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 15;
+Integer timeout = 43;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
@@ -4193,6 +4193,8 @@ void createSubAccountAsync(
 | firstName |  ``` Required ```  | Sub account user first name |
 | lastName |  ``` Required ```  | sub account user last name |
 | email |  ``` Required ```  | Sub account email address |
+| friendlyName |  ``` Required ```  | Descriptive name of the sub account |
+| password |  ``` Required ```  | The password of the sub account.  Please make sure to make as password that is at least 8 characters long, contain a symbol, uppercase and a number. |
 | responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
 
 
@@ -4209,6 +4211,12 @@ collect.setLastName(lastName);
 
 String email = "Email";
 collect.setEmail(email);
+
+String friendlyName = "FriendlyName";
+collect.setFriendlyName(friendlyName);
+
+String password = "Password";
+collect.setPassword(password);
 
 String responseType = "json";
 collect.setResponseType(responseType);
@@ -4323,10 +4331,10 @@ void sendDedicatedShortcodeAsync(
 ```java
 SendDedicatedShortcodeInput collect = new SendDedicatedShortcodeInput();
 
-int shortcode = 15;
+int shortcode = 43;
 collect.setShortcode(shortcode);
 
-double to = 15.8378498795619;
+double to = 43.6348971950984;
 collect.setTo(to);
 
 String body = "body";
