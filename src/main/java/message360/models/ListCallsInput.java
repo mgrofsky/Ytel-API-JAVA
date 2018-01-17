@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListCallsInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5374562877313648445L;
+    private static final long serialVersionUID = 5414299682743618246L;
     private String responseType = "json";
     private Integer page = 1;
     private Integer pageSize = 10;
@@ -35,7 +35,7 @@ public class ListCallsInput
     }
  
     /** GETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     @JsonGetter("Page")
     public Integer getPage ( ) { 
@@ -43,7 +43,7 @@ public class ListCallsInput
     }
     
     /** SETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     @JsonSetter("Page")
     public void setPage (Integer value) { 
@@ -67,7 +67,7 @@ public class ListCallsInput
     }
  
     /** GETTER
-     * Only list calls to this number
+     * Filter calls that were sent to this 10-digit number (E.164 format).
      */
     @JsonGetter("To")
     public String getTo ( ) { 
@@ -75,7 +75,7 @@ public class ListCallsInput
     }
     
     /** SETTER
-     * Only list calls to this number
+     * Filter calls that were sent to this 10-digit number (E.164 format).
      */
     @JsonSetter("To")
     public void setTo (String value) { 
@@ -83,7 +83,7 @@ public class ListCallsInput
     }
  
     /** GETTER
-     * Only list calls from this number
+     * Filter calls that were sent from this 10-digit number (E.164 format).
      */
     @JsonGetter("From")
     public String getFrom ( ) { 
@@ -91,7 +91,7 @@ public class ListCallsInput
     }
     
     /** SETTER
-     * Only list calls from this number
+     * Filter calls that were sent from this 10-digit number (E.164 format).
      */
     @JsonSetter("From")
     public void setFrom (String value) { 
@@ -99,7 +99,7 @@ public class ListCallsInput
     }
  
     /** GETTER
-     * Only list calls starting within the specified date range
+     * Return calls that are from a specified date.
      */
     @JsonGetter("DateCreated")
     public String getDateCreated ( ) { 
@@ -107,7 +107,7 @@ public class ListCallsInput
     }
     
     /** SETTER
-     * Only list calls starting within the specified date range
+     * Return calls that are from a specified date.
      */
     @JsonSetter("DateCreated")
     public void setDateCreated (String value) { 

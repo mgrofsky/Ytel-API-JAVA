@@ -11,12 +11,12 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListRecordingInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4938590989563303609L;
+    private static final long serialVersionUID = 4991731305027260412L;
     private String responseType = "json";
     private Integer page = 1;
-    private Integer pageSize = 10;
-    private String dateCreated;
-    private String callSid;
+    private Integer pagesize = 10;
+    private String datecreated;
+    private String callsid;
     /** GETTER
      * Response type format xml or json
      */
@@ -34,67 +34,67 @@ public class ListRecordingInput
     }
  
     /** GETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonGetter("Page")
+    @JsonGetter("page")
     public Integer getPage ( ) { 
         return this.page;
     }
     
     /** SETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonSetter("Page")
+    @JsonSetter("page")
     public void setPage (Integer value) { 
         this.page = value;
     }
  
     /** GETTER
-     * Number of individual resources listed in the response per page
+     * The count of objects to return per page.
      */
-    @JsonGetter("PageSize")
-    public Integer getPageSize ( ) { 
-        return this.pageSize;
+    @JsonGetter("pagesize")
+    public Integer getPagesize ( ) { 
+        return this.pagesize;
     }
     
     /** SETTER
-     * Number of individual resources listed in the response per page
+     * The count of objects to return per page.
      */
-    @JsonSetter("PageSize")
-    public void setPageSize (Integer value) { 
-        this.pageSize = value;
+    @JsonSetter("pagesize")
+    public void setPagesize (Integer value) { 
+        this.pagesize = value;
     }
  
     /** GETTER
-     * Recording date
+     * Filter results by creation date
      */
-    @JsonGetter("DateCreated")
-    public String getDateCreated ( ) { 
-        return this.dateCreated;
+    @JsonGetter("Datecreated")
+    public String getDatecreated ( ) { 
+        return this.datecreated;
     }
     
     /** SETTER
-     * Recording date
+     * Filter results by creation date
      */
-    @JsonSetter("DateCreated")
-    public void setDateCreated (String value) { 
-        this.dateCreated = value;
+    @JsonSetter("Datecreated")
+    public void setDatecreated (String value) { 
+        this.datecreated = value;
     }
  
     /** GETTER
-     * Call ID
+     * The unique identifier for a call.
      */
-    @JsonGetter("CallSid")
-    public String getCallSid ( ) { 
-        return this.callSid;
+    @JsonGetter("callsid")
+    public String getCallsid ( ) { 
+        return this.callsid;
     }
     
     /** SETTER
-     * Call ID
+     * The unique identifier for a call.
      */
-    @JsonSetter("CallSid")
-    public void setCallSid (String value) { 
-        this.callSid = value;
+    @JsonSetter("callsid")
+    public void setCallsid (String value) { 
+        this.callsid = value;
     }
  
 }

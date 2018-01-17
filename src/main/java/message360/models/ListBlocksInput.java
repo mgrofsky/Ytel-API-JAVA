@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListBlocksInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5085104843239269134L;
+    private static final long serialVersionUID = 5390260741260207171L;
     private String responseType = "json";
     private String offset;
     private String limit;
@@ -32,33 +32,33 @@ public class ListBlocksInput
     }
  
     /** GETTER
-     * Where to start in the output list
+     * The starting point of the list of blocked emails that should be returned.
      */
-    @JsonGetter("offset")
+    @JsonGetter("Offset")
     public String getOffset ( ) { 
         return this.offset;
     }
     
     /** SETTER
-     * Where to start in the output list
+     * The starting point of the list of blocked emails that should be returned.
      */
-    @JsonSetter("offset")
+    @JsonSetter("Offset")
     public void setOffset (String value) { 
         this.offset = value;
     }
  
     /** GETTER
-     * Maximum number of records to return
+     * The count of results that should be returned.
      */
-    @JsonGetter("limit")
+    @JsonGetter("Limit")
     public String getLimit ( ) { 
         return this.limit;
     }
     
     /** SETTER
-     * Maximum number of records to return
+     * The count of results that should be returned.
      */
-    @JsonSetter("limit")
+    @JsonSetter("Limit")
     public void setLimit (String value) { 
         this.limit = value;
     }

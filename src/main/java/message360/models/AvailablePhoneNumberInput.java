@@ -11,41 +11,41 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class AvailablePhoneNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5558461551459554455L;
-    private NumberTypeEnum numberType;
-    private String areaCode;
+    private static final long serialVersionUID = 4850551486285084863L;
+    private NumberTypeEnum numbertype;
+    private String areacode;
     private String responseType = "json";
-    private Integer pageSize = 10;
+    private Integer pagesize = 10;
     /** GETTER
      * Number type either SMS,Voice or all
      */
-    @JsonGetter("NumberType")
-    public NumberTypeEnum getNumberType ( ) { 
-        return this.numberType;
+    @JsonGetter("numbertype")
+    public NumberTypeEnum getNumbertype ( ) { 
+        return this.numbertype;
     }
     
     /** SETTER
      * Number type either SMS,Voice or all
      */
-    @JsonSetter("NumberType")
-    public void setNumberType (NumberTypeEnum value) { 
-        this.numberType = value;
+    @JsonSetter("numbertype")
+    public void setNumbertype (NumberTypeEnum value) { 
+        this.numbertype = value;
     }
  
     /** GETTER
-     * Phone Number Area Code
+     * Specifies the area code for the returned list of available numbers. Only available for North American numbers.
      */
-    @JsonGetter("AreaCode")
-    public String getAreaCode ( ) { 
-        return this.areaCode;
+    @JsonGetter("areacode")
+    public String getAreacode ( ) { 
+        return this.areacode;
     }
     
     /** SETTER
-     * Phone Number Area Code
+     * Specifies the area code for the returned list of available numbers. Only available for North American numbers.
      */
-    @JsonSetter("AreaCode")
-    public void setAreaCode (String value) { 
-        this.areaCode = value;
+    @JsonSetter("areacode")
+    public void setAreacode (String value) { 
+        this.areacode = value;
     }
  
     /** GETTER
@@ -65,19 +65,19 @@ public class AvailablePhoneNumberInput
     }
  
     /** GETTER
-     * Page Size
+     * The count of objects to return.
      */
-    @JsonGetter("PageSize")
-    public Integer getPageSize ( ) { 
-        return this.pageSize;
+    @JsonGetter("pagesize")
+    public Integer getPagesize ( ) { 
+        return this.pagesize;
     }
     
     /** SETTER
-     * Page Size
+     * The count of objects to return.
      */
-    @JsonSetter("PageSize")
-    public void setPageSize (Integer value) { 
-        this.pageSize = value;
+    @JsonSetter("pagesize")
+    public void setPagesize (Integer value) { 
+        this.pagesize = value;
     }
  
 }

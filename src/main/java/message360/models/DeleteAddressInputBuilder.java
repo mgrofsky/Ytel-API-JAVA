@@ -21,8 +21,8 @@ public class DeleteAddressInputBuilder {
     /**
      * The identifier of the address to be deleted.
      */
-    public DeleteAddressInputBuilder addressSID(String addressSID) {
-        deleteAddressInput.setAddressSID(addressSID);
+    public DeleteAddressInputBuilder addressid(String addressid) {
+        deleteAddressInput.setAddressid(addressid);
         return this;
     }
 

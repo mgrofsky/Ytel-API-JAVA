@@ -11,11 +11,11 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ViewCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5464723584788218275L;
+    private static final long serialVersionUID = 4688306045617882423L;
     private String callsid;
     private String responseType = "json";
     /** GETTER
-     * Call Sid id for particular Call
+     * The unique identifier for the voice call.
      */
     @JsonGetter("callsid")
     public String getCallsid ( ) { 
@@ -23,7 +23,7 @@ public class ViewCallInput
     }
     
     /** SETTER
-     * Call Sid id for particular Call
+     * The unique identifier for the voice call.
      */
     @JsonSetter("callsid")
     public void setCallsid (String value) { 

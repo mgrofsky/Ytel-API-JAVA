@@ -11,13 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListInboundSharedShortcodesInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5758308514914946194L;
+    private static final long serialVersionUID = 5380595819665333203L;
     private String responseType = "json";
     private Integer page = 1;
     private Integer pagesize = 10;
     private String from;
     private String shortcode;
-    private String dateReceived;
+    private String datecreated;
     /** GETTER
      * Response type format xml or json
      */
@@ -35,7 +35,7 @@ public class ListInboundSharedShortcodesInput
     }
  
     /** GETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     @JsonGetter("page")
     public Integer getPage ( ) { 
@@ -43,7 +43,7 @@ public class ListInboundSharedShortcodesInput
     }
     
     /** SETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     @JsonSetter("page")
     public void setPage (Integer value) { 
@@ -101,17 +101,17 @@ public class ListInboundSharedShortcodesInput
     /** GETTER
      * Only list messages sent with the specified date
      */
-    @JsonGetter("DateReceived")
-    public String getDateReceived ( ) { 
-        return this.dateReceived;
+    @JsonGetter("Datecreated")
+    public String getDatecreated ( ) { 
+        return this.datecreated;
     }
     
     /** SETTER
      * Only list messages sent with the specified date
      */
-    @JsonSetter("DateReceived")
-    public void setDateReceived (String value) { 
-        this.dateReceived = value;
+    @JsonSetter("Datecreated")
+    public void setDatecreated (String value) { 
+        this.datecreated = value;
     }
  
 }

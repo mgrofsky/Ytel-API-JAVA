@@ -11,10 +11,10 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListTranscriptionInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5110922664536713352L;
+    private static final long serialVersionUID = 4779501006767400288L;
     private String responseType = "json";
     private Integer page = 1;
-    private Integer pageSize = 10;
+    private Integer pagesize = 10;
     private StatusEnum status;
     private String dateTranscribed;
     /** GETTER
@@ -34,65 +34,65 @@ public class ListTranscriptionInput
     }
  
     /** GETTER
-     * page number
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonGetter("Page")
+    @JsonGetter("page")
     public Integer getPage ( ) { 
         return this.page;
     }
     
     /** SETTER
-     * page number
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonSetter("Page")
+    @JsonSetter("page")
     public void setPage (Integer value) { 
         this.page = value;
     }
  
     /** GETTER
-     * Amount of data per page
+     * The count of objects to return per page.
      */
-    @JsonGetter("PageSize")
-    public Integer getPageSize ( ) { 
-        return this.pageSize;
+    @JsonGetter("pagesize")
+    public Integer getPagesize ( ) { 
+        return this.pagesize;
     }
     
     /** SETTER
-     * Amount of data per page
+     * The count of objects to return per page.
      */
-    @JsonSetter("PageSize")
-    public void setPageSize (Integer value) { 
-        this.pageSize = value;
+    @JsonSetter("pagesize")
+    public void setPagesize (Integer value) { 
+        this.pagesize = value;
     }
  
     /** GETTER
-     * Transcription status
+     * The state of the transcription.
      */
-    @JsonGetter("Status")
+    @JsonGetter("status")
     public StatusEnum getStatus ( ) { 
         return this.status;
     }
     
     /** SETTER
-     * Transcription status
+     * The state of the transcription.
      */
-    @JsonSetter("Status")
+    @JsonSetter("status")
     public void setStatus (StatusEnum value) { 
         this.status = value;
     }
  
     /** GETTER
-     * Transcription date
+     * The date the transcription took place.
      */
-    @JsonGetter("DateTranscribed")
+    @JsonGetter("dateTranscribed")
     public String getDateTranscribed ( ) { 
         return this.dateTranscribed;
     }
     
     /** SETTER
-     * Transcription date
+     * The date the transcription took place.
      */
-    @JsonSetter("DateTranscribed")
+    @JsonSetter("dateTranscribed")
     public void setDateTranscribed (String value) { 
         this.dateTranscribed = value;
     }

@@ -21,8 +21,8 @@ public class ViewTemplateInputBuilder {
     /**
      * The unique identifier for a template object
      */
-    public ViewTemplateInputBuilder templateid(UUID templateid) {
-        viewTemplateInput.setTemplateid(templateid);
+    public ViewTemplateInputBuilder templateId(UUID templateId) {
+        viewTemplateInput.setTemplateId(templateId);
         return this;
     }
 

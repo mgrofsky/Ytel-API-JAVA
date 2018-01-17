@@ -19,7 +19,7 @@ public class ViewNumberDetailsInputBuilder {
     }
 
     /**
-     * Get Phone number Detail
+     * A valid message360 10-digit phone number (E.164 format).
      */
     public ViewNumberDetailsInputBuilder phoneNumber(String phoneNumber) {
         viewNumberDetailsInput.setPhoneNumber(phoneNumber);

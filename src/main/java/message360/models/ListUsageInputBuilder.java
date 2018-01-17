@@ -27,7 +27,7 @@ public class ListUsageInputBuilder {
     }
 
     /**
-     * Product Code
+     * Filter usage results by product type.
      */
     public ListUsageInputBuilder productCode(ProductCodeEnum productCode) {
         listUsageInput.setProductCode(productCode);
@@ -35,7 +35,7 @@ public class ListUsageInputBuilder {
     }
 
     /**
-     * Start Usage Date
+     * Filter usage objects by start date.
      */
     public ListUsageInputBuilder startDate(String startDate) {
         listUsageInput.setStartDate(startDate);
@@ -43,10 +43,18 @@ public class ListUsageInputBuilder {
     }
 
     /**
-     * End Usage Date
+     * Filter usage objects by end date.
      */
     public ListUsageInputBuilder endDate(String endDate) {
         listUsageInput.setEndDate(endDate);
+        return this;
+    }
+
+    /**
+     * Will include all subaccount usage data
+     */
+    public ListUsageInputBuilder includeSubAccounts(String includeSubAccounts) {
+        listUsageInput.setIncludeSubAccounts(includeSubAccounts);
         return this;
     }
     /**

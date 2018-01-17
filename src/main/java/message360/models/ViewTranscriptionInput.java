@@ -11,23 +11,23 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ViewTranscriptionInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5010107253346901296L;
-    private String transcriptionSid;
+    private static final long serialVersionUID = 4876448470222612561L;
+    private String transcriptionsid;
     private String responseType = "json";
     /** GETTER
-     * Unique Transcription ID
+     * The unique identifier for a transcription object.
      */
-    @JsonGetter("TranscriptionSid")
-    public String getTranscriptionSid ( ) { 
-        return this.transcriptionSid;
+    @JsonGetter("transcriptionsid")
+    public String getTranscriptionsid ( ) { 
+        return this.transcriptionsid;
     }
     
     /** SETTER
-     * Unique Transcription ID
+     * The unique identifier for a transcription object.
      */
-    @JsonSetter("TranscriptionSid")
-    public void setTranscriptionSid (String value) { 
-        this.transcriptionSid = value;
+    @JsonSetter("transcriptionsid")
+    public void setTranscriptionsid (String value) { 
+        this.transcriptionsid = value;
     }
  
     /** GETTER

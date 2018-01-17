@@ -11,27 +11,27 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class DeleteInvalidInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5463380032530130947L;
+    private static final long serialVersionUID = 5066783501518965623L;
     private String email;
     private String responseType = "json";
     /** GETTER
-     * Email that was marked invalid
+     * A valid email address that is to be remove from the invalid email list.
      */
-    @JsonGetter("email")
+    @JsonGetter("Email")
     public String getEmail ( ) { 
         return this.email;
     }
     
     /** SETTER
-     * Email that was marked invalid
+     * A valid email address that is to be remove from the invalid email list.
      */
-    @JsonSetter("email")
+    @JsonSetter("Email")
     public void setEmail (String value) { 
         this.email = value;
     }
  
     /** GETTER
-     * Json or xml
+     * Response Type either json or xml
      */
     @JsonGetter("ResponseType")
     public String getResponseType ( ) { 
@@ -39,7 +39,7 @@ public class DeleteInvalidInput
     }
     
     /** SETTER
-     * Json or xml
+     * Response Type either json or xml
      */
     @JsonSetter("ResponseType")
     public void setResponseType (String value) { 

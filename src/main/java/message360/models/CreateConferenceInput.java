@@ -11,23 +11,23 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateConferenceInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4667641405029054381L;
+    private static final long serialVersionUID = 5401339822802354833L;
     private String from;
     private String to;
     private String url;
-    private HttpActionEnum method = HttpActionEnum.POST;
-    private String recordCallbackUrl;
     private String responseType = "json";
+    private HttpActionEnum method = HttpActionEnum.POST;
     private String statusCallBackUrl;
     private HttpActionEnum statusCallBackMethod;
-    private String fallBackUrl;
-    private HttpActionEnum fallBackMethod;
+    private String fallbackUrl;
+    private HttpActionEnum fallbackMethod;
     private Boolean record;
-    private HttpActionEnum recordCallbackMethod;
-    private String schdeuleTime;
+    private String recordCallBackUrl;
+    private HttpActionEnum recordCallBackMethod;
+    private String scheduleTime;
     private Integer timeout;
     /** GETTER
-     * This number to display on Caller ID as calling
+     * A valid 10-digit number (E.164 format) that will be initiating the conference call.
      */
     @JsonGetter("From")
     public String getFrom ( ) { 
@@ -35,7 +35,7 @@ public class CreateConferenceInput
     }
     
     /** SETTER
-     * This number to display on Caller ID as calling
+     * A valid 10-digit number (E.164 format) that will be initiating the conference call.
      */
     @JsonSetter("From")
     public void setFrom (String value) { 
@@ -43,7 +43,7 @@ public class CreateConferenceInput
     }
  
     /** GETTER
-     * To number
+     * A valid 10-digit number (E.164 format) that is to receive the conference call.
      */
     @JsonGetter("To")
     public String getTo ( ) { 
@@ -51,7 +51,7 @@ public class CreateConferenceInput
     }
     
     /** SETTER
-     * To number
+     * A valid 10-digit number (E.164 format) that is to receive the conference call.
      */
     @JsonSetter("To")
     public void setTo (String value) { 
@@ -59,7 +59,7 @@ public class CreateConferenceInput
     }
  
     /** GETTER
-     * URL requested once the call connects
+     * URL requested once the conference connects
      */
     @JsonGetter("Url")
     public String getUrl ( ) { 
@@ -67,43 +67,11 @@ public class CreateConferenceInput
     }
     
     /** SETTER
-     * URL requested once the call connects
+     * URL requested once the conference connects
      */
     @JsonSetter("Url")
     public void setUrl (String value) { 
         this.url = value;
-    }
- 
-    /** GETTER
-     * Specifies the HTTP method used to request the required URL once call connects.
-     */
-    @JsonGetter("Method")
-    public HttpActionEnum getMethod ( ) { 
-        return this.method;
-    }
-    
-    /** SETTER
-     * Specifies the HTTP method used to request the required URL once call connects.
-     */
-    @JsonSetter("Method")
-    public void setMethod (HttpActionEnum value) { 
-        this.method = value;
-    }
- 
-    /** GETTER
-     * Recording parameters will be sent here upon completion.
-     */
-    @JsonGetter("RecordCallbackUrl")
-    public String getRecordCallbackUrl ( ) { 
-        return this.recordCallbackUrl;
-    }
-    
-    /** SETTER
-     * Recording parameters will be sent here upon completion.
-     */
-    @JsonSetter("RecordCallbackUrl")
-    public void setRecordCallbackUrl (String value) { 
-        this.recordCallbackUrl = value;
     }
  
     /** GETTER
@@ -120,6 +88,22 @@ public class CreateConferenceInput
     @JsonSetter("ResponseType")
     public void setResponseType (String value) { 
         this.responseType = value;
+    }
+ 
+    /** GETTER
+     * Specifies the HTTP method used to request the required URL once call connects.
+     */
+    @JsonGetter("Method")
+    public HttpActionEnum getMethod ( ) { 
+        return this.method;
+    }
+    
+    /** SETTER
+     * Specifies the HTTP method used to request the required URL once call connects.
+     */
+    @JsonSetter("Method")
+    public void setMethod (HttpActionEnum value) { 
+        this.method = value;
     }
  
     /** GETTER
@@ -157,33 +141,33 @@ public class CreateConferenceInput
     /** GETTER
      * URL requested if the initial Url parameter fails or encounters an error
      */
-    @JsonGetter("FallBackUrl")
-    public String getFallBackUrl ( ) { 
-        return this.fallBackUrl;
+    @JsonGetter("FallbackUrl")
+    public String getFallbackUrl ( ) { 
+        return this.fallbackUrl;
     }
     
     /** SETTER
      * URL requested if the initial Url parameter fails or encounters an error
      */
-    @JsonSetter("FallBackUrl")
-    public void setFallBackUrl (String value) { 
-        this.fallBackUrl = value;
+    @JsonSetter("FallbackUrl")
+    public void setFallbackUrl (String value) { 
+        this.fallbackUrl = value;
     }
  
     /** GETTER
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
-    @JsonGetter("FallBackMethod")
-    public HttpActionEnum getFallBackMethod ( ) { 
-        return this.fallBackMethod;
+    @JsonGetter("FallbackMethod")
+    public HttpActionEnum getFallbackMethod ( ) { 
+        return this.fallbackMethod;
     }
     
     /** SETTER
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
-    @JsonSetter("FallBackMethod")
-    public void setFallBackMethod (HttpActionEnum value) { 
-        this.fallBackMethod = value;
+    @JsonSetter("FallbackMethod")
+    public void setFallbackMethod (HttpActionEnum value) { 
+        this.fallbackMethod = value;
     }
  
     /** GETTER
@@ -203,35 +187,51 @@ public class CreateConferenceInput
     }
  
     /** GETTER
+     * Recording parameters will be sent here upon completion.
+     */
+    @JsonGetter("RecordCallBackUrl")
+    public String getRecordCallBackUrl ( ) { 
+        return this.recordCallBackUrl;
+    }
+    
+    /** SETTER
+     * Recording parameters will be sent here upon completion.
+     */
+    @JsonSetter("RecordCallBackUrl")
+    public void setRecordCallBackUrl (String value) { 
+        this.recordCallBackUrl = value;
+    }
+ 
+    /** GETTER
      * Specifies the HTTP method used to request the required URL once conference connects.
      */
-    @JsonGetter("RecordCallbackMethod")
-    public HttpActionEnum getRecordCallbackMethod ( ) { 
-        return this.recordCallbackMethod;
+    @JsonGetter("RecordCallBackMethod")
+    public HttpActionEnum getRecordCallBackMethod ( ) { 
+        return this.recordCallBackMethod;
     }
     
     /** SETTER
      * Specifies the HTTP method used to request the required URL once conference connects.
      */
-    @JsonSetter("RecordCallbackMethod")
-    public void setRecordCallbackMethod (HttpActionEnum value) { 
-        this.recordCallbackMethod = value;
+    @JsonSetter("RecordCallBackMethod")
+    public void setRecordCallBackMethod (HttpActionEnum value) { 
+        this.recordCallBackMethod = value;
     }
  
     /** GETTER
      * Schedule conference in future. Schedule time must be greater than current time
      */
-    @JsonGetter("SchdeuleTime")
-    public String getSchdeuleTime ( ) { 
-        return this.schdeuleTime;
+    @JsonGetter("ScheduleTime")
+    public String getScheduleTime ( ) { 
+        return this.scheduleTime;
     }
     
     /** SETTER
      * Schedule conference in future. Schedule time must be greater than current time
      */
-    @JsonSetter("SchdeuleTime")
-    public void setSchdeuleTime (String value) { 
-        this.schdeuleTime = value;
+    @JsonSetter("ScheduleTime")
+    public void setScheduleTime (String value) { 
+        this.scheduleTime = value;
     }
  
     /** GETTER

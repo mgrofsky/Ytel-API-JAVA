@@ -21,8 +21,8 @@ public class ViewConferenceInputBuilder {
     /**
      * The unique identifier of each conference resource
      */
-    public ViewConferenceInputBuilder conferencesid(String conferencesid) {
-        viewConferenceInput.setConferencesid(conferencesid);
+    public ViewConferenceInputBuilder conferenceSid(String conferenceSid) {
+        viewConferenceInput.setConferenceSid(conferenceSid);
         return this;
     }
 

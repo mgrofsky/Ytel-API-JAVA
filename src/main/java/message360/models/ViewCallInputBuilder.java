@@ -19,7 +19,7 @@ public class ViewCallInputBuilder {
     }
 
     /**
-     * Call Sid id for particular Call
+     * The unique identifier for the voice call.
      */
     public ViewCallInputBuilder callsid(String callsid) {
         viewCallInput.setCallsid(callsid);

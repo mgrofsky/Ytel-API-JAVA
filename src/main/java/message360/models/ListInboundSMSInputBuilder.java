@@ -27,7 +27,7 @@ public class ListInboundSMSInputBuilder {
     }
 
     /**
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListInboundSMSInputBuilder page(Integer page) {
         listInboundSMSInput.setPage(page);
@@ -35,15 +35,15 @@ public class ListInboundSMSInputBuilder {
     }
 
     /**
-     * Number of individual resources listed in the response per page
+     * The count of objects to return per page.
      */
-    public ListInboundSMSInputBuilder pagesize(Integer pagesize) {
-        listInboundSMSInput.setPagesize(pagesize);
+    public ListInboundSMSInputBuilder pageSize(Integer pageSize) {
+        listInboundSMSInput.setPageSize(pageSize);
         return this;
     }
 
     /**
-     * From Number to Inbound SMS
+     * Filter SMS message objects from this valid 10-digit phone number (E.164 format).
      */
     public ListInboundSMSInputBuilder from(String from) {
         listInboundSMSInput.setFrom(from);
@@ -51,7 +51,7 @@ public class ListInboundSMSInputBuilder {
     }
 
     /**
-     * To Number to get Inbound SMS
+     * Filter SMS message objects to this valid 10-digit phone number (E.164 format).
      */
     public ListInboundSMSInputBuilder to(String to) {
         listInboundSMSInput.setTo(to);

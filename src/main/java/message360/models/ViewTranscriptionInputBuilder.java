@@ -19,10 +19,10 @@ public class ViewTranscriptionInputBuilder {
     }
 
     /**
-     * Unique Transcription ID
+     * The unique identifier for a transcription object.
      */
-    public ViewTranscriptionInputBuilder transcriptionSid(String transcriptionSid) {
-        viewTranscriptionInput.setTranscriptionSid(transcriptionSid);
+    public ViewTranscriptionInputBuilder transcriptionsid(String transcriptionsid) {
+        viewTranscriptionInput.setTranscriptionsid(transcriptionsid);
         return this;
     }
 

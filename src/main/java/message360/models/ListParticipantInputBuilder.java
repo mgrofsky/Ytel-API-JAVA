@@ -19,7 +19,7 @@ public class ListParticipantInputBuilder {
     }
 
     /**
-     * unique conference sid
+     * The unique identifier for a conference.
      */
     public ListParticipantInputBuilder conferenceSid(String conferenceSid) {
         listParticipantInput.setConferenceSid(conferenceSid);
@@ -35,7 +35,7 @@ public class ListParticipantInputBuilder {
     }
 
     /**
-     * page number
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListParticipantInputBuilder page(Integer page) {
         listParticipantInput.setPage(page);
@@ -43,7 +43,7 @@ public class ListParticipantInputBuilder {
     }
 
     /**
-     * Amount of records to return per page
+     * The count of objects to return per page.
      */
     public ListParticipantInputBuilder pagesize(Integer pagesize) {
         listParticipantInput.setPagesize(pagesize);
@@ -51,7 +51,7 @@ public class ListParticipantInputBuilder {
     }
 
     /**
-     * Participants that are muted
+     * Specifies if participant should be muted.
      */
     public ListParticipantInputBuilder muted(Boolean muted) {
         listParticipantInput.setMuted(muted);
@@ -59,7 +59,7 @@ public class ListParticipantInputBuilder {
     }
 
     /**
-     * Participants cant hear
+     * Specifies if the participant should hear audio in the conference.
      */
     public ListParticipantInputBuilder deaf(Boolean deaf) {
         listParticipantInput.setDeaf(deaf);

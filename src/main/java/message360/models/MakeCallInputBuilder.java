@@ -19,7 +19,7 @@ public class MakeCallInputBuilder {
     }
 
     /**
-     * This number to display on Caller ID as calling
+     * A valid message360 Voice enabled number (E.164 format) that will be initiating the phone call.
      */
     public MakeCallInputBuilder from(String from) {
         makeCallInput.setFrom(from);
@@ -59,7 +59,7 @@ public class MakeCallInputBuilder {
     }
 
     /**
-     * specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
+     * URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished.
      */
     public MakeCallInputBuilder statusCallBackUrl(String statusCallBackUrl) {
         makeCallInput.setStatusCallBackUrl(statusCallBackUrl);

@@ -19,7 +19,7 @@ public class ReleaseNumberInputBuilder {
     }
 
     /**
-     * Phone number to be relase
+     * A valid 10-digit message360 number (E.164 format).
      */
     public ReleaseNumberInputBuilder phoneNumber(String phoneNumber) {
         releaseNumberInput.setPhoneNumber(phoneNumber);

@@ -21,8 +21,8 @@ public class ViewAddressInputBuilder {
     /**
      * The identifier of the address to be retrieved.
      */
-    public ViewAddressInputBuilder addressSID(String addressSID) {
-        viewAddressInput.setAddressSID(addressSID);
+    public ViewAddressInputBuilder addressid(String addressid) {
+        viewAddressInput.setAddressid(addressid);
         return this;
     }
 

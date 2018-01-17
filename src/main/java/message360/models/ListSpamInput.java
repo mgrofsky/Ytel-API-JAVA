@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListSpamInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4955427196740644148L;
+    private static final long serialVersionUID = 5587357709749831812L;
     private String responseType = "json";
     private String offset;
     private String limit;
@@ -32,33 +32,33 @@ public class ListSpamInput
     }
  
     /** GETTER
-     * The record number to start the list at
+     * The starting point of the list of spam emails that should be returned.
      */
-    @JsonGetter("offset")
+    @JsonGetter("Offset")
     public String getOffset ( ) { 
         return this.offset;
     }
     
     /** SETTER
-     * The record number to start the list at
+     * The starting point of the list of spam emails that should be returned.
      */
-    @JsonSetter("offset")
+    @JsonSetter("Offset")
     public void setOffset (String value) { 
         this.offset = value;
     }
  
     /** GETTER
-     * Maximum number of records to return
+     * The count of results that should be returned.
      */
-    @JsonGetter("limit")
+    @JsonGetter("Limit")
     public String getLimit ( ) { 
         return this.limit;
     }
     
     /** SETTER
-     * Maximum number of records to return
+     * The count of results that should be returned.
      */
-    @JsonSetter("limit")
+    @JsonSetter("Limit")
     public void setLimit (String value) { 
         this.limit = value;
     }

@@ -11,23 +11,23 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class AudioURLTranscriptionInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5033472041698161022L;
-    private String audioUrl;
+    private static final long serialVersionUID = 4739752545628708430L;
+    private String audiourl;
     private String responseType = "json";
     /** GETTER
-     * Audio url
+     * URL pointing to the location of the audio file that is to be transcribed.
      */
-    @JsonGetter("AudioUrl")
-    public String getAudioUrl ( ) { 
-        return this.audioUrl;
+    @JsonGetter("audiourl")
+    public String getAudiourl ( ) { 
+        return this.audiourl;
     }
     
     /** SETTER
-     * Audio url
+     * URL pointing to the location of the audio file that is to be transcribed.
      */
-    @JsonSetter("AudioUrl")
-    public void setAudioUrl (String value) { 
-        this.audioUrl = value;
+    @JsonSetter("audiourl")
+    public void setAudiourl (String value) { 
+        this.audiourl = value;
     }
  
     /** GETTER

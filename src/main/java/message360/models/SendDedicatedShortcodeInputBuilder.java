@@ -51,7 +51,7 @@ public class SendDedicatedShortcodeInputBuilder {
     }
 
     /**
-     * Callback status method, POST or GET
+     * Specifies the HTTP method used to request the required URL once the Short Code message is sent.GET or POST
      */
     public SendDedicatedShortcodeInputBuilder method(HttpActionEnum method) {
         sendDedicatedShortcodeInput.setMethod(method);
@@ -59,7 +59,7 @@ public class SendDedicatedShortcodeInputBuilder {
     }
 
     /**
-     * Callback url for SMS status
+     * URL that can be requested to receive notification when Short Code message was sent.
      */
     public SendDedicatedShortcodeInputBuilder messagestatuscallback(String messagestatuscallback) {
         sendDedicatedShortcodeInput.setMessagestatuscallback(messagestatuscallback);

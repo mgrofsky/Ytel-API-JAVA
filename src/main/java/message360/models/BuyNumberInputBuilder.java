@@ -19,7 +19,7 @@ public class BuyNumberInputBuilder {
     }
 
     /**
-     * Phone number to be purchase
+     * A valid 10-digit message360 number (E.164 format).
      */
     public BuyNumberInputBuilder phoneNumber(String phoneNumber) {
         buyNumberInput.setPhoneNumber(phoneNumber);

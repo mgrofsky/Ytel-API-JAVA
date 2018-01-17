@@ -27,7 +27,7 @@ public class ListBlocksInputBuilder {
     }
 
     /**
-     * Where to start in the output list
+     * The starting point of the list of blocked emails that should be returned.
      */
     public ListBlocksInputBuilder offset(String offset) {
         listBlocksInput.setOffset(offset);
@@ -35,7 +35,7 @@ public class ListBlocksInputBuilder {
     }
 
     /**
-     * Maximum number of records to return
+     * The count of results that should be returned.
      */
     public ListBlocksInputBuilder limit(String limit) {
         listBlocksInput.setLimit(limit);

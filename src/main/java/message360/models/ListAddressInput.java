@@ -11,11 +11,11 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListAddressInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4748011801174971305L;
+    private static final long serialVersionUID = 5389324548638175279L;
     private String responseType = "json";
     private Integer page = 1;
-    private Integer pageSize = 10;
-    private String addressSID;
+    private Integer pagesize = 10;
+    private String addressid;
     private String dateCreated;
     /** GETTER
      * Response Type either json or xml
@@ -34,17 +34,17 @@ public class ListAddressInput
     }
  
     /** GETTER
-     * Return requested # of items starting the value, default=0, must be an integer
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonGetter("Page")
+    @JsonGetter("page")
     public Integer getPage ( ) { 
         return this.page;
     }
     
     /** SETTER
-     * Return requested # of items starting the value, default=0, must be an integer
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonSetter("Page")
+    @JsonSetter("page")
     public void setPage (Integer value) { 
         this.page = value;
     }
@@ -52,39 +52,39 @@ public class ListAddressInput
     /** GETTER
      * How many results to return, default is 10, max is 100, must be an integer
      */
-    @JsonGetter("PageSize")
-    public Integer getPageSize ( ) { 
-        return this.pageSize;
+    @JsonGetter("pagesize")
+    public Integer getPagesize ( ) { 
+        return this.pagesize;
     }
     
     /** SETTER
      * How many results to return, default is 10, max is 100, must be an integer
      */
-    @JsonSetter("PageSize")
-    public void setPageSize (Integer value) { 
-        this.pageSize = value;
+    @JsonSetter("pagesize")
+    public void setPagesize (Integer value) { 
+        this.pagesize = value;
     }
  
     /** GETTER
      * addresses Sid
      */
-    @JsonGetter("AddressSID")
-    public String getAddressSID ( ) { 
-        return this.addressSID;
+    @JsonGetter("addressid")
+    public String getAddressid ( ) { 
+        return this.addressid;
     }
     
     /** SETTER
      * addresses Sid
      */
-    @JsonSetter("AddressSID")
-    public void setAddressSID (String value) { 
-        this.addressSID = value;
+    @JsonSetter("addressid")
+    public void setAddressid (String value) { 
+        this.addressid = value;
     }
  
     /** GETTER
      * date created address.
      */
-    @JsonGetter("DateCreated")
+    @JsonGetter("dateCreated")
     public String getDateCreated ( ) { 
         return this.dateCreated;
     }
@@ -92,7 +92,7 @@ public class ListAddressInput
     /** SETTER
      * date created address.
      */
-    @JsonSetter("DateCreated")
+    @JsonSetter("dateCreated")
     public void setDateCreated (String value) { 
         this.dateCreated = value;
     }

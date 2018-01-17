@@ -19,7 +19,7 @@ public class SendRinglessVMInputBuilder {
     }
 
     /**
-     * This number to display on Caller ID as calling
+     * A valid message360 Voice enabled number (E.164 format) that will be initiating the phone call.
      */
     public SendRinglessVMInputBuilder from(String from) {
         sendRinglessVMInput.setFrom(from);
@@ -27,7 +27,7 @@ public class SendRinglessVMInputBuilder {
     }
 
     /**
-     * Alternate caller ID required for RVM
+     * A required secondary Caller ID for RVM to work.
      */
     public SendRinglessVMInputBuilder rVMCallerId(String rVMCallerId) {
         sendRinglessVMInput.setRVMCallerId(rVMCallerId);
@@ -35,7 +35,7 @@ public class SendRinglessVMInputBuilder {
     }
 
     /**
-     * To number
+     * A valid number (E.164 format) that will receive the phone call.
      */
     public SendRinglessVMInputBuilder to(String to) {
         sendRinglessVMInput.setTo(to);
@@ -43,7 +43,7 @@ public class SendRinglessVMInputBuilder {
     }
 
     /**
-     * URL to an audio file
+     * The URL requested once the RVM connects. A set of default parameters will be sent here.
      */
     public SendRinglessVMInputBuilder voiceMailURL(String voiceMailURL) {
         sendRinglessVMInput.setVoiceMailURL(voiceMailURL);
@@ -59,7 +59,7 @@ public class SendRinglessVMInputBuilder {
     }
 
     /**
-     * Not currently used in this version
+     * Specifies the HTTP method used to request the required URL once call connects.
      */
     public SendRinglessVMInputBuilder method(HttpActionEnum method) {
         sendRinglessVMInput.setMethod(method);
@@ -67,7 +67,7 @@ public class SendRinglessVMInputBuilder {
     }
 
     /**
-     * URL to post the status of the Ringless request
+     * URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished.
      */
     public SendRinglessVMInputBuilder statusCallBackUrl(String statusCallBackUrl) {
         sendRinglessVMInput.setStatusCallBackUrl(statusCallBackUrl);
@@ -75,7 +75,7 @@ public class SendRinglessVMInputBuilder {
     }
 
     /**
-     * POST or GET
+     * Specifies the HTTP method used to request the required StatusCallBackUrl once call connects.
      */
     public SendRinglessVMInputBuilder statsCallBackMethod(HttpActionEnum statsCallBackMethod) {
         sendRinglessVMInput.setStatsCallBackMethod(statsCallBackMethod);

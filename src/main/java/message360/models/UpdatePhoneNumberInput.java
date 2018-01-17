@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class UpdatePhoneNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5521546367302180591L;
+    private static final long serialVersionUID = 5549240367958980715L;
     private String phoneNumber;
     private String voiceUrl;
     private String responseType = "json";
@@ -28,7 +28,7 @@ public class UpdatePhoneNumberInput
     private String smsFallbackUrl;
     private HttpActionEnum smsFallbackMethod;
     /** GETTER
-     * The phone number to update
+     * A valid message360 number (E.164 format).
      */
     @JsonGetter("PhoneNumber")
     public String getPhoneNumber ( ) { 
@@ -36,7 +36,7 @@ public class UpdatePhoneNumberInput
     }
     
     /** SETTER
-     * The phone number to update
+     * A valid message360 number (E.164 format).
      */
     @JsonSetter("PhoneNumber")
     public void setPhoneNumber (String value) { 
@@ -236,7 +236,7 @@ public class UpdatePhoneNumberInput
     }
  
     /** GETTER
-     * URL requested once the call connects
+     * URL used if any errors occur during execution of InboundXML from an SMS or at initial request of the SmsUrl.
      */
     @JsonGetter("SmsFallbackUrl")
     public String getSmsFallbackUrl ( ) { 
@@ -244,7 +244,7 @@ public class UpdatePhoneNumberInput
     }
     
     /** SETTER
-     * URL requested once the call connects
+     * URL used if any errors occur during execution of InboundXML from an SMS or at initial request of the SmsUrl.
      */
     @JsonSetter("SmsFallbackUrl")
     public void setSmsFallbackUrl (String value) { 
@@ -252,7 +252,7 @@ public class UpdatePhoneNumberInput
     }
  
     /** GETTER
-     * URL requested if the sms URL is not available
+     * The HTTP method message360 will use when URL requested if the SmsUrl is not available.
      */
     @JsonGetter("SmsFallbackMethod")
     public HttpActionEnum getSmsFallbackMethod ( ) { 
@@ -260,7 +260,7 @@ public class UpdatePhoneNumberInput
     }
     
     /** SETTER
-     * URL requested if the sms URL is not available
+     * The HTTP method message360 will use when URL requested if the SmsUrl is not available.
      */
     @JsonSetter("SmsFallbackMethod")
     public void setSmsFallbackMethod (HttpActionEnum value) { 

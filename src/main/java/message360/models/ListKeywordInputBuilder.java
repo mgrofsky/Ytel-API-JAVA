@@ -27,7 +27,7 @@ public class ListKeywordInputBuilder {
     }
 
     /**
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListKeywordInputBuilder page(Integer page) {
         listKeywordInput.setPage(page);
@@ -37,8 +37,8 @@ public class ListKeywordInputBuilder {
     /**
      * Number of individual resources listed in the response per page
      */
-    public ListKeywordInputBuilder pageSize(Integer pageSize) {
-        listKeywordInput.setPageSize(pageSize);
+    public ListKeywordInputBuilder pagesize(Integer pagesize) {
+        listKeywordInput.setPagesize(pagesize);
         return this;
     }
 

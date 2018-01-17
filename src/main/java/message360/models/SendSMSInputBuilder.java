@@ -19,7 +19,7 @@ public class SendSMSInputBuilder {
     }
 
     /**
-     * SMS enabled Message360 number to send this message from
+     * The 10-digit SMS-enabled message360 number (E.164 format) in which the message is sent.
      */
     public SendSMSInputBuilder from(String from) {
         sendSMSInput.setFrom(from);
@@ -27,7 +27,7 @@ public class SendSMSInputBuilder {
     }
 
     /**
-     * Number to send the SMS to
+     * The 10-digit phone number (E.164 format) that will receive the message.
      */
     public SendSMSInputBuilder to(String to) {
         sendSMSInput.setTo(to);
@@ -35,7 +35,7 @@ public class SendSMSInputBuilder {
     }
 
     /**
-     * Text Message To Send
+     * The body message that is to be sent in the text.
      */
     public SendSMSInputBuilder body(String body) {
         sendSMSInput.setBody(body);
@@ -61,8 +61,8 @@ public class SendSMSInputBuilder {
     /**
      * URL that can be requested to receive notification when SMS has Sent. A set of default parameters will be sent here once the SMS is finished.
      */
-    public SendSMSInputBuilder messagestatuscallback(String messagestatuscallback) {
-        sendSMSInput.setMessagestatuscallback(messagestatuscallback);
+    public SendSMSInputBuilder messageStatusCallback(String messageStatusCallback) {
+        sendSMSInput.setMessageStatusCallback(messageStatusCallback);
         return this;
     }
 
@@ -71,6 +71,14 @@ public class SendSMSInputBuilder {
      */
     public SendSMSInputBuilder smartsms(Boolean smartsms) {
         sendSMSInput.setSmartsms(smartsms);
+        return this;
+    }
+
+    /**
+     * Delivery reports are a method to tell your system if the message has arrived on the destination phone.
+     */
+    public SendSMSInputBuilder deliveryStatus(Boolean deliveryStatus) {
+        sendSMSInput.setDeliveryStatus(deliveryStatus);
         return this;
     }
     /**

@@ -11,92 +11,76 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SendEmailInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5520584068868515370L;
+    private static final long serialVersionUID = 5389171279789043623L;
     private String to;
-    private String from;
     private SendEmailAsEnum type = SendEmailAsEnum.HTML;
     private String subject;
     private String message;
     private String responseType = "json";
+    private String from;
     private String cc;
     private String bcc;
     private String attachment;
     /** GETTER
-     * The to email address
+     * A valid address that will receive the email. Multiple addresses can be separated by using commas.
      */
-    @JsonGetter("to")
+    @JsonGetter("To")
     public String getTo ( ) { 
         return this.to;
     }
     
     /** SETTER
-     * The to email address
+     * A valid address that will receive the email. Multiple addresses can be separated by using commas.
      */
-    @JsonSetter("to")
+    @JsonSetter("To")
     public void setTo (String value) { 
         this.to = value;
     }
  
     /** GETTER
-     * The from email address
+     * Specifies the type of email to be sent
      */
-    @JsonGetter("from")
-    public String getFrom ( ) { 
-        return this.from;
-    }
-    
-    /** SETTER
-     * The from email address
-     */
-    @JsonSetter("from")
-    public void setFrom (String value) { 
-        this.from = value;
-    }
- 
-    /** GETTER
-     * email format type, html or text
-     */
-    @JsonGetter("type")
+    @JsonGetter("Type")
     public SendEmailAsEnum getType ( ) { 
         return this.type;
     }
     
     /** SETTER
-     * email format type, html or text
+     * Specifies the type of email to be sent
      */
-    @JsonSetter("type")
+    @JsonSetter("Type")
     public void setType (SendEmailAsEnum value) { 
         this.type = value;
     }
  
     /** GETTER
-     * Email subject
+     * The subject of the mail. Must be a valid string.
      */
-    @JsonGetter("subject")
+    @JsonGetter("Subject")
     public String getSubject ( ) { 
         return this.subject;
     }
     
     /** SETTER
-     * Email subject
+     * The subject of the mail. Must be a valid string.
      */
-    @JsonSetter("subject")
+    @JsonSetter("Subject")
     public void setSubject (String value) { 
         this.subject = value;
     }
  
     /** GETTER
-     * The body of the email message
+     * The email message that is to be sent in the text.
      */
-    @JsonGetter("message")
+    @JsonGetter("Message")
     public String getMessage ( ) { 
         return this.message;
     }
     
     /** SETTER
-     * The body of the email message
+     * The email message that is to be sent in the text.
      */
-    @JsonSetter("message")
+    @JsonSetter("Message")
     public void setMessage (String value) { 
         this.message = value;
     }
@@ -118,49 +102,65 @@ public class SendEmailInput
     }
  
     /** GETTER
-     * CC Email address
+     * A valid address that will send the email.
      */
-    @JsonGetter("cc")
+    @JsonGetter("From")
+    public String getFrom ( ) { 
+        return this.from;
+    }
+    
+    /** SETTER
+     * A valid address that will send the email.
+     */
+    @JsonSetter("From")
+    public void setFrom (String value) { 
+        this.from = value;
+    }
+ 
+    /** GETTER
+     * Carbon copy. A valid address that will receive the email. Multiple addresses can be separated by using commas.
+     */
+    @JsonGetter("Cc")
     public String getCc ( ) { 
         return this.cc;
     }
     
     /** SETTER
-     * CC Email address
+     * Carbon copy. A valid address that will receive the email. Multiple addresses can be separated by using commas.
      */
-    @JsonSetter("cc")
+    @JsonSetter("Cc")
     public void setCc (String value) { 
         this.cc = value;
     }
  
     /** GETTER
-     * BCC Email address
+     * Blind carbon copy. A valid address that will receive the email. Multiple addresses can be separated by using commas.
      */
-    @JsonGetter("bcc")
+    @JsonGetter("Bcc")
     public String getBcc ( ) { 
         return this.bcc;
     }
     
     /** SETTER
-     * BCC Email address
+     * Blind carbon copy. A valid address that will receive the email. Multiple addresses can be separated by using commas.
      */
-    @JsonSetter("bcc")
+    @JsonSetter("Bcc")
     public void setBcc (String value) { 
         this.bcc = value;
     }
  
     /** GETTER
-     * File to be attached.File must be less than 7MB.
+     * A file that is attached to the email. Must be less than 7 MB in size.
      */
-    @JsonGetter("attachment")
+    @JsonGetter("Attachment")
     public String getAttachment ( ) { 
         return this.attachment;
     }
     
     /** SETTER
-     * File to be attached.File must be less than 7MB.
+     * A file that is attached to the email. Must be less than 7 MB in size.
      */
-    @JsonSetter("attachment")
+    @JsonSetter("Attachment")
     public void setAttachment (String value) { 
         this.attachment = value;
     }

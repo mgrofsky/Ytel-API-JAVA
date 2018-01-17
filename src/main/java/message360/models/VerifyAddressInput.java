@@ -11,23 +11,23 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class VerifyAddressInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5348345792965501754L;
-    private String addressSID;
+    private static final long serialVersionUID = 5431514254610891640L;
+    private String addressid;
     private String responseType = "json";
     /** GETTER
      * The identifier of the address to be verified.
      */
-    @JsonGetter("AddressSID")
-    public String getAddressSID ( ) { 
-        return this.addressSID;
+    @JsonGetter("addressid")
+    public String getAddressid ( ) { 
+        return this.addressid;
     }
     
     /** SETTER
      * The identifier of the address to be verified.
      */
-    @JsonSetter("AddressSID")
-    public void setAddressSID (String value) { 
-        this.addressSID = value;
+    @JsonSetter("addressid")
+    public void setAddressid (String value) { 
+        this.addressid = value;
     }
  
     /** GETTER

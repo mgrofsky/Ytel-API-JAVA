@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class MakeCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5738170739322852264L;
+    private static final long serialVersionUID = 4791901528737424472L;
     private String from;
     private String to;
     private String url;
@@ -37,7 +37,7 @@ public class MakeCallInput
     private Boolean feedback;
     private String surveyId;
     /** GETTER
-     * This number to display on Caller ID as calling
+     * A valid message360 Voice enabled number (E.164 format) that will be initiating the phone call.
      */
     @JsonGetter("From")
     public String getFrom ( ) { 
@@ -45,7 +45,7 @@ public class MakeCallInput
     }
     
     /** SETTER
-     * This number to display on Caller ID as calling
+     * A valid message360 Voice enabled number (E.164 format) that will be initiating the phone call.
      */
     @JsonSetter("From")
     public void setFrom (String value) { 
@@ -117,7 +117,7 @@ public class MakeCallInput
     }
  
     /** GETTER
-     * specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
+     * URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished.
      */
     @JsonGetter("StatusCallBackUrl")
     public String getStatusCallBackUrl ( ) { 
@@ -125,7 +125,7 @@ public class MakeCallInput
     }
     
     /** SETTER
-     * specifies the HTTP methodlinkclass used to request StatusCallbackUrl.
+     * URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished.
      */
     @JsonSetter("StatusCallBackUrl")
     public void setStatusCallBackUrl (String value) { 

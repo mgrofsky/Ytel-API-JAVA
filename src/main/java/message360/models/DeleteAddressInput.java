@@ -11,23 +11,23 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class DeleteAddressInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5253152240164337712L;
-    private String addressSID;
+    private static final long serialVersionUID = 5005484018394827611L;
+    private String addressid;
     private String responseType = "json";
     /** GETTER
      * The identifier of the address to be deleted.
      */
-    @JsonGetter("AddressSID")
-    public String getAddressSID ( ) { 
-        return this.addressSID;
+    @JsonGetter("addressid")
+    public String getAddressid ( ) { 
+        return this.addressid;
     }
     
     /** SETTER
      * The identifier of the address to be deleted.
      */
-    @JsonSetter("AddressSID")
-    public void setAddressSID (String value) { 
-        this.addressSID = value;
+    @JsonSetter("addressid")
+    public void setAddressid (String value) { 
+        this.addressid = value;
     }
  
     /** GETTER

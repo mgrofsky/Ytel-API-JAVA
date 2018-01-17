@@ -27,7 +27,7 @@ public class ListTranscriptionInputBuilder {
     }
 
     /**
-     * page number
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListTranscriptionInputBuilder page(Integer page) {
         listTranscriptionInput.setPage(page);
@@ -35,15 +35,15 @@ public class ListTranscriptionInputBuilder {
     }
 
     /**
-     * Amount of data per page
+     * The count of objects to return per page.
      */
-    public ListTranscriptionInputBuilder pageSize(Integer pageSize) {
-        listTranscriptionInput.setPageSize(pageSize);
+    public ListTranscriptionInputBuilder pagesize(Integer pagesize) {
+        listTranscriptionInput.setPagesize(pagesize);
         return this;
     }
 
     /**
-     * Transcription status
+     * The state of the transcription.
      */
     public ListTranscriptionInputBuilder status(StatusEnum status) {
         listTranscriptionInput.setStatus(status);
@@ -51,7 +51,7 @@ public class ListTranscriptionInputBuilder {
     }
 
     /**
-     * Transcription date
+     * The date the transcription took place.
      */
     public ListTranscriptionInputBuilder dateTranscribed(String dateTranscribed) {
         listTranscriptionInput.setDateTranscribed(dateTranscribed);

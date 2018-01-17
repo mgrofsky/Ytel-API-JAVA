@@ -19,10 +19,10 @@ public class CarrierLookupInputBuilder {
     }
 
     /**
-     * The number to lookup
+     * A valid 10-digit number (E.164 format).
      */
-    public CarrierLookupInputBuilder phonenumber(String phonenumber) {
-        carrierLookupInput.setPhonenumber(phonenumber);
+    public CarrierLookupInputBuilder phoneNumber(String phoneNumber) {
+        carrierLookupInput.setPhoneNumber(phoneNumber);
         return this;
     }
 

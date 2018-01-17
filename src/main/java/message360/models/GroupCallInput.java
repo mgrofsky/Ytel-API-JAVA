@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class GroupCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5182124423692071050L;
+    private static final long serialVersionUID = 4956015054366952837L;
     private String from;
     private String to;
     private String url;
@@ -146,7 +146,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * Specifies the HTTP method used to request the required URL once call connects.
+     * URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished.
      */
     @JsonGetter("StatusCallBackUrl")
     public String getStatusCallBackUrl ( ) { 
@@ -154,7 +154,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * Specifies the HTTP method used to request the required URL once call connects.
+     * URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished.
      */
     @JsonSetter("StatusCallBackUrl")
     public void setStatusCallBackUrl (String value) { 
@@ -210,7 +210,7 @@ public class GroupCallInput
     }
  
     /** GETTER
-     * URL that can be requested every 60 seconds during the call to notify of elapsed tim
+     * URL that can be requested every 60 seconds during the call to notify of elapsed time and pass other general information.
      */
     @JsonGetter("HeartBeatUrl")
     public String getHeartBeatUrl ( ) { 
@@ -218,7 +218,7 @@ public class GroupCallInput
     }
     
     /** SETTER
-     * URL that can be requested every 60 seconds during the call to notify of elapsed tim
+     * URL that can be requested every 60 seconds during the call to notify of elapsed time and pass other general information.
      */
     @JsonSetter("HeartBeatUrl")
     public void setHeartBeatUrl (String value) { 

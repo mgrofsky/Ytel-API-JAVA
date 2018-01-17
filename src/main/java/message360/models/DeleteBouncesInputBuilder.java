@@ -27,7 +27,7 @@ public class DeleteBouncesInputBuilder {
     }
 
     /**
-     * The email address to remove from the bounce list
+     * The email address to be remove from the bounced email list.
      */
     public DeleteBouncesInputBuilder email(String email) {
         deleteBouncesInput.setEmail(email);

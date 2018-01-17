@@ -27,7 +27,7 @@ public class ListInboundSharedShortcodesInputBuilder {
     }
 
     /**
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListInboundSharedShortcodesInputBuilder page(Integer page) {
         listInboundSharedShortcodesInput.setPage(page);
@@ -61,8 +61,8 @@ public class ListInboundSharedShortcodesInputBuilder {
     /**
      * Only list messages sent with the specified date
      */
-    public ListInboundSharedShortcodesInputBuilder dateReceived(String dateReceived) {
-        listInboundSharedShortcodesInput.setDateReceived(dateReceived);
+    public ListInboundSharedShortcodesInputBuilder datecreated(String datecreated) {
+        listInboundSharedShortcodesInput.setDatecreated(datecreated);
         return this;
     }
     /**

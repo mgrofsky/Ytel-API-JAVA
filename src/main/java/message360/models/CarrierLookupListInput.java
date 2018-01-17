@@ -11,10 +11,10 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CarrierLookupListInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5144661290691059120L;
+    private static final long serialVersionUID = 5021644799578916943L;
     private String responseType = "json";
     private Integer page = 1;
-    private Integer pagesize = 10;
+    private Integer pageSize = 10;
     /** GETTER
      * Response type format xml or json
      */
@@ -32,35 +32,35 @@ public class CarrierLookupListInput
     }
  
     /** GETTER
-     * Page Number
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonGetter("page")
+    @JsonGetter("Page")
     public Integer getPage ( ) { 
         return this.page;
     }
     
     /** SETTER
-     * Page Number
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonSetter("page")
+    @JsonSetter("Page")
     public void setPage (Integer value) { 
         this.page = value;
     }
  
     /** GETTER
-     * Page Size
+     * The count of objects to return per page.
      */
-    @JsonGetter("pagesize")
-    public Integer getPagesize ( ) { 
-        return this.pagesize;
+    @JsonGetter("PageSize")
+    public Integer getPageSize ( ) { 
+        return this.pageSize;
     }
     
     /** SETTER
-     * Page Size
+     * The count of objects to return per page.
      */
-    @JsonSetter("pagesize")
-    public void setPagesize (Integer value) { 
-        this.pagesize = value;
+    @JsonSetter("PageSize")
+    public void setPageSize (Integer value) { 
+        this.pageSize = value;
     }
  
 }

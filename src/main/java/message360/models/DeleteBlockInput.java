@@ -11,21 +11,21 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class DeleteBlockInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5608524597976858021L;
+    private static final long serialVersionUID = 5290248987893416137L;
     private String email;
     private String responseType = "json";
     /** GETTER
-     * Email address to remove from block list
+     * The email address to be remove from the blocked list.
      */
-    @JsonGetter("email")
+    @JsonGetter("Email")
     public String getEmail ( ) { 
         return this.email;
     }
     
     /** SETTER
-     * Email address to remove from block list
+     * The email address to be remove from the blocked list.
      */
-    @JsonSetter("email")
+    @JsonSetter("Email")
     public void setEmail (String value) { 
         this.email = value;
     }

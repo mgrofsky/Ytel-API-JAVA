@@ -11,13 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5623452508818315053L;
+    private static final long serialVersionUID = 4705848648312803075L;
     private String responseType = "json";
     private Integer page = 1;
-    private Integer pagesize = 10;
+    private Integer pageSize = 10;
     private String from;
     private String to;
-    private String datesent;
+    private String dateSent;
     /** GETTER
      * Response type format xml or json
      */
@@ -35,17 +35,17 @@ public class ListSMSInput
     }
  
     /** GETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonGetter("page")
+    @JsonGetter("Page")
     public Integer getPage ( ) { 
         return this.page;
     }
     
     /** SETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonSetter("page")
+    @JsonSetter("Page")
     public void setPage (Integer value) { 
         this.page = value;
     }
@@ -53,47 +53,47 @@ public class ListSMSInput
     /** GETTER
      * Number of individual resources listed in the response per page
      */
-    @JsonGetter("pagesize")
-    public Integer getPagesize ( ) { 
-        return this.pagesize;
+    @JsonGetter("PageSize")
+    public Integer getPageSize ( ) { 
+        return this.pageSize;
     }
     
     /** SETTER
      * Number of individual resources listed in the response per page
      */
-    @JsonSetter("pagesize")
-    public void setPagesize (Integer value) { 
-        this.pagesize = value;
+    @JsonSetter("PageSize")
+    public void setPageSize (Integer value) { 
+        this.pageSize = value;
     }
  
     /** GETTER
-     * Messages sent from this number
+     * Filter SMS message objects from this valid 10-digit phone number (E.164 format).
      */
-    @JsonGetter("from")
+    @JsonGetter("From")
     public String getFrom ( ) { 
         return this.from;
     }
     
     /** SETTER
-     * Messages sent from this number
+     * Filter SMS message objects from this valid 10-digit phone number (E.164 format).
      */
-    @JsonSetter("from")
+    @JsonSetter("From")
     public void setFrom (String value) { 
         this.from = value;
     }
  
     /** GETTER
-     * Messages sent to this number
+     * Filter SMS message objects to this valid 10-digit phone number (E.164 format).
      */
-    @JsonGetter("to")
+    @JsonGetter("To")
     public String getTo ( ) { 
         return this.to;
     }
     
     /** SETTER
-     * Messages sent to this number
+     * Filter SMS message objects to this valid 10-digit phone number (E.164 format).
      */
-    @JsonSetter("to")
+    @JsonSetter("To")
     public void setTo (String value) { 
         this.to = value;
     }
@@ -101,17 +101,17 @@ public class ListSMSInput
     /** GETTER
      * Only list SMS messages sent in the specified date range
      */
-    @JsonGetter("datesent")
-    public String getDatesent ( ) { 
-        return this.datesent;
+    @JsonGetter("DateSent")
+    public String getDateSent ( ) { 
+        return this.dateSent;
     }
     
     /** SETTER
      * Only list SMS messages sent in the specified date range
      */
-    @JsonSetter("datesent")
-    public void setDatesent (String value) { 
-        this.datesent = value;
+    @JsonSetter("DateSent")
+    public void setDateSent (String value) { 
+        this.dateSent = value;
     }
  
 }

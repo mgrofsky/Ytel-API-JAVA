@@ -19,10 +19,10 @@ public class ViewRecordingInputBuilder {
     }
 
     /**
-     * Search Recording sid
+     * The unique identifier for the recording.
      */
-    public ViewRecordingInputBuilder recordingSid(String recordingSid) {
-        viewRecordingInput.setRecordingSid(recordingSid);
+    public ViewRecordingInputBuilder recordingsid(String recordingsid) {
+        viewRecordingInput.setRecordingsid(recordingsid);
         return this;
     }
 

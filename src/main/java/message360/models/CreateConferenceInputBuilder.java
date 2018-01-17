@@ -19,7 +19,7 @@ public class CreateConferenceInputBuilder {
     }
 
     /**
-     * This number to display on Caller ID as calling
+     * A valid 10-digit number (E.164 format) that will be initiating the conference call.
      */
     public CreateConferenceInputBuilder from(String from) {
         createConferenceInput.setFrom(from);
@@ -27,7 +27,7 @@ public class CreateConferenceInputBuilder {
     }
 
     /**
-     * To number
+     * A valid 10-digit number (E.164 format) that is to receive the conference call.
      */
     public CreateConferenceInputBuilder to(String to) {
         createConferenceInput.setTo(to);
@@ -35,26 +35,10 @@ public class CreateConferenceInputBuilder {
     }
 
     /**
-     * URL requested once the call connects
+     * URL requested once the conference connects
      */
     public CreateConferenceInputBuilder url(String url) {
         createConferenceInput.setUrl(url);
-        return this;
-    }
-
-    /**
-     * Specifies the HTTP method used to request the required URL once call connects.
-     */
-    public CreateConferenceInputBuilder method(HttpActionEnum method) {
-        createConferenceInput.setMethod(method);
-        return this;
-    }
-
-    /**
-     * Recording parameters will be sent here upon completion.
-     */
-    public CreateConferenceInputBuilder recordCallbackUrl(String recordCallbackUrl) {
-        createConferenceInput.setRecordCallbackUrl(recordCallbackUrl);
         return this;
     }
 
@@ -63,6 +47,14 @@ public class CreateConferenceInputBuilder {
      */
     public CreateConferenceInputBuilder responseType(String responseType) {
         createConferenceInput.setResponseType(responseType);
+        return this;
+    }
+
+    /**
+     * Specifies the HTTP method used to request the required URL once call connects.
+     */
+    public CreateConferenceInputBuilder method(HttpActionEnum method) {
+        createConferenceInput.setMethod(method);
         return this;
     }
 
@@ -85,16 +77,16 @@ public class CreateConferenceInputBuilder {
     /**
      * URL requested if the initial Url parameter fails or encounters an error
      */
-    public CreateConferenceInputBuilder fallBackUrl(String fallBackUrl) {
-        createConferenceInput.setFallBackUrl(fallBackUrl);
+    public CreateConferenceInputBuilder fallbackUrl(String fallbackUrl) {
+        createConferenceInput.setFallbackUrl(fallbackUrl);
         return this;
     }
 
     /**
      * Specifies the HTTP method used to request the required FallbackUrl once call connects.
      */
-    public CreateConferenceInputBuilder fallBackMethod(HttpActionEnum fallBackMethod) {
-        createConferenceInput.setFallBackMethod(fallBackMethod);
+    public CreateConferenceInputBuilder fallbackMethod(HttpActionEnum fallbackMethod) {
+        createConferenceInput.setFallbackMethod(fallbackMethod);
         return this;
     }
 
@@ -107,18 +99,26 @@ public class CreateConferenceInputBuilder {
     }
 
     /**
+     * Recording parameters will be sent here upon completion.
+     */
+    public CreateConferenceInputBuilder recordCallBackUrl(String recordCallBackUrl) {
+        createConferenceInput.setRecordCallBackUrl(recordCallBackUrl);
+        return this;
+    }
+
+    /**
      * Specifies the HTTP method used to request the required URL once conference connects.
      */
-    public CreateConferenceInputBuilder recordCallbackMethod(HttpActionEnum recordCallbackMethod) {
-        createConferenceInput.setRecordCallbackMethod(recordCallbackMethod);
+    public CreateConferenceInputBuilder recordCallBackMethod(HttpActionEnum recordCallBackMethod) {
+        createConferenceInput.setRecordCallBackMethod(recordCallBackMethod);
         return this;
     }
 
     /**
      * Schedule conference in future. Schedule time must be greater than current time
      */
-    public CreateConferenceInputBuilder schdeuleTime(String schdeuleTime) {
-        createConferenceInput.setSchdeuleTime(schdeuleTime);
+    public CreateConferenceInputBuilder scheduleTime(String scheduleTime) {
+        createConferenceInput.setScheduleTime(scheduleTime);
         return this;
     }
 
