@@ -27,7 +27,7 @@ public class CarrierLookupListInputBuilder {
     }
 
     /**
-     * Page Number
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public CarrierLookupListInputBuilder page(Integer page) {
         carrierLookupListInput.setPage(page);
@@ -35,10 +35,10 @@ public class CarrierLookupListInputBuilder {
     }
 
     /**
-     * Page Size
+     * The count of objects to return per page.
      */
-    public CarrierLookupListInputBuilder pagesize(Integer pagesize) {
-        carrierLookupListInput.setPagesize(pagesize);
+    public CarrierLookupListInputBuilder pageSize(Integer pageSize) {
+        carrierLookupListInput.setPageSize(pageSize);
         return this;
     }
     /**

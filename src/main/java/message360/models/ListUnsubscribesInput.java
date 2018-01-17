@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListUnsubscribesInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4689544746684839662L;
+    private static final long serialVersionUID = 5286579688321999473L;
     private String responseType = "json";
     private String offset;
     private String limit;
@@ -32,33 +32,33 @@ public class ListUnsubscribesInput
     }
  
     /** GETTER
-     * Starting record of the list
+     * The starting point of the list of unsubscribed emails that should be returned.
      */
-    @JsonGetter("offset")
+    @JsonGetter("Offset")
     public String getOffset ( ) { 
         return this.offset;
     }
     
     /** SETTER
-     * Starting record of the list
+     * The starting point of the list of unsubscribed emails that should be returned.
      */
-    @JsonSetter("offset")
+    @JsonSetter("Offset")
     public void setOffset (String value) { 
         this.offset = value;
     }
  
     /** GETTER
-     * Maximum number of records to be returned
+     * The count of results that should be returned.
      */
-    @JsonGetter("limit")
+    @JsonGetter("Limit")
     public String getLimit ( ) { 
         return this.limit;
     }
     
     /** SETTER
-     * Maximum number of records to be returned
+     * The count of results that should be returned.
      */
-    @JsonSetter("limit")
+    @JsonSetter("Limit")
     public void setLimit (String value) { 
         this.limit = value;
     }

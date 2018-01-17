@@ -27,7 +27,7 @@ public class ListSpamInputBuilder {
     }
 
     /**
-     * The record number to start the list at
+     * The starting point of the list of spam emails that should be returned.
      */
     public ListSpamInputBuilder offset(String offset) {
         listSpamInput.setOffset(offset);
@@ -35,7 +35,7 @@ public class ListSpamInputBuilder {
     }
 
     /**
-     * Maximum number of records to return
+     * The count of results that should be returned.
      */
     public ListSpamInputBuilder limit(String limit) {
         listSpamInput.setLimit(limit);

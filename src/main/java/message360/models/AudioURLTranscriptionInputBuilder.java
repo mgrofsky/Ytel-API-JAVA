@@ -19,10 +19,10 @@ public class AudioURLTranscriptionInputBuilder {
     }
 
     /**
-     * Audio url
+     * URL pointing to the location of the audio file that is to be transcribed.
      */
-    public AudioURLTranscriptionInputBuilder audioUrl(String audioUrl) {
-        audioURLTranscriptionInput.setAudioUrl(audioUrl);
+    public AudioURLTranscriptionInputBuilder audiourl(String audiourl) {
+        audioURLTranscriptionInput.setAudiourl(audiourl);
         return this;
     }
 

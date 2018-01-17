@@ -19,10 +19,10 @@ public class DeleteRecordingInputBuilder {
     }
 
     /**
-     * Unique Recording Sid to be delete
+     * The unique identifier for a recording.
      */
-    public DeleteRecordingInputBuilder recordingSid(String recordingSid) {
-        deleteRecordingInput.setRecordingSid(recordingSid);
+    public DeleteRecordingInputBuilder recordingsid(String recordingsid) {
+        deleteRecordingInput.setRecordingsid(recordingsid);
         return this;
     }
 

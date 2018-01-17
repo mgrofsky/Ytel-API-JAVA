@@ -21,16 +21,16 @@ public class AvailablePhoneNumberInputBuilder {
     /**
      * Number type either SMS,Voice or all
      */
-    public AvailablePhoneNumberInputBuilder numberType(NumberTypeEnum numberType) {
-        availablePhoneNumberInput.setNumberType(numberType);
+    public AvailablePhoneNumberInputBuilder numbertype(NumberTypeEnum numbertype) {
+        availablePhoneNumberInput.setNumbertype(numbertype);
         return this;
     }
 
     /**
-     * Phone Number Area Code
+     * Specifies the area code for the returned list of available numbers. Only available for North American numbers.
      */
-    public AvailablePhoneNumberInputBuilder areaCode(String areaCode) {
-        availablePhoneNumberInput.setAreaCode(areaCode);
+    public AvailablePhoneNumberInputBuilder areacode(String areacode) {
+        availablePhoneNumberInput.setAreacode(areacode);
         return this;
     }
 
@@ -43,10 +43,10 @@ public class AvailablePhoneNumberInputBuilder {
     }
 
     /**
-     * Page Size
+     * The count of objects to return.
      */
-    public AvailablePhoneNumberInputBuilder pageSize(Integer pageSize) {
-        availablePhoneNumberInput.setPageSize(pageSize);
+    public AvailablePhoneNumberInputBuilder pagesize(Integer pagesize) {
+        availablePhoneNumberInput.setPagesize(pagesize);
         return this;
     }
     /**

@@ -27,7 +27,7 @@ public class ListInboundShortcodeInputBuilder {
     }
 
     /**
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListInboundShortcodeInputBuilder page(Integer page) {
         listInboundShortcodeInput.setPage(page);
@@ -37,8 +37,8 @@ public class ListInboundShortcodeInputBuilder {
     /**
      * Number of individual resources listed in the response per page
      */
-    public ListInboundShortcodeInputBuilder pageSize(Integer pageSize) {
-        listInboundShortcodeInput.setPageSize(pageSize);
+    public ListInboundShortcodeInputBuilder pagesize(Integer pagesize) {
+        listInboundShortcodeInput.setPagesize(pagesize);
         return this;
     }
 
@@ -61,8 +61,8 @@ public class ListInboundShortcodeInputBuilder {
     /**
      * Only list SMS messages sent in the specified date MAKE REQUEST
      */
-    public ListInboundShortcodeInputBuilder dateReceived(String dateReceived) {
-        listInboundShortcodeInput.setDateReceived(dateReceived);
+    public ListInboundShortcodeInputBuilder datecreated(String datecreated) {
+        listInboundShortcodeInput.setDatecreated(datecreated);
         return this;
     }
     /**

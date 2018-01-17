@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SendDedicatedShortcodeInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5048472298743012471L;
+    private static final long serialVersionUID = 4970928713542641711L;
     private int shortcode;
     private double to;
     private String body;
@@ -83,7 +83,7 @@ public class SendDedicatedShortcodeInput
     }
  
     /** GETTER
-     * Callback status method, POST or GET
+     * Specifies the HTTP method used to request the required URL once the Short Code message is sent.GET or POST
      */
     @JsonGetter("method")
     public HttpActionEnum getMethod ( ) { 
@@ -91,7 +91,7 @@ public class SendDedicatedShortcodeInput
     }
     
     /** SETTER
-     * Callback status method, POST or GET
+     * Specifies the HTTP method used to request the required URL once the Short Code message is sent.GET or POST
      */
     @JsonSetter("method")
     public void setMethod (HttpActionEnum value) { 
@@ -99,7 +99,7 @@ public class SendDedicatedShortcodeInput
     }
  
     /** GETTER
-     * Callback url for SMS status
+     * URL that can be requested to receive notification when Short Code message was sent.
      */
     @JsonGetter("messagestatuscallback")
     public String getMessagestatuscallback ( ) { 
@@ -107,7 +107,7 @@ public class SendDedicatedShortcodeInput
     }
     
     /** SETTER
-     * Callback url for SMS status
+     * URL that can be requested to receive notification when Short Code message was sent.
      */
     @JsonSetter("messagestatuscallback")
     public void setMessagestatuscallback (String value) { 

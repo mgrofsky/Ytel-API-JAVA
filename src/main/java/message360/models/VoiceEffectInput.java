@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class VoiceEffectInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4955141285455832299L;
+    private static final long serialVersionUID = 5190708291988800449L;
     private String callSid;
     private String responseType = "json";
     private AudioDirectionEnum audioDirection;
@@ -69,7 +69,7 @@ public class VoiceEffectInput
     }
  
     /** GETTER
-     * value between -14 and 14
+     * Set the pitch in semitone (half-step) intervals. Value between -14 and 14
      */
     @JsonGetter("PitchSemiTones")
     public Double getPitchSemiTones ( ) { 
@@ -77,7 +77,7 @@ public class VoiceEffectInput
     }
     
     /** SETTER
-     * value between -14 and 14
+     * Set the pitch in semitone (half-step) intervals. Value between -14 and 14
      */
     @JsonSetter("PitchSemiTones")
     public void setPitchSemiTones (Double value) { 
@@ -85,7 +85,7 @@ public class VoiceEffectInput
     }
  
     /** GETTER
-     * value between -1 and 1
+     * Set the pitch in octave intervals.. Value between -1 and 1
      */
     @JsonGetter("PitchOctaves")
     public Double getPitchOctaves ( ) { 
@@ -93,7 +93,7 @@ public class VoiceEffectInput
     }
     
     /** SETTER
-     * value between -1 and 1
+     * Set the pitch in octave intervals.. Value between -1 and 1
      */
     @JsonSetter("PitchOctaves")
     public void setPitchOctaves (Double value) { 
@@ -101,7 +101,7 @@ public class VoiceEffectInput
     }
  
     /** GETTER
-     * value greater than 0
+     * Set the pitch (lowness/highness) of the audio. The higher the value, the higher the pitch. Value greater than 0
      */
     @JsonGetter("Pitch")
     public Double getPitch ( ) { 
@@ -109,7 +109,7 @@ public class VoiceEffectInput
     }
     
     /** SETTER
-     * value greater than 0
+     * Set the pitch (lowness/highness) of the audio. The higher the value, the higher the pitch. Value greater than 0
      */
     @JsonSetter("Pitch")
     public void setPitch (Double value) { 
@@ -117,7 +117,7 @@ public class VoiceEffectInput
     }
  
     /** GETTER
-     * value greater than 0
+     * Set the rate for audio. The lower the value, the lower the rate. value greater than 0
      */
     @JsonGetter("Rate")
     public Double getRate ( ) { 
@@ -125,7 +125,7 @@ public class VoiceEffectInput
     }
     
     /** SETTER
-     * value greater than 0
+     * Set the rate for audio. The lower the value, the lower the rate. value greater than 0
      */
     @JsonSetter("Rate")
     public void setRate (Double value) { 
@@ -133,7 +133,7 @@ public class VoiceEffectInput
     }
  
     /** GETTER
-     * value greater than 0
+     * Set the tempo (speed) of the audio. A higher value denotes a faster tempo. Value greater than 0
      */
     @JsonGetter("Tempo")
     public Double getTempo ( ) { 
@@ -141,7 +141,7 @@ public class VoiceEffectInput
     }
     
     /** SETTER
-     * value greater than 0
+     * Set the tempo (speed) of the audio. A higher value denotes a faster tempo. Value greater than 0
      */
     @JsonSetter("Tempo")
     public void setTempo (Double value) { 

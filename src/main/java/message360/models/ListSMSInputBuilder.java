@@ -27,7 +27,7 @@ public class ListSMSInputBuilder {
     }
 
     /**
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListSMSInputBuilder page(Integer page) {
         listSMSInput.setPage(page);
@@ -37,13 +37,13 @@ public class ListSMSInputBuilder {
     /**
      * Number of individual resources listed in the response per page
      */
-    public ListSMSInputBuilder pagesize(Integer pagesize) {
-        listSMSInput.setPagesize(pagesize);
+    public ListSMSInputBuilder pageSize(Integer pageSize) {
+        listSMSInput.setPageSize(pageSize);
         return this;
     }
 
     /**
-     * Messages sent from this number
+     * Filter SMS message objects from this valid 10-digit phone number (E.164 format).
      */
     public ListSMSInputBuilder from(String from) {
         listSMSInput.setFrom(from);
@@ -51,7 +51,7 @@ public class ListSMSInputBuilder {
     }
 
     /**
-     * Messages sent to this number
+     * Filter SMS message objects to this valid 10-digit phone number (E.164 format).
      */
     public ListSMSInputBuilder to(String to) {
         listSMSInput.setTo(to);
@@ -61,8 +61,8 @@ public class ListSMSInputBuilder {
     /**
      * Only list SMS messages sent in the specified date range
      */
-    public ListSMSInputBuilder datesent(String datesent) {
-        listSMSInput.setDatesent(datesent);
+    public ListSMSInputBuilder dateSent(String dateSent) {
+        listSMSInput.setDateSent(dateSent);
         return this;
     }
     /**

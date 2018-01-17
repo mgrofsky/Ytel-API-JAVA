@@ -11,23 +11,23 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ViewConferenceInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4746754056905061291L;
-    private String conferencesid;
+    private static final long serialVersionUID = 5213610017762596592L;
+    private String conferenceSid;
     private String responseType = "json";
     /** GETTER
      * The unique identifier of each conference resource
      */
-    @JsonGetter("conferencesid")
-    public String getConferencesid ( ) { 
-        return this.conferencesid;
+    @JsonGetter("ConferenceSid")
+    public String getConferenceSid ( ) { 
+        return this.conferenceSid;
     }
     
     /** SETTER
      * The unique identifier of each conference resource
      */
-    @JsonSetter("conferencesid")
-    public void setConferencesid (String value) { 
-        this.conferencesid = value;
+    @JsonSetter("ConferenceSid")
+    public void setConferenceSid (String value) { 
+        this.conferenceSid = value;
     }
  
     /** GETTER

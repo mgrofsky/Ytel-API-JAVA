@@ -72,7 +72,7 @@ public class GroupCallInputBuilder {
     }
 
     /**
-     * Specifies the HTTP method used to request the required URL once call connects.
+     * URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished.
      */
     public GroupCallInputBuilder statusCallBackUrl(String statusCallBackUrl) {
         groupCallInput.setStatusCallBackUrl(statusCallBackUrl);
@@ -104,7 +104,7 @@ public class GroupCallInputBuilder {
     }
 
     /**
-     * URL that can be requested every 60 seconds during the call to notify of elapsed tim
+     * URL that can be requested every 60 seconds during the call to notify of elapsed time and pass other general information.
      */
     public GroupCallInputBuilder heartBeatUrl(String heartBeatUrl) {
         groupCallInput.setHeartBeatUrl(heartBeatUrl);

@@ -19,13 +19,16 @@ public class ViewParticipantInputBuilder {
     }
 
     /**
-     * unique conference sid
+     * The unique identifier for a conference object.
      */
     public ViewParticipantInputBuilder conferenceSid(String conferenceSid) {
         viewParticipantInput.setConferenceSid(conferenceSid);
         return this;
     }
 
+    /**
+     * The unique identifier for a participant object.
+     */
     public ViewParticipantInputBuilder participantSid(String participantSid) {
         viewParticipantInput.setParticipantSid(participantSid);
         return this;

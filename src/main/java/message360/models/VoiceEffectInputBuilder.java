@@ -43,7 +43,7 @@ public class VoiceEffectInputBuilder {
     }
 
     /**
-     * value between -14 and 14
+     * Set the pitch in semitone (half-step) intervals. Value between -14 and 14
      */
     public VoiceEffectInputBuilder pitchSemiTones(Double pitchSemiTones) {
         voiceEffectInput.setPitchSemiTones(pitchSemiTones);
@@ -51,7 +51,7 @@ public class VoiceEffectInputBuilder {
     }
 
     /**
-     * value between -1 and 1
+     * Set the pitch in octave intervals.. Value between -1 and 1
      */
     public VoiceEffectInputBuilder pitchOctaves(Double pitchOctaves) {
         voiceEffectInput.setPitchOctaves(pitchOctaves);
@@ -59,7 +59,7 @@ public class VoiceEffectInputBuilder {
     }
 
     /**
-     * value greater than 0
+     * Set the pitch (lowness/highness) of the audio. The higher the value, the higher the pitch. Value greater than 0
      */
     public VoiceEffectInputBuilder pitch(Double pitch) {
         voiceEffectInput.setPitch(pitch);
@@ -67,7 +67,7 @@ public class VoiceEffectInputBuilder {
     }
 
     /**
-     * value greater than 0
+     * Set the rate for audio. The lower the value, the lower the rate. value greater than 0
      */
     public VoiceEffectInputBuilder rate(Double rate) {
         voiceEffectInput.setRate(rate);
@@ -75,7 +75,7 @@ public class VoiceEffectInputBuilder {
     }
 
     /**
-     * value greater than 0
+     * Set the tempo (speed) of the audio. A higher value denotes a faster tempo. Value greater than 0
      */
     public VoiceEffectInputBuilder tempo(Double tempo) {
         voiceEffectInput.setTempo(tempo);

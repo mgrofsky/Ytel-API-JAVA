@@ -27,15 +27,15 @@ public class ListInvalidInputBuilder {
     }
 
     /**
-     * Starting record for listing out emails
+     * The starting point of the list of invalid emails that should be returned.
      */
-    public ListInvalidInputBuilder offet(String offet) {
-        listInvalidInput.setOffet(offet);
+    public ListInvalidInputBuilder offset(String offset) {
+        listInvalidInput.setOffset(offset);
         return this;
     }
 
     /**
-     * Maximum number of records to return
+     * The count of results that should be returned.
      */
     public ListInvalidInputBuilder limit(String limit) {
         listInvalidInput.setLimit(limit);

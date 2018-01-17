@@ -39,7 +39,7 @@ public class RecordingController extends BaseController {
     }
 
     /**
-     * View a specific Recording
+     * Retrieve the recording of a call by its RecordingSid. This resource will return information regarding the call such as start time, end time, duration, and so forth.
      * @param    ViewRecordingInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
@@ -54,7 +54,7 @@ public class RecordingController extends BaseController {
     }
 
     /**
-     * View a specific Recording
+     * Retrieve the recording of a call by its RecordingSid. This resource will return information regarding the call such as start time, end time, duration, and so forth.
      * @param    ViewRecordingInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
@@ -63,8 +63,8 @@ public class RecordingController extends BaseController {
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == input.getRecordingSid())
-            throw new NullPointerException("The property \"RecordingSid\" in the input object cannot be null.");
+        if (null == input.getRecordingsid())
+            throw new NullPointerException("The property \"Recordingsid\" in the input object cannot be null.");
 
         if (null == input.getResponseType())
             throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
@@ -78,7 +78,7 @@ public class RecordingController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5642607477574794756L;
+            private static final long serialVersionUID = 4630452039319355178L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +87,7 @@ public class RecordingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5735960877009962209L;
+            private static final long serialVersionUID = 5243849343690786595L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -95,9 +95,9 @@ public class RecordingController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4904193904384755153L;
+            private static final long serialVersionUID = 5053742515854014010L;
             {
-                    put( "RecordingSid", input.getRecordingSid() );
+                    put( "recordingsid", input.getRecordingsid() );
             }
         };
 
@@ -159,7 +159,7 @@ public class RecordingController extends BaseController {
     }
 
     /**
-     * Delete Recording Record
+     * Remove a recording from your message360 account.
      * @param    DeleteRecordingInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
@@ -174,7 +174,7 @@ public class RecordingController extends BaseController {
     }
 
     /**
-     * Delete Recording Record
+     * Remove a recording from your message360 account.
      * @param    DeleteRecordingInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
@@ -183,8 +183,8 @@ public class RecordingController extends BaseController {
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == input.getRecordingSid())
-            throw new NullPointerException("The property \"RecordingSid\" in the input object cannot be null.");
+        if (null == input.getRecordingsid())
+            throw new NullPointerException("The property \"Recordingsid\" in the input object cannot be null.");
 
         if (null == input.getResponseType())
             throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
@@ -198,7 +198,7 @@ public class RecordingController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5076195654051562586L;
+            private static final long serialVersionUID = 4846677651345311136L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -207,7 +207,7 @@ public class RecordingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5233468104014834559L;
+            private static final long serialVersionUID = 5718522394095030961L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -215,9 +215,9 @@ public class RecordingController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5541318494099714885L;
+            private static final long serialVersionUID = 5625190681836984273L;
             {
-                    put( "RecordingSid", input.getRecordingSid() );
+                    put( "recordingsid", input.getRecordingsid() );
             }
         };
 
@@ -279,7 +279,7 @@ public class RecordingController extends BaseController {
     }
 
     /**
-     * List out Recordings
+     * Retrieve a list of recording objects.
      * @param    ListRecordingInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
@@ -294,7 +294,7 @@ public class RecordingController extends BaseController {
     }
 
     /**
-     * List out Recordings
+     * Retrieve a list of recording objects.
      * @param    ListRecordingInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
@@ -315,7 +315,7 @@ public class RecordingController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5641032623257288167L;
+            private static final long serialVersionUID = 5394980523188416995L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -324,7 +324,7 @@ public class RecordingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4710770478081762713L;
+            private static final long serialVersionUID = 5350015700975099077L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -332,12 +332,12 @@ public class RecordingController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4819434032786546859L;
+            private static final long serialVersionUID = 4689620707658968949L;
             {
-                    put( "Page", input.getPage() );
-                    put( "PageSize", input.getPageSize() );
-                    put( "DateCreated", input.getDateCreated() );
-                    put( "CallSid", input.getCallSid() );
+                    put( "page", input.getPage() );
+                    put( "pagesize", input.getPagesize() );
+                    put( "Datecreated", input.getDatecreated() );
+                    put( "callsid", input.getCallsid() );
             }
         };
 

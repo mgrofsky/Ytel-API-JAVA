@@ -11,10 +11,10 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListKeywordInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5443757352070162309L;
+    private static final long serialVersionUID = 5298234997786519390L;
     private String responseType = "json";
     private Integer page = 1;
-    private Integer pageSize = 10;
+    private Integer pagesize = 10;
     private String keyword;
     private Integer shortcode;
     /** GETTER
@@ -34,17 +34,17 @@ public class ListKeywordInput
     }
  
     /** GETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonGetter("Page")
+    @JsonGetter("page")
     public Integer getPage ( ) { 
         return this.page;
     }
     
     /** SETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonSetter("Page")
+    @JsonSetter("page")
     public void setPage (Integer value) { 
         this.page = value;
     }
@@ -52,17 +52,17 @@ public class ListKeywordInput
     /** GETTER
      * Number of individual resources listed in the response per page
      */
-    @JsonGetter("PageSize")
-    public Integer getPageSize ( ) { 
-        return this.pageSize;
+    @JsonGetter("pagesize")
+    public Integer getPagesize ( ) { 
+        return this.pagesize;
     }
     
     /** SETTER
      * Number of individual resources listed in the response per page
      */
-    @JsonSetter("PageSize")
-    public void setPageSize (Integer value) { 
-        this.pageSize = value;
+    @JsonSetter("pagesize")
+    public void setPagesize (Integer value) { 
+        this.pagesize = value;
     }
  
     /** GETTER

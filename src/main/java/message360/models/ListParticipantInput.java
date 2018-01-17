@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListParticipantInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5124880208399459509L;
+    private static final long serialVersionUID = 5457425363546168902L;
     private String conferenceSid;
     private String responseType = "json";
     private Integer page = 1;
@@ -19,7 +19,7 @@ public class ListParticipantInput
     private Boolean muted;
     private Boolean deaf;
     /** GETTER
-     * unique conference sid
+     * The unique identifier for a conference.
      */
     @JsonGetter("ConferenceSid")
     public String getConferenceSid ( ) { 
@@ -27,7 +27,7 @@ public class ListParticipantInput
     }
     
     /** SETTER
-     * unique conference sid
+     * The unique identifier for a conference.
      */
     @JsonSetter("ConferenceSid")
     public void setConferenceSid (String value) { 
@@ -51,7 +51,7 @@ public class ListParticipantInput
     }
  
     /** GETTER
-     * page number
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     @JsonGetter("Page")
     public Integer getPage ( ) { 
@@ -59,7 +59,7 @@ public class ListParticipantInput
     }
     
     /** SETTER
-     * page number
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     @JsonSetter("Page")
     public void setPage (Integer value) { 
@@ -67,7 +67,7 @@ public class ListParticipantInput
     }
  
     /** GETTER
-     * Amount of records to return per page
+     * The count of objects to return per page.
      */
     @JsonGetter("Pagesize")
     public Integer getPagesize ( ) { 
@@ -75,7 +75,7 @@ public class ListParticipantInput
     }
     
     /** SETTER
-     * Amount of records to return per page
+     * The count of objects to return per page.
      */
     @JsonSetter("Pagesize")
     public void setPagesize (Integer value) { 
@@ -83,7 +83,7 @@ public class ListParticipantInput
     }
  
     /** GETTER
-     * Participants that are muted
+     * Specifies if participant should be muted.
      */
     @JsonGetter("Muted")
     public Boolean getMuted ( ) { 
@@ -91,7 +91,7 @@ public class ListParticipantInput
     }
     
     /** SETTER
-     * Participants that are muted
+     * Specifies if participant should be muted.
      */
     @JsonSetter("Muted")
     public void setMuted (Boolean value) { 
@@ -99,7 +99,7 @@ public class ListParticipantInput
     }
  
     /** GETTER
-     * Participants cant hear
+     * Specifies if the participant should hear audio in the conference.
      */
     @JsonGetter("Deaf")
     public Boolean getDeaf ( ) { 
@@ -107,7 +107,7 @@ public class ListParticipantInput
     }
     
     /** SETTER
-     * Participants cant hear
+     * Specifies if the participant should hear audio in the conference.
      */
     @JsonSetter("Deaf")
     public void setDeaf (Boolean value) { 

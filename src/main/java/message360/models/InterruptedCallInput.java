@@ -11,14 +11,14 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class InterruptedCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4936331722082373731L;
+    private static final long serialVersionUID = 5723833481436356178L;
     private String callSid;
     private String responseType = "json";
     private String url;
     private HttpActionEnum method;
     private InterruptedCallStatusEnum status;
     /** GETTER
-     * Call SId
+     * The unique identifier for voice call that is in progress.
      */
     @JsonGetter("CallSid")
     public String getCallSid ( ) { 
@@ -26,7 +26,7 @@ public class InterruptedCallInput
     }
     
     /** SETTER
-     * Call SId
+     * The unique identifier for voice call that is in progress.
      */
     @JsonSetter("CallSid")
     public void setCallSid (String value) { 

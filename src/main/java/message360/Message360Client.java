@@ -26,14 +26,6 @@ public class Message360Client {
     }
 
     /**
-     * Singleton access to Transcription controller
-     * @return	Returns the TranscriptionController instance 
-     */
-    public TranscriptionController getTranscription() {
-        return TranscriptionController.getInstance();
-    }
-
-    /**
      * Singleton access to PhoneNumber controller
      * @return	Returns the PhoneNumberController instance 
      */
@@ -42,19 +34,19 @@ public class Message360Client {
     }
 
     /**
-     * Singleton access to Usage controller
-     * @return	Returns the UsageController instance 
-     */
-    public UsageController getUsage() {
-        return UsageController.getInstance();
-    }
-
-    /**
      * Singleton access to WebRTC controller
      * @return	Returns the WebRTCController instance 
      */
     public WebRTCController getWebRTC() {
         return WebRTCController.getInstance();
+    }
+
+    /**
+     * Singleton access to Transcription controller
+     * @return	Returns the TranscriptionController instance 
+     */
+    public TranscriptionController getTranscription() {
+        return TranscriptionController.getInstance();
     }
 
     /**
@@ -122,11 +114,43 @@ public class Message360Client {
     }
 
     /**
+     * Singleton access to Usage controller
+     * @return	Returns the UsageController instance 
+     */
+    public UsageController getUsage() {
+        return UsageController.getInstance();
+    }
+
+    /**
      * Singleton access to ShortCode controller
      * @return	Returns the ShortCodeController instance 
      */
     public ShortCodeController getShortCode() {
         return ShortCodeController.getInstance();
+    }
+
+    /**
+     * Singleton access to PostCard controller
+     * @return	Returns the PostCardController instance 
+     */
+    public PostCardController getPostCard() {
+        return PostCardController.getInstance();
+    }
+
+    /**
+     * Singleton access to Letter controller
+     * @return	Returns the LetterController instance 
+     */
+    public LetterController getLetter() {
+        return LetterController.getInstance();
+    }
+
+    /**
+     * Singleton access to AreaMail controller
+     * @return	Returns the AreaMailController instance 
+     */
+    public AreaMailController getAreaMail() {
+        return AreaMailController.getInstance();
     }
 
     /**

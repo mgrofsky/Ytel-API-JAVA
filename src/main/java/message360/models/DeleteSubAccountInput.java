@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class DeleteSubAccountInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5619658143080207016L;
+    private static final long serialVersionUID = 5380489277871081364L;
     private String subAccountSID;
     private MergeNumberStatusEnum mergeNumber = MergeNumberStatusEnum.DELETE;
     private String responseType = "json";

@@ -11,11 +11,12 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListUsageInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4958191802426991454L;
+    private static final long serialVersionUID = 5706555349289195546L;
     private String responseType = "json";
     private ProductCodeEnum productCode = ProductCodeEnum.ALL;
     private String startDate = "2016-09-06";
     private String endDate = "2016-09-06";
+    private String includeSubAccounts;
     /** GETTER
      * Response type format xml or json
      */
@@ -33,7 +34,7 @@ public class ListUsageInput
     }
  
     /** GETTER
-     * Product Code
+     * Filter usage results by product type.
      */
     @JsonGetter("ProductCode")
     public ProductCodeEnum getProductCode ( ) { 
@@ -41,7 +42,7 @@ public class ListUsageInput
     }
     
     /** SETTER
-     * Product Code
+     * Filter usage results by product type.
      */
     @JsonSetter("ProductCode")
     public void setProductCode (ProductCodeEnum value) { 
@@ -49,7 +50,7 @@ public class ListUsageInput
     }
  
     /** GETTER
-     * Start Usage Date
+     * Filter usage objects by start date.
      */
     @JsonGetter("startDate")
     public String getStartDate ( ) { 
@@ -57,7 +58,7 @@ public class ListUsageInput
     }
     
     /** SETTER
-     * Start Usage Date
+     * Filter usage objects by start date.
      */
     @JsonSetter("startDate")
     public void setStartDate (String value) { 
@@ -65,7 +66,7 @@ public class ListUsageInput
     }
  
     /** GETTER
-     * End Usage Date
+     * Filter usage objects by end date.
      */
     @JsonGetter("endDate")
     public String getEndDate ( ) { 
@@ -73,11 +74,27 @@ public class ListUsageInput
     }
     
     /** SETTER
-     * End Usage Date
+     * Filter usage objects by end date.
      */
     @JsonSetter("endDate")
     public void setEndDate (String value) { 
         this.endDate = value;
+    }
+ 
+    /** GETTER
+     * Will include all subaccount usage data
+     */
+    @JsonGetter("IncludeSubAccounts")
+    public String getIncludeSubAccounts ( ) { 
+        return this.includeSubAccounts;
+    }
+    
+    /** SETTER
+     * Will include all subaccount usage data
+     */
+    @JsonSetter("IncludeSubAccounts")
+    public void setIncludeSubAccounts (String value) { 
+        this.includeSubAccounts = value;
     }
  
 }

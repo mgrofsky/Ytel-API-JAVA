@@ -11,23 +11,23 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class DeleteRecordingInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5281086604261220829L;
-    private String recordingSid;
+    private static final long serialVersionUID = 5297416952879836188L;
+    private String recordingsid;
     private String responseType = "json";
     /** GETTER
-     * Unique Recording Sid to be delete
+     * The unique identifier for a recording.
      */
-    @JsonGetter("RecordingSid")
-    public String getRecordingSid ( ) { 
-        return this.recordingSid;
+    @JsonGetter("recordingsid")
+    public String getRecordingsid ( ) { 
+        return this.recordingsid;
     }
     
     /** SETTER
-     * Unique Recording Sid to be delete
+     * The unique identifier for a recording.
      */
-    @JsonSetter("RecordingSid")
-    public void setRecordingSid (String value) { 
-        this.recordingSid = value;
+    @JsonSetter("recordingsid")
+    public void setRecordingsid (String value) { 
+        this.recordingsid = value;
     }
  
     /** GETTER

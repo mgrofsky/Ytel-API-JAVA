@@ -27,7 +27,7 @@ public class ListAssignmentInputBuilder {
     }
 
     /**
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListAssignmentInputBuilder page(Integer page) {
         listAssignmentInput.setPage(page);
@@ -37,8 +37,8 @@ public class ListAssignmentInputBuilder {
     /**
      * Number of individual resources listed in the response per page
      */
-    public ListAssignmentInputBuilder pageSize(Integer pageSize) {
-        listAssignmentInput.setPageSize(pageSize);
+    public ListAssignmentInputBuilder pagesize(Integer pagesize) {
+        listAssignmentInput.setPagesize(pagesize);
         return this;
     }
 

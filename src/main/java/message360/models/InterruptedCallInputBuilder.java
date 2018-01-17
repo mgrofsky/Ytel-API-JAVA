@@ -19,7 +19,7 @@ public class InterruptedCallInputBuilder {
     }
 
     /**
-     * Call SId
+     * The unique identifier for voice call that is in progress.
      */
     public InterruptedCallInputBuilder callSid(String callSid) {
         interruptedCallInput.setCallSid(callSid);

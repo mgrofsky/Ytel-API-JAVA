@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5476070397615621832L;
+    private static final long serialVersionUID = 5188102410972600320L;
     private String responseType = "json";
     private Integer page = 1;
     private Integer pageSize = 10;
@@ -34,7 +34,7 @@ public class ListNumberInput
     }
  
     /** GETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * Which page of the overall response will be returned. Page indexing starts at 1.
      */
     @JsonGetter("Page")
     public Integer getPage ( ) { 
@@ -42,7 +42,7 @@ public class ListNumberInput
     }
     
     /** SETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * Which page of the overall response will be returned. Page indexing starts at 1.
      */
     @JsonSetter("Page")
     public void setPage (Integer value) { 
@@ -50,7 +50,7 @@ public class ListNumberInput
     }
  
     /** GETTER
-     * Number of individual resources listed in the response per page
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     @JsonGetter("PageSize")
     public Integer getPageSize ( ) { 
@@ -58,7 +58,7 @@ public class ListNumberInput
     }
     
     /** SETTER
-     * Number of individual resources listed in the response per page
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     @JsonSetter("PageSize")
     public void setPageSize (Integer value) { 
@@ -66,7 +66,7 @@ public class ListNumberInput
     }
  
     /** GETTER
-     * SMS or Voice
+     * The capability supported by the number.Number type either SMS,Voice or all
      */
     @JsonGetter("NumberType")
     public NumberTypeEnum getNumberType ( ) { 
@@ -74,7 +74,7 @@ public class ListNumberInput
     }
     
     /** SETTER
-     * SMS or Voice
+     * The capability supported by the number.Number type either SMS,Voice or all
      */
     @JsonSetter("NumberType")
     public void setNumberType (NumberTypeEnum value) { 
@@ -82,7 +82,7 @@ public class ListNumberInput
     }
  
     /** GETTER
-     * Friendly name of the number
+     * A human-readable label added to the number object.
      */
     @JsonGetter("FriendlyName")
     public String getFriendlyName ( ) { 
@@ -90,7 +90,7 @@ public class ListNumberInput
     }
     
     /** SETTER
-     * Friendly name of the number
+     * A human-readable label added to the number object.
      */
     @JsonSetter("FriendlyName")
     public void setFriendlyName (String value) { 

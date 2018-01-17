@@ -27,7 +27,7 @@ public class ListOutboundSharedShortcodesInputBuilder {
     }
 
     /**
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListOutboundSharedShortcodesInputBuilder page(Integer page) {
         listOutboundSharedShortcodesInput.setPage(page);
@@ -43,15 +43,15 @@ public class ListOutboundSharedShortcodesInputBuilder {
     }
 
     /**
-     * Messages sent from this number
+     * Only list messages sent from this Short Code
      */
-    public ListOutboundSharedShortcodesInputBuilder from(String from) {
-        listOutboundSharedShortcodesInput.setFrom(from);
+    public ListOutboundSharedShortcodesInputBuilder shortcode(String shortcode) {
+        listOutboundSharedShortcodesInput.setShortcode(shortcode);
         return this;
     }
 
     /**
-     * Messages sent to this number
+     * Only list messages sent to this number
      */
     public ListOutboundSharedShortcodesInputBuilder to(String to) {
         listOutboundSharedShortcodesInput.setTo(to);

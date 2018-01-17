@@ -11,12 +11,12 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ViewParticipantInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4625041636999904855L;
+    private static final long serialVersionUID = 5070157490567714070L;
     private String conferenceSid;
     private String participantSid;
     private String responseType = "json";
     /** GETTER
-     * unique conference sid
+     * The unique identifier for a conference object.
      */
     @JsonGetter("ConferenceSid")
     public String getConferenceSid ( ) { 
@@ -24,7 +24,7 @@ public class ViewParticipantInput
     }
     
     /** SETTER
-     * unique conference sid
+     * The unique identifier for a conference object.
      */
     @JsonSetter("ConferenceSid")
     public void setConferenceSid (String value) { 
@@ -32,7 +32,7 @@ public class ViewParticipantInput
     }
  
     /** GETTER
-     * TODO: Write general description for this method
+     * The unique identifier for a participant object.
      */
     @JsonGetter("ParticipantSid")
     public String getParticipantSid ( ) { 
@@ -40,7 +40,7 @@ public class ViewParticipantInput
     }
     
     /** SETTER
-     * TODO: Write general description for this method
+     * The unique identifier for a participant object.
      */
     @JsonSetter("ParticipantSid")
     public void setParticipantSid (String value) { 

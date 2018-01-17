@@ -19,7 +19,7 @@ public class UpdatePhoneNumberInputBuilder {
     }
 
     /**
-     * The phone number to update
+     * A valid message360 number (E.164 format).
      */
     public UpdatePhoneNumberInputBuilder phoneNumber(String phoneNumber) {
         updatePhoneNumberInput.setPhoneNumber(phoneNumber);
@@ -123,7 +123,7 @@ public class UpdatePhoneNumberInputBuilder {
     }
 
     /**
-     * URL requested once the call connects
+     * URL used if any errors occur during execution of InboundXML from an SMS or at initial request of the SmsUrl.
      */
     public UpdatePhoneNumberInputBuilder smsFallbackUrl(String smsFallbackUrl) {
         updatePhoneNumberInput.setSmsFallbackUrl(smsFallbackUrl);
@@ -131,7 +131,7 @@ public class UpdatePhoneNumberInputBuilder {
     }
 
     /**
-     * URL requested if the sms URL is not available
+     * The HTTP method message360 will use when URL requested if the SmsUrl is not available.
      */
     public UpdatePhoneNumberInputBuilder smsFallbackMethod(HttpActionEnum smsFallbackMethod) {
         updatePhoneNumberInput.setSmsFallbackMethod(smsFallbackMethod);

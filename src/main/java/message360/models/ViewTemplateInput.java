@@ -11,23 +11,23 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ViewTemplateInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5386760494059283098L;
-    private UUID templateid;
+    private static final long serialVersionUID = 5279486199153642453L;
+    private UUID templateId;
     private String responseType = "json";
     /** GETTER
      * The unique identifier for a template object
      */
-    @JsonGetter("templateid")
-    public UUID getTemplateid ( ) { 
-        return this.templateid;
+    @JsonGetter("TemplateId")
+    public UUID getTemplateId ( ) { 
+        return this.templateId;
     }
     
     /** SETTER
      * The unique identifier for a template object
      */
-    @JsonSetter("templateid")
-    public void setTemplateid (UUID value) { 
-        this.templateid = value;
+    @JsonSetter("TemplateId")
+    public void setTemplateId (UUID value) { 
+        this.templateId = value;
     }
  
     /** GETTER

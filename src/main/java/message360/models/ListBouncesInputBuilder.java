@@ -27,7 +27,7 @@ public class ListBouncesInputBuilder {
     }
 
     /**
-     * The record to start the list at
+     * The starting point of the list of bounced emails that should be returned.
      */
     public ListBouncesInputBuilder offset(String offset) {
         listBouncesInput.setOffset(offset);
@@ -35,7 +35,7 @@ public class ListBouncesInputBuilder {
     }
 
     /**
-     * The maximum number of records to return
+     * The count of results that should be returned.
      */
     public ListBouncesInputBuilder limit(String limit) {
         listBouncesInput.setLimit(limit);

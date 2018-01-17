@@ -11,13 +11,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListInboundShortcodeInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5130581607749540588L;
+    private static final long serialVersionUID = 4860447679036850825L;
     private String responseType = "json";
     private Integer page = 1;
-    private Integer pageSize = 10;
+    private Integer pagesize = 10;
     private String from;
     private String shortcode;
-    private String dateReceived;
+    private String datecreated;
     /** GETTER
      * Response type format xml or json
      */
@@ -35,17 +35,17 @@ public class ListInboundShortcodeInput
     }
  
     /** GETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonGetter("Page")
+    @JsonGetter("page")
     public Integer getPage ( ) { 
         return this.page;
     }
     
     /** SETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonSetter("Page")
+    @JsonSetter("page")
     public void setPage (Integer value) { 
         this.page = value;
     }
@@ -53,17 +53,17 @@ public class ListInboundShortcodeInput
     /** GETTER
      * Number of individual resources listed in the response per page
      */
-    @JsonGetter("PageSize")
-    public Integer getPageSize ( ) { 
-        return this.pageSize;
+    @JsonGetter("pagesize")
+    public Integer getPagesize ( ) { 
+        return this.pagesize;
     }
     
     /** SETTER
      * Number of individual resources listed in the response per page
      */
-    @JsonSetter("PageSize")
-    public void setPageSize (Integer value) { 
-        this.pageSize = value;
+    @JsonSetter("pagesize")
+    public void setPagesize (Integer value) { 
+        this.pagesize = value;
     }
  
     /** GETTER
@@ -101,17 +101,17 @@ public class ListInboundShortcodeInput
     /** GETTER
      * Only list SMS messages sent in the specified date MAKE REQUEST
      */
-    @JsonGetter("DateReceived")
-    public String getDateReceived ( ) { 
-        return this.dateReceived;
+    @JsonGetter("Datecreated")
+    public String getDatecreated ( ) { 
+        return this.datecreated;
     }
     
     /** SETTER
      * Only list SMS messages sent in the specified date MAKE REQUEST
      */
-    @JsonSetter("DateReceived")
-    public void setDateReceived (String value) { 
-        this.dateReceived = value;
+    @JsonSetter("Datecreated")
+    public void setDatecreated (String value) { 
+        this.datecreated = value;
     }
  
 }

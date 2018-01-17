@@ -19,10 +19,10 @@ public class ViewSMSInputBuilder {
     }
 
     /**
-     * Message sid
+     * The unique identifier for a sms message.
      */
-    public ViewSMSInputBuilder messagesid(String messagesid) {
-        viewSMSInput.setMessagesid(messagesid);
+    public ViewSMSInputBuilder messageSid(String messageSid) {
+        viewSMSInput.setMessageSid(messageSid);
         return this;
     }
 

@@ -19,7 +19,7 @@ public class RecordingTranscriptionInputBuilder {
     }
 
     /**
-     * Unique Recording sid
+     * The unique identifier for a recording object.
      */
     public RecordingTranscriptionInputBuilder recordingSid(String recordingSid) {
         recordingTranscriptionInput.setRecordingSid(recordingSid);

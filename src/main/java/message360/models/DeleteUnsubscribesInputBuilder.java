@@ -19,7 +19,7 @@ public class DeleteUnsubscribesInputBuilder {
     }
 
     /**
-     * The email to remove from the unsubscribe list
+     * A valid email address that is to be remove from the unsubscribe list.
      */
     public DeleteUnsubscribesInputBuilder email(String email) {
         deleteUnsubscribesInput.setEmail(email);

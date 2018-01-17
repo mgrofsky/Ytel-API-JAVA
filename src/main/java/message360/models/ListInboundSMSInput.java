@@ -11,10 +11,10 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListInboundSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5565869449212303946L;
+    private static final long serialVersionUID = 4901606897638997775L;
     private String responseType = "json";
     private Integer page = 1;
-    private Integer pagesize = 10;
+    private Integer pageSize = 10;
     private String from;
     private String to;
     private String dateSent;
@@ -35,65 +35,65 @@ public class ListInboundSMSInput
     }
  
     /** GETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonGetter("page")
+    @JsonGetter("Page")
     public Integer getPage ( ) { 
         return this.page;
     }
     
     /** SETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
-    @JsonSetter("page")
+    @JsonSetter("Page")
     public void setPage (Integer value) { 
         this.page = value;
     }
  
     /** GETTER
-     * Number of individual resources listed in the response per page
+     * The count of objects to return per page.
      */
-    @JsonGetter("pagesize")
-    public Integer getPagesize ( ) { 
-        return this.pagesize;
+    @JsonGetter("PageSize")
+    public Integer getPageSize ( ) { 
+        return this.pageSize;
     }
     
     /** SETTER
-     * Number of individual resources listed in the response per page
+     * The count of objects to return per page.
      */
-    @JsonSetter("pagesize")
-    public void setPagesize (Integer value) { 
-        this.pagesize = value;
+    @JsonSetter("PageSize")
+    public void setPageSize (Integer value) { 
+        this.pageSize = value;
     }
  
     /** GETTER
-     * From Number to Inbound SMS
+     * Filter SMS message objects from this valid 10-digit phone number (E.164 format).
      */
-    @JsonGetter("from")
+    @JsonGetter("From")
     public String getFrom ( ) { 
         return this.from;
     }
     
     /** SETTER
-     * From Number to Inbound SMS
+     * Filter SMS message objects from this valid 10-digit phone number (E.164 format).
      */
-    @JsonSetter("from")
+    @JsonSetter("From")
     public void setFrom (String value) { 
         this.from = value;
     }
  
     /** GETTER
-     * To Number to get Inbound SMS
+     * Filter SMS message objects to this valid 10-digit phone number (E.164 format).
      */
-    @JsonGetter("to")
+    @JsonGetter("To")
     public String getTo ( ) { 
         return this.to;
     }
     
     /** SETTER
-     * To Number to get Inbound SMS
+     * Filter SMS message objects to this valid 10-digit phone number (E.164 format).
      */
-    @JsonSetter("to")
+    @JsonSetter("To")
     public void setTo (String value) { 
         this.to = value;
     }

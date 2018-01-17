@@ -39,7 +39,7 @@ public class UsageController extends BaseController {
     }
 
     /**
-     * Get all usage 
+     * Retrieve usage metrics regarding your message360 account. The results includes inbound/outbound voice calls and inbound/outbound SMS messages as well as carrier lookup requests.
      * @param    ListUsageInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
@@ -54,7 +54,7 @@ public class UsageController extends BaseController {
     }
 
     /**
-     * Get all usage 
+     * Retrieve usage metrics regarding your message360 account. The results includes inbound/outbound voice calls and inbound/outbound SMS messages as well as carrier lookup requests.
      * @param    ListUsageInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
@@ -75,7 +75,7 @@ public class UsageController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4687480738913716031L;
+            private static final long serialVersionUID = 5326445026310231864L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -84,7 +84,7 @@ public class UsageController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5644405500308201587L;
+            private static final long serialVersionUID = 5238681879111277615L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -92,11 +92,12 @@ public class UsageController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5142855599049593053L;
+            private static final long serialVersionUID = 5309782417429517377L;
             {
                     put( "ProductCode", (input.getProductCode() != null) ? input.getProductCode().value() : 0 );
                     put( "startDate", input.getStartDate() );
                     put( "endDate", input.getEndDate() );
+                    put( "IncludeSubAccounts", input.getIncludeSubAccounts() );
             }
         };
 

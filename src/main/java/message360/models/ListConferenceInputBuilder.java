@@ -27,7 +27,7 @@ public class ListConferenceInputBuilder {
     }
 
     /**
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListConferenceInputBuilder page(Integer page) {
         listConferenceInput.setPage(page);
@@ -37,8 +37,8 @@ public class ListConferenceInputBuilder {
     /**
      * Number of individual resources listed in the response per page
      */
-    public ListConferenceInputBuilder pageSize(Integer pageSize) {
-        listConferenceInput.setPageSize(pageSize);
+    public ListConferenceInputBuilder pagesize(Integer pagesize) {
+        listConferenceInput.setPagesize(pagesize);
         return this;
     }
 

@@ -19,7 +19,7 @@ public class DeleteBlockInputBuilder {
     }
 
     /**
-     * Email address to remove from block list
+     * The email address to be remove from the blocked list.
      */
     public DeleteBlockInputBuilder email(String email) {
         deleteBlockInput.setEmail(email);

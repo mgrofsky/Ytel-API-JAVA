@@ -18,6 +18,9 @@ public class ViewAccountInputBuilder {
         viewAccountInput = new ViewAccountInput();
     }
 
+    /**
+     * Filter account information based on date.
+     */
     public ViewAccountInputBuilder date(String date) {
         viewAccountInput.setDate(date);
         return this;

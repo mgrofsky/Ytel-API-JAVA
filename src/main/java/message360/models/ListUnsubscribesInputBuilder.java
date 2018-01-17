@@ -27,7 +27,7 @@ public class ListUnsubscribesInputBuilder {
     }
 
     /**
-     * Starting record of the list
+     * The starting point of the list of unsubscribed emails that should be returned.
      */
     public ListUnsubscribesInputBuilder offset(String offset) {
         listUnsubscribesInput.setOffset(offset);
@@ -35,7 +35,7 @@ public class ListUnsubscribesInputBuilder {
     }
 
     /**
-     * Maximum number of records to be returned
+     * The count of results that should be returned.
      */
     public ListUnsubscribesInputBuilder limit(String limit) {
         listUnsubscribesInput.setLimit(limit);

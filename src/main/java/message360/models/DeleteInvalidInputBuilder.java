@@ -19,7 +19,7 @@ public class DeleteInvalidInputBuilder {
     }
 
     /**
-     * Email that was marked invalid
+     * A valid email address that is to be remove from the invalid email list.
      */
     public DeleteInvalidInputBuilder email(String email) {
         deleteInvalidInput.setEmail(email);
@@ -27,7 +27,7 @@ public class DeleteInvalidInputBuilder {
     }
 
     /**
-     * Json or xml
+     * Response Type either json or xml
      */
     public DeleteInvalidInputBuilder responseType(String responseType) {
         deleteInvalidInput.setResponseType(responseType);

@@ -11,23 +11,23 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CarrierLookupInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5035672223419098649L;
-    private String phonenumber;
+    private static final long serialVersionUID = 5070168600587512345L;
+    private String phoneNumber;
     private String responseType = "json";
     /** GETTER
-     * The number to lookup
+     * A valid 10-digit number (E.164 format).
      */
-    @JsonGetter("phonenumber")
-    public String getPhonenumber ( ) { 
-        return this.phonenumber;
+    @JsonGetter("PhoneNumber")
+    public String getPhoneNumber ( ) { 
+        return this.phoneNumber;
     }
     
     /** SETTER
-     * The number to lookup
+     * A valid 10-digit number (E.164 format).
      */
-    @JsonSetter("phonenumber")
-    public void setPhonenumber (String value) { 
-        this.phonenumber = value;
+    @JsonSetter("PhoneNumber")
+    public void setPhoneNumber (String value) { 
+        this.phoneNumber = value;
     }
  
     /** GETTER

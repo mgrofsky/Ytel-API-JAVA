@@ -11,23 +11,23 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ViewRecordingInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5561182938601542699L;
-    private String recordingSid;
+    private static final long serialVersionUID = 4635211891588534952L;
+    private String recordingsid;
     private String responseType = "json";
     /** GETTER
-     * Search Recording sid
+     * The unique identifier for the recording.
      */
-    @JsonGetter("RecordingSid")
-    public String getRecordingSid ( ) { 
-        return this.recordingSid;
+    @JsonGetter("recordingsid")
+    public String getRecordingsid ( ) { 
+        return this.recordingsid;
     }
     
     /** SETTER
-     * Search Recording sid
+     * The unique identifier for the recording.
      */
-    @JsonSetter("RecordingSid")
-    public void setRecordingSid (String value) { 
-        this.recordingSid = value;
+    @JsonSetter("recordingsid")
+    public void setRecordingsid (String value) { 
+        this.recordingsid = value;
     }
  
     /** GETTER

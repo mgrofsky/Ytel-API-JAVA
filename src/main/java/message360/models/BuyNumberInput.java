@@ -11,11 +11,11 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class BuyNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5120568672424383200L;
+    private static final long serialVersionUID = 5161825636278730831L;
     private String phoneNumber;
     private String responseType = "json";
     /** GETTER
-     * Phone number to be purchase
+     * A valid 10-digit message360 number (E.164 format).
      */
     @JsonGetter("PhoneNumber")
     public String getPhoneNumber ( ) { 
@@ -23,7 +23,7 @@ public class BuyNumberInput
     }
     
     /** SETTER
-     * Phone number to be purchase
+     * A valid 10-digit message360 number (E.164 format).
      */
     @JsonSetter("PhoneNumber")
     public void setPhoneNumber (String value) { 

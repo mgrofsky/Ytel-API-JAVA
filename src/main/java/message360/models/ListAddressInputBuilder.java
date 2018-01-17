@@ -27,7 +27,7 @@ public class ListAddressInputBuilder {
     }
 
     /**
-     * Return requested # of items starting the value, default=0, must be an integer
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListAddressInputBuilder page(Integer page) {
         listAddressInput.setPage(page);
@@ -37,16 +37,16 @@ public class ListAddressInputBuilder {
     /**
      * How many results to return, default is 10, max is 100, must be an integer
      */
-    public ListAddressInputBuilder pageSize(Integer pageSize) {
-        listAddressInput.setPageSize(pageSize);
+    public ListAddressInputBuilder pagesize(Integer pagesize) {
+        listAddressInput.setPagesize(pagesize);
         return this;
     }
 
     /**
      * addresses Sid
      */
-    public ListAddressInputBuilder addressSID(String addressSID) {
-        listAddressInput.setAddressSID(addressSID);
+    public ListAddressInputBuilder addressid(String addressid) {
+        listAddressInput.setAddressid(addressid);
         return this;
     }
 

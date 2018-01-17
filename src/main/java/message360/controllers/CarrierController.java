@@ -39,7 +39,7 @@ public class CarrierController extends BaseController {
     }
 
     /**
-     * Get the All Purchase Number's Carrier lookup
+     * Retrieve a list of carrier lookup objects.
      * @param    CarrierLookupListInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
@@ -54,7 +54,7 @@ public class CarrierController extends BaseController {
     }
 
     /**
-     * Get the All Purchase Number's Carrier lookup
+     * Retrieve a list of carrier lookup objects.
      * @param    CarrierLookupListInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
@@ -75,7 +75,7 @@ public class CarrierController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5635290237679036172L;
+            private static final long serialVersionUID = 5299110992062426490L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -84,7 +84,7 @@ public class CarrierController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4976581898969402270L;
+            private static final long serialVersionUID = 5556300674489970116L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -92,10 +92,10 @@ public class CarrierController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5099784888712880361L;
+            private static final long serialVersionUID = 5647638351908827519L;
             {
-                    put( "page", input.getPage() );
-                    put( "pagesize", input.getPagesize() );
+                    put( "Page", input.getPage() );
+                    put( "PageSize", input.getPageSize() );
             }
         };
 
@@ -181,8 +181,8 @@ public class CarrierController extends BaseController {
                 final APICallBack<String> callBack
     ) {
         //validating required parameters
-        if (null == input.getPhonenumber())
-            throw new NullPointerException("The property \"Phonenumber\" in the input object cannot be null.");
+        if (null == input.getPhoneNumber())
+            throw new NullPointerException("The property \"PhoneNumber\" in the input object cannot be null.");
 
         if (null == input.getResponseType())
             throw new NullPointerException("The property \"ResponseType\" in the input object cannot be null.");
@@ -196,7 +196,7 @@ public class CarrierController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5315177539621096589L;
+            private static final long serialVersionUID = 5107436368771249565L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -205,7 +205,7 @@ public class CarrierController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5754632758503216354L;
+            private static final long serialVersionUID = 5534001039245623890L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -213,9 +213,9 @@ public class CarrierController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4973975261001519121L;
+            private static final long serialVersionUID = 5256448266755484433L;
             {
-                    put( "phonenumber", input.getPhonenumber() );
+                    put( "PhoneNumber", input.getPhoneNumber() );
             }
         };
 

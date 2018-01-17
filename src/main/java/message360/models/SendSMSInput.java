@@ -11,58 +11,59 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SendSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5367969768910308530L;
+    private static final long serialVersionUID = 5092838558938835250L;
     private String from;
     private String to;
     private String body;
     private String responseType = "json";
     private HttpActionEnum method;
-    private String messagestatuscallback;
+    private String messageStatusCallback;
     private Boolean smartsms = false;
+    private Boolean deliveryStatus = false;
     /** GETTER
-     * SMS enabled Message360 number to send this message from
+     * The 10-digit SMS-enabled message360 number (E.164 format) in which the message is sent.
      */
-    @JsonGetter("from")
+    @JsonGetter("From")
     public String getFrom ( ) { 
         return this.from;
     }
     
     /** SETTER
-     * SMS enabled Message360 number to send this message from
+     * The 10-digit SMS-enabled message360 number (E.164 format) in which the message is sent.
      */
-    @JsonSetter("from")
+    @JsonSetter("From")
     public void setFrom (String value) { 
         this.from = value;
     }
  
     /** GETTER
-     * Number to send the SMS to
+     * The 10-digit phone number (E.164 format) that will receive the message.
      */
-    @JsonGetter("to")
+    @JsonGetter("To")
     public String getTo ( ) { 
         return this.to;
     }
     
     /** SETTER
-     * Number to send the SMS to
+     * The 10-digit phone number (E.164 format) that will receive the message.
      */
-    @JsonSetter("to")
+    @JsonSetter("To")
     public void setTo (String value) { 
         this.to = value;
     }
  
     /** GETTER
-     * Text Message To Send
+     * The body message that is to be sent in the text.
      */
-    @JsonGetter("body")
+    @JsonGetter("Body")
     public String getBody ( ) { 
         return this.body;
     }
     
     /** SETTER
-     * Text Message To Send
+     * The body message that is to be sent in the text.
      */
-    @JsonSetter("body")
+    @JsonSetter("Body")
     public void setBody (String value) { 
         this.body = value;
     }
@@ -86,7 +87,7 @@ public class SendSMSInput
     /** GETTER
      * Specifies the HTTP method used to request the required URL once SMS sent.
      */
-    @JsonGetter("method")
+    @JsonGetter("Method")
     public HttpActionEnum getMethod ( ) { 
         return this.method;
     }
@@ -94,7 +95,7 @@ public class SendSMSInput
     /** SETTER
      * Specifies the HTTP method used to request the required URL once SMS sent.
      */
-    @JsonSetter("method")
+    @JsonSetter("Method")
     public void setMethod (HttpActionEnum value) { 
         this.method = value;
     }
@@ -102,23 +103,23 @@ public class SendSMSInput
     /** GETTER
      * URL that can be requested to receive notification when SMS has Sent. A set of default parameters will be sent here once the SMS is finished.
      */
-    @JsonGetter("messagestatuscallback")
-    public String getMessagestatuscallback ( ) { 
-        return this.messagestatuscallback;
+    @JsonGetter("MessageStatusCallback")
+    public String getMessageStatusCallback ( ) { 
+        return this.messageStatusCallback;
     }
     
     /** SETTER
      * URL that can be requested to receive notification when SMS has Sent. A set of default parameters will be sent here once the SMS is finished.
      */
-    @JsonSetter("messagestatuscallback")
-    public void setMessagestatuscallback (String value) { 
-        this.messagestatuscallback = value;
+    @JsonSetter("MessageStatusCallback")
+    public void setMessageStatusCallback (String value) { 
+        this.messageStatusCallback = value;
     }
  
     /** GETTER
      * Check's 'to' number can receive sms or not using Carrier API, if wireless = true then text sms is sent, else wireless = false then call is recieved to end user with audible message.
      */
-    @JsonGetter("smartsms")
+    @JsonGetter("Smartsms")
     public Boolean getSmartsms ( ) { 
         return this.smartsms;
     }
@@ -126,9 +127,25 @@ public class SendSMSInput
     /** SETTER
      * Check's 'to' number can receive sms or not using Carrier API, if wireless = true then text sms is sent, else wireless = false then call is recieved to end user with audible message.
      */
-    @JsonSetter("smartsms")
+    @JsonSetter("Smartsms")
     public void setSmartsms (Boolean value) { 
         this.smartsms = value;
+    }
+ 
+    /** GETTER
+     * Delivery reports are a method to tell your system if the message has arrived on the destination phone.
+     */
+    @JsonGetter("DeliveryStatus")
+    public Boolean getDeliveryStatus ( ) { 
+        return this.deliveryStatus;
+    }
+    
+    /** SETTER
+     * Delivery reports are a method to tell your system if the message has arrived on the destination phone.
+     */
+    @JsonSetter("DeliveryStatus")
+    public void setDeliveryStatus (Boolean value) { 
+        this.deliveryStatus = value;
     }
  
 }

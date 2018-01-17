@@ -11,11 +11,11 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListOutboundSharedShortcodesInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5106666331294553661L;
+    private static final long serialVersionUID = 4848447343971882616L;
     private String responseType = "json";
     private Integer page = 1;
     private Integer pagesize = 10;
-    private String from;
+    private String shortcode;
     private String to;
     private String datesent;
     /** GETTER
@@ -35,7 +35,7 @@ public class ListOutboundSharedShortcodesInput
     }
  
     /** GETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     @JsonGetter("page")
     public Integer getPage ( ) { 
@@ -43,7 +43,7 @@ public class ListOutboundSharedShortcodesInput
     }
     
     /** SETTER
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     @JsonSetter("page")
     public void setPage (Integer value) { 
@@ -67,23 +67,23 @@ public class ListOutboundSharedShortcodesInput
     }
  
     /** GETTER
-     * Messages sent from this number
+     * Only list messages sent from this Short Code
      */
-    @JsonGetter("from")
-    public String getFrom ( ) { 
-        return this.from;
+    @JsonGetter("Shortcode")
+    public String getShortcode ( ) { 
+        return this.shortcode;
     }
     
     /** SETTER
-     * Messages sent from this number
+     * Only list messages sent from this Short Code
      */
-    @JsonSetter("from")
-    public void setFrom (String value) { 
-        this.from = value;
+    @JsonSetter("Shortcode")
+    public void setShortcode (String value) { 
+        this.shortcode = value;
     }
  
     /** GETTER
-     * Messages sent to this number
+     * Only list messages sent to this number
      */
     @JsonGetter("to")
     public String getTo ( ) { 
@@ -91,7 +91,7 @@ public class ListOutboundSharedShortcodesInput
     }
     
     /** SETTER
-     * Messages sent to this number
+     * Only list messages sent to this number
      */
     @JsonSetter("to")
     public void setTo (String value) { 

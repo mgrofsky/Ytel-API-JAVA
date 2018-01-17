@@ -27,7 +27,7 @@ public class ListNumberInputBuilder {
     }
 
     /**
-     * Which page of the overall response will be returned. Zero indexed
+     * Which page of the overall response will be returned. Page indexing starts at 1.
      */
     public ListNumberInputBuilder page(Integer page) {
         listNumberInput.setPage(page);
@@ -35,7 +35,7 @@ public class ListNumberInputBuilder {
     }
 
     /**
-     * Number of individual resources listed in the response per page
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListNumberInputBuilder pageSize(Integer pageSize) {
         listNumberInput.setPageSize(pageSize);
@@ -43,7 +43,7 @@ public class ListNumberInputBuilder {
     }
 
     /**
-     * SMS or Voice
+     * The capability supported by the number.Number type either SMS,Voice or all
      */
     public ListNumberInputBuilder numberType(NumberTypeEnum numberType) {
         listNumberInput.setNumberType(numberType);
@@ -51,7 +51,7 @@ public class ListNumberInputBuilder {
     }
 
     /**
-     * Friendly name of the number
+     * A human-readable label added to the number object.
      */
     public ListNumberInputBuilder friendlyName(String friendlyName) {
         listNumberInput.setFriendlyName(friendlyName);

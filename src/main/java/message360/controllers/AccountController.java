@@ -39,7 +39,7 @@ public class AccountController extends BaseController {
     }
 
     /**
-     * Display Account Description
+     * Retrieve information regarding your message360 account by a specific date. The response object will contain data such as account status, balance, and account usage totals.
      * @param    ViewAccountInput    Object containing request parameters
      * @return    Returns the String response from the API call 
      */
@@ -54,7 +54,7 @@ public class AccountController extends BaseController {
     }
 
     /**
-     * Display Account Description
+     * Retrieve information regarding your message360 account by a specific date. The response object will contain data such as account status, balance, and account usage totals.
      * @param    ViewAccountInput    Object containing request parameters
      * @return    Returns the void response from the API call 
      */
@@ -78,7 +78,7 @@ public class AccountController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5128132156649668898L;
+            private static final long serialVersionUID = 5250972546628104302L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +87,7 @@ public class AccountController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4805430918772313196L;
+            private static final long serialVersionUID = 5056655396678526721L;
             {
                     put( "user-agent", "message360-api" );
             }
@@ -95,7 +95,7 @@ public class AccountController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5683549425813245685L;
+            private static final long serialVersionUID = 5019027491864115186L;
             {
                     put( "Date", input.getDate() );
             }

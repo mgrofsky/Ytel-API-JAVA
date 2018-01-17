@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SendRinglessVMInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5323987873856265205L;
+    private static final long serialVersionUID = 5357765080207633684L;
     private String from;
     private String rVMCallerId;
     private String to;
@@ -21,7 +21,7 @@ public class SendRinglessVMInput
     private String statusCallBackUrl;
     private HttpActionEnum statsCallBackMethod;
     /** GETTER
-     * This number to display on Caller ID as calling
+     * A valid message360 Voice enabled number (E.164 format) that will be initiating the phone call.
      */
     @JsonGetter("From")
     public String getFrom ( ) { 
@@ -29,7 +29,7 @@ public class SendRinglessVMInput
     }
     
     /** SETTER
-     * This number to display on Caller ID as calling
+     * A valid message360 Voice enabled number (E.164 format) that will be initiating the phone call.
      */
     @JsonSetter("From")
     public void setFrom (String value) { 
@@ -37,7 +37,7 @@ public class SendRinglessVMInput
     }
  
     /** GETTER
-     * Alternate caller ID required for RVM
+     * A required secondary Caller ID for RVM to work.
      */
     @JsonGetter("RVMCallerId")
     public String getRVMCallerId ( ) { 
@@ -45,7 +45,7 @@ public class SendRinglessVMInput
     }
     
     /** SETTER
-     * Alternate caller ID required for RVM
+     * A required secondary Caller ID for RVM to work.
      */
     @JsonSetter("RVMCallerId")
     public void setRVMCallerId (String value) { 
@@ -53,7 +53,7 @@ public class SendRinglessVMInput
     }
  
     /** GETTER
-     * To number
+     * A valid number (E.164 format) that will receive the phone call.
      */
     @JsonGetter("To")
     public String getTo ( ) { 
@@ -61,7 +61,7 @@ public class SendRinglessVMInput
     }
     
     /** SETTER
-     * To number
+     * A valid number (E.164 format) that will receive the phone call.
      */
     @JsonSetter("To")
     public void setTo (String value) { 
@@ -69,7 +69,7 @@ public class SendRinglessVMInput
     }
  
     /** GETTER
-     * URL to an audio file
+     * The URL requested once the RVM connects. A set of default parameters will be sent here.
      */
     @JsonGetter("VoiceMailURL")
     public String getVoiceMailURL ( ) { 
@@ -77,7 +77,7 @@ public class SendRinglessVMInput
     }
     
     /** SETTER
-     * URL to an audio file
+     * The URL requested once the RVM connects. A set of default parameters will be sent here.
      */
     @JsonSetter("VoiceMailURL")
     public void setVoiceMailURL (String value) { 
@@ -101,7 +101,7 @@ public class SendRinglessVMInput
     }
  
     /** GETTER
-     * Not currently used in this version
+     * Specifies the HTTP method used to request the required URL once call connects.
      */
     @JsonGetter("Method")
     public HttpActionEnum getMethod ( ) { 
@@ -109,7 +109,7 @@ public class SendRinglessVMInput
     }
     
     /** SETTER
-     * Not currently used in this version
+     * Specifies the HTTP method used to request the required URL once call connects.
      */
     @JsonSetter("Method")
     public void setMethod (HttpActionEnum value) { 
@@ -117,7 +117,7 @@ public class SendRinglessVMInput
     }
  
     /** GETTER
-     * URL to post the status of the Ringless request
+     * URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished.
      */
     @JsonGetter("StatusCallBackUrl")
     public String getStatusCallBackUrl ( ) { 
@@ -125,7 +125,7 @@ public class SendRinglessVMInput
     }
     
     /** SETTER
-     * URL to post the status of the Ringless request
+     * URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished.
      */
     @JsonSetter("StatusCallBackUrl")
     public void setStatusCallBackUrl (String value) { 
@@ -133,7 +133,7 @@ public class SendRinglessVMInput
     }
  
     /** GETTER
-     * POST or GET
+     * Specifies the HTTP method used to request the required StatusCallBackUrl once call connects.
      */
     @JsonGetter("StatsCallBackMethod")
     public HttpActionEnum getStatsCallBackMethod ( ) { 
@@ -141,7 +141,7 @@ public class SendRinglessVMInput
     }
     
     /** SETTER
-     * POST or GET
+     * Specifies the HTTP method used to request the required StatusCallBackUrl once call connects.
      */
     @JsonSetter("StatsCallBackMethod")
     public void setStatsCallBackMethod (HttpActionEnum value) { 

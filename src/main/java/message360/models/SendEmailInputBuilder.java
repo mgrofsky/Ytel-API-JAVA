@@ -19,7 +19,7 @@ public class SendEmailInputBuilder {
     }
 
     /**
-     * The to email address
+     * A valid address that will receive the email. Multiple addresses can be separated by using commas.
      */
     public SendEmailInputBuilder to(String to) {
         sendEmailInput.setTo(to);
@@ -27,15 +27,7 @@ public class SendEmailInputBuilder {
     }
 
     /**
-     * The from email address
-     */
-    public SendEmailInputBuilder from(String from) {
-        sendEmailInput.setFrom(from);
-        return this;
-    }
-
-    /**
-     * email format type, html or text
+     * Specifies the type of email to be sent
      */
     public SendEmailInputBuilder type(SendEmailAsEnum type) {
         sendEmailInput.setType(type);
@@ -43,7 +35,7 @@ public class SendEmailInputBuilder {
     }
 
     /**
-     * Email subject
+     * The subject of the mail. Must be a valid string.
      */
     public SendEmailInputBuilder subject(String subject) {
         sendEmailInput.setSubject(subject);
@@ -51,7 +43,7 @@ public class SendEmailInputBuilder {
     }
 
     /**
-     * The body of the email message
+     * The email message that is to be sent in the text.
      */
     public SendEmailInputBuilder message(String message) {
         sendEmailInput.setMessage(message);
@@ -67,7 +59,15 @@ public class SendEmailInputBuilder {
     }
 
     /**
-     * CC Email address
+     * A valid address that will send the email.
+     */
+    public SendEmailInputBuilder from(String from) {
+        sendEmailInput.setFrom(from);
+        return this;
+    }
+
+    /**
+     * Carbon copy. A valid address that will receive the email. Multiple addresses can be separated by using commas.
      */
     public SendEmailInputBuilder cc(String cc) {
         sendEmailInput.setCc(cc);
@@ -75,7 +75,7 @@ public class SendEmailInputBuilder {
     }
 
     /**
-     * BCC Email address
+     * Blind carbon copy. A valid address that will receive the email. Multiple addresses can be separated by using commas.
      */
     public SendEmailInputBuilder bcc(String bcc) {
         sendEmailInput.setBcc(bcc);
@@ -83,7 +83,7 @@ public class SendEmailInputBuilder {
     }
 
     /**
-     * File to be attached.File must be less than 7MB.
+     * A file that is attached to the email. Must be less than 7 MB in size.
      */
     public SendEmailInputBuilder attachment(String attachment) {
         sendEmailInput.setAttachment(attachment);

@@ -21,8 +21,8 @@ public class VerifyAddressInputBuilder {
     /**
      * The identifier of the address to be verified.
      */
-    public VerifyAddressInputBuilder addressSID(String addressSID) {
-        verifyAddressInput.setAddressSID(addressSID);
+    public VerifyAddressInputBuilder addressid(String addressid) {
+        verifyAddressInput.setAddressid(addressid);
         return this;
     }
 

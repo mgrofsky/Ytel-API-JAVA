@@ -27,7 +27,7 @@ public class ListCallsInputBuilder {
     }
 
     /**
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListCallsInputBuilder page(Integer page) {
         listCallsInput.setPage(page);
@@ -43,7 +43,7 @@ public class ListCallsInputBuilder {
     }
 
     /**
-     * Only list calls to this number
+     * Filter calls that were sent to this 10-digit number (E.164 format).
      */
     public ListCallsInputBuilder to(String to) {
         listCallsInput.setTo(to);
@@ -51,7 +51,7 @@ public class ListCallsInputBuilder {
     }
 
     /**
-     * Only list calls from this number
+     * Filter calls that were sent from this 10-digit number (E.164 format).
      */
     public ListCallsInputBuilder from(String from) {
         listCallsInput.setFrom(from);
@@ -59,7 +59,7 @@ public class ListCallsInputBuilder {
     }
 
     /**
-     * Only list calls starting within the specified date range
+     * Return calls that are from a specified date.
      */
     public ListCallsInputBuilder dateCreated(String dateCreated) {
         listCallsInput.setDateCreated(dateCreated);

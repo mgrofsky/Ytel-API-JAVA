@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class HangupParticipantInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5662075414972889534L;
+    private static final long serialVersionUID = 5603825774833189430L;
     private String conferenceSid;
     private String participantSid;
     private String responseType = "json";

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListBouncesInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5276014107876157830L;
+    private static final long serialVersionUID = 4806670775899548861L;
     private String responseType = "json";
     private String offset;
     private String limit;
@@ -32,33 +32,33 @@ public class ListBouncesInput
     }
  
     /** GETTER
-     * The record to start the list at
+     * The starting point of the list of bounced emails that should be returned.
      */
-    @JsonGetter("offset")
+    @JsonGetter("Offset")
     public String getOffset ( ) { 
         return this.offset;
     }
     
     /** SETTER
-     * The record to start the list at
+     * The starting point of the list of bounced emails that should be returned.
      */
-    @JsonSetter("offset")
+    @JsonSetter("Offset")
     public void setOffset (String value) { 
         this.offset = value;
     }
  
     /** GETTER
-     * The maximum number of records to return
+     * The count of results that should be returned.
      */
-    @JsonGetter("limit")
+    @JsonGetter("Limit")
     public String getLimit ( ) { 
         return this.limit;
     }
     
     /** SETTER
-     * The maximum number of records to return
+     * The count of results that should be returned.
      */
-    @JsonSetter("limit")
+    @JsonSetter("Limit")
     public void setLimit (String value) { 
         this.limit = value;
     }

@@ -27,7 +27,7 @@ public class ListRecordingInputBuilder {
     }
 
     /**
-     * Which page of the overall response will be returned. Zero indexed
+     * The page count to retrieve from the total results in the collection. Page indexing starts at 1.
      */
     public ListRecordingInputBuilder page(Integer page) {
         listRecordingInput.setPage(page);
@@ -35,26 +35,26 @@ public class ListRecordingInputBuilder {
     }
 
     /**
-     * Number of individual resources listed in the response per page
+     * The count of objects to return per page.
      */
-    public ListRecordingInputBuilder pageSize(Integer pageSize) {
-        listRecordingInput.setPageSize(pageSize);
+    public ListRecordingInputBuilder pagesize(Integer pagesize) {
+        listRecordingInput.setPagesize(pagesize);
         return this;
     }
 
     /**
-     * Recording date
+     * Filter results by creation date
      */
-    public ListRecordingInputBuilder dateCreated(String dateCreated) {
-        listRecordingInput.setDateCreated(dateCreated);
+    public ListRecordingInputBuilder datecreated(String datecreated) {
+        listRecordingInput.setDatecreated(datecreated);
         return this;
     }
 
     /**
-     * Call ID
+     * The unique identifier for a call.
      */
-    public ListRecordingInputBuilder callSid(String callSid) {
-        listRecordingInput.setCallSid(callSid);
+    public ListRecordingInputBuilder callsid(String callsid) {
+        listRecordingInput.setCallsid(callsid);
         return this;
     }
     /**

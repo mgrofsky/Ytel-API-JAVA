@@ -197,7 +197,8 @@ public class UnirestClient implements HttpClient {
         
         //set json header if needed
         if(request instanceof HttpBodyRequest) {
-            uniRequest.header("content-type", "application/json; charset=UTF-8");
+            if (!uniRequest.getHeaders().containsKey("content-type"))
+                uniRequest.header("content-type", "application/json; charset=UTF-8");
         } 
 
         //set basic auth credentials if needed

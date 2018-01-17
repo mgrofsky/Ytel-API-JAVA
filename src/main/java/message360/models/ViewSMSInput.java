@@ -11,23 +11,23 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ViewSMSInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4859901800158325781L;
-    private String messagesid;
+    private static final long serialVersionUID = 5235413188022761310L;
+    private String messageSid;
     private String responseType = "json";
     /** GETTER
-     * Message sid
+     * The unique identifier for a sms message.
      */
-    @JsonGetter("messagesid")
-    public String getMessagesid ( ) { 
-        return this.messagesid;
+    @JsonGetter("MessageSid")
+    public String getMessageSid ( ) { 
+        return this.messageSid;
     }
     
     /** SETTER
-     * Message sid
+     * The unique identifier for a sms message.
      */
-    @JsonSetter("messagesid")
-    public void setMessagesid (String value) { 
-        this.messagesid = value;
+    @JsonSetter("MessageSid")
+    public void setMessageSid (String value) { 
+        this.messageSid = value;
     }
  
     /** GETTER

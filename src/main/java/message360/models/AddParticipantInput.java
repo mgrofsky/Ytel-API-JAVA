@@ -11,42 +11,42 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class AddParticipantInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5441050754380904944L;
-    private String conferencesid;
-    private String participantnumber;
+    private static final long serialVersionUID = 5085239424950019192L;
+    private String conferenceSid;
+    private String participantNumber;
     private String responseType = "json";
     private Boolean muted;
     private Boolean deaf;
     /** GETTER
-     * Unique Conference Sid
+     * The unique identifier for a conference object.
      */
-    @JsonGetter("conferencesid")
-    public String getConferencesid ( ) { 
-        return this.conferencesid;
+    @JsonGetter("ConferenceSid")
+    public String getConferenceSid ( ) { 
+        return this.conferenceSid;
     }
     
     /** SETTER
-     * Unique Conference Sid
+     * The unique identifier for a conference object.
      */
-    @JsonSetter("conferencesid")
-    public void setConferencesid (String value) { 
-        this.conferencesid = value;
+    @JsonSetter("ConferenceSid")
+    public void setConferenceSid (String value) { 
+        this.conferenceSid = value;
     }
  
     /** GETTER
-     * Particiant Number
+     * The phone number of the participant to be added.
      */
-    @JsonGetter("participantnumber")
-    public String getParticipantnumber ( ) { 
-        return this.participantnumber;
+    @JsonGetter("ParticipantNumber")
+    public String getParticipantNumber ( ) { 
+        return this.participantNumber;
     }
     
     /** SETTER
-     * Particiant Number
+     * The phone number of the participant to be added.
      */
-    @JsonSetter("participantnumber")
-    public void setParticipantnumber (String value) { 
-        this.participantnumber = value;
+    @JsonSetter("ParticipantNumber")
+    public void setParticipantNumber (String value) { 
+        this.participantNumber = value;
     }
  
     /** GETTER
@@ -66,33 +66,33 @@ public class AddParticipantInput
     }
  
     /** GETTER
-     * add muted
+     * Specifies if participant should be muted.
      */
-    @JsonGetter("muted")
+    @JsonGetter("Muted")
     public Boolean getMuted ( ) { 
         return this.muted;
     }
     
     /** SETTER
-     * add muted
+     * Specifies if participant should be muted.
      */
-    @JsonSetter("muted")
+    @JsonSetter("Muted")
     public void setMuted (Boolean value) { 
         this.muted = value;
     }
  
     /** GETTER
-     * add without volume
+     * Specifies if the participant should hear audio in the conference.
      */
-    @JsonGetter("deaf")
+    @JsonGetter("Deaf")
     public Boolean getDeaf ( ) { 
         return this.deaf;
     }
     
     /** SETTER
-     * add without volume
+     * Specifies if the participant should hear audio in the conference.
      */
-    @JsonSetter("deaf")
+    @JsonSetter("Deaf")
     public void setDeaf (Boolean value) { 
         this.deaf = value;
     }

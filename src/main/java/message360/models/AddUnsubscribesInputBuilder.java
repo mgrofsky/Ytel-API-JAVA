@@ -19,7 +19,7 @@ public class AddUnsubscribesInputBuilder {
     }
 
     /**
-     * The email to add to the unsubscribe list
+     * A valid email address that is to be added to the unsubscribe list
      */
     public AddUnsubscribesInputBuilder email(String email) {
         addUnsubscribesInput.setEmail(email);

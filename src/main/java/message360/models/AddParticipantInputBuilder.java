@@ -19,18 +19,18 @@ public class AddParticipantInputBuilder {
     }
 
     /**
-     * Unique Conference Sid
+     * The unique identifier for a conference object.
      */
-    public AddParticipantInputBuilder conferencesid(String conferencesid) {
-        addParticipantInput.setConferencesid(conferencesid);
+    public AddParticipantInputBuilder conferenceSid(String conferenceSid) {
+        addParticipantInput.setConferenceSid(conferenceSid);
         return this;
     }
 
     /**
-     * Particiant Number
+     * The phone number of the participant to be added.
      */
-    public AddParticipantInputBuilder participantnumber(String participantnumber) {
-        addParticipantInput.setParticipantnumber(participantnumber);
+    public AddParticipantInputBuilder participantNumber(String participantNumber) {
+        addParticipantInput.setParticipantNumber(participantNumber);
         return this;
     }
 
@@ -43,7 +43,7 @@ public class AddParticipantInputBuilder {
     }
 
     /**
-     * add muted
+     * Specifies if participant should be muted.
      */
     public AddParticipantInputBuilder muted(Boolean muted) {
         addParticipantInput.setMuted(muted);
@@ -51,7 +51,7 @@ public class AddParticipantInputBuilder {
     }
 
     /**
-     * add without volume
+     * Specifies if the participant should hear audio in the conference.
      */
     public AddParticipantInputBuilder deaf(Boolean deaf) {
         addParticipantInput.setDeaf(deaf);

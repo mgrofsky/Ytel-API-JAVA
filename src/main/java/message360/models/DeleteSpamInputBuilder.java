@@ -27,7 +27,7 @@ public class DeleteSpamInputBuilder {
     }
 
     /**
-     * Email address
+     * A valid email address that is to be remove from the spam list.
      */
     public DeleteSpamInputBuilder email(String email) {
         deleteSpamInput.setEmail(email);

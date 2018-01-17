@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListInvalidInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4759954368078078944L;
+    private static final long serialVersionUID = 5727509438393232011L;
     private String responseType = "json";
-    private String offet;
+    private String offset;
     private String limit;
     /** GETTER
      * Response type format xml or json
@@ -32,33 +32,33 @@ public class ListInvalidInput
     }
  
     /** GETTER
-     * Starting record for listing out emails
+     * The starting point of the list of invalid emails that should be returned.
      */
-    @JsonGetter("offet")
-    public String getOffet ( ) { 
-        return this.offet;
+    @JsonGetter("Offset")
+    public String getOffset ( ) { 
+        return this.offset;
     }
     
     /** SETTER
-     * Starting record for listing out emails
+     * The starting point of the list of invalid emails that should be returned.
      */
-    @JsonSetter("offet")
-    public void setOffet (String value) { 
-        this.offet = value;
+    @JsonSetter("Offset")
+    public void setOffset (String value) { 
+        this.offset = value;
     }
  
     /** GETTER
-     * Maximum number of records to return
+     * The count of results that should be returned.
      */
-    @JsonGetter("limit")
+    @JsonGetter("Limit")
     public String getLimit ( ) { 
         return this.limit;
     }
     
     /** SETTER
-     * Maximum number of records to return
+     * The count of results that should be returned.
      */
-    @JsonSetter("limit")
+    @JsonSetter("Limit")
     public void setLimit (String value) { 
         this.limit = value;
     }
