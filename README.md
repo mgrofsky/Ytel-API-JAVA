@@ -1,6 +1,6 @@
 # Getting started
 
-message360 API version 3
+Ytel API version 3
 
 ## How to Build
 
@@ -11,62 +11,62 @@ you will need internet access for a successful build.
 
 * In order to open the client library in Eclipse click on ``` File -> Import ```.
 
-![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?step=import0&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?step=import0&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
 * In the import dialog, select ``` Existing Java Project ``` and click ``` Next ```.
 
-![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?step=import1&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?step=import1&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
 * Browse to locate the folder containing the source code. Select the detected location of the project and click ``` Finish ```.
 
-![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?step=import2&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?step=import2&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
 * Upon successful import, the project will be automatically built by Eclipse after automatically resolving the dependencies.
 
-![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?step=import3&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?step=import3&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
 ## How to Use
 
-The following section explains how to use the Message360 library in a new console project.
+The following section explains how to use the Ytel library in a new console project.
 
 ### 1. Starting a new project
 
 For starting a new project, click the menu command ``` File > New > Project ```.
 
-![Add a new project in Eclipse](https://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Add a new project in Eclipse](https://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
 Next, choose ``` Maven > Maven Project ```and click ``` Next ```.
 
-![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
 Here, make sure to use the current workspace by choosing ``` Use default Workspace location ```, as shown in the picture below and click ``` Next ```.
 
-![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
 Following this, select the *quick start* project type to create a simple project with an existing class and a ``` main ``` method. To do this, choose ``` maven-archetype-quickstart ``` item from the list and click ``` Next ```.
 
-![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
 In the last step, provide a ``` Group Id ``` and ``` Artifact Id ``` as shown in the picture below and click ``` Finish ```.
 
-![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
 ### 2. Add reference of the library project
 
-The created Maven project manages its dependencies using its ``` pom.xml ``` file. In order to add a dependency on the *Message360* client library, double click on the ``` pom.xml ``` file in the ``` Package Explorer ```. Opening the ``` pom.xml ``` file will render a graphical view on the cavas. Here, switch to the ``` Dependencies ``` tab and click the ``` Add ``` button as shown in the picture below.
+The created Maven project manages its dependencies using its ``` pom.xml ``` file. In order to add a dependency on the *Ytel* client library, double click on the ``` pom.xml ``` file in the ``` Package Explorer ```. Opening the ``` pom.xml ``` file will render a graphical view on the cavas. Here, switch to the ``` Dependencies ``` tab and click the ``` Add ``` button as shown in the picture below.
 
-![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?step=testProject0&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?step=testProject0&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
-Clicking the ``` Add ``` button will open a dialog where you need to specify Message360 in ``` Group Id ``` and Message360 in the ``` Artifact Id ``` fields. Once added click ``` OK ```. Save the ``` pom.xml ``` file.
+Clicking the ``` Add ``` button will open a dialog where you need to specify Ytel in ``` Group Id ``` and Ytel in the ``` Artifact Id ``` fields. Once added click ``` OK ```. Save the ``` pom.xml ``` file.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject1&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject1&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
 ### 3. Write sample code
 
 Once the ``` SimpleConsoleApp ``` is created, a file named ``` App.java ``` will be visible in the *Package Explorer* with a ``` main ``` method. This is the entry point for the execution of the created project.
 Here, you can add code to initialize the client library and instantiate a *Controller* class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject2&workspaceFolder=Message360-Java&workspaceName=Message360&projectName=Message360&rootNamespace=message360)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject2&workspaceFolder=Ytel-Java&workspaceName=Ytel&projectName=Ytel&rootNamespace=ytel)
 
 ## How to Test
 
@@ -75,7 +75,7 @@ JUnit is used as the testing framework and test runner.
 
 In Eclipse, for running the tests do the following:
 
-1. Select the project *Message360* from the package explorer.
+1. Select the project *Ytel* from the package explorer.
 2. Select "Run -> Run as -> JUnit Test" or use "Alt + Shift + X" followed by "T" to run the Tests.
 
 ## Initialization
@@ -97,7 +97,7 @@ API client can be initialized as following.
 String basicAuthUserName = "basicAuthUserName"; // The username to use with basic authentication
 String basicAuthPassword = "basicAuthPassword"; // The password to use with basic authentication
 
-Message360Client client = new Message360Client(basicAuthUserName, basicAuthPassword);
+YtelClient client = new YtelClient(basicAuthUserName, basicAuthPassword);
 ```
 
 
@@ -105,10 +105,10 @@ Message360Client client = new Message360Client(basicAuthUserName, basicAuthPassw
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
+* [WebRTCController](#web_rtc_controller)
 * [SharedShortCodeController](#shared_short_code_controller)
 * [ConferenceController](#conference_controller)
 * [PhoneNumberController](#phone_number_controller)
-* [WebRTCController](#web_rtc_controller)
 * [TranscriptionController](#transcription_controller)
 * [RecordingController](#recording_controller)
 * [EmailController](#email_controller)
@@ -124,7 +124,115 @@ Message360Client client = new Message360Client(basicAuthUserName, basicAuthPassw
 * [LetterController](#letter_controller)
 * [AreaMailController](#area_mail_controller)
 
-## <a name="shared_short_code_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.SharedShortCodeController") SharedShortCodeController
+## <a name="web_rtc_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.WebRTCController") WebRTCController
+
+### Get singleton instance
+
+The singleton instance of the ``` WebRTCController ``` class can be accessed from the API Client.
+
+```java
+WebRTCController webRTC = client.getWebRTC();
+```
+
+### <a name="create_token_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.WebRTCController.createTokenAsync") createTokenAsync
+
+> Ytel webrtc
+
+
+```java
+void createTokenAsync(
+        final CreateTokenInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountSid |  ``` Required ```  | Your Ytel Account SID |
+| authToken |  ``` Required ```  | Your Ytel Token |
+| username |  ``` Required ```  | WebRTC username authentication |
+| password |  ``` Required ```  | WebRTC password authentication |
+
+
+#### Example Usage
+
+```java
+CreateTokenInput collect = new CreateTokenInput();
+
+String accountSid = "account_sid";
+collect.setAccountSid(accountSid);
+
+String authToken = "auth_token";
+collect.setAuthToken(authToken);
+
+String username = "username";
+collect.setUsername(username);
+
+String password = "password";
+collect.setPassword(password);
+
+// Invoking the API call with sample inputs
+webRTC.createTokenAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+### <a name="check_funds_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.WebRTCController.checkFundsAsync") checkFundsAsync
+
+> TODO: Add a method description
+
+
+```java
+void checkFundsAsync(
+        final CheckFundsInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountSid |  ``` Required ```  | Your Ytel Account SID |
+| authToken |  ``` Required ```  | Your Ytel Token |
+
+
+#### Example Usage
+
+```java
+CheckFundsInput collect = new CheckFundsInput();
+
+String accountSid = "account_sid";
+collect.setAccountSid(accountSid);
+
+String authToken = "auth_token";
+collect.setAuthToken(authToken);
+
+// Invoking the API call with sample inputs
+webRTC.checkFundsAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="shared_short_code_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.SharedShortCodeController") SharedShortCodeController
 
 ### Get singleton instance
 
@@ -134,7 +242,7 @@ The singleton instance of the ``` SharedShortCodeController ``` class can be acc
 SharedShortCodeController sharedShortCode = client.getSharedShortCode();
 ```
 
-### <a name="view_template_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.viewTemplateAsync") viewTemplateAsync
+### <a name="view_template_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SharedShortCodeController.viewTemplateAsync") viewTemplateAsync
 
 > View a Shared ShortCode Template
 
@@ -178,7 +286,7 @@ sharedShortCode.viewTemplateAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_shared_shortcodes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.viewSharedShortcodesAsync") viewSharedShortcodesAsync
+### <a name="view_shared_shortcodes_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SharedShortCodeController.viewSharedShortcodesAsync") viewSharedShortcodesAsync
 
 > View a ShortCode Message
 
@@ -222,7 +330,7 @@ sharedShortCode.viewSharedShortcodesAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_outbound_shared_shortcodes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.listOutboundSharedShortcodesAsync") listOutboundSharedShortcodesAsync
+### <a name="list_outbound_shared_shortcodes_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SharedShortCodeController.listOutboundSharedShortcodesAsync") listOutboundSharedShortcodesAsync
 
 > List ShortCode Messages
 
@@ -282,7 +390,7 @@ sharedShortCode.listOutboundSharedShortcodesAsync(collect, new APICallBack<Strin
 ```
 
 
-### <a name="list_inbound_shared_shortcodes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.listInboundSharedShortcodesAsync") listInboundSharedShortcodesAsync
+### <a name="list_inbound_shared_shortcodes_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SharedShortCodeController.listInboundSharedShortcodesAsync") listInboundSharedShortcodesAsync
 
 > List All Inbound ShortCode
 
@@ -342,9 +450,9 @@ sharedShortCode.listInboundSharedShortcodesAsync(collect, new APICallBack<String
 ```
 
 
-### <a name="send_shared_shortcode_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.sendSharedShortcodeAsync") sendSharedShortcodeAsync
+### <a name="send_shared_shortcode_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SharedShortCodeController.sendSharedShortcodeAsync") sendSharedShortcodeAsync
 
-> Send an SMS from a message360 ShortCode
+> Send an SMS from a Ytel ShortCode
 
 
 ```java
@@ -406,7 +514,7 @@ sharedShortCode.sendSharedShortcodeAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_templates_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.listTemplatesAsync") listTemplatesAsync
+### <a name="list_templates_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SharedShortCodeController.listTemplatesAsync") listTemplatesAsync
 
 > List Shortcode Templates by Type
 
@@ -462,7 +570,7 @@ sharedShortCode.listTemplatesAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_keyword_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.viewKeywordAsync") viewKeywordAsync
+### <a name="view_keyword_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SharedShortCodeController.viewKeywordAsync") viewKeywordAsync
 
 > View a set of properties for a single keyword.
 
@@ -506,9 +614,9 @@ sharedShortCode.viewKeywordAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_keyword_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.listKeywordAsync") listKeywordAsync
+### <a name="list_keyword_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SharedShortCodeController.listKeywordAsync") listKeywordAsync
 
-> Retrieve a list of keywords associated with your message360 account.
+> Retrieve a list of keywords associated with your Ytel account.
 
 
 ```java
@@ -545,7 +653,7 @@ collect.setPagesize(pagesize);
 String keyword = "Keyword";
 collect.setKeyword(keyword);
 
-Integer shortcode = 224;
+Integer shortcode = 192;
 collect.setShortcode(shortcode);
 
 // Invoking the API call with sample inputs
@@ -562,7 +670,7 @@ sharedShortCode.listKeywordAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_assignement_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.viewAssignementAsync") viewAssignementAsync
+### <a name="view_assignement_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SharedShortCodeController.viewAssignementAsync") viewAssignementAsync
 
 > The response returned here contains all resource properties associated with the given Shortcode.
 
@@ -577,7 +685,7 @@ void viewAssignementAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| shortcode |  ``` Required ```  | List of valid Shortcode to your message360 account |
+| shortcode |  ``` Required ```  | List of valid Shortcode to your Ytel account |
 | responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
 
 
@@ -606,9 +714,9 @@ sharedShortCode.viewAssignementAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_assignment_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.listAssignmentAsync") listAssignmentAsync
+### <a name="list_assignment_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SharedShortCodeController.listAssignmentAsync") listAssignmentAsync
 
-> Retrieve a list of shortcode assignment associated with your message360 account.
+> Retrieve a list of shortcode assignment associated with your Ytel account.
 
 
 ```java
@@ -658,7 +766,7 @@ sharedShortCode.listAssignmentAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="update_assignment_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SharedShortCodeController.updateAssignmentAsync") updateAssignmentAsync
+### <a name="update_assignment_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SharedShortCodeController.updateAssignmentAsync") updateAssignmentAsync
 
 > TODO: Add a method description
 
@@ -673,7 +781,7 @@ void updateAssignmentAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| shortcode |  ``` Required ```  | List of valid shortcode to your message360 account |
+| shortcode |  ``` Required ```  | List of valid shortcode to your Ytel account |
 | responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
 | friendlyName |  ``` Optional ```  | User generated name of the shortcode |
 | callbackUrl |  ``` Optional ```  | URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished. |
@@ -724,7 +832,7 @@ sharedShortCode.updateAssignmentAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="conference_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.ConferenceController") ConferenceController
+## <a name="conference_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.ConferenceController") ConferenceController
 
 ### Get singleton instance
 
@@ -734,7 +842,7 @@ The singleton instance of the ``` ConferenceController ``` class can be accessed
 ConferenceController conference = client.getConference();
 ```
 
-### <a name="deaf_mute_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.deafMuteParticipantAsync") deafMuteParticipantAsync
+### <a name="deaf_mute_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ConferenceController.deafMuteParticipantAsync") deafMuteParticipantAsync
 
 > Deaf Mute Participant
 
@@ -773,7 +881,7 @@ collect.setResponseType(responseType);
 Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 // Invoking the API call with sample inputs
@@ -790,7 +898,7 @@ conference.deafMuteParticipantAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.viewParticipantAsync") viewParticipantAsync
+### <a name="view_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ConferenceController.viewParticipantAsync") viewParticipantAsync
 
 > Retrieve information about a participant by its ParticipantSid.
 
@@ -838,7 +946,7 @@ conference.viewParticipantAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_conference_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.viewConferenceAsync") viewConferenceAsync
+### <a name="view_conference_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ConferenceController.viewConferenceAsync") viewConferenceAsync
 
 > Retrieve information about a conference by its ConferenceSid.
 
@@ -882,7 +990,7 @@ conference.viewConferenceAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="add_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.addParticipantAsync") addParticipantAsync
+### <a name="add_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ConferenceController.addParticipantAsync") addParticipantAsync
 
 > Add Participant in conference 
 
@@ -918,10 +1026,10 @@ collect.setParticipantNumber(participantNumber);
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Boolean muted = false;
+Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 // Invoking the API call with sample inputs
@@ -938,9 +1046,9 @@ conference.addParticipantAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="create_conference_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.createConferenceAsync") createConferenceAsync
+### <a name="create_conference_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ConferenceController.createConferenceAsync") createConferenceAsync
 
-> Here you can experiment with initiating a conference call through message360 and view the request response generated when doing so.
+> Here you can experiment with initiating a conference call through Ytel and view the request response generated when doing so.
 
 
 ```java
@@ -1001,7 +1109,7 @@ collect.setFallbackUrl(fallbackUrl);
 HttpActionEnum fallbackMethod = HttpActionEnum.fromString("GET");
 collect.setFallbackMethod(fallbackMethod);
 
-Boolean record = false;
+Boolean record = true;
 collect.setRecord(record);
 
 String recordCallBackUrl = "RecordCallBackUrl";
@@ -1013,7 +1121,7 @@ collect.setRecordCallBackMethod(recordCallBackMethod);
 String scheduleTime = "ScheduleTime";
 collect.setScheduleTime(scheduleTime);
 
-Integer timeout = 60;
+Integer timeout = 192;
 collect.setTimeout(timeout);
 
 // Invoking the API call with sample inputs
@@ -1030,7 +1138,7 @@ conference.createConferenceAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="hangup_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.hangupParticipantAsync") hangupParticipantAsync
+### <a name="hangup_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ConferenceController.hangupParticipantAsync") hangupParticipantAsync
 
 > Remove a participant from a conference.
 
@@ -1078,7 +1186,7 @@ conference.hangupParticipantAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="play_conference_audio_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.playConferenceAudioAsync") playConferenceAudioAsync
+### <a name="play_conference_audio_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ConferenceController.playConferenceAudioAsync") playConferenceAudioAsync
 
 > Play an audio file during a conference.
 
@@ -1130,7 +1238,7 @@ conference.playConferenceAudioAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.listParticipantAsync") listParticipantAsync
+### <a name="list_participant_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ConferenceController.listParticipantAsync") listParticipantAsync
 
 > Retrieve a list of participants for an in-progress conference.
 
@@ -1170,10 +1278,10 @@ collect.setPage(page);
 Integer pagesize = 10;
 collect.setPagesize(pagesize);
 
-Boolean muted = false;
+Boolean muted = true;
 collect.setMuted(muted);
 
-Boolean deaf = false;
+Boolean deaf = true;
 collect.setDeaf(deaf);
 
 // Invoking the API call with sample inputs
@@ -1190,7 +1298,7 @@ conference.listParticipantAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_conference_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ConferenceController.listConferenceAsync") listConferenceAsync
+### <a name="list_conference_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ConferenceController.listConferenceAsync") listConferenceAsync
 
 > Retrieve a list of conference objects.
 
@@ -1248,7 +1356,7 @@ conference.listConferenceAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="phone_number_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.PhoneNumberController") PhoneNumberController
+## <a name="phone_number_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.PhoneNumberController") PhoneNumberController
 
 ### Get singleton instance
 
@@ -1258,9 +1366,9 @@ The singleton instance of the ``` PhoneNumberController ``` class can be accesse
 PhoneNumberController phoneNumber = client.getPhoneNumber();
 ```
 
-### <a name="available_phone_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.availablePhoneNumberAsync") availablePhoneNumberAsync
+### <a name="available_phone_number_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PhoneNumberController.availablePhoneNumberAsync") availablePhoneNumberAsync
 
-> Retrieve a list of available phone numbers that can be purchased and used for your message360 account.
+> Retrieve a list of available phone numbers that can be purchased and used for your Ytel account.
 
 
 ```java
@@ -1310,141 +1418,9 @@ phoneNumber.availablePhoneNumberAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_number_details_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.viewNumberDetailsAsync") viewNumberDetailsAsync
+### <a name="mass_release_number_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PhoneNumberController.massReleaseNumberAsync") massReleaseNumberAsync
 
-> Retrieve the details for a phone number by its number.
-
-
-```java
-void viewNumberDetailsAsync(
-        final ViewNumberDetailsInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| phoneNumber |  ``` Required ```  | A valid message360 10-digit phone number (E.164 format). |
-| responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
-
-
-#### Example Usage
-
-```java
-ViewNumberDetailsInput collect = new ViewNumberDetailsInput();
-
-String phoneNumber = "PhoneNumber";
-collect.setPhoneNumber(phoneNumber);
-
-String responseType = "json";
-collect.setResponseType(responseType);
-
-// Invoking the API call with sample inputs
-phoneNumber.viewNumberDetailsAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
-### <a name="release_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.releaseNumberAsync") releaseNumberAsync
-
-> Remove a purchased message360 number from your account.
-
-
-```java
-void releaseNumberAsync(
-        final ReleaseNumberInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| phoneNumber |  ``` Required ```  | A valid 10-digit message360 number (E.164 format). |
-| responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
-
-
-#### Example Usage
-
-```java
-ReleaseNumberInput collect = new ReleaseNumberInput();
-
-String phoneNumber = "PhoneNumber";
-collect.setPhoneNumber(phoneNumber);
-
-String responseType = "json";
-collect.setResponseType(responseType);
-
-// Invoking the API call with sample inputs
-phoneNumber.releaseNumberAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
-### <a name="buy_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.buyNumberAsync") buyNumberAsync
-
-> Purchase a phone number to be used with your message360 account
-
-
-```java
-void buyNumberAsync(
-        final BuyNumberInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| phoneNumber |  ``` Required ```  | A valid 10-digit message360 number (E.164 format). |
-| responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
-
-
-#### Example Usage
-
-```java
-BuyNumberInput collect = new BuyNumberInput();
-
-String phoneNumber = "PhoneNumber";
-collect.setPhoneNumber(phoneNumber);
-
-String responseType = "json";
-collect.setResponseType(responseType);
-
-// Invoking the API call with sample inputs
-phoneNumber.buyNumberAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
-### <a name="mass_release_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.massReleaseNumberAsync") massReleaseNumberAsync
-
-> Remove a purchased message360 number from your account.
+> Remove a purchased Ytel number from your account.
 
 
 ```java
@@ -1457,7 +1433,7 @@ void massReleaseNumberAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| phoneNumber |  ``` Required ```  | A valid message360 comma separated numbers (E.164 format). |
+| phoneNumber |  ``` Required ```  | A valid Ytel comma separated numbers (E.164 format). |
 | responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
 
 
@@ -1486,9 +1462,141 @@ phoneNumber.massReleaseNumberAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="update_phone_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.updatePhoneNumberAsync") updatePhoneNumberAsync
+### <a name="view_number_details_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PhoneNumberController.viewNumberDetailsAsync") viewNumberDetailsAsync
 
-> Update properties for a message360 number that has been purchased for your account. Refer to the parameters list for the list of properties that can be updated.
+> Retrieve the details for a phone number by its number.
+
+
+```java
+void viewNumberDetailsAsync(
+        final ViewNumberDetailsInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| phoneNumber |  ``` Required ```  | A valid Ytel 10-digit phone number (E.164 format). |
+| responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+ViewNumberDetailsInput collect = new ViewNumberDetailsInput();
+
+String phoneNumber = "PhoneNumber";
+collect.setPhoneNumber(phoneNumber);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+phoneNumber.viewNumberDetailsAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+### <a name="release_number_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PhoneNumberController.releaseNumberAsync") releaseNumberAsync
+
+> Remove a purchased Ytel number from your account.
+
+
+```java
+void releaseNumberAsync(
+        final ReleaseNumberInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| phoneNumber |  ``` Required ```  | A valid 10-digit Ytel number (E.164 format). |
+| responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+ReleaseNumberInput collect = new ReleaseNumberInput();
+
+String phoneNumber = "PhoneNumber";
+collect.setPhoneNumber(phoneNumber);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+phoneNumber.releaseNumberAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+### <a name="buy_number_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PhoneNumberController.buyNumberAsync") buyNumberAsync
+
+> Purchase a phone number to be used with your Ytel account
+
+
+```java
+void buyNumberAsync(
+        final BuyNumberInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| phoneNumber |  ``` Required ```  | A valid 10-digit Ytel number (E.164 format). |
+| responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+BuyNumberInput collect = new BuyNumberInput();
+
+String phoneNumber = "PhoneNumber";
+collect.setPhoneNumber(phoneNumber);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+phoneNumber.buyNumberAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+### <a name="update_phone_number_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PhoneNumberController.updatePhoneNumberAsync") updatePhoneNumberAsync
+
+> Update properties for a Ytel number that has been purchased for your account. Refer to the parameters list for the list of properties that can be updated.
 
 
 ```java
@@ -1501,7 +1609,7 @@ void updatePhoneNumberAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| phoneNumber |  ``` Required ```  | A valid message360 number (E.164 format). |
+| phoneNumber |  ``` Required ```  | A valid Ytel number (E.164 format). |
 | voiceUrl |  ``` Required ```  | URL requested once the call connects |
 | responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
 | friendlyName |  ``` Optional ```  | Phone number friendly name description |
@@ -1515,7 +1623,7 @@ void updatePhoneNumberAsync(
 | smsUrl |  ``` Optional ```  | URL requested when an SMS is received |
 | smsMethod |  ``` Optional ```  | Post or Get |
 | smsFallbackUrl |  ``` Optional ```  | URL used if any errors occur during execution of InboundXML from an SMS or at initial request of the SmsUrl. |
-| smsFallbackMethod |  ``` Optional ```  | The HTTP method message360 will use when URL requested if the SmsUrl is not available. |
+| smsFallbackMethod |  ``` Optional ```  | The HTTP method Ytel will use when URL requested if the SmsUrl is not available. |
 
 
 #### Example Usage
@@ -1582,9 +1690,61 @@ phoneNumber.updatePhoneNumberAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.listNumberAsync") listNumberAsync
+### <a name="transfer_number_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PhoneNumberController.transferNumberAsync") transferNumberAsync
 
-> Retrieve a list of purchased phones numbers associated with your message360 account.
+> Transfer phone number that has been purchased for from one account to another account.
+
+
+```java
+void transferNumberAsync(
+        final TransferNumberInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| phonenumber |  ``` Required ```  | A valid 10-digit Ytel number (E.164 format). |
+| fromaccountsid |  ``` Required ```  | A specific Accountsid from where Number is getting transfer. |
+| toaccountsid |  ``` Required ```  | A specific Accountsid to which Number is getting transfer. |
+| responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
+
+
+#### Example Usage
+
+```java
+TransferNumberInput collect = new TransferNumberInput();
+
+String phonenumber = "phonenumber";
+collect.setPhonenumber(phonenumber);
+
+String fromaccountsid = "fromaccountsid";
+collect.setFromaccountsid(fromaccountsid);
+
+String toaccountsid = "toaccountsid";
+collect.setToaccountsid(toaccountsid);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+// Invoking the API call with sample inputs
+phoneNumber.transferNumberAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
+### <a name="list_number_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PhoneNumberController.listNumberAsync") listNumberAsync
+
+> Retrieve a list of purchased phones numbers associated with your Ytel account.
 
 
 ```java
@@ -1638,9 +1798,9 @@ phoneNumber.listNumberAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="mass_update_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.massUpdateNumberAsync") massUpdateNumberAsync
+### <a name="mass_update_number_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PhoneNumberController.massUpdateNumberAsync") massUpdateNumberAsync
 
-> Update properties for a message360 numbers that has been purchased for your account. Refer to the parameters list for the list of properties that can be updated.
+> Update properties for a Ytel numbers that has been purchased for your account. Refer to the parameters list for the list of properties that can be updated.
 
 
 ```java
@@ -1653,7 +1813,7 @@ void massUpdateNumberAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| phoneNumber |  ``` Required ```  | A valid comma(,) separated message360 numbers. (E.164 format). |
+| phoneNumber |  ``` Required ```  | A valid comma(,) separated Ytel numbers. (E.164 format). |
 | voiceUrl |  ``` Required ```  | The URL returning InboundXML incoming calls should execute when connected. |
 | responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
 | friendlyName |  ``` Optional ```  | A human-readable value for labeling the number. |
@@ -1661,13 +1821,13 @@ void massUpdateNumberAsync(
 | voiceFallbackUrl |  ``` Optional ```  | URL used if any errors occur during execution of InboundXML on a call or at initial request of the voice url |
 | voiceFallbackMethod |  ``` Optional ```  | Specifies the HTTP method used to request the VoiceFallbackUrl once incoming call connects. |
 | hangupCallback |  ``` Optional ```  | URL that can be requested to receive notification when and how incoming call has ended. |
-| hangupCallbackMethod |  ``` Optional ```  | The HTTP method message360 will use when requesting the HangupCallback URL. |
+| hangupCallbackMethod |  ``` Optional ```  | The HTTP method Ytel will use when requesting the HangupCallback URL. |
 | heartbeatUrl |  ``` Optional ```  | URL that can be used to monitor the phone number. |
-| heartbeatMethod |  ``` Optional ```  | The HTTP method message360 will use when requesting the HeartbeatUrl. |
+| heartbeatMethod |  ``` Optional ```  | The HTTP method Ytel will use when requesting the HeartbeatUrl. |
 | smsUrl |  ``` Optional ```  | URL requested when an SMS is received. |
-| smsMethod |  ``` Optional ```  | The HTTP method message360 will use when requesting the SmsUrl. |
+| smsMethod |  ``` Optional ```  | The HTTP method Ytel will use when requesting the SmsUrl. |
 | smsFallbackUrl |  ``` Optional ```  | URL used if any errors occur during execution of InboundXML from an SMS or at initial request of the SmsUrl. |
-| smsFallbackMethod |  ``` Optional ```  | The HTTP method message360 will use when URL requested if the SmsUrl is not available. |
+| smsFallbackMethod |  ``` Optional ```  | The HTTP method Ytel will use when URL requested if the SmsUrl is not available. |
 
 
 #### Example Usage
@@ -1734,7 +1894,7 @@ phoneNumber.massUpdateNumberAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="get_did_score_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.getDIDScoreNumberAsync") getDIDScoreNumberAsync
+### <a name="get_did_score_number_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PhoneNumberController.getDIDScoreNumberAsync") getDIDScoreNumberAsync
 
 > Get DID Score Number
 
@@ -1778,9 +1938,9 @@ phoneNumber.getDIDScoreNumberAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="bulk_buy_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.bulkBuyNumberAsync") bulkBuyNumberAsync
+### <a name="bulk_buy_number_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PhoneNumberController.bulkBuyNumberAsync") bulkBuyNumberAsync
 
-> Purchase a selected number of DID's from specific area codes to be used with your message360 account.
+> Purchase a selected number of DID's from specific area codes to be used with your Ytel account.
 
 
 ```java
@@ -1834,169 +1994,9 @@ phoneNumber.bulkBuyNumberAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="transfer_number_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PhoneNumberController.transferNumberAsync") transferNumberAsync
-
-> Transfer phone number that has been purchased for from one account to another account.
-
-
-```java
-void transferNumberAsync(
-        final TransferNumberInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| phonenumber |  ``` Required ```  | A valid 10-digit message360 number (E.164 format). |
-| fromaccountsid |  ``` Required ```  | A specific Accountsid from where Number is getting transfer. |
-| toaccountsid |  ``` Required ```  | A specific Accountsid to which Number is getting transfer. |
-| responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
-
-
-#### Example Usage
-
-```java
-TransferNumberInput collect = new TransferNumberInput();
-
-String phonenumber = "phonenumber";
-collect.setPhonenumber(phonenumber);
-
-String fromaccountsid = "fromaccountsid";
-collect.setFromaccountsid(fromaccountsid);
-
-String toaccountsid = "toaccountsid";
-collect.setToaccountsid(toaccountsid);
-
-String responseType = "json";
-collect.setResponseType(responseType);
-
-// Invoking the API call with sample inputs
-phoneNumber.transferNumberAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="web_rtc_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.WebRTCController") WebRTCController
-
-### Get singleton instance
-
-The singleton instance of the ``` WebRTCController ``` class can be accessed from the API Client.
-
-```java
-WebRTCController webRTC = client.getWebRTC();
-```
-
-### <a name="check_funds_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.WebRTCController.checkFundsAsync") checkFundsAsync
-
-> TODO: Add a method description
-
-
-```java
-void checkFundsAsync(
-        final CheckFundsInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| accountSid |  ``` Required ```  | Your message360 Account SID |
-| authToken |  ``` Required ```  | Your message360 Token |
-
-
-#### Example Usage
-
-```java
-CheckFundsInput collect = new CheckFundsInput();
-
-String accountSid = "account_sid";
-collect.setAccountSid(accountSid);
-
-String authToken = "auth_token";
-collect.setAuthToken(authToken);
-
-// Invoking the API call with sample inputs
-webRTC.checkFundsAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
-### <a name="create_token_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.WebRTCController.createTokenAsync") createTokenAsync
-
-> message360 webrtc
-
-
-```java
-void createTokenAsync(
-        final CreateTokenInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| accountSid |  ``` Required ```  | Your message360 Account SID |
-| authToken |  ``` Required ```  | Your message360 Token |
-| username |  ``` Required ```  | WebRTC username authentication |
-| password |  ``` Required ```  | WebRTC password authentication |
-
-
-#### Example Usage
-
-```java
-CreateTokenInput collect = new CreateTokenInput();
-
-String accountSid = "account_sid";
-collect.setAccountSid(accountSid);
-
-String authToken = "auth_token";
-collect.setAuthToken(authToken);
-
-String username = "username";
-collect.setUsername(username);
-
-String password = "password";
-collect.setPassword(password);
-
-// Invoking the API call with sample inputs
-webRTC.createTokenAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="transcription_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.TranscriptionController") TranscriptionController
+## <a name="transcription_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.TranscriptionController") TranscriptionController
 
 ### Get singleton instance
 
@@ -2006,7 +2006,7 @@ The singleton instance of the ``` TranscriptionController ``` class can be acces
 TranscriptionController transcription = client.getTranscription();
 ```
 
-### <a name="view_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.TranscriptionController.viewTranscriptionAsync") viewTranscriptionAsync
+### <a name="view_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.TranscriptionController.viewTranscriptionAsync") viewTranscriptionAsync
 
 > Retrieve information about a transaction by its TranscriptionSid.
 
@@ -2050,7 +2050,7 @@ transcription.viewTranscriptionAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="recording_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.TranscriptionController.recordingTranscriptionAsync") recordingTranscriptionAsync
+### <a name="recording_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.TranscriptionController.recordingTranscriptionAsync") recordingTranscriptionAsync
 
 > Transcribe a message360 recording by its RecordingSid.
 
@@ -2094,7 +2094,7 @@ transcription.recordingTranscriptionAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="audio_url_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.TranscriptionController.audioURLTranscriptionAsync") audioURLTranscriptionAsync
+### <a name="audio_url_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.TranscriptionController.audioURLTranscriptionAsync") audioURLTranscriptionAsync
 
 > Transcribe an audio recording from a file.
 
@@ -2138,9 +2138,9 @@ transcription.audioURLTranscriptionAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.TranscriptionController.listTranscriptionAsync") listTranscriptionAsync
+### <a name="list_transcription_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.TranscriptionController.listTranscriptionAsync") listTranscriptionAsync
 
-> Retrieve a list of transcription objects for your message360 account.
+> Retrieve a list of transcription objects for your Ytel account.
 
 
 ```java
@@ -2196,7 +2196,7 @@ transcription.listTranscriptionAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="recording_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.RecordingController") RecordingController
+## <a name="recording_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.RecordingController") RecordingController
 
 ### Get singleton instance
 
@@ -2206,7 +2206,7 @@ The singleton instance of the ``` RecordingController ``` class can be accessed 
 RecordingController recording = client.getRecording();
 ```
 
-### <a name="view_recording_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.RecordingController.viewRecordingAsync") viewRecordingAsync
+### <a name="view_recording_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.RecordingController.viewRecordingAsync") viewRecordingAsync
 
 > Retrieve the recording of a call by its RecordingSid. This resource will return information regarding the call such as start time, end time, duration, and so forth.
 
@@ -2250,9 +2250,9 @@ recording.viewRecordingAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="delete_recording_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.RecordingController.deleteRecordingAsync") deleteRecordingAsync
+### <a name="delete_recording_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.RecordingController.deleteRecordingAsync") deleteRecordingAsync
 
-> Remove a recording from your message360 account.
+> Remove a recording from your Ytel account.
 
 
 ```java
@@ -2294,7 +2294,7 @@ recording.deleteRecordingAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_recording_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.RecordingController.listRecordingAsync") listRecordingAsync
+### <a name="list_recording_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.RecordingController.listRecordingAsync") listRecordingAsync
 
 > Retrieve a list of recording objects.
 
@@ -2352,7 +2352,7 @@ recording.listRecordingAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="email_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.EmailController") EmailController
+## <a name="email_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.EmailController") EmailController
 
 ### Get singleton instance
 
@@ -2362,7 +2362,7 @@ The singleton instance of the ``` EmailController ``` class can be accessed from
 EmailController email = client.getEmail();
 ```
 
-### <a name="delete_spam_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.deleteSpamAsync") deleteSpamAsync
+### <a name="delete_spam_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.deleteSpamAsync") deleteSpamAsync
 
 > Remove an email from the spam email list.
 
@@ -2406,7 +2406,7 @@ email.deleteSpamAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="delete_block_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.deleteBlockAsync") deleteBlockAsync
+### <a name="delete_block_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.deleteBlockAsync") deleteBlockAsync
 
 > Remove an email from blocked emails list.
 
@@ -2450,7 +2450,7 @@ email.deleteBlockAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="add_unsubscribes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.addUnsubscribesAsync") addUnsubscribesAsync
+### <a name="add_unsubscribes_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.addUnsubscribesAsync") addUnsubscribesAsync
 
 > Add an email to the unsubscribe list
 
@@ -2494,7 +2494,7 @@ email.addUnsubscribesAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="send_email_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.sendEmailAsync") sendEmailAsync
+### <a name="send_email_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.sendEmailAsync") sendEmailAsync
 
 > Create and submit an email message to one or more email addresses.
 
@@ -2566,7 +2566,7 @@ email.sendEmailAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="delete_unsubscribes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.deleteUnsubscribesAsync") deleteUnsubscribesAsync
+### <a name="delete_unsubscribes_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.deleteUnsubscribesAsync") deleteUnsubscribesAsync
 
 > Remove an email address from the list of unsubscribed emails.
 
@@ -2610,7 +2610,7 @@ email.deleteUnsubscribesAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_unsubscribes_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.listUnsubscribesAsync") listUnsubscribesAsync
+### <a name="list_unsubscribes_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.listUnsubscribesAsync") listUnsubscribesAsync
 
 > Retrieve a list of email addresses from the unsubscribe list.
 
@@ -2658,7 +2658,7 @@ email.listUnsubscribesAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_invalid_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.listInvalidAsync") listInvalidAsync
+### <a name="list_invalid_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.listInvalidAsync") listInvalidAsync
 
 > Retrieve a list of invalid email addresses.
 
@@ -2706,7 +2706,7 @@ email.listInvalidAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="delete_bounces_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.deleteBouncesAsync") deleteBouncesAsync
+### <a name="delete_bounces_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.deleteBouncesAsync") deleteBouncesAsync
 
 > Remove an email address from the bounced list.
 
@@ -2750,7 +2750,7 @@ email.deleteBouncesAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_bounces_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.listBouncesAsync") listBouncesAsync
+### <a name="list_bounces_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.listBouncesAsync") listBouncesAsync
 
 > Retrieve a list of emails that have bounced.
 
@@ -2798,7 +2798,7 @@ email.listBouncesAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_spam_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.listSpamAsync") listSpamAsync
+### <a name="list_spam_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.listSpamAsync") listSpamAsync
 
 > Retrieve a list of emails that are on the spam list.
 
@@ -2846,7 +2846,7 @@ email.listSpamAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_blocks_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.listBlocksAsync") listBlocksAsync
+### <a name="list_blocks_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.listBlocksAsync") listBlocksAsync
 
 > Retrieve a list of emails that have been blocked.
 
@@ -2894,7 +2894,7 @@ email.listBlocksAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="delete_invalid_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.EmailController.deleteInvalidAsync") deleteInvalidAsync
+### <a name="delete_invalid_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.EmailController.deleteInvalidAsync") deleteInvalidAsync
 
 > Remove an email from the invalid email list.
 
@@ -2940,7 +2940,7 @@ email.deleteInvalidAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="sms_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.SMSController") SMSController
+## <a name="sms_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.SMSController") SMSController
 
 ### Get singleton instance
 
@@ -2950,9 +2950,9 @@ The singleton instance of the ``` SMSController ``` class can be accessed from t
 SMSController sMS = client.getSMS();
 ```
 
-### <a name="send_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SMSController.sendSMSAsync") sendSMSAsync
+### <a name="send_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SMSController.sendSMSAsync") sendSMSAsync
 
-> Send an SMS from a message360 number
+> Send an SMS from a Ytel number
 
 
 ```java
@@ -2965,7 +2965,7 @@ void sendSMSAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| from |  ``` Required ```  | The 10-digit SMS-enabled message360 number (E.164 format) in which the message is sent. |
+| from |  ``` Required ```  | The 10-digit SMS-enabled Ytel number (E.164 format) in which the message is sent. |
 | to |  ``` Required ```  | The 10-digit phone number (E.164 format) that will receive the message. |
 | body |  ``` Required ```  | The body message that is to be sent in the text. |
 | responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
@@ -3018,7 +3018,7 @@ sMS.sendSMSAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SMSController.viewSMSAsync") viewSMSAsync
+### <a name="view_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SMSController.viewSMSAsync") viewSMSAsync
 
 > Retrieve a single SMS message object by its SmsSid.
 
@@ -3062,7 +3062,7 @@ sMS.viewSMSAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SMSController.listSMSAsync") listSMSAsync
+### <a name="list_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SMSController.listSMSAsync") listSMSAsync
 
 > Retrieve a list of Outbound SMS message objects.
 
@@ -3122,7 +3122,7 @@ sMS.listSMSAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_inbound_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SMSController.listInboundSMSAsync") listInboundSMSAsync
+### <a name="list_inbound_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SMSController.listInboundSMSAsync") listInboundSMSAsync
 
 > Retrieve a list of Inbound SMS message objects.
 
@@ -3182,7 +3182,7 @@ sMS.listInboundSMSAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_detail_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SMSController.viewDetailSMSAsync") viewDetailSMSAsync
+### <a name="view_detail_sms_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SMSController.viewDetailSMSAsync") viewDetailSMSAsync
 
 > Retrieve a single SMS message object with details by its SmsSid.
 
@@ -3228,7 +3228,7 @@ sMS.viewDetailSMSAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="call_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.CallController") CallController
+## <a name="call_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.CallController") CallController
 
 ### Get singleton instance
 
@@ -3238,9 +3238,9 @@ The singleton instance of the ``` CallController ``` class can be accessed from 
 CallController call = client.getCall();
 ```
 
-### <a name="make_call_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.makeCallAsync") makeCallAsync
+### <a name="make_call_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CallController.makeCallAsync") makeCallAsync
 
-> You can experiment with initiating a call through Message360 and view the request response generated when doing so and get the response in json
+> You can experiment with initiating a call through Ytel and view the request response generated when doing so and get the response in json
 
 
 ```java
@@ -3253,7 +3253,7 @@ void makeCallAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| from |  ``` Required ```  | A valid message360 Voice enabled number (E.164 format) that will be initiating the phone call. |
+| from |  ``` Required ```  | A valid Ytel Voice enabled number (E.164 format) that will be initiating the phone call. |
 | to |  ``` Required ```  | To number |
 | url |  ``` Required ```  | URL requested once the call connects |
 | responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
@@ -3264,7 +3264,7 @@ void makeCallAsync(
 | fallBackMethod |  ``` Optional ```  | Specifies the HTTP method used to request the required FallbackUrl once call connects. |
 | heartBeatUrl |  ``` Optional ```  | URL that can be requested every 60 seconds during the call to notify of elapsed tim |
 | heartBeatMethod |  ``` Optional ```  | Specifies the HTTP method used to request HeartbeatUrl. |
-| timeout |  ``` Optional ```  | Time (in seconds) Message360 should wait while the call is ringing before canceling the call |
+| timeout |  ``` Optional ```  | Time (in seconds) Ytel should wait while the call is ringing before canceling the call |
 | playDtmf |  ``` Optional ```  | DTMF Digits to play to the call once it connects. 0-9, #, or * |
 | hideCallerId |  ``` Optional ```  | Specifies if the caller id will be hidden |
 | record |  ``` Optional ```  | Specifies if the call should be recorded |
@@ -3272,7 +3272,7 @@ void makeCallAsync(
 | recordCallBackMethod |  ``` Optional ```  | Method used to request the RecordCallback URL. |
 | transcribe |  ``` Optional ```  | Specifies if the call recording should be transcribed |
 | transcribeCallBackUrl |  ``` Optional ```  | Transcription parameters will be sent here upon completion |
-| ifMachine |  ``` Optional ```  | How Message360 should handle the receiving numbers voicemail machine |
+| ifMachine |  ``` Optional ```  | How Ytel should handle the receiving numbers voicemail machine |
 | ifMachineUrl |  ``` Optional ```  | URL requested when IfMachine=continue |
 | ifMachineMethod |  ``` Optional ```  | Method used to request the IfMachineUrl. |
 | feedback |  ``` Optional ```  | Specify if survey should be enable or not |
@@ -3317,16 +3317,16 @@ collect.setHeartBeatUrl(heartBeatUrl);
 HttpActionEnum heartBeatMethod = HttpActionEnum.fromString("GET");
 collect.setHeartBeatMethod(heartBeatMethod);
 
-Integer timeout = 60;
+Integer timeout = 150;
 collect.setTimeout(timeout);
 
 String playDtmf = "PlayDtmf";
 collect.setPlayDtmf(playDtmf);
 
-Boolean hideCallerId = false;
+Boolean hideCallerId = true;
 collect.setHideCallerId(hideCallerId);
 
-Boolean record = false;
+Boolean record = true;
 collect.setRecord(record);
 
 String recordCallBackUrl = "RecordCallBackUrl";
@@ -3335,7 +3335,7 @@ collect.setRecordCallBackUrl(recordCallBackUrl);
 HttpActionEnum recordCallBackMethod = HttpActionEnum.fromString("GET");
 collect.setRecordCallBackMethod(recordCallBackMethod);
 
-Boolean transcribe = false;
+Boolean transcribe = true;
 collect.setTranscribe(transcribe);
 
 String transcribeCallBackUrl = "TranscribeCallBackUrl";
@@ -3350,7 +3350,7 @@ collect.setIfMachineUrl(ifMachineUrl);
 HttpActionEnum ifMachineMethod = HttpActionEnum.fromString("GET");
 collect.setIfMachineMethod(ifMachineMethod);
 
-Boolean feedback = false;
+Boolean feedback = true;
 collect.setFeedback(feedback);
 
 String surveyId = "SurveyId";
@@ -3370,7 +3370,7 @@ call.makeCallAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="play_audio_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.playAudioAsync") playAudioAsync
+### <a name="play_audio_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CallController.playAudioAsync") playAudioAsync
 
 > Play Dtmf and send the Digit
 
@@ -3411,13 +3411,13 @@ collect.setSayText(sayText);
 String responseType = "json";
 collect.setResponseType(responseType);
 
-Integer length = 60;
+Integer length = 150;
 collect.setLength(length);
 
 DirectionEnum direction = DirectionEnum.fromString("IN");
 collect.setDirection(direction);
 
-Boolean mix = false;
+Boolean mix = true;
 collect.setMix(mix);
 
 // Invoking the API call with sample inputs
@@ -3434,7 +3434,7 @@ call.playAudioAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="record_call_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.recordCallAsync") recordCallAsync
+### <a name="record_call_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CallController.recordCallAsync") recordCallAsync
 
 > Start or stop recording of an in-progress voice call.
 
@@ -3466,7 +3466,7 @@ RecordCallInput collect = new RecordCallInput();
 String callSid = "CallSid";
 collect.setCallSid(callSid);
 
-boolean record = false;
+boolean record = true;
 collect.setRecord(record);
 
 String responseType = "json";
@@ -3475,7 +3475,7 @@ collect.setResponseType(responseType);
 DirectionEnum direction = DirectionEnum.fromString("IN");
 collect.setDirection(direction);
 
-Integer timeLimit = 60;
+Integer timeLimit = 150;
 collect.setTimeLimit(timeLimit);
 
 String callBackUrl = "CallBackUrl";
@@ -3498,7 +3498,7 @@ call.recordCallAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="voice_effect_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.voiceEffectAsync") voiceEffectAsync
+### <a name="voice_effect_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CallController.voiceEffectAsync") voiceEffectAsync
 
 > Add audio voice effects to the an in-progress voice call.
 
@@ -3537,19 +3537,19 @@ collect.setResponseType(responseType);
 AudioDirectionEnum audioDirection = AudioDirectionEnum.fromString("IN");
 collect.setAudioDirection(audioDirection);
 
-Double pitchSemiTones = 152.028382849893;
+Double pitchSemiTones = 150.308782984646;
 collect.setPitchSemiTones(pitchSemiTones);
 
-Double pitchOctaves = 152.028382849893;
+Double pitchOctaves = 150.308782984646;
 collect.setPitchOctaves(pitchOctaves);
 
-Double pitch = 152.028382849893;
+Double pitch = 150.308782984646;
 collect.setPitch(pitch);
 
-Double rate = 152.028382849893;
+Double rate = 150.308782984646;
 collect.setRate(rate);
 
-Double tempo = 152.028382849893;
+Double tempo = 150.308782984646;
 collect.setTempo(tempo);
 
 // Invoking the API call with sample inputs
@@ -3566,7 +3566,7 @@ call.voiceEffectAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="send_digit_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.sendDigitAsync") sendDigitAsync
+### <a name="send_digit_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CallController.sendDigitAsync") sendDigitAsync
 
 > Play Dtmf and send the Digit
 
@@ -3618,7 +3618,7 @@ call.sendDigitAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="interrupted_call_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.interruptedCallAsync") interruptedCallAsync
+### <a name="interrupted_call_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CallController.interruptedCallAsync") interruptedCallAsync
 
 > Interrupt the Call by Call Sid
 
@@ -3674,129 +3674,9 @@ call.interruptedCallAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="group_call_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.groupCallAsync") groupCallAsync
+### <a name="list_calls_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CallController.listCallsAsync") listCallsAsync
 
-> Group Call
-
-
-```java
-void groupCallAsync(
-        final GroupCallInput input,
-        final APICallBack<String> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| from |  ``` Required ```  | This number to display on Caller ID as calling |
-| to |  ``` Required ```  | Please enter multiple E164 number. You can add max 10 numbers. Add numbers separated with comma. e.g : 1111111111,2222222222 |
-| url |  ``` Required ```  | URL requested once the call connects |
-| responseType |  ``` Required ```  ``` DefaultValue ```  | TODO: Add a parameter description |
-| groupConfirmKey |  ``` Required ```  | Define the DTMF that the called party should send to bridge the call. Allowed Values : 0-9, #, * |
-| groupConfirmFile |  ``` Required ```  | Specify the audio file you want to play when the called party picks up the call |
-| method |  ``` Optional ```  | Specifies the HTTP method used to request the required URL once call connects. |
-| statusCallBackUrl |  ``` Optional ```  | URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished. |
-| statusCallBackMethod |  ``` Optional ```  | Specifies the HTTP methodlinkclass used to request StatusCallbackUrl. |
-| fallBackUrl |  ``` Optional ```  | URL requested if the initial Url parameter fails or encounters an error |
-| fallBackMethod |  ``` Optional ```  | Specifies the HTTP method used to request the required FallbackUrl once call connects. |
-| heartBeatUrl |  ``` Optional ```  | URL that can be requested every 60 seconds during the call to notify of elapsed time and pass other general information. |
-| heartBeatMethod |  ``` Optional ```  | Specifies the HTTP method used to request HeartbeatUrl. |
-| timeout |  ``` Optional ```  | Time (in seconds) Message360 should wait while the call is ringing before canceling the call |
-| playDtmf |  ``` Optional ```  | DTMF Digits to play to the call once it connects. 0-9, #, or * |
-| hideCallerId |  ``` Optional ```  | Specifies if the caller id will be hidden |
-| record |  ``` Optional ```  | Specifies if the call should be recorded |
-| recordCallBackUrl |  ``` Optional ```  | Recording parameters will be sent here upon completion |
-| recordCallBackMethod |  ``` Optional ```  | Method used to request the RecordCallback URL. |
-| transcribe |  ``` Optional ```  | Specifies if the call recording should be transcribed |
-| transcribeCallBackUrl |  ``` Optional ```  | Transcription parameters will be sent here upon completion |
-
-
-#### Example Usage
-
-```java
-GroupCallInput collect = new GroupCallInput();
-
-String from = "From";
-collect.setFrom(from);
-
-String to = "To";
-collect.setTo(to);
-
-String url = "Url";
-collect.setUrl(url);
-
-String responseType = "json";
-collect.setResponseType(responseType);
-
-String groupConfirmKey = "GroupConfirmKey";
-collect.setGroupConfirmKey(groupConfirmKey);
-
-AudioFormatEnum groupConfirmFile = AudioFormatEnum.fromString("mp3");
-collect.setGroupConfirmFile(groupConfirmFile);
-
-HttpActionEnum method = HttpActionEnum.fromString("GET");
-collect.setMethod(method);
-
-String statusCallBackUrl = "StatusCallBackUrl";
-collect.setStatusCallBackUrl(statusCallBackUrl);
-
-HttpActionEnum statusCallBackMethod = HttpActionEnum.fromString("GET");
-collect.setStatusCallBackMethod(statusCallBackMethod);
-
-String fallBackUrl = "FallBackUrl";
-collect.setFallBackUrl(fallBackUrl);
-
-HttpActionEnum fallBackMethod = HttpActionEnum.fromString("GET");
-collect.setFallBackMethod(fallBackMethod);
-
-String heartBeatUrl = "HeartBeatUrl";
-collect.setHeartBeatUrl(heartBeatUrl);
-
-HttpActionEnum heartBeatMethod = HttpActionEnum.fromString("GET");
-collect.setHeartBeatMethod(heartBeatMethod);
-
-Integer timeout = 152;
-collect.setTimeout(timeout);
-
-String playDtmf = "PlayDtmf";
-collect.setPlayDtmf(playDtmf);
-
-String hideCallerId = "HideCallerId";
-collect.setHideCallerId(hideCallerId);
-
-Boolean record = true;
-collect.setRecord(record);
-
-String recordCallBackUrl = "RecordCallBackUrl";
-collect.setRecordCallBackUrl(recordCallBackUrl);
-
-HttpActionEnum recordCallBackMethod = HttpActionEnum.fromString("GET");
-collect.setRecordCallBackMethod(recordCallBackMethod);
-
-Boolean transcribe = true;
-collect.setTranscribe(transcribe);
-
-String transcribeCallBackUrl = "TranscribeCallBackUrl";
-collect.setTranscribeCallBackUrl(transcribeCallBackUrl);
-
-// Invoking the API call with sample inputs
-call.groupCallAsync(collect, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-}
-);
-
-```
-
-
-### <a name="list_calls_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.listCallsAsync") listCallsAsync
-
-> A list of calls associated with your Message360 account
+> A list of calls associated with your Ytel account
 
 
 ```java
@@ -3854,9 +3734,9 @@ call.listCallsAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="send_ringless_vm_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.sendRinglessVMAsync") sendRinglessVMAsync
+### <a name="send_ringless_vm_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CallController.sendRinglessVMAsync") sendRinglessVMAsync
 
-> Initiate an outbound Ringless Voicemail through message360.
+> Initiate an outbound Ringless Voicemail through Ytel.
 
 
 ```java
@@ -3869,7 +3749,7 @@ void sendRinglessVMAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| from |  ``` Required ```  | A valid message360 Voice enabled number (E.164 format) that will be initiating the phone call. |
+| from |  ``` Required ```  | A valid Ytel Voice enabled number (E.164 format) that will be initiating the phone call. |
 | rVMCallerId |  ``` Required ```  | A required secondary Caller ID for RVM to work. |
 | to |  ``` Required ```  | A valid number (E.164 format) that will receive the phone call. |
 | voiceMailURL |  ``` Required ```  | The URL requested once the RVM connects. A set of default parameters will be sent here. |
@@ -3922,7 +3802,7 @@ call.sendRinglessVMAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_call_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.viewCallAsync") viewCallAsync
+### <a name="view_call_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CallController.viewCallAsync") viewCallAsync
 
 > Retrieve a single voice call’s information by its CallSid.
 
@@ -3966,7 +3846,7 @@ call.viewCallAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_call_detail_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CallController.viewCallDetailAsync") viewCallDetailAsync
+### <a name="view_call_detail_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CallController.viewCallDetailAsync") viewCallDetailAsync
 
 > Retrieve a single voice call’s information by its CallSid.
 
@@ -4004,9 +3884,129 @@ call.viewCallDetailAsync(callSid, responseType, new APICallBack<String>() {
 ```
 
 
+### <a name="group_call_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CallController.groupCallAsync") groupCallAsync
+
+> Group Call
+
+
+```java
+void groupCallAsync(
+        final GroupCallInput input,
+        final APICallBack<String> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| from |  ``` Required ```  | This number to display on Caller ID as calling |
+| to |  ``` Required ```  | Please enter multiple E164 number. You can add max 10 numbers. Add numbers separated with comma. e.g : 1111111111,2222222222 |
+| url |  ``` Required ```  | URL requested once the call connects |
+| responseType |  ``` Required ```  ``` DefaultValue ```  | TODO: Add a parameter description |
+| groupConfirmKey |  ``` Required ```  | Define the DTMF that the called party should send to bridge the call. Allowed Values : 0-9, #, * |
+| groupConfirmFile |  ``` Required ```  | Specify the audio file you want to play when the called party picks up the call |
+| method |  ``` Optional ```  | Specifies the HTTP method used to request the required URL once call connects. |
+| statusCallBackUrl |  ``` Optional ```  | URL that can be requested to receive notification when call has ended. A set of default parameters will be sent here once the call is finished. |
+| statusCallBackMethod |  ``` Optional ```  | Specifies the HTTP methodlinkclass used to request StatusCallbackUrl. |
+| fallBackUrl |  ``` Optional ```  | URL requested if the initial Url parameter fails or encounters an error |
+| fallBackMethod |  ``` Optional ```  | Specifies the HTTP method used to request the required FallbackUrl once call connects. |
+| heartBeatUrl |  ``` Optional ```  | URL that can be requested every 60 seconds during the call to notify of elapsed time and pass other general information. |
+| heartBeatMethod |  ``` Optional ```  | Specifies the HTTP method used to request HeartbeatUrl. |
+| timeout |  ``` Optional ```  | Time (in seconds) we should wait while the call is ringing before canceling the call |
+| playDtmf |  ``` Optional ```  | DTMF Digits to play to the call once it connects. 0-9, #, or * |
+| hideCallerId |  ``` Optional ```  | Specifies if the caller id will be hidden |
+| record |  ``` Optional ```  | Specifies if the call should be recorded |
+| recordCallBackUrl |  ``` Optional ```  | Recording parameters will be sent here upon completion |
+| recordCallBackMethod |  ``` Optional ```  | Method used to request the RecordCallback URL. |
+| transcribe |  ``` Optional ```  | Specifies if the call recording should be transcribed |
+| transcribeCallBackUrl |  ``` Optional ```  | Transcription parameters will be sent here upon completion |
+
+
+#### Example Usage
+
+```java
+GroupCallInput collect = new GroupCallInput();
+
+String from = "From";
+collect.setFrom(from);
+
+String to = "To";
+collect.setTo(to);
+
+String url = "Url";
+collect.setUrl(url);
+
+String responseType = "json";
+collect.setResponseType(responseType);
+
+String groupConfirmKey = "GroupConfirmKey";
+collect.setGroupConfirmKey(groupConfirmKey);
+
+AudioFormatEnum groupConfirmFile = AudioFormatEnum.fromString("mp3");
+collect.setGroupConfirmFile(groupConfirmFile);
+
+HttpActionEnum method = HttpActionEnum.fromString("GET");
+collect.setMethod(method);
+
+String statusCallBackUrl = "StatusCallBackUrl";
+collect.setStatusCallBackUrl(statusCallBackUrl);
+
+HttpActionEnum statusCallBackMethod = HttpActionEnum.fromString("GET");
+collect.setStatusCallBackMethod(statusCallBackMethod);
+
+String fallBackUrl = "FallBackUrl";
+collect.setFallBackUrl(fallBackUrl);
+
+HttpActionEnum fallBackMethod = HttpActionEnum.fromString("GET");
+collect.setFallBackMethod(fallBackMethod);
+
+String heartBeatUrl = "HeartBeatUrl";
+collect.setHeartBeatUrl(heartBeatUrl);
+
+HttpActionEnum heartBeatMethod = HttpActionEnum.fromString("GET");
+collect.setHeartBeatMethod(heartBeatMethod);
+
+Integer timeout = 150;
+collect.setTimeout(timeout);
+
+String playDtmf = "PlayDtmf";
+collect.setPlayDtmf(playDtmf);
+
+String hideCallerId = "HideCallerId";
+collect.setHideCallerId(hideCallerId);
+
+Boolean record = true;
+collect.setRecord(record);
+
+String recordCallBackUrl = "RecordCallBackUrl";
+collect.setRecordCallBackUrl(recordCallBackUrl);
+
+HttpActionEnum recordCallBackMethod = HttpActionEnum.fromString("GET");
+collect.setRecordCallBackMethod(recordCallBackMethod);
+
+Boolean transcribe = true;
+collect.setTranscribe(transcribe);
+
+String transcribeCallBackUrl = "TranscribeCallBackUrl";
+collect.setTranscribeCallBackUrl(transcribeCallBackUrl);
+
+// Invoking the API call with sample inputs
+call.groupCallAsync(collect, new APICallBack<String>() {
+    public void onSuccess(HttpContext context, String response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+}
+);
+
+```
+
+
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="carrier_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.CarrierController") CarrierController
+## <a name="carrier_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.CarrierController") CarrierController
 
 ### Get singleton instance
 
@@ -4016,7 +4016,7 @@ The singleton instance of the ``` CarrierController ``` class can be accessed fr
 CarrierController carrier = client.getCarrier();
 ```
 
-### <a name="carrier_lookup_list_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CarrierController.carrierLookupListAsync") carrierLookupListAsync
+### <a name="carrier_lookup_list_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CarrierController.carrierLookupListAsync") carrierLookupListAsync
 
 > Retrieve a list of carrier lookup objects.
 
@@ -4064,7 +4064,7 @@ carrier.carrierLookupListAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="carrier_lookup_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.CarrierController.carrierLookupAsync") carrierLookupAsync
+### <a name="carrier_lookup_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.CarrierController.carrierLookupAsync") carrierLookupAsync
 
 > Get the Carrier Lookup
 
@@ -4110,7 +4110,7 @@ carrier.carrierLookupAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="address_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.AddressController") AddressController
+## <a name="address_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.AddressController") AddressController
 
 ### Get singleton instance
 
@@ -4120,7 +4120,7 @@ The singleton instance of the ``` AddressController ``` class can be accessed fr
 AddressController address = client.getAddress();
 ```
 
-### <a name="create_address_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AddressController.createAddressAsync") createAddressAsync
+### <a name="create_address_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.AddressController.createAddressAsync") createAddressAsync
 
 > To add an address to your address book, you create a new address object. You can retrieve and delete individual addresses as well as get a list of addresses. Addresses are identified by a unique random ID.
 
@@ -4196,7 +4196,7 @@ address.createAddressAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_address_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AddressController.viewAddressAsync") viewAddressAsync
+### <a name="view_address_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.AddressController.viewAddressAsync") viewAddressAsync
 
 > View Address Specific address Book by providing the address id
 
@@ -4240,7 +4240,7 @@ address.viewAddressAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_address_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AddressController.listAddressAsync") listAddressAsync
+### <a name="list_address_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.AddressController.listAddressAsync") listAddressAsync
 
 > List All Address 
 
@@ -4296,7 +4296,7 @@ address.listAddressAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="verify_address_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AddressController.verifyAddressAsync") verifyAddressAsync
+### <a name="verify_address_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.AddressController.verifyAddressAsync") verifyAddressAsync
 
 > Validates an address given.
 
@@ -4340,7 +4340,7 @@ address.verifyAddressAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="delete_address_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AddressController.deleteAddressAsync") deleteAddressAsync
+### <a name="delete_address_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.AddressController.deleteAddressAsync") deleteAddressAsync
 
 > To delete Address to your address book
 
@@ -4386,7 +4386,7 @@ address.deleteAddressAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="sub_account_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.SubAccountController") SubAccountController
+## <a name="sub_account_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.SubAccountController") SubAccountController
 
 ### Get singleton instance
 
@@ -4396,7 +4396,7 @@ The singleton instance of the ``` SubAccountController ``` class can be accessed
 SubAccountController subAccount = client.getSubAccount();
 ```
 
-### <a name="delete_sub_account_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SubAccountController.deleteSubAccountAsync") deleteSubAccountAsync
+### <a name="delete_sub_account_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SubAccountController.deleteSubAccountAsync") deleteSubAccountAsync
 
 > Delete sub account or merge numbers into parent
 
@@ -4444,7 +4444,7 @@ subAccount.deleteSubAccountAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="suspend_sub_account_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SubAccountController.suspendSubAccountAsync") suspendSubAccountAsync
+### <a name="suspend_sub_account_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SubAccountController.suspendSubAccountAsync") suspendSubAccountAsync
 
 > Suspend or unsuspend
 
@@ -4492,7 +4492,7 @@ subAccount.suspendSubAccountAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="create_sub_account_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.SubAccountController.createSubAccountAsync") createSubAccountAsync
+### <a name="create_sub_account_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.SubAccountController.createSubAccountAsync") createSubAccountAsync
 
 > Create a sub user account under the parent account
 
@@ -4554,7 +4554,7 @@ subAccount.createSubAccountAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="account_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.AccountController") AccountController
+## <a name="account_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.AccountController") AccountController
 
 ### Get singleton instance
 
@@ -4564,9 +4564,9 @@ The singleton instance of the ``` AccountController ``` class can be accessed fr
 AccountController account = client.getAccount();
 ```
 
-### <a name="view_account_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AccountController.viewAccountAsync") viewAccountAsync
+### <a name="view_account_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.AccountController.viewAccountAsync") viewAccountAsync
 
-> Retrieve information regarding your message360 account by a specific date. The response object will contain data such as account status, balance, and account usage totals.
+> Retrieve information regarding your Ytel account by a specific date. The response object will contain data such as account status, balance, and account usage totals.
 
 
 ```java
@@ -4610,7 +4610,7 @@ account.viewAccountAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="usage_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.UsageController") UsageController
+## <a name="usage_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.UsageController") UsageController
 
 ### Get singleton instance
 
@@ -4620,9 +4620,9 @@ The singleton instance of the ``` UsageController ``` class can be accessed from
 UsageController usage = client.getUsage();
 ```
 
-### <a name="list_usage_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.UsageController.listUsageAsync") listUsageAsync
+### <a name="list_usage_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.UsageController.listUsageAsync") listUsageAsync
 
-> Retrieve usage metrics regarding your message360 account. The results includes inbound/outbound voice calls and inbound/outbound SMS messages as well as carrier lookup requests.
+> Retrieve usage metrics regarding your Ytel account. The results includes inbound/outbound voice calls and inbound/outbound SMS messages as well as carrier lookup requests.
 
 
 ```java
@@ -4678,7 +4678,7 @@ usage.listUsageAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="short_code_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.ShortCodeController") ShortCodeController
+## <a name="short_code_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.ShortCodeController") ShortCodeController
 
 ### Get singleton instance
 
@@ -4688,7 +4688,7 @@ The singleton instance of the ``` ShortCodeController ``` class can be accessed 
 ShortCodeController shortCode = client.getShortCode();
 ```
 
-### <a name="send_dedicated_shortcode_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.sendDedicatedShortcodeAsync") sendDedicatedShortcodeAsync
+### <a name="send_dedicated_shortcode_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ShortCodeController.sendDedicatedShortcodeAsync") sendDedicatedShortcodeAsync
 
 > TODO: Add a method description
 
@@ -4716,10 +4716,10 @@ void sendDedicatedShortcodeAsync(
 ```java
 SendDedicatedShortcodeInput collect = new SendDedicatedShortcodeInput();
 
-int shortcode = 152;
+int shortcode = 150;
 collect.setShortcode(shortcode);
 
-double to = 152.028382849893;
+double to = 150.308782984646;
 collect.setTo(to);
 
 String body = "body";
@@ -4748,7 +4748,7 @@ shortCode.sendDedicatedShortcodeAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_shortcode_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.viewShortcodeAsync") viewShortcodeAsync
+### <a name="view_shortcode_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ShortCodeController.viewShortcodeAsync") viewShortcodeAsync
 
 > View a single Sms Short Code message.
 
@@ -4792,7 +4792,7 @@ shortCode.viewShortcodeAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_shortcode_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.listShortcodeAsync") listShortcodeAsync
+### <a name="list_shortcode_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ShortCodeController.listShortcodeAsync") listShortcodeAsync
 
 > Retrieve a list of Short Code message objects.
 
@@ -4852,9 +4852,9 @@ shortCode.listShortcodeAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_inbound_shortcode_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.listInboundShortcodeAsync") listInboundShortcodeAsync
+### <a name="list_inbound_shortcode_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ShortCodeController.listInboundShortcodeAsync") listInboundShortcodeAsync
 
-> Retrive a list of inbound Sms Short Code messages associated with your message360 account.
+> Retrive a list of inbound Sms Short Code messages associated with your Ytel account.
 
 
 ```java
@@ -4912,7 +4912,7 @@ shortCode.listInboundShortcodeAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_dedicated_shortcode_assignment_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.viewDedicatedShortcodeAssignmentAsync") viewDedicatedShortcodeAssignmentAsync
+### <a name="view_dedicated_shortcode_assignment_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ShortCodeController.viewDedicatedShortcodeAssignmentAsync") viewDedicatedShortcodeAssignmentAsync
 
 > Retrieve a single Short Code object by its shortcode assignment.
 
@@ -4927,7 +4927,7 @@ void viewDedicatedShortcodeAssignmentAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| shortcode |  ``` Required ```  | List of valid Dedicated Short Code to your message360 account |
+| shortcode |  ``` Required ```  | List of valid Dedicated Short Code to your Ytel account |
 | responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
 
 
@@ -4956,7 +4956,7 @@ shortCode.viewDedicatedShortcodeAssignmentAsync(collect, new APICallBack<String>
 ```
 
 
-### <a name="update_dedicated_short_code_assignment_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.updateDedicatedShortCodeAssignmentAsync") updateDedicatedShortCodeAssignmentAsync
+### <a name="update_dedicated_short_code_assignment_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ShortCodeController.updateDedicatedShortCodeAssignmentAsync") updateDedicatedShortCodeAssignmentAsync
 
 > Update a dedicated shortcode.
 
@@ -4971,7 +4971,7 @@ void updateDedicatedShortCodeAssignmentAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| shortcode |  ``` Required ```  | List of valid dedicated shortcode to your message360 account. |
+| shortcode |  ``` Required ```  | List of valid dedicated shortcode to your Ytel account. |
 | responseType |  ``` Required ```  ``` DefaultValue ```  | Response type format xml or json |
 | friendlyName |  ``` Optional ```  | User generated name of the dedicated shortcode. |
 | callbackMethod |  ``` Optional ```  | Specifies the HTTP method used to request the required StatusCallBackUrl once call connects. |
@@ -5020,9 +5020,9 @@ shortCode.updateDedicatedShortCodeAssignmentAsync(collect, new APICallBack<Strin
 ```
 
 
-### <a name="list_short_code_assignment_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.ShortCodeController.listShortCodeAssignmentAsync") listShortCodeAssignmentAsync
+### <a name="list_short_code_assignment_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.ShortCodeController.listShortCodeAssignmentAsync") listShortCodeAssignmentAsync
 
-> Retrieve a list of Short Code assignment associated with your message360 account.
+> Retrieve a list of Short Code assignment associated with your Ytel account.
 
 
 ```java
@@ -5074,7 +5074,7 @@ shortCode.listShortCodeAssignmentAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="post_card_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.PostCardController") PostCardController
+## <a name="post_card_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.PostCardController") PostCardController
 
 ### Get singleton instance
 
@@ -5084,7 +5084,7 @@ The singleton instance of the ``` PostCardController ``` class can be accessed f
 PostCardController postCard = client.getPostCard();
 ```
 
-### <a name="view_postcard_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PostCardController.viewPostcardAsync") viewPostcardAsync
+### <a name="view_postcard_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PostCardController.viewPostcardAsync") viewPostcardAsync
 
 > Retrieve a postcard object by its PostcardId.
 
@@ -5128,7 +5128,7 @@ postCard.viewPostcardAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="create_postcard_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PostCardController.createPostcardAsync") createPostcardAsync
+### <a name="create_postcard_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PostCardController.createPostcardAsync") createPostcardAsync
 
 > Create, print, and mail a postcard to an address. The postcard front must be supplied as a PDF, image, or an HTML string. The back can be a PDF, image, HTML string, or it can be automatically generated by supplying a custom message.
 
@@ -5204,7 +5204,7 @@ postCard.createPostcardAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_postcards_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PostCardController.listPostcardsAsync") listPostcardsAsync
+### <a name="list_postcards_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PostCardController.listPostcardsAsync") listPostcardsAsync
 
 > Retrieve a list of postcard objects. The postcards objects are sorted by creation date, with the most recently created postcards appearing first.
 
@@ -5260,7 +5260,7 @@ postCard.listPostcardsAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="delete_postcard_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.PostCardController.deletePostcardAsync") deletePostcardAsync
+### <a name="delete_postcard_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.PostCardController.deletePostcardAsync") deletePostcardAsync
 
 > Remove a postcard object.
 
@@ -5306,7 +5306,7 @@ postCard.deletePostcardAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="letter_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.LetterController") LetterController
+## <a name="letter_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.LetterController") LetterController
 
 ### Get singleton instance
 
@@ -5316,7 +5316,7 @@ The singleton instance of the ``` LetterController ``` class can be accessed fro
 LetterController letter = client.getLetter();
 ```
 
-### <a name="view_letter_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.LetterController.viewLetterAsync") viewLetterAsync
+### <a name="view_letter_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.LetterController.viewLetterAsync") viewLetterAsync
 
 > Retrieve a letter object by its LetterSid.
 
@@ -5360,7 +5360,7 @@ letter.viewLetterAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="create_letter_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.LetterController.createLetterAsync") createLetterAsync
+### <a name="create_letter_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.LetterController.createLetterAsync") createLetterAsync
 
 > Create, print, and mail a letter to an address. The letter file must be supplied as a PDF or an HTML string.
 
@@ -5440,7 +5440,7 @@ letter.createLetterAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_letters_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.LetterController.listLettersAsync") listLettersAsync
+### <a name="list_letters_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.LetterController.listLettersAsync") listLettersAsync
 
 > Retrieve a list of letter objects. The letter objects are sorted by creation date, with the most recently created letters appearing first.
 
@@ -5496,7 +5496,7 @@ letter.listLettersAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="delete_letter_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.LetterController.deleteLetterAsync") deleteLetterAsync
+### <a name="delete_letter_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.LetterController.deleteLetterAsync") deleteLetterAsync
 
 > Remove a letter object by its LetterId.
 
@@ -5542,7 +5542,7 @@ letter.deleteLetterAsync(collect, new APICallBack<String>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="area_mail_controller"></a>![Class: ](https://apidocs.io/img/class.png "message360.controllers.AreaMailController") AreaMailController
+## <a name="area_mail_controller"></a>![Class: ](https://apidocs.io/img/class.png "ytel.controllers.AreaMailController") AreaMailController
 
 ### Get singleton instance
 
@@ -5552,7 +5552,7 @@ The singleton instance of the ``` AreaMailController ``` class can be accessed f
 AreaMailController areaMail = client.getAreaMail();
 ```
 
-### <a name="create_area_mail_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AreaMailController.createAreaMailAsync") createAreaMailAsync
+### <a name="create_area_mail_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.AreaMailController.createAreaMailAsync") createAreaMailAsync
 
 > Create a new AreaMail object.
 
@@ -5620,7 +5620,7 @@ areaMail.createAreaMailAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="view_area_mail_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AreaMailController.viewAreaMailAsync") viewAreaMailAsync
+### <a name="view_area_mail_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.AreaMailController.viewAreaMailAsync") viewAreaMailAsync
 
 > Retrieve an AreaMail object by its AreaMailId.
 
@@ -5664,7 +5664,7 @@ areaMail.viewAreaMailAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="list_area_mail_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AreaMailController.listAreaMailAsync") listAreaMailAsync
+### <a name="list_area_mail_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.AreaMailController.listAreaMailAsync") listAreaMailAsync
 
 > Retrieve a list of AreaMail objects.
 
@@ -5720,7 +5720,7 @@ areaMail.listAreaMailAsync(collect, new APICallBack<String>() {
 ```
 
 
-### <a name="delete_area_mail_async"></a>![Method: ](https://apidocs.io/img/method.png "message360.controllers.AreaMailController.deleteAreaMailAsync") deleteAreaMailAsync
+### <a name="delete_area_mail_async"></a>![Method: ](https://apidocs.io/img/method.png "ytel.controllers.AreaMailController.deleteAreaMailAsync") deleteAreaMailAsync
 
 > Remove an AreaMail object by its AreaMailId.
 

@@ -1,0 +1,42 @@
+/*
+ * Ytel
+ *
+ * This file was automatically generated for ytel by APIMATIC v2.0 ( https://apimatic.io ).
+ */
+package ytel.models;
+
+import java.util.*;
+
+public class DeleteAddressInputBuilder {
+    //the instance to build
+    private DeleteAddressInput deleteAddressInput;
+
+    /**
+     * Default constructor to initialize the instance
+     */
+    public DeleteAddressInputBuilder() {
+        deleteAddressInput = new DeleteAddressInput();
+    }
+
+    /**
+     * The identifier of the address to be deleted.
+     */
+    public DeleteAddressInputBuilder addressid(String addressid) {
+        deleteAddressInput.setAddressid(addressid);
+        return this;
+    }
+
+    /**
+     * Response type either json or xml
+     */
+    public DeleteAddressInputBuilder responseType(String responseType) {
+        deleteAddressInput.setResponseType(responseType);
+        return this;
+    }
+    /**
+     * Build the instance with the given values
+     */
+    public DeleteAddressInput build() {
+        return deleteAddressInput;
+    }
+}
