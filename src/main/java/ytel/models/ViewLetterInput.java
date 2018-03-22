@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ViewLetterInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4622045090045373742L;
+    private static final long serialVersionUID = 4961516096503571523L;
     private String lettersid;
     private String responseType = "json";
     /** GETTER

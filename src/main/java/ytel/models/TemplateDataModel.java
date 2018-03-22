@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class TemplateDataModel 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4752805366982066455L;
+    private static final long serialVersionUID = 5680016373350005022L;
     private String companyname;
     private String otpcode;
     /** GETTER

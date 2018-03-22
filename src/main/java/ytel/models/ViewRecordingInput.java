@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ViewRecordingInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5137913978842274149L;
+    private static final long serialVersionUID = 4636166561280568448L;
     private String recordingsid;
     private String responseType = "json";
     /** GETTER

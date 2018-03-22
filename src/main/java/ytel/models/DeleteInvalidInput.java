@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class DeleteInvalidInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5472061598343843417L;
+    private static final long serialVersionUID = 5282735886375991899L;
     private String email;
     private String responseType = "json";
     /** GETTER

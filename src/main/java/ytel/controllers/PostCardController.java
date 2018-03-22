@@ -78,7 +78,7 @@ public class PostCardController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5317380785565724624L;
+            private static final long serialVersionUID = 5531090981662421338L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +87,7 @@ public class PostCardController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4922384444219391316L;
+            private static final long serialVersionUID = 5407436076459213903L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -95,7 +95,7 @@ public class PostCardController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5195971258671137935L;
+            private static final long serialVersionUID = 4770217144373310976L;
             {
                     put( "postcardid", input.getPostcardid() );
             }
@@ -216,7 +216,7 @@ public class PostCardController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4703723464588714747L;
+            private static final long serialVersionUID = 4703783490960003923L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -225,7 +225,7 @@ public class PostCardController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4963446822082839213L;
+            private static final long serialVersionUID = 5646276739366647098L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -233,7 +233,7 @@ public class PostCardController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4642183793563344332L;
+            private static final long serialVersionUID = 5096943484927363723L;
             {
                     put( "to", input.getTo() );
                     put( "from", input.getFrom() );
@@ -341,7 +341,7 @@ public class PostCardController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4760763440694424104L;
+            private static final long serialVersionUID = 5752333051753072440L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -350,7 +350,7 @@ public class PostCardController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5571441739196272184L;
+            private static final long serialVersionUID = 5320038458416503278L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -358,7 +358,7 @@ public class PostCardController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5095171333630663814L;
+            private static final long serialVersionUID = 4926280918156605295L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -464,7 +464,7 @@ public class PostCardController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4878333989258022594L;
+            private static final long serialVersionUID = 4701794709455270579L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -473,7 +473,7 @@ public class PostCardController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4919169024981439899L;
+            private static final long serialVersionUID = 4744797580239185036L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -481,7 +481,7 @@ public class PostCardController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4748311849264575613L;
+            private static final long serialVersionUID = 4988389778453848872L;
             {
                     put( "postcardid", input.getPostcardid() );
             }

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class DeletePostcardInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5490318215045453506L;
+    private static final long serialVersionUID = 4687974621902272146L;
     private String postcardid;
     private String responseType = "json";
     /** GETTER

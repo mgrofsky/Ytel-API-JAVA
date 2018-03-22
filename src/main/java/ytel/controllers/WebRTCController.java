@@ -86,7 +86,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5527651988143083356L;
+            private static final long serialVersionUID = 5565341136008075795L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -94,7 +94,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5707397749714558538L;
+            private static final long serialVersionUID = 4956029470896499987L;
             {
                     put( "account_sid", input.getAccountSid() );
                     put( "auth_token", input.getAuthToken() );
@@ -202,7 +202,7 @@ public class WebRTCController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4646714596848535605L;
+            private static final long serialVersionUID = 4941901786914854408L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -210,7 +210,7 @@ public class WebRTCController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5331749498400426120L;
+            private static final long serialVersionUID = 5284854040166814333L;
             {
                     put( "account_sid", input.getAccountSid() );
                     put( "auth_token", input.getAuthToken() );

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ListShortcodeInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4902801949033404341L;
+    private static final long serialVersionUID = 4858999585546263212L;
     private String responseType = "json";
     private String shortcode;
     private String to;

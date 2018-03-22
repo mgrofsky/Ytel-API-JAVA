@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateSubAccountInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5169458423264751294L;
+    private static final long serialVersionUID = 4977919840216046034L;
     private String firstName;
     private String lastName;
     private String email;

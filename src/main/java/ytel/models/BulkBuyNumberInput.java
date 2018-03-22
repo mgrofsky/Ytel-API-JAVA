@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class BulkBuyNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5556666759293649399L;
+    private static final long serialVersionUID = 5027973752560778747L;
     private NumberTypeEnum numberType;
     private String areaCode;
     private String quantity;

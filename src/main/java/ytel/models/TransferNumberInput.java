@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class TransferNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4923212727968578152L;
+    private static final long serialVersionUID = 5498784314904691617L;
     private String phonenumber;
     private String fromaccountsid;
     private String toaccountsid;

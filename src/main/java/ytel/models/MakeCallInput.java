@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class MakeCallInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5483904575510657322L;
+    private static final long serialVersionUID = 5146377558753552891L;
     private String from;
     private String to;
     private String url;

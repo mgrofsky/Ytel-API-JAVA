@@ -87,7 +87,7 @@ public class AreaMailController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5077353399233727040L;
+            private static final long serialVersionUID = 5757131429234591646L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -96,7 +96,7 @@ public class AreaMailController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5660057020324752457L;
+            private static final long serialVersionUID = 5564511263900247709L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -104,7 +104,7 @@ public class AreaMailController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4797196925250040525L;
+            private static final long serialVersionUID = 4807399476494380805L;
             {
                     put( "routes", input.getRoutes() );
                     put( "attachbyid", input.getAttachbyid() );
@@ -213,7 +213,7 @@ public class AreaMailController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4972878308165037623L;
+            private static final long serialVersionUID = 4729218427334707732L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -222,7 +222,7 @@ public class AreaMailController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5699400503299978961L;
+            private static final long serialVersionUID = 5732604067622240847L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -230,7 +230,7 @@ public class AreaMailController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5158959283729752051L;
+            private static final long serialVersionUID = 5172755223125365644L;
             {
                     put( "areamailid", input.getAreamailid() );
             }
@@ -330,7 +330,7 @@ public class AreaMailController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5398422342257305535L;
+            private static final long serialVersionUID = 5600835414882453075L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -339,7 +339,7 @@ public class AreaMailController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5598046463408928840L;
+            private static final long serialVersionUID = 5071552958972894357L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -347,7 +347,7 @@ public class AreaMailController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4637306048402225521L;
+            private static final long serialVersionUID = 4824320725458637460L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -453,7 +453,7 @@ public class AreaMailController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5324577309957348929L;
+            private static final long serialVersionUID = 5025975360052581841L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -462,7 +462,7 @@ public class AreaMailController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5020255929322460305L;
+            private static final long serialVersionUID = 4675850665865604607L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -470,7 +470,7 @@ public class AreaMailController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5019453294707794226L;
+            private static final long serialVersionUID = 5516867080529900964L;
             {
                     put( "areamailid", input.getAreamailid() );
             }

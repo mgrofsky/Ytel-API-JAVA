@@ -84,7 +84,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4838731690175675427L;
+            private static final long serialVersionUID = 5473460917817688639L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -93,7 +93,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4758709437108330653L;
+            private static final long serialVersionUID = 5102101583897995812L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -101,7 +101,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5311866389165536031L;
+            private static final long serialVersionUID = 5007842279049866977L;
             {
                     put( "From", input.getFrom() );
                     put( "To", input.getTo() );
@@ -210,7 +210,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5212497742545711001L;
+            private static final long serialVersionUID = 4637254179526220264L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -219,7 +219,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5694072471307950011L;
+            private static final long serialVersionUID = 4722388447711686481L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -227,7 +227,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4932213965716264687L;
+            private static final long serialVersionUID = 5660254131047102731L;
             {
                     put( "MessageSid", input.getMessageSid() );
             }
@@ -327,7 +327,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5244090464441221501L;
+            private static final long serialVersionUID = 4861108225064257146L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -336,7 +336,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5048621252653536484L;
+            private static final long serialVersionUID = 4778487102872347481L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -344,7 +344,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5550241327141773267L;
+            private static final long serialVersionUID = 5482705057145952157L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -448,7 +448,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5646074227259928277L;
+            private static final long serialVersionUID = 5395933823242077795L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -457,7 +457,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4879161417545952072L;
+            private static final long serialVersionUID = 4717680626501840400L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -465,7 +465,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5159122953898360941L;
+            private static final long serialVersionUID = 5472622472454606898L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -572,7 +572,7 @@ public class SMSController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5450188667537198595L;
+            private static final long serialVersionUID = 4831199233204165520L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -581,7 +581,7 @@ public class SMSController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4843560053002093855L;
+            private static final long serialVersionUID = 5593520386579040470L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -589,7 +589,7 @@ public class SMSController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5049699644151353338L;
+            private static final long serialVersionUID = 5668017575416627924L;
             {
                     put( "MessageSid", input.getMessageSid() );
             }

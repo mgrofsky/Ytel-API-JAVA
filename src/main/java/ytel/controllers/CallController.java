@@ -84,7 +84,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5227624524243448718L;
+            private static final long serialVersionUID = 5204725653687468672L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -93,7 +93,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5437684676646094612L;
+            private static final long serialVersionUID = 4816602975573112555L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -101,7 +101,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5064123322342152902L;
+            private static final long serialVersionUID = 4863491777547573258L;
             {
                     put( "From", input.getFrom() );
                     put( "To", input.getTo() );
@@ -232,7 +232,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4910685085782973513L;
+            private static final long serialVersionUID = 5197387883300965722L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -241,7 +241,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5345879848455565987L;
+            private static final long serialVersionUID = 4634455574868523599L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -249,7 +249,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5438116330789137252L;
+            private static final long serialVersionUID = 4617435421783809244L;
             {
                     put( "CallSid", input.getCallSid() );
                     put( "AudioUrl", input.getAudioUrl() );
@@ -357,7 +357,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5380704968771308251L;
+            private static final long serialVersionUID = 5248501918397536232L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -366,7 +366,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5302345804998623545L;
+            private static final long serialVersionUID = 5335471401777120615L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -374,7 +374,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5540253831472374481L;
+            private static final long serialVersionUID = 4736825328971508039L;
             {
                     put( "CallSid", input.getCallSid() );
                     put( "Record", input.getRecord() );
@@ -482,7 +482,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4947432358940895624L;
+            private static final long serialVersionUID = 5171721651957653811L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -491,7 +491,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5562669958954461976L;
+            private static final long serialVersionUID = 5700960592680045607L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -499,7 +499,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4700655376083006228L;
+            private static final long serialVersionUID = 4948217634536618889L;
             {
                     put( "CallSid", input.getCallSid() );
                     put( "AudioDirection", (input.getAudioDirection() != null) ? input.getAudioDirection().value() : null );
@@ -611,7 +611,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5024953205886336054L;
+            private static final long serialVersionUID = 4868385363162279492L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -620,7 +620,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5340501214622136862L;
+            private static final long serialVersionUID = 5463042833668401541L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -628,7 +628,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5633453028846327461L;
+            private static final long serialVersionUID = 4895658753847508473L;
             {
                     put( "CallSid", input.getCallSid() );
                     put( "PlayDtmf", input.getPlayDtmf() );
@@ -733,7 +733,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5255930065573610671L;
+            private static final long serialVersionUID = 5501350559188062094L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -742,7 +742,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5218142036618187457L;
+            private static final long serialVersionUID = 4872598832047069298L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -750,7 +750,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5675036650958118716L;
+            private static final long serialVersionUID = 4931372175396908216L;
             {
                     put( "CallSid", input.getCallSid() );
                     put( "Url", input.getUrl() );
@@ -853,7 +853,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4959348064503355888L;
+            private static final long serialVersionUID = 5103732493371088309L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -862,7 +862,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5760693836256389054L;
+            private static final long serialVersionUID = 5761052440501469198L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -870,7 +870,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4750996070165837920L;
+            private static final long serialVersionUID = 5458698155797314005L;
             {
                     put( "Page", input.getPage() );
                     put( "PageSize", input.getPageSize() );
@@ -986,7 +986,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4698667988555743835L;
+            private static final long serialVersionUID = 5250295614063627420L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -995,7 +995,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5647039723910153310L;
+            private static final long serialVersionUID = 5541161358503700765L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -1003,7 +1003,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5226102423349296872L;
+            private static final long serialVersionUID = 5350862344045546271L;
             {
                     put( "From", input.getFrom() );
                     put( "RVMCallerId", input.getRVMCallerId() );
@@ -1112,7 +1112,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5263813367951272821L;
+            private static final long serialVersionUID = 5520406796443071561L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -1121,7 +1121,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5530348109565832129L;
+            private static final long serialVersionUID = 5332833778032777187L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -1129,7 +1129,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4814905215701773329L;
+            private static final long serialVersionUID = 5536888650501062288L;
             {
                     put( "callsid", input.getCallsid() );
             }
@@ -1236,7 +1236,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4718431410420567674L;
+            private static final long serialVersionUID = 5151423459294407269L;
             {
                     put( "ResponseType", responseType );
             }});
@@ -1245,7 +1245,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4696860484999796198L;
+            private static final long serialVersionUID = 5212213252077041775L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -1253,7 +1253,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5618165543341139870L;
+            private static final long serialVersionUID = 5529813093500114370L;
             {
                     put( "callSid", callSid );
             }
@@ -1368,7 +1368,7 @@ public class CallController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5728656235243832479L;
+            private static final long serialVersionUID = 4988862751968424123L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -1377,7 +1377,7 @@ public class CallController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4707304010001035846L;
+            private static final long serialVersionUID = 4693784157387797129L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -1385,7 +1385,7 @@ public class CallController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4722912284615423774L;
+            private static final long serialVersionUID = 4684198745656229619L;
             {
                     put( "From", input.getFrom() );
                     put( "To", input.getTo() );

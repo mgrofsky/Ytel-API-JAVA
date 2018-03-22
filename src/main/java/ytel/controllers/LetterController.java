@@ -78,7 +78,7 @@ public class LetterController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4882261329132192718L;
+            private static final long serialVersionUID = 5394382206523723323L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -87,7 +87,7 @@ public class LetterController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5212668094023289484L;
+            private static final long serialVersionUID = 5202600838067491513L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -95,7 +95,7 @@ public class LetterController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4834915202105387997L;
+            private static final long serialVersionUID = 5519794211297396524L;
             {
                     put( "lettersid", input.getLettersid() );
             }
@@ -210,7 +210,7 @@ public class LetterController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5469480439011399180L;
+            private static final long serialVersionUID = 5148283347598178625L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -219,7 +219,7 @@ public class LetterController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5285418116639224732L;
+            private static final long serialVersionUID = 4741275851405920211L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -227,7 +227,7 @@ public class LetterController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5494829408130710267L;
+            private static final long serialVersionUID = 5190426509627440312L;
             {
                     put( "to", input.getTo() );
                     put( "from", input.getFrom() );
@@ -336,7 +336,7 @@ public class LetterController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4804784429775004063L;
+            private static final long serialVersionUID = 4912119910776441541L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -345,7 +345,7 @@ public class LetterController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5279991627175316761L;
+            private static final long serialVersionUID = 5578046740213114127L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -353,7 +353,7 @@ public class LetterController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4877614949804195545L;
+            private static final long serialVersionUID = 4925800930828158697L;
             {
                     put( "page", input.getPage() );
                     put( "pagesize", input.getPagesize() );
@@ -459,7 +459,7 @@ public class LetterController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5464201374587078328L;
+            private static final long serialVersionUID = 4854135954712368367L;
             {
                     put( "ResponseType", input.getResponseType() );
             }});
@@ -468,7 +468,7 @@ public class LetterController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4653524547815025533L;
+            private static final long serialVersionUID = 4861383410215270742L;
             {
                     put( "user-agent", "ytel-api" );
             }
@@ -476,7 +476,7 @@ public class LetterController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4956818814614292841L;
+            private static final long serialVersionUID = 5708536606379629380L;
             {
                     put( "lettersid", input.getLettersid() );
             }

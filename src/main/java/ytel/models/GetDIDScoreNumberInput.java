@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class GetDIDScoreNumberInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5502921343904791851L;
+    private static final long serialVersionUID = 5466059454042863722L;
     private String phonenumber;
     private String responseType = "json";
     /** GETTER

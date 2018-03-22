@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreatePostcardInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5480751486616816699L;
+    private static final long serialVersionUID = 5062844027038301201L;
     private String to;
     private String from;
     private String attachbyid;

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class CreateLetterInput 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5354985602451536305L;
+    private static final long serialVersionUID = 4797175167383631292L;
     private String to;
     private String from;
     private String attachbyid;
